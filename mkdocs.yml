@@ -1,6 +1,5 @@
 site_name: Metrist Docs
 site_url: https://docs.metrist.io
-site_dir: public
 nav:
     - 'Inviting Team Members': '0001-invites.md'
 

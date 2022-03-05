@@ -1,5 +1,7 @@
 site_name: Metrist Docs
 site_url: https://docs.metrist.io
-nav:
-    - 'Inviting Team Members': '0001-invites.md'
+pages:
+    - Inviting Team Members: '0001-invites.md'
+    - Using Slack: '0002-slack.md'
+
 

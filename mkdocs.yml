@@ -1,7 +1,19 @@
-site_name: Metrist Docs
+site_name: Metrist
 site_url: https://docs.metrist.io
+extra_css:
+    - custom.css
 pages:
-    - Inviting Team Members: '0001-invites.md'
-    - Using Slack: '0002-slack.md'
-
-
+    - Home: 'index.md'
+    - 'Chat Apps':
+      - Slack: 'slack.md'
+      - Teams: 'teams.md'
+    - 'Web App':
+      - 'Inviting your team': 'web-app-invites.md'
+      - 'Adding service montiors': 'web-app-monitors.md'
+      - 'Alerts and notifications': 'web-app-notifications.md'
+      - 'Configuring thresholds': 'web-app-thresholds.md'
+    - 'Agent':
+      - 'General overview': 'agent-overview.md'
+      - 'Agent source code': 'agent-source-code.md'
+      - 'Ruby in-process agent': 'agent-ruby-in-process.md'
+      - 'PHP/Curl in-process agent': 'agent-php-in-process.md'

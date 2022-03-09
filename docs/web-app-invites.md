@@ -1,14 +1,12 @@
-# How do I invite a team member?
-
 ## Sending an invitation
-
-![Invites Screen](https://raw.githubusercontent.com/Metrist-Software/product-docs/main/images/0001-invites.png)
 
 Other team members may join your Metrist account through an email-based invitation system.
 
 1. Click on the _Users_ tab.
 2. In the _Email Address_ field, type the email address of the user you wish to invite.
 3. Click the _Send Invitation_ button.
+
+![Invites Screen](https://raw.githubusercontent.com/Metrist-Software/product-docs/main/images/0001-invites.png)
 
 This will send an email invitation to your team member. They will have the option to accept the invitation and sign into your Metrist account.
 

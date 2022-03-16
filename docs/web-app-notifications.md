@@ -58,7 +58,7 @@ Here is a sample webhook that demonstrates the format and available data:
             "CreatedAt": "2021-01-18T19:36:20.2699061Z"
         },
         {
-            "Name": "Getting addresses in the prod envirionment",
+            "Name": "Getting addresses in the prod environment",
             "CheckId": "GetAddressesProd",
             "Instance": "us-east-1",
             "State": "degraded",

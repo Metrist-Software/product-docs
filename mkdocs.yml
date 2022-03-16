@@ -9,8 +9,8 @@ pages:
       - Teams: 'teams.md'
     - 'Web App':
       - 'Inviting your team': 'web-app-invites.md'
-      - 'Adding service montiors': 'web-app-monitors.md'
-      - 'Alerts and notifications': 'web-app-notifications.md'
+      - 'Configuring service montiors': 'web-app-monitors.md'
+      - 'Configuring notifications': 'web-app-notifications.md'
       - 'Configuring thresholds': 'web-app-thresholds.md'
     - 'Agent':
       - 'General overview': 'agent-overview.md'

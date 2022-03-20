@@ -16,22 +16,26 @@ To be notified via Slack or Teams, run the associated command in your [chat app]
 
 To configure email notifications:
 
-1. Click on the _Subscriptions_ tab.
+1. Click on the _Alerting_ tab.
 2. Click on the _Add Subscription_ button.
 3. Choose _Email_ as the _Subscription Type_, and choose the service monitor you'd like to be notified about.
 4. Click the _Save Subscription_ button.
 
 **Note:** Email notifications can only be sent to the email address associated with your user account at this time.
 
+![Configuring email notifications](https://raw.githubusercontent.com/Metrist-Software/product-docs/main/images/email-notifications.png)
+
 ### Webhooks
 
 Webhook notifications are JSON requests that are sent to an HTTP endpoint of your choice. To configure webhook notifications:
 
-1. Click on the _Subscriptions_ tab.
+1. Click on the _Alerting_ tab.
 2. Click on the _Add Subscription_ button.
 3. Choose _Webhook_ as the _Subscription Type_, and choose the service monitor you'd like to be notified about.
 4. Enter in the URL where you'd like to receive the webhooks in the _Url_ field.
 5. Optionally, provide the _Authorization Header_ that is required to successfully deliver the webhook.
+
+![Configuring webhook notifications](https://raw.githubusercontent.com/Metrist-Software/product-docs/main/images/webhook-notifications.png)
 
 #### Format
 
@@ -58,7 +62,7 @@ Here is a sample webhook that demonstrates the format and available data:
             "CreatedAt": "2021-01-18T19:36:20.2699061Z"
         },
         {
-            "Name": "Getting addresses in the prod envirionment",
+            "Name": "Getting addresses in the prod environment",
             "CheckId": "GetAddressesProd",
             "Instance": "us-east-1",
             "State": "degraded",

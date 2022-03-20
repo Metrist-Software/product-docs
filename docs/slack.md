@@ -8,8 +8,8 @@
 4. This redirects to Slack's application installation flow. Review the permissions and click _Allow_.
 5. The Slack installation will be confirmed. If any errors arise, please contact [support@metrist.io](mailto:support@metrist.io).
 
-![Slack Install 1](https://raw.githubusercontent.com/Metrist-Software/product-docs/develop/images/0001-slack.png)
-![Slack Install 2](https://raw.githubusercontent.com/Metrist-Software/product-docs/develop/images/0002-slack.png)
+![Slack Install 1](https://raw.githubusercontent.com/Metrist-Software/product-docs/main/images/0001-slack.png)
+![Slack Install 2](https://raw.githubusercontent.com/Metrist-Software/product-docs/main/images/0002-slack.png)
 
 ## Slash commands
 

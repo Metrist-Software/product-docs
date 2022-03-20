@@ -7,7 +7,7 @@ Once Metrist is connected, follow these instructions to install the app in Teams
 3. If required, log into Microsoft Teams where you intend to install the application.
 4. On the left bar, find _Apps_ right above the _Help_ icon in the bottom left You must be the team owner, or the owner must allow users to add the appropriate app types for this functionality to appear.
 5. Choose _Upload a custom app_ on the lower right.
-![Teams Install](https://raw.githubusercontent.com/Metrist-Software/product-docs/develop/images/teams.png)
+![Teams Install](https://raw.githubusercontent.com/Metrist-Software/product-docs/main/images/teams.png)
 6. Browse to and select your .zip package from your computer.
 7. After a brief pause you will see the Metrist application in the list.
 8. Click on Metrist and beside the Open button click the down arrow

@@ -7,4 +7,4 @@ After you've created your account, you may want to add more service monitors to 
 3. Select or deselect the service monitors you'd like access to by clicking on the monitor panel or checkbox.
 4. Click the _Save changes_ button.
 
-![Configuring service monitors](https://raw.githubusercontent.com/Metrist-Software/product-docs/develop/images/0001-web-app-monitors.png)
+![Configuring service monitors](https://raw.githubusercontent.com/Metrist-Software/product-docs/main/images/0001-web-app-monitors.png)

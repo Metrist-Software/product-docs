@@ -16,7 +16,7 @@ To be notified via Slack or Teams, run the associated command in your [chat app]
 
 To configure email notifications:
 
-1. Click on the _Subscriptions_ tab.
+1. Click on the _Alerting_ tab.
 2. Click on the _Add Subscription_ button.
 3. Choose _Email_ as the _Subscription Type_, and choose the service monitor you'd like to be notified about.
 4. Click the _Save Subscription_ button.
@@ -27,7 +27,7 @@ To configure email notifications:
 
 Webhook notifications are JSON requests that are sent to an HTTP endpoint of your choice. To configure webhook notifications:
 
-1. Click on the _Subscriptions_ tab.
+1. Click on the _Alerting_ tab.
 2. Click on the _Add Subscription_ button.
 3. Choose _Webhook_ as the _Subscription Type_, and choose the service monitor you'd like to be notified about.
 4. Enter in the URL where you'd like to receive the webhooks in the _Url_ field.

@@ -2,7 +2,7 @@
 
 ## Overview
 
-This document explains how the various parts of Canary Monitoring's offering fit together, especially
+This document explains how the various parts of Metrist's offering fit together, especially
 the shared code that is run on-premises.
 
 ## Terminology
@@ -10,10 +10,10 @@ the shared code that is run on-premises.
 * *On-premises*, or "on-prem", designates code that runs on customer owned or operated infrastructure
   and under a customer's control. While "on-prem" classically meant "at customer owned sites" like
   offices, factories and warehouses, we include any cloud infrastructure and co-location sites as well.
-* *Shared code* is the code that Canary Monitoring shares with customers under NDA. We share this
+* *Shared code* is the code that Metrist shares with customers under NDA. We share this
   code so that customers can verify the safety of our code, create their own builds, and make their
-  own extensions. All code that Canary Monitoring expects customers to run on-premises is shared.
-* *Canary back-end* is the term we will use for systems that are operated by Canary Monitoring on
+  own extensions. All code that Metrist expects customers to run on-premises is shared.
+* *Metrist back-end* is the term we will use for systems that are operated by Metrist on
   its infrastructure.
 * *Monitor* is a process that actively assesses the availability and performance of an API, usually a
   vendor's API.
@@ -21,12 +21,12 @@ the shared code that is run on-premises.
 * *Production monitor* is a monitor that uses real production traffic to assess the availability
   and performance of an API. A production monitor typically observes production software to gather
   API performance data, currently typically done by in-process monitoring.
-* *Shared monitors* are synthetic monitors that Canary Monitoring continuously runs on its own infrastructure,
+* *Shared monitors* are synthetic monitors that Metrist continuously runs on its own infrastructure,
   generating data that can be used by all customers.
-* *Private monitors* are monitors that are operated, using Canary-supplied software, by customers on their own
+* *Private monitors* are monitors that are operated, using Metrist-supplied software, by customers on their own
   infrastructure. Typically, private monitors use service-specific credentials for the APIs monitored that are
   managed by the customer.
-* *Canary monitoring agent* is software that customers run on-prem to do execute private monitors.
+* *Metrist monitoring agent* is software that customers run on-prem to do execute private monitors.
   The agent also is responsible for supporting in-process monitoring by collecting and pre-processing data
   sent to it by in-process monitoring.
 * *In-process monitoring* is the act of intercepting API calls in production systems. Software that
@@ -34,22 +34,22 @@ the shared code that is run on-premises.
   agent. The monitoring agent has logic to decide whether the intercepted API call has data that contributes
   to the assessment of a production monitor.
 
-## Canary Monitoring Agent
+## Metrist Monitoring Agent
 
-The Canary Monitoring Agent (CMA) is the cornerstone of our on-premises offering. It has two main functions:
+The Metrist Monitoring Agent (MMA) is the cornerstone of our on-premises offering. It has two main functions:
 
 * To schedule and run private synthetic monitors. This is very much alike to how monitors are scheduled
-  and run on the Canary back-end, but with a different, customer-specific configuration.
+  and run on the Metrist back-end, but with a different, customer-specific configuration.
 * To receive data from in-process monitoring. The in-process part of this system is intentionally kept
   as simple as possible, to minimize the overhead and risk associated with "intruding" on production
   code. The monitoring agent takes care of the heavy lifting here.
 
 ### Private synthetic monitoring
 
-Using an API key, the Canary Monitoring Agent (CMA) fetches customer-specific scheduling configuration
-from the Canary back-end and uses that to decide which synthetic monitors to run. This happens
+Using an API key, the Metrist Monitoring Agent (MMA) fetches customer-specific scheduling configuration
+from the Metrist back-end and uses that to decide which synthetic monitors to run. This happens
 roughly every ten seconds. For each monitor that is scheduled to run, the CMA will look at the last
-time the monitor reported back (again fetching this from the Canary back-end) and decide whether enough
+time the monitor reported back (again fetching this from the Metrist back-end) and decide whether enough
 time has elapsed to warrant a new run of the monitor. If this is true, then the monitor is run.
 Measurements collected by the monitor are then sent to the Canaray back-end for further analysis.
 
@@ -66,13 +66,13 @@ The goals of private synthetic monitoring are three-fold:
    API keys and production data can stay where it should be: on-prem. Note that the monitor is still
    synthetic - it runs "fake" transactions - but it operates on "real" data, which can
    have a large performance impact.
-3. To facilitate monitoring for vendor APIs that are not supported by Canary Monitoring. Using the
+3. To facilitate monitoring for vendor APIs that are not supported by Metrist. Using the
    shared source for the CMA, customers can build their own monitors and run them through the agent.
 
-The CMA comes bundled with all monitors that Canary Monitoring supports for private monitoring. It
+The CMA comes bundled with all monitors that Metrist supports for private monitoring. It
 is the configuration document, however, that decides which monitors are run. By storing this configuration
 document centrally, multiple instances of the customer agent can run with the same configuration. By
-sending measurements back to the Canary back-end, measurements can be aggregated, compared with
+sending measurements back to the Metrist back-end, measurements can be aggregated, compared with
 public measurements, and trigger notifications in the same way as notifications for shared monitors
 are triggered.
 
@@ -80,7 +80,7 @@ are triggered.
 
 ### In-process monitoring
 
-For certain production processes, Canary Monitoring supplies "In-Process Agents" (IPAs) that intercept
+For certain production processes, Metrist supplies "In-Process Agents" (IPAs) that intercept
 outgoing API calls (or, more often, outgoing HTTP calls). How this happens is dependent on the actual
 stack; two curent examples are:
 
@@ -102,13 +102,13 @@ More agents may follow, but they will all share the characteristics of the curre
   behaviour of the IPA code will not change.
 * Maximize out-of-band processing. The IPA is a firehose that simply sends off data of _all_ intercepted calls to
   the CMA. The CMA then can take processing at leisure, sifting out data it knows about, and converting it into
-  the monitor measurement format that the Canary back-end requires. The data can be queued and processed with
+  the monitor measurement format that the Metrist back-end requires. The data can be queued and processed with
   pretty much arbitrary delays as long as it is properly timestamped when received.
 
-Note that with this setup, customer-operated software is still in full control over what is sent to Canary's
+Note that with this setup, customer-operated software is still in full control over what is sent to Metrist's
 backend: while the IPA typically operates in "firehose" mode, observing and forwarding all outgoing API calls
 to the CMA, the CMA acts as a filter to only send data that is clean, free of sensitive information, and
-expected to be sent to Canary's backend.
+expected to be sent to Metrist's backend.
 
 #### IPA/CMA protocol
 

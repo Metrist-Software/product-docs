@@ -1,9 +1,9 @@
-# Canary In-Process Agent
+# Metrist In-Process Agent
 
-This Rails Plugin/Gem contains the Canary Monitoring In-Process Agent.
+This Rails Plugin/Gem contains the Metrist Monitoring In-Process Agent.
 
 The goal of this agent is simple: all outgoing HTTP traffic gets intercepted and is sent off
-to the local Canary Monitoring Agent, which sifts through the data and decides what to do with it.
+to the local Metrist Monitoring Agent, which sifts through the data and decides what to do with it.
 
 It is kept very simple on purpose: it will time the call, and then send some elementary
 data to the host's agent per UDP. The overhead of this is in the order of microseconds,

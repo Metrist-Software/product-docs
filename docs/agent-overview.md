@@ -26,7 +26,7 @@ the shared code that is run on-premises.
 * *Private monitors* are monitors that are operated, using Metrist-supplied software, by customers on their own
   infrastructure. Typically, private monitors use service-specific credentials for the APIs monitored that are
   managed by the customer.
-* *Metrist monitoring agent* is software that customers run on-prem to do execute private monitors.
+* *Metrist agent* is software that customers run on-prem to do execute private monitors.
   The agent also is responsible for supporting in-process monitoring by collecting and pre-processing data
   sent to it by in-process monitoring.
 * *In-process monitoring* is the act of intercepting API calls in production systems. Software that
@@ -34,9 +34,9 @@ the shared code that is run on-premises.
   agent. The monitoring agent has logic to decide whether the intercepted API call has data that contributes
   to the assessment of a production monitor.
 
-## Metrist Monitoring Agent
+## Metrist Agent
 
-The Metrist Monitoring Agent (MMA) is the cornerstone of our on-premises offering. It has two main functions:
+The Metrist Agent (MA) is the cornerstone of our on-premises offering. It has two main functions:
 
 * To schedule and run private synthetic monitors. This is very much alike to how monitors are scheduled
   and run on the Metrist back-end, but with a different, customer-specific configuration.
@@ -46,7 +46,7 @@ The Metrist Monitoring Agent (MMA) is the cornerstone of our on-premises offerin
 
 ### Private synthetic monitoring
 
-Using an API key, the Metrist Monitoring Agent (MMA) fetches customer-specific scheduling configuration
+Using an API key, the Metrist Agent (MA) fetches customer-specific scheduling configuration
 from the Metrist back-end and uses that to decide which synthetic monitors to run. This happens
 roughly every ten seconds. For each monitor that is scheduled to run, the CMA will look at the last
 time the monitor reported back (again fetching this from the Metrist back-end) and decide whether enough

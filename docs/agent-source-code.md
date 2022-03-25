@@ -1,6 +1,6 @@
 # Orchestrator
 
-This repository contains the Metrist Monitoring Agent, which includes two main functions:
+This repository contains the Metrist Agent, which includes two main functions:
 
 * Orchestration of monitor runs
 * Forwarding of in-process monitoring data it receives.

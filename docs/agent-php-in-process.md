@@ -3,7 +3,7 @@
 This directory contains the source code for the PHP/Curl In-Process Agent. The goal of
 this agent is to hook into outgoing API calls and send them off to the local Metrist
 Monitoring Agent, which will sift through the data and send interesting items off
-for analysis to the Metrist Monitoring backends.
+for analysis to the Metrist backends.
 
 Installation is quite simple: build or obtain the binary package, and then make sure
 that your PHP (or other software that uses libcurl in "easy" mode) process is loaded

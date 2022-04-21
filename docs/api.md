@@ -29,10 +29,11 @@ API calls in the following versions:
 
 Return the status of one or more monitors.
 
-Path: /api/v0/monitor-status
-Status: experimental
+* Path: /api/v0/monitor-status
+* Status: experimental
 
 Parameters:
+
 * `m[]` - one or more monitors to get the status for. These should be the logical
           names for the monitors.
 
@@ -56,4 +57,4 @@ Returns:
     "state": "up"
   }
 ]
-``````
+```

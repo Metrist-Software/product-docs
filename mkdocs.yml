@@ -17,3 +17,4 @@ pages:
       - 'Agent source code': 'agent-source-code.md'
       - 'Ruby in-process agent': 'agent-ruby-in-process.md'
       - 'PHP/Curl in-process agent': 'agent-php-in-process.md'
+    - 'API': 'api.md'

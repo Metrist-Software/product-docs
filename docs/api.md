@@ -44,7 +44,7 @@ object).
 Example:
 
 ```
-curl -H "Authorization: Bearer XXX" 'https://app.metrist.io:4443/api/v0/monitor-status?m[]=testsignal'
+curl -H "Authorization: Bearer XXX" 'https://app.metrist.io/api/v0/monitor-status?m[]=testsignal'
 ```
 
 Returns:

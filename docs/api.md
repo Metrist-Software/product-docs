@@ -58,3 +58,36 @@ Returns:
   }
 ]
 ```
+
+### Values for monitor parameter
+
+The following values are available for the `m[]` parameter(s):
+
+**AWS**
+
+* `awscloudfront` - AWS Cloudfront
+* `awscloudwatch` - AWS CloudWatch
+* `cognito` - AWS Cognito
+* `ec2` - AWS EC2
+* `awsecs` - AWS ECS (Fargate)
+* `awseks` - AWS EKS
+* `awselb` - AWS ELB
+* `awsiam` - AWS IAM
+* `kinesis` - AWS Kinesis
+* `awslambda` - AWS Lambda
+* `awsrds` - AWS RDS
+* `awsroute53` - AWS Route53
+* `s3` - AWS S3
+* `ses` - AWS SES
+* `sqs` - AWS SQS
+
+**Azure**
+
+* `azureaks` - Azure AKS
+* `azuread` - Azure Active Directory
+* `azureappservice` - Azure App Service
+* `azureblob` - Azure Blob Storage
+* `azurecdn` - Azure CDN
+* `azuredb` - Azure Cosmos DB
+* `azuredevopsartifacts` - Azure DevOps Artifacts
+* `azuredevopsboards` - Azure DevOps Boards

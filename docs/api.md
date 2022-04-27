@@ -63,6 +63,10 @@ Returns:
 
 The following values are available for the `m[]` parameter(s):
 
+**Metrist**
+
+* `metrist` - Metrist (yes, monitor Metrist with Metrist)
+
 **AWS**
 
 * `awscloudfront` - AWS Cloudfront
@@ -91,3 +95,54 @@ The following values are available for the `m[]` parameter(s):
 * `azuredb` - Azure Cosmos DB
 * `azuredevopsartifacts` - Azure DevOps Artifacts
 * `azuredevopsboards` - Azure DevOps Boards
+* `azuredevopspipelines` - Azure DevOps Pipelines
+* `azuredevopsrepos` - Azure DevOps Repos
+* `azuredevopstestplans` - Azure DevOps Test Plans
+* `azurefncs` - Azure Functions
+* `azuremonitor` - Azure Monitor
+* `azuresql` - Azure SQL
+* `azurevm` - Azure Virtual Machines
+
+** Google Cloud Platform
+
+* `gcpcloudstorage` - GCP Cloud Storage
+* `gcpcomputeengine` - GCP Compute Engine
+* `gcpgke` - GCP GKE
+
+** APIs
+
+* `avalara` - Avalara (AvaTax)
+* `bambora` - Bambora
+* `braintree` - Braintree
+* `easypost` - EasyPost
+* `fastly` - Fastly
+* `github` - GitHub
+* `gcal` - Google Calendar
+* `gmaps` - Google Maps
+* `hubspot` - HubSpot
+* `moneris` - Moneris
+* `pubnub` - PubNub
+* `sendgrid` - SendGrid
+* `stripe` - Stripe
+
+** Infrastructure
+
+* `cloudflare` - Cloudflare
+* `heroku` - Heroku
+* `snowflake` - Snowflake
+
+** SaaS
+
+* `authzero` - Auth0
+* `circleci` - CircleCI
+* `datadog` - Datadog
+* `jira` - Jira
+* `npm` - NPM
+* `nuget` - NuGet
+* `pagerduty` - PagerDuty
+* `sentry` - Sentry
+* `slack` - Slack
+* `trello` - Trello
+* `twiliovid` - Twilio Video
+* `zendesk` - Zendesk
+* `zoom` - Zoom

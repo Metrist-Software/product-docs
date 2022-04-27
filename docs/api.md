@@ -65,7 +65,7 @@ The following values are available for the `m[]` parameter(s):
 
 **Metrist**
 
-* `metrist` - Metrist (yes, monitor Metrist with Metrist)
+* `metrist` - Metrist (yes, monitor Metrist with Metrist!)
 
 **AWS**
 
@@ -103,13 +103,13 @@ The following values are available for the `m[]` parameter(s):
 * `azuresql` - Azure SQL
 * `azurevm` - Azure Virtual Machines
 
-** Google Cloud Platform
+**Google Cloud Platform**
 
 * `gcpcloudstorage` - GCP Cloud Storage
 * `gcpcomputeengine` - GCP Compute Engine
 * `gcpgke` - GCP GKE
 
-** APIs
+**APIs**
 
 * `avalara` - Avalara (AvaTax)
 * `bambora` - Bambora
@@ -125,13 +125,13 @@ The following values are available for the `m[]` parameter(s):
 * `sendgrid` - SendGrid
 * `stripe` - Stripe
 
-** Infrastructure
+**Infrastructure**
 
 * `cloudflare` - Cloudflare
 * `heroku` - Heroku
 * `snowflake` - Snowflake
 
-** SaaS
+**SaaS**
 
 * `authzero` - Auth0
 * `circleci` - CircleCI

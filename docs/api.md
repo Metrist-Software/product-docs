@@ -29,7 +29,8 @@ API calls in the following versions:
 
 Return the status of one or more monitors.
 
-* Path: /api/v0/monitor-status
+* Path: `/api/v0/monitor-status`
+* Verb: GET
 * Status: experimental
 
 Parameters:
@@ -59,7 +60,7 @@ Returns:
 ]
 ```
 
-### Values for monitor parameter
+#### Values for monitor parameter
 
 The following values are available for the `m[]` parameter(s):
 
@@ -105,6 +106,7 @@ The following values are available for the `m[]` parameter(s):
 
 **Google Cloud Platform**
 
+* `gcpappengine` - GCP App Engine
 * `gcpcloudstorage` - GCP Cloud Storage
 * `gcpcomputeengine` - GCP Compute Engine
 * `gcpgke` - GCP GKE
@@ -146,3 +148,65 @@ The following values are available for the `m[]` parameter(s):
 * `twiliovid` - Twilio Video
 * `zendesk` - Zendesk
 * `zoom` - Zoom
+
+### Add monitor configuration
+
+Adds a monitor configuration.
+
+* Path: `/api/v0/monitor-config/`
+* Verb: POST
+* Status: experimental
+
+Sample request body:
+
+```
+{
+  "monitor_logical_name": "asana",
+  "interval_secs": 120,
+  "run_groups": ["Metrist Agent"],
+  "run_spec": {
+    "name": "asana",
+    "run_type": "dll"
+  },
+  "steps": [
+    {
+      "check_logical_name": "Ping",
+      "timeout_secs": 900
+    }
+  ]
+}
+```
+
+Returns the ID of the MonitorConfig object.
+
+Example:
+
+```
+curl -d $JSON -H "Content-Type: application/json" -H "Authorization: Bearer XXX" 'https://app.metrist.io/api/v0/monitor-config'
+```
+
+Returns:
+
+```
+11y9YlrWxXf39mRWIrhFtPl
+```
+
+### Delete monitor configuration
+
+Deletes a monitor configuration.
+
+* Path: `/api/v0/monitor-config/:id`
+* Verb: DELETE
+* Status: experimental
+
+Example:
+
+```
+curl -X DELETE -H "Authorization: Bearer XXX" 'https://app.metrist.io/api/v0/monitor-config/asana/11y9YlrWxXf39mRWIrhFtPl'
+```
+
+Returns:
+
+```
+OK
+```

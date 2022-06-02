@@ -30,6 +30,7 @@ API calls in the following versions:
 Return the status of one or more monitors.
 
 * Path: /api/v0/monitor-status
+* Verb: GET
 * Status: experimental
 
 Parameters:
@@ -57,6 +58,68 @@ Returns:
     "state": "up"
   }
 ]
+```
+
+### Add monitor configuration
+
+Adds a monitor configuration.
+
+* Path: /api/v0/monitor-config/:id
+* Verb: POST
+* Status: experimental
+
+Sample request body:
+
+```
+{
+  "monitor_logical_name": "asana",
+  "interval_secs": 120,
+  "run_groups": ["Metrist Agent"],
+  "run_spec": {
+    "name": "asana",
+    "run_type": "dll"
+  },
+  "steps": [
+    {
+      "check_logical_name": "Ping",
+      "timeout_secs": 900
+    }
+  ]
+}
+```
+
+Returns the ID of the MonitorConfig object.
+
+Example:
+
+```
+curl -d $JSON -H "Content-Type: application/json" -H "Authorization: Bearer XXX" 'https://app.metrist.io/api/v0/monitor-config'
+```
+
+Returns:
+
+```
+11y9YlrWxXf39mRWIrhFtPl
+```
+
+### Delete monitor configuration
+
+Deletes a monitor configuration.
+
+* Path: /api/v0/monitor-config/:id
+* Verb: DELETE
+* Status: experimental
+
+Example:
+
+```
+curl -X DELETE -H "Authorization: Bearer XXX" 'https://app.metrist.io/api/v0/monitor-config/asana/11y9YlrWxXf39mRWIrhFtPl'
+```
+
+Returns:
+
+```
+OK
 ```
 
 ### Values for monitor parameter

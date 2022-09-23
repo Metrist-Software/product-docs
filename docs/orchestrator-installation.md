@@ -4,7 +4,7 @@
 
 To install Orchestrator the easy way, simply run
 
-    curl https://dist.metrist.io/install.sh | bash
+    curl https://dist.metrist.io/install.sh >/tmp/install.sh; bash /tmp/install.sh
 
 and follow the prompts. If you are running on a platform that the script support, you will end up with a running copy of
 Orchestrator.

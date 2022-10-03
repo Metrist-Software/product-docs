@@ -20,3 +20,4 @@ pages:
       - 'PHP/Curl in-process agent': 'agent-php-in-process.md'
       - 'eBPF plugin': 'orchestrator-ebpf-plugin.md'
     - 'API': 'api.md'
+    - 'Local Development': 'local-development.md'

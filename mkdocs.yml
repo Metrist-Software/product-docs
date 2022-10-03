@@ -2,7 +2,7 @@ site_name: Metrist
 site_url: https://docs.metrist.io
 extra_css:
     - custom.css
-pages:
+nav:
     - Home: 'index.md'
     - 'Chat Apps':
       - Slack: 'slack.md'

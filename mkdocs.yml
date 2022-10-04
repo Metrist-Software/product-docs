@@ -20,4 +20,3 @@ nav:
       - 'PHP/Curl in-process agent': 'agent-php-in-process.md'
       - 'eBPF plugin': 'orchestrator-ebpf-plugin.md'
     - 'API': 'api.md'
-    - 'Local Docs': 'local-development.md'

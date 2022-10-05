@@ -60,23 +60,23 @@ so you can verify that the distribution packages were indeed built by us.
 We distribute a package containing the executable and a simple systemd script for easy installation on Ubuntu 20.04. The following
 steps will install the plugin with a default configuration (talking to an orchestrator instance on localhost):
 
-    plugin_latest=$(curl http://dist.metrist.io/orchestrator-plugins/ebpf/ubuntu/ubuntu-20.04.latest.txt)
+    plugin_latest=$(curl http://dist.metrist.io/orchestrator-plugins/ebpf/ubuntu/20.04.x86_64.latest.txt)
     wget http://dist.metrist.io/orchestrator-plugins/ebpf/ubuntu/$plugin_latest
     wget http://dist.metrist.io/orchestrator-plugins/ebpf/ubuntu/$plugin_latest.asc
     gpg --verify $plugin_latest.asc
     apt-get install -y ./metrist*.deb
 
-A standard environment file is in /etc/default/metrist-orchestrator-ebpf-plugin and can be changed to point the plugin at
+A standard environment file is in /etc/default/metrist-ebpf-agent and can be changed to point the plugin at
 an Orchestrator running elsewhere:
 
-    cat <<EOF >/etc/default/metrist-orchestrator-ebpf-plugin
+    cat <<EOF >/etc/default/metrist-ebpf-agent
     METRIST_ORCHESTRATOR_ENDPOINT=<your_orchestrator_host>:51713
     EOF
 
 When all is done, the standard systemd invocation will start the service:
 
-    systemd enable metrist-orchestrator-ebpf-plugin
-    systemd start metrist-orchestrator-ebpf-plugin
+    systemd enable metrist-ebpf-agent
+    systemd start metrist-ebpf-agent
 
 # Other systems
 
@@ -88,5 +88,5 @@ If your system has a young enough kernel version, you may install the executable
     gpg --verify $latest.tar.gz.asc
     tar xvfz $latest.tar.gz
 
-From there, you can run the resulting executable (`metrist-orchestrator-ebpf-plugin`) from the command line or as a daemon
+From there, you can run the resulting executable (`metrist-ebpf-agent`) from the command line or as a daemon
 started by your system's supervisor. The only setting is the `METRIST_ORCHESTRATOR_ENDPOINT` environment variable.

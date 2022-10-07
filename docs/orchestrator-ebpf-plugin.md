@@ -60,6 +60,7 @@ so you can verify that the distribution packages were indeed built by us.
 We distribute a package containing the executable and a simple systemd script for easy installation on Ubuntu 20.04. The following
 steps will install the plugin with a default configuration (talking to an orchestrator instance on localhost):
 
+    cd /tmp # This is important other wise apt-get install will fail
     plugin_latest=$(curl http://dist.metrist.io/orchestrator-plugins/ebpf/ubuntu/20.04.x86_64.latest.txt)
     wget http://dist.metrist.io/orchestrator-plugins/ebpf/ubuntu/$plugin_latest
     wget http://dist.metrist.io/orchestrator-plugins/ebpf/ubuntu/$plugin_latest.asc
@@ -75,8 +76,8 @@ an Orchestrator running elsewhere:
 
 When all is done, the standard systemd invocation will start the service:
 
-    systemd enable metrist-ebpf-agent
-    systemd start metrist-ebpf-agent
+    systemctl enable metrist-ebpf-agent
+    systemctl start metrist-ebpf-agent
 
 # Other systems
 

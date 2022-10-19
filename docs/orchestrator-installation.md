@@ -97,9 +97,10 @@ You can simply download the package:
     wget https://dist.metrist.io/orchestrator/amazon-linux/$orch_latest
 
 (Optional) Verifying the package
-    Amazon Linux 2 includes a gpg version < 2.1 so verification would have to be done
-    outside the Amazon Linux 2 machine using a gpg version >= 2.1 to support the
-    Keybox keyring format of our trustedkeys.gpg.
+
+Amazon Linux 2 includes a gpg version < 2.1 so verification would have to be done
+outside the Amazon Linux 2 machine using a gpg version >= 2.1 to support the
+Keybox keyring format of our trustedkeys.gpg.
 
     orch_latest=$(curl https://dist.metrist.io/orchestrator/amazon-linux/2.x86_64.latest.txt)
     wget https://dist.metrist.io/orchestrator/amazon-linux/$orch_latest

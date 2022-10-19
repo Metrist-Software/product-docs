@@ -19,7 +19,7 @@ installations.
 All binaries are signed by a key that is listed in our [public keyring](https://github.com/Metrist-Software/orchestrator/blob/main/dist/trustedkeys.gpg?raw=true). This means that
 you can fetch our keyring:
 
-    wget 'https://github.com/Metrist-Software/orchestrator/blob/main/dist/trustedkeys.gpg?raw=true' >/tmp/metrist.gpg
+    wget -O /tmp/metrist.gpg https://github.com/Metrist-Software/orchestrator/blob/main/dist/trustedkeys.gpg?raw=true
 
 and use the verification commands listed with the download commands in the rest of this document.
 

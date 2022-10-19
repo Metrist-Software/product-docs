@@ -84,6 +84,37 @@ platforms that have the same C libraries as the supported Ubuntu versions
 not support this, however. Please contact us if you want your system
 added to the list.
 
+## Amazon Linux package installation
+
+Systems supported:
+
+* Amazon Linux 2
+
+You can simply download the package:
+
+    sudo yum install wget gpg curl
+    orch_latest=$(curl https://dist.metrist.io/orchestrator/amazon-linux/2.x86_64.latest.txt)
+    wget https://dist.metrist.io/orchestrator/amazon-linux/$orch_latest
+    wget https://dist.metrist.io/orchestrator/amazon-linux/$orch_latest.asc
+    gpg --verify --keyring=/tmp/metrist.gpg $orch_latest.asc
+
+Installation then proceeds by installing the package:
+
+    sudo yum localinstall ./$orch_latest
+
+And adding your API key:
+
+    cat <<EOF | sudo tee -a /etc/default/metrist-orchestrator
+    METRIST_API_TOKEN=$METRIST_API_KEY
+    EOF
+
+You can then proceed to start the software using systemd:
+
+    sudo systemctl enable --now metrist-orchestrator
+    sudo systemctl start metrist-orchestrator
+
+A quick `journalctl --unit metrist-orchestrator` should show a running program.
+
 ## Installation from source
 
 Installation from source is simplest using [asdf-vm](https://asdf-vm.com/). Just fetch the source code from Git,

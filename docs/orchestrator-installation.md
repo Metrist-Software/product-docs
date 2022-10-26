@@ -34,7 +34,7 @@ expect to find it in the environment:
 
 We distribute a Docker image for Orchestrator. You can get the image name from our distribution site:
 
-    latest=$(curl https://orchestrator/docker/latest.txt)
+    latest=$(curl https://dist.metrist.io/orchestrator/docker/orchestrator-latest.txt)
     docker run <run-args...> $latest
 
 `run-args` depends on what you want to do with Orchestrator. In the simplest case, for only running private synthetic

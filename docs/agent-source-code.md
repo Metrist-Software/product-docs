@@ -9,16 +9,16 @@ The agent is written in Elixir and distributed both as a stand-alone executable 
 
 ## Orchestration
 
-Based on monitor configurations maintained on the Metrist backend, the orchestrator will schedule runs
-of checks for certain monitors. It is configured with an instance id that allows the backend to keep
-track of when something was last run and one or more "run groups" that allow the backend to decide what
+Based on monitor configurations maintained on the Metrist back-end, the orchestrator will schedule runs
+of checks for certain monitors. It is configured with an instance id that allows the back-end to keep
+track of when something was last run and one or more "run groups" that allow the back-end to decide what
 monitors and checks are configured to run on that particular instance of the orchestrator.
 
 When a monitor is up for its run, it is downloaded from a Metrist-managed S3 bucket so that the latest version of
 a monitor is always executed; it is then started and the monitor is expected to participate in a simple
 [procotol](docs/protocol.md) to exchange configuration data and have the orchestrator drive the monitoring code
 through the configured scenario. For every step, a timing is obtained and the orchestrator sends that back to
-the Metrist backend.
+the Metrist back-end.
 
 ## In-process forwarding
 
@@ -47,7 +47,7 @@ the measured value will be sent to the Metrist back-end.
 The agent is configured through environment variables:
 
 * `CANARY_INSTANCE_ID` - this is the instance id used for reporting. It can be any logical name, but should be unique and consistent between
-  runs as the backend will use this to supply the instance with the timings of last monitoring runs.
+  runs as the back-end will use this to supply the instance with the timings of last monitoring runs.
 * `CANARY_RUN_GROUPS` - one or more "run groups" this monitor will schedule. When more than one, a comma-separated list. This can be
   used to have several instances of monitors run some same set of monitors.
 * `CANARY_CLEANUP_ENABLED` - if set, a flag that determines whether to run cleanup actions. Monitors can have a "Cleanup" action

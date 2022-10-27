@@ -106,9 +106,9 @@ More agents may follow, but they will all share the characteristics of the curre
   pretty much arbitrary delays as long as it is properly timestamped when received.
 
 Note that with this setup, customer-operated software is still in full control over what is sent to Metrist's
-backend: while the IPA typically operates in "firehose" mode, observing and forwarding all outgoing API calls
+back-end: while the IPA typically operates in "firehose" mode, observing and forwarding all outgoing API calls
 to the CMA, the CMA acts as a filter to only send data that is clean, free of sensitive information, and
-expected to be sent to Metrist's backend.
+expected to be sent to Metrist's back-end.
 
 #### IPA/CMA protocol
 

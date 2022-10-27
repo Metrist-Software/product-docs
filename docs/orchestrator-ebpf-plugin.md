@@ -6,7 +6,7 @@ The Orchestrator eBPF Plugin uses the Linux kernel's [eBPF](https://ebpf.io/) fu
 outgoing API calls. Any call that a monitored node makes is sent to the configured Orchestrator's endpoint for
 [In-process forwarding](../agent-source-code#in-process-forwarding) for further processing. Unknown API calls
 will be logged (both by Orchestrator as well as by this plugin) and known API calls will be converted into
-Service/check pairs and sent to the Metrist backend as regular monitoring metrics.
+Service/check pairs and sent to the Metrist back-end as regular monitoring metrics.
 
 ## Mechanism
 

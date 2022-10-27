@@ -62,3 +62,4 @@ Metrist Orchestrator is configured through environment variables:
 * `METRIST_IPA_LOOPBACK_ONLY` - whether to open the UDP socket for in-process data only on the loopback/localhost address. This can be
   used to restrict this sort of traffic to only the local machine. Off by default which means that the "wildcard" address is bound,
   making the UDP socket accessible to all machines that can route to the instance.
+* `METRIST_IPA_SERVER_PORT` - sets a port through which telemetry data is to be sent. The default is port 51712.

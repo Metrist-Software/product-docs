@@ -13,4 +13,4 @@ Once Metrist is connected, follow these instructions to install the app in Teams
 8. Click on Metrist and beside the Open button click the down arrow
 9. Choose Add to a Team and choose the team you would like to install the app within
 
-Your Microsoft Teams installation needs to have the appropriate custom app settings to allow the installation of a custom application via a zip file. Details on custom app policies can be found here.
+Your Microsoft Teams installation needs to have the appropriate custom app settings to allow the installation of a custom application via a zip file. Details on custom app policies can be found [here](https://learn.microsoft.com/en-us/microsoftteams/teams-custom-app-policies-and-settings).

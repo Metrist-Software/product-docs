@@ -57,13 +57,13 @@ The goals of private synthetic monitoring are three-fold:
 
 1. To provide insights how vendor APIs work from the customer's premises. The shared monitors run from
    a number of geographically distributed locations but these locations will not necessarily match where
-   customer interactions with the vendor happens, and network issues often can result in highly local
+   customer interactions with the vendor happens, and network issues often result in highly local
    outages.
 2. To provide insights how vendor APIs react on the customer's exact data. Shared monitors run with
-   "dummy" data, often on vendor accounts dedicated to monitoring. It is very well possible that data sizes
+   "dummy" data, often on vendor accounts dedicated to monitoring. It is likely that data sizes
    influence how a vendor API behaves, and as such using a production API key for monitoring may
-   result in observing different behaviour. By employing private monitoring, control of production
-   API keys and production data can stay where it should be: on-prem. Note that the monitor is still
+   reveal different behaviour. By employing private monitoring, control of production
+   API keys and production data can stay where it should be: on-premises. Note that the monitor is still
    synthetic - it runs "fake" transactions - but it operates on "real" data, which can
    have a large performance impact.
 3. To facilitate monitoring for vendor APIs that are not supported by Metrist. Using the
@@ -72,9 +72,10 @@ The goals of private synthetic monitoring are three-fold:
 Metrist Orchestrator comes bundled with all monitors that Metrist supports for private monitoring. It
 is the configuration document, however, that decides which monitors are run. By storing this configuration
 document centrally, multiple instances of the customer agent can run with the same configuration. By
-sending measurements back to the Metrist back-end, measurements can be aggregated, compared with
-public measurements, and trigger notifications in the same way as notifications for shared monitors
-are triggered.
+sending measurements back to the Metrist back-end, measurements can be:
+- aggregated,
+- compared with public measurements,
+- and trigger notifications in the same way notifications for shared monitors are triggered.
 
 <!-- TODO: links to installation, configuration, monitoring DSL -->
 
@@ -122,7 +123,7 @@ or combining URL fragments, it is shipped "as is" to Metrist Orchestrator so tha
 trend may continue with more format variations to accomodate specific use cases.
 
 An IPA message consists of fields, separated by tab characters (ASCII code 9) and terminated by line feeds (ASCII code 11). This
-format is simple to construct, simple to parse, and human readable. The first field is always a version code, and it determines
+format is simple to construct, simple to parse, and human readable. The first field is always a version code and it determines
 the rest of the payload. The current variants are:
 
 * Version "0": four fields containing the HTTP method, host, path and time (in fractional milliseconds);

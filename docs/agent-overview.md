@@ -13,7 +13,7 @@ the shared code that is run on-premises.
 * *Shared code* is the code that Metrist shares with customers under NDA. We share this
   code so that customers can verify the safety of our code, create their own builds, and make their
   own extensions. All code that Metrist expects customers to run on-premises is shared.
-* *Metrist back-end* is the term we will use for systems that are operated by Metrist on
+* *Metrist backend* is the term we will use for systems that are operated by Metrist on
   its infrastructure.
 * *Monitor* is a process that actively assesses the availability and performance of an API, usually a
   vendor's API.
@@ -39,7 +39,7 @@ the shared code that is run on-premises.
 Metrist Orchestrator is the cornerstone of our on-premises offering. Orchestrator has two main functions:
 
 * To schedule and run private synthetic monitors. This is very much alike to how monitors are scheduled
-  and run on the Metrist back-end, but with a different, customer-specific configuration.
+  and run on the Metrist backend, but with a different, customer-specific configuration.
 * To receive data from in-process monitoring. The in-process part of this system is intentionally kept
   as simple as possible, to minimize the overhead and risk associated with "intruding" on production
   code. The monitoring agent takes care of the heavy lifting here.
@@ -47,11 +47,11 @@ Metrist Orchestrator is the cornerstone of our on-premises offering. Orchestrato
 ### Private synthetic monitoring
 
 Using an API key, Metrist Orchestrator fetches customer-specific scheduling configuration
-from the Metrist back-end and uses that to decide which synthetic monitors to run. This happens
+from the Metrist backend and uses that to decide which synthetic monitors to run. This happens
 roughly every ten seconds. For each monitor that is scheduled to run, Orchestrator will look at the last
-time the monitor reported back (again fetching this from the Metrist back-end) and decide whether enough
+time the monitor reported back (again fetching this from the Metrist backend) and decide whether enough
 time has elapsed to warrant a new run of the monitor. If this is true, then the monitor is run.
-Measurements collected by the monitor are sent to the Metrist back-end for further analysis.
+Measurements collected by the monitor are sent to the Metrist backend for further analysis.
 
 The goals of private synthetic monitoring are three-fold:
 
@@ -72,7 +72,7 @@ The goals of private synthetic monitoring are three-fold:
 Metrist Orchestrator comes bundled with all monitors that Metrist supports for private monitoring. It
 is the configuration document, however, that decides which monitors are run. By storing this configuration
 document centrally, multiple instances of the customer agent can run with the same configuration. By
-sending measurements back to the Metrist back-end, measurements can be:
+sending measurements back to the Metrist backend, measurements can be:
 - aggregated,
 - compared with public measurements,
 - and trigger notifications in the same way notifications for shared monitors are triggered.
@@ -103,11 +103,11 @@ More agents may follow, but they will all share the characteristics of the curre
   behaviour of the IPA code will not change.
 * Maximize out-of-band processing. The IPA is a firehose that simply sends off data of _all_ intercepted calls to
   Metrist Orchestrator. Our Orchestrator can then take processing at leisure, sift out data it knows about, and convert it into
-  a format that the Metrist back-end requires. The data can be queued and processed with arbitrary delays as long as it is properly timestamped when received.
+  a format that the Metrist backend requires. The data can be queued and processed with arbitrary delays as long as it is properly timestamped when received.
 
-Note that with this setup, customer-operated software is still in full control over what is sent to the Metrist back-end: while the IPA typically operates in "firehose" mode, observing and forwarding all outgoing API calls
+Note that with this setup, customer-operated software is still in full control over what is sent to the Metrist backend: while the IPA typically operates in "firehose" mode, observing and forwarding all outgoing API calls
 to Metrist Orchestrator, it acts as a filter to send data that is clean, free of sensitive information, and
-expected to be sent to the Metrist back-end.
+expected to be sent to the Metrist backend.
 
 #### IPA/Orchestrator protocol
 

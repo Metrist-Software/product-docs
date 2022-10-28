@@ -16,7 +16,7 @@ monitors and checks are configured to run on that particular instance of Orchest
 
 When a monitor is up for its run, it is downloaded from a Metrist-managed S3 bucket so that the latest version of
 a monitor is always executed; it is then started and the monitor is expected to participate in a simple
-[procotol](docs/protocol.md) to exchange configuration data and have Orchestrator drive the monitoring code
+[procotol](https://github.com/Metrist-Software/orchestrator/blob/main/docs/protocol.md) to exchange configuration data and have Orchestrator drive the monitoring code
 through the configured scenario. For every step, a timing is obtained and Orchestrator sends that back to
 the Metrist backend.
 

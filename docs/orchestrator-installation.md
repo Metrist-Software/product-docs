@@ -10,8 +10,7 @@ and follow the prompts. If you are running on a platform that the script support
 Orchestrator.
 
 We do not support every combination of operating system and (in Linux' case) distribution. If the script detects that your
-system is not supported for guided installation, it will refer you back here. Please see the rest of the document for
-various levels of more manual installation options. These options are also a good starting point for unattended
+system is not supported for guided installation, it will refer you back here. Please see the rest of the document for more installation options. These options are also a good starting point for unattended
 installations.
 
 ## Verification of binaries

@@ -163,7 +163,7 @@ Sample request body:
 {
   "monitor_logical_name": "asana",
   "interval_secs": 120,
-  "run_groups": ["Metrist Agent"],
+  "run_groups": ["Metrist Orchestrator"],
   "run_spec": {
     "name": "asana",
     "run_type": "dll"

@@ -6,16 +6,15 @@ nav:
     - Home: 'index.md'
     - 'Chat Apps':
       - Slack: 'slack.md'
-      - Teams: 'teams.md'
     - 'Web App':
       - 'Inviting your team': 'web-app-invites.md'
-      - 'Configuring service montiors': 'web-app-monitors.md'
+      - 'Configuring service monitors': 'web-app-monitors.md'
       - 'Configuring notifications': 'web-app-notifications.md'
       - 'Configuring thresholds': 'web-app-thresholds.md'
-    - 'Agent':
-      - 'General overview': 'agent-overview.md'
+    - 'Download':
+      - 'General overview': 'download-overview.md'
       - 'Installation': 'orchestrator-installation.md'
-      - 'Agent source code': 'agent-source-code.md'
+      - 'Orchestrator source code': 'orchestrator-source-code.md'
       - 'Ruby in-process agent': 'agent-ruby-in-process.md'
       - 'PHP/Curl in-process agent': 'agent-php-in-process.md'
       - 'eBPF plugin': 'orchestrator-ebpf-plugin.md'

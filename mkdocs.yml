@@ -8,7 +8,7 @@ nav:
       - Slack: 'slack.md'
     - 'Web App':
       - 'Inviting your team': 'web-app-invites.md'
-      - 'Configuring service montiors': 'web-app-monitors.md'
+      - 'Configuring service monitors': 'web-app-monitors.md'
       - 'Configuring notifications': 'web-app-notifications.md'
       - 'Configuring thresholds': 'web-app-thresholds.md'
     - 'Download':

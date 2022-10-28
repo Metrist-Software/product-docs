@@ -14,7 +14,7 @@ nav:
     - 'Agent':
       - 'General overview': 'agent-overview.md'
       - 'Installation': 'orchestrator-installation.md'
-      - 'Agent source code': 'agent-source-code.md'
+      - 'Orchestrator source code': 'orchestrator-source-code.md'
       - 'Ruby in-process agent': 'agent-ruby-in-process.md'
       - 'PHP/Curl in-process agent': 'agent-php-in-process.md'
       - 'eBPF plugin': 'orchestrator-ebpf-plugin.md'

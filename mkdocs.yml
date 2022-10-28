@@ -11,8 +11,8 @@ nav:
       - 'Configuring service montiors': 'web-app-monitors.md'
       - 'Configuring notifications': 'web-app-notifications.md'
       - 'Configuring thresholds': 'web-app-thresholds.md'
-    - 'Agent':
-      - 'General overview': 'agent-overview.md'
+    - 'Download':
+      - 'General overview': 'download-overview.md'
       - 'Installation': 'orchestrator-installation.md'
       - 'Orchestrator source code': 'orchestrator-source-code.md'
       - 'Ruby in-process agent': 'agent-ruby-in-process.md'

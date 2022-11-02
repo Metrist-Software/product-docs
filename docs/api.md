@@ -97,7 +97,7 @@ The following values are available for the `m[]` parameter(s):
 * `azuredevopsartifacts` - Azure DevOps Artifacts
 * `azuredevopsboards` - Azure DevOps Boards
 * `azuredevopspipelines` - Azure DevOps Pipelines
-* `azuredevopsrepos` - Azure DevOps Repos
+* `azuredevops` - Azure DevOps Repos
 * `azuredevopstestplans` - Azure DevOps Test Plans
 * `azurefncs` - Azure Functions
 * `azuremonitor` - Azure Monitor
@@ -109,7 +109,7 @@ The following values are available for the `m[]` parameter(s):
 * `gcpappengine` - GCP App Engine
 * `gcpcloudstorage` - GCP Cloud Storage
 * `gcpcomputeengine` - GCP Compute Engine
-* `gcpgke` - GCP GKE
+* `gke` - GCP GKE
 
 **APIs**
 

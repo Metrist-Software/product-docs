@@ -25,7 +25,7 @@ When working with Rails, you probably already have most of your configuration in
 you can simply configure the Gem using:
 
   ```ruby
-  Metrist.config do | c |
+  MetristIpa.config do | c |
     c.host = "cma.prod.test.com"
     c.port = 12345
   end

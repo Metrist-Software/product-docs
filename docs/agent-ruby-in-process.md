@@ -36,7 +36,7 @@ you can simply configure the Gem using:
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'canary_ipa'
+gem 'metrist_ipa'
 ```
 
 And then execute:
@@ -46,5 +46,5 @@ $ bundle
 
 Or install it yourself as:
 ```bash
-$ gem install canary_ipa
+$ gem install metrist_ipa
 ```

@@ -15,9 +15,9 @@ if stuff gets delayed, dropped, or whatever.
 
 Just installing the Gem is enough. There is some optional configuration through the environment:
 
-* `METRIST_AGENT_HOST` sets a hostname/IP to which telemetry data is to be sent. The default
+* `METRIST_ORCHESTRATOR_HOST` sets a hostname/IP to which telemetry data is to be sent. The default
   is localhost.
-* `METRIST_AGENT_PORT` sets a port through which telemetry data is to be sent. The default is port 51712.
+* `METRIST_ORCHESTRATOR_PORT` sets a port through which telemetry data is to be sent. The default is port 51712.
 
 ## Rails usage
 

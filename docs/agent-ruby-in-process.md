@@ -15,9 +15,9 @@ if stuff gets delayed, dropped, or whatever.
 
 Just installing the Gem is enough. There is some optional configuration through the environment:
 
-* `CANARY_MONITORING_AGENT_HOST` sets a hostname/IP to which telemetry data is to be sent. The default
+* `METRIST_ORCHESTRATOR_HOST` sets a hostname/IP to which telemetry data is to be sent. The default
   is localhost.
-* `CANARY_MONITORING_AGENT_PORT` sets a port through which telemetry data is to be sent. The default is port 51712.
+* `METRIST_ORCHESTRATOR_PORT` sets a port through which telemetry data is to be sent. The default is port 51712.
 
 ## Rails usage
 
@@ -25,7 +25,7 @@ When working with Rails, you probably already have most of your configuration in
 you can simply configure the Gem using:
 
   ```ruby
-  CanaryIpa.config do | c |
+  MetristIpa.config do | c |
     c.host = "cma.prod.test.com"
     c.port = 12345
   end
@@ -36,7 +36,7 @@ you can simply configure the Gem using:
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'canary_ipa'
+gem 'metrist_ipa'
 ```
 
 And then execute:
@@ -46,5 +46,5 @@ $ bundle
 
 Or install it yourself as:
 ```bash
-$ gem install canary_ipa
+$ gem install metrist_ipa
 ```

@@ -13,6 +13,8 @@ We do not support every combination of operating system and (in Linux' case) dis
 system is not supported for guided installation, it will refer you back here. Please see the rest of the document for more installation options. These options are also a good starting point for unattended
 installations.
 
+The shell command above will fail in a VM running in WSL (Windows Subsystem for Linux). We recommend Windows users skip to the section below about [Docker installation](#docker-installation).
+
 ## Verification of binaries
 
 All binaries are signed by a key that is listed in our [public keyring](https://github.com/Metrist-Software/orchestrator/blob/main/dist/trustedkeys.gpg?raw=true). This means that

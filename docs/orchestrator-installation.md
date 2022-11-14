@@ -29,7 +29,7 @@ and use the verification commands listed with the download commands in the rest 
 You will need your API key to run Metrist Orchestrator, which you can get from https://app.metrist.io/profile. Scripts below
 expect to find it in the environment:
 
-    export METRIST_API_KEY=<your key here>
+    export METRIST_API_TOKEN=<your key here>
 
 ## Docker installation
 
@@ -39,10 +39,10 @@ We distribute a Docker image for Orchestrator. You can get the image name from o
     docker run <run-args...> $latest
 
 `run-args` depends on what you want to do with Orchestrator. In the simplest case, for only running private synthetic
-monitoring, you just need to add an API key using `-e METRIST_API_KEY=<your key>`. If you want to export Orchestrator's
+monitoring, you just need to add an API key using `-e METRIST_API_TOKEN=<your key>`. If you want to export Orchestrator's
 listening port for in-process monitoring, you should add `-p 51712:51712/udp`. With both, for example:
 
-   docker run -e METRIST_API_KEY=$METRIST_API_KEY -p 51712:51712/udp $latest
+   docker run -e METRIST_API_TOKEN=$METRIST_API_TOKEN -p 51712:51712/udp $latest
 
 ## Debian package installation
 
@@ -67,7 +67,7 @@ Installation then proceeds by installing the package:
 And adding your API key:
 
     cat <<EOF | sudo tee -a /etc/default/metrist-orchestrator
-    METRIST_API_TOKEN=$METRIST_API_KEY
+    METRIST_API_TOKEN=$METRIST_API_TOKEN
     EOF
 
 You can then proceed to start the software using systemd:
@@ -115,7 +115,7 @@ Installation then proceeds by installing the package:
 And adding your API key:
 
     cat <<EOF | sudo tee -a /etc/default/metrist-orchestrator
-    METRIST_API_TOKEN=$METRIST_API_KEY
+    METRIST_API_TOKEN=$METRIST_API_TOKEN
     EOF
 
 You can then proceed to start the software using systemd:

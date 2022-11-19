@@ -81,6 +81,7 @@ The following values are available for the `m[]` parameter(s):
 * `kinesis` - AWS Kinesis
 * `awslambda` - AWS Lambda
 * `awsrds` - AWS RDS
+* `awsrdspersistent` - AWS RDS Persistent ([Configure Your Own](shared-monitors-config/awsrdspersistent.md))
 * `awsroute53` - AWS Route53
 * `s3` - AWS S3
 * `ses` - AWS SES

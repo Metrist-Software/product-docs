@@ -24,7 +24,7 @@ Extra Configuration
 
 : `dbname` - name of database to ping
 
-: `engine` - "postgres" | any other value will default to "mysql" [(Contact us to support other engines.)](//etrist.io/contact/)
+: `engine` - "postgres" | any other value will default to "mysql" [(Contact us to support other engines.)](https://metrist.io/contact/)
 
 : `password` - a password
 
@@ -50,10 +50,10 @@ To monitor the health of your own instance of an AWS RDS database:
 ### 1. Pre-requisites
 
 1.	A Metrist.io account.
-	- If someone in your team already has a Metrist account, [they can invite you](/web-app-invites).
-	- Or [create a new account](//app.metrist.io/login/signup).
+	- If someone in your team already has a Metrist account, [they can invite you](/guides/web-app-invites).
+	- Or [create a new account](https://app.metrist.io/login/signup).
 1.	Metrist Orchestrator.
-	- Follow these [installation instructions](/orchestrator-installation/) to get Orchestator running on your own device.
+	- Follow these [installation instructions](/guides/orchestrator-installation) to get Orchestator running on your own device.
 
 At this point, you have running instance of Orchestrator and will have set up at least these environment variables:
 
@@ -122,8 +122,8 @@ With monitor configuration now available in your local instance of Orchestrator,
 
 That code should return a key such as `11zLBF1eZq9g3wZh86nYXV8`.
 
-> Tip: [API](/api) documentation describes how to delete/remove the monitor.
+> Tip: [API](/tools/api) documentation describes how to delete/remove the monitor.
 
 ## Result
 
-Metrist now runs the `awsrdspersistent` monitor through your Orchestrator. Telemetry data collected is visible at [app.metrio.io](//app.metrist.io).
+Metrist now runs the `awsrdspersistent` monitor through your Orchestrator. Telemetry data collected is visible at [app.metrio.io](https://app.metrist.io).

@@ -2,7 +2,3 @@ node_modules
 docs/.vitepress/dist
 
 .yarn/*
-!.yarn/plugins/*
-!.yarn/releases/*
-.pnp.cjs
-.pnp.loader.mjs

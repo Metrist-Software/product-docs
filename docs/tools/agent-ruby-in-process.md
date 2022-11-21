@@ -1,4 +1,8 @@
-# Metrist In-Process Agent
+---
+title: Metrist Ruby In-Process Agent
+---
+
+# {{ $frontmatter.title }}
 
 This Rails Plugin/Gem contains the Metrist In-Process Agent (IPA).
 

@@ -1,0 +1,14 @@
+{
+	"devDependencies": {
+		"vitepress": "^1.0.0-alpha.29",
+		"vue": "^3.2.45"
+	},
+  "name": "product-docs",
+  "scripts": {
+		"docs:build": "vitepress build docs",
+		"docs:dev": "vitepress dev docs",
+		"docs:serve": "vitepress serve docs --port 8080",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.0.0"
+}

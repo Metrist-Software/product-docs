@@ -1,4 +1,8 @@
-# Metrist PHP/Curl In-Process Agent
+---
+title: Metrist PHP/Curl In-Process Agent
+---
+
+# {{ $frontmatter.title }}
 
 This directory contains the source code for the PHP/Curl In-Process Agent (IPA).
 

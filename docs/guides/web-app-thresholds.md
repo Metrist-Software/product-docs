@@ -1,4 +1,10 @@
-## Degraded and down states
+---
+title: Configure Thresholds
+---
+
+# {{ $frontmatter.title }}
+
+## Degraded and Down States
 
 Metrist will declare that a service is degraded when:
 
@@ -18,11 +24,11 @@ Metrist will declare that a service has recovered from a down state when:
 * The most recent two consecutive checks have succeeded, or,
 * A check run completed after a run that timed out runs in less than 900,000 ms, (15 minutes).
 
-## Changing the defaults
+## Changing the Threshold Defaults
 
-For a service monitor in aggregate, or indeed for any of a service monitor's checks, the above definitions of degraded and down can be changed to match your workloads and use cases.
+For a service monitor in aggregate, or indeed for any of a service monitor’s checks, the above definitions of _degraded_ and _down_ can be changed to match your workloads and use cases.
 
-Changing these values affects not only when the web UI indicates a service monitor's status, but also when you'll be notified via any alerting subscriptions you've set up.
+Changing these values affects not only when the web UI indicates a service monitor’s status, but also when you’ll be notified via any alerting subscriptions you’ve added.
 
 For degraded states, you can configure the following values:
 
@@ -36,10 +42,12 @@ For down states, you can configure the following values:
 * The number of consecutive check runs required to change the state from down to recovered.
 * The timeout value beyond which a check run is considered to be down.
 
-To change these, click on the service monitor you'd like to change.
+To change these, click on the service monitor you’d like to change.
 
 1. Click on the _Thresholds_ button.
-2. Make changes to the configuration items that you'd like.
-3. Click on the _Save Configuration_ button.
 
-![Configuring thresholds](https://raw.githubusercontent.com/Metrist-Software/product-docs/develop/images/threshold-configuration.png)
+1. Make changes to the configuration items that you’d like.
+
+1. Click on the _Save Configuration_ button.
+
+	![Configuring thresholds](/images/threshold-configuration.png)

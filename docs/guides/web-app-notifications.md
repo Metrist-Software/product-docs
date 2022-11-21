@@ -1,47 +1,63 @@
-## Configuring notifications
+---
+title: Configure Notifications
+---
 
-Notifications can be sent when a service monitor's state changes to degraded or down, and when the service monitor recovers.
+# {{ $frontmatter.title }}
+
+Notifications can be sent when a service monitor’s state changes to degraded or down, and when the service monitor recovers.
 
 Metrist supports several notification types:
 
-* Slack or Teams messages
-* Emails
+* Datadog
+* Email
+* PagerDuty
+* Slack messages (to a channel or DM)
+* Teams messages <Badge type="info" text="Contact us" />
 * Webhooks
 
 ### Slack or Teams messages
 
-To be notified via Slack or Teams, run the associated command in your [chat app](chat-apps.md).
+To be notified via Slack or Teams, run the associated command in your [chat app](/guides/chat-apps).
 
-### Emails
+### Email
 
 To configure email notifications:
 
 1. Click on the _Alerting_ tab.
-2. Click on the _Add Subscription_ button.
-3. Choose _Email_ as the _Subscription Type_, and choose the service monitor you'd like to be notified about.
-4. Click the _Save Subscription_ button.
 
-**Note:** Email notifications can only be sent to the email address associated with your user account at this time.
+1. Click on the _Add Subscription_ button.
 
-![Configuring email notifications](https://raw.githubusercontent.com/Metrist-Software/product-docs/main/images/email-notifications.png)
+1. Choose _Email_ as the _Subscription Type_, and choose the service monitor you’d like to be notified about.
+
+1. Click the _Save Subscription_ button.
+
+	::: info Note
+	Email notifications can only be sent to the email address associated with your user account at this time.
+	:::
+
+	![Configuring email notifications](/images/email-notifications.png)
 
 ### Webhooks
 
 Webhook notifications are JSON requests that are sent to an HTTP endpoint of your choice. To configure webhook notifications:
 
 1. Click on the _Alerting_ tab.
-2. Click on the _Add Subscription_ button.
-3. Choose _Webhook_ as the _Subscription Type_, and choose the service monitor you'd like to be notified about.
-4. Enter in the URL where you'd like to receive the webhooks in the _Url_ field.
-5. Optionally, provide the _Authorization Header_ that is required to successfully deliver the webhook.
 
-![Configuring webhook notifications](https://raw.githubusercontent.com/Metrist-Software/product-docs/main/images/webhook-notifications.png)
+1. Click on the _Add Subscription_ button.
 
-#### Format
+1. Choose _Webhook_ as the _Subscription Type_, and choose the service monitor you’d like to be notified about.
 
-Here is a sample webhook that demonstrates the format and available data:
+1. Enter in the URL where you’d like to receive the webhooks in the _Url_ field.
 
-```
+1. Optionally, provide the _Authorization Header_ that is required to successfully deliver the webhook.
+
+	![Configuring webhook notifications](/images/webhook-notifications.png)
+
+#### Example Webhook Format
+
+Here is an example webhook that demonstrates the format and available data:
+
+```json
 {
     "MonitorId": "Monitors/easypost",
     "MonitorName": "EasyPost",

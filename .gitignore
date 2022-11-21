@@ -1,2 +1,2 @@
-public
-site
+node_modules
+docs/.vitepress/dist

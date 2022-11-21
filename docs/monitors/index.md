@@ -1,0 +1,5 @@
+---
+title: Monitors
+---
+
+# {{ $frontmatter.title }}

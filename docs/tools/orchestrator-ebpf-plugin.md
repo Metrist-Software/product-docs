@@ -1,10 +1,14 @@
-# Orchestrator eBPF Plugin
+---
+title: Orchestrator eBFP Plugin
+---
+
+# {{ $frontmatter.title }}
 
 ## Introduction
 
 The Metrist Orchestrator eBPF Plugin uses the Linux kernel's [eBPF](https://ebpf.io/) functionality to help discover all
 outgoing API calls. Any call that a monitored node makes is sent to the configured Orchestrator's endpoint for
-[In-process forwarding](../orchestrator-source-code#in-process-forwarding) for further processing. Unknown API calls
+[In-process forwarding](/tools/orchestrator-source-code#in-process-forwarding) for further processing. Unknown API calls
 will be logged (both by Orchestrator as well as by this plugin) and known API calls will be converted into
 Service/check pairs and sent to the Metrist backend as regular monitoring metrics.
 
@@ -21,7 +25,7 @@ sees the data as regular "in-process agent" data and will therefore process it a
 
 ## Limitations
 
-Plain HTTP traffic is ignored. Because, the sort of APIs we are interested in, in the context of Metrist's vendor
+Plain HTTP traffic is ignored. Because, the sort of APIs we are interested in, in the context of Metrist’s vendor
 management functionality, typically are not sent in the clear over the public internet.
 
 At the moment, we only monitor traffic from software that uses the OpenSSL library and only if it has been dynamically
@@ -52,7 +56,7 @@ usage should be in the order of a handful of megabytes.
 We support Linux distributions as-needed. So, if you don't see yours and you want support with a platform-native installation
 package, please let us know.
 
-Our distribution packages are signed with PGP/GnuPG. We distribute a keyring file with [trusted keys](https://github.com/Metrist-Software/orchestrator/blob/main/dist/trustedkeys.gpg) you can install prior to downloading
+Our distribution packages are signed with PGP/GnuPG. We distribute a keyring file with [trusted keys](https://github.com/Metrist-Software/orchestrator/blob/dist/trustedkeys.gpg) you can install prior to downloading
 so you can verify that the distribution packages were indeed built by us.
 
 # Ubuntu 20.04

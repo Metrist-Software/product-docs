@@ -2,7 +2,6 @@ import { defineConfig } from 'vitepress'
 
 export default defineConfig({
 	appearance: 'dark',
-	cleanUrls: 'without-subfolders',
 	description: 'Metrist product & developer documentation.',
 	lastUpdated: true,
 	markdown: {

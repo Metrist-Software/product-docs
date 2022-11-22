@@ -2,6 +2,7 @@ import { defineConfig } from 'vitepress'
 
 export default defineConfig({
 	appearance: 'dark',
+	base: '/product-docs/',
 	description: 'Metrist product & developer documentation.',
 	lastUpdated: true,
 	themeConfig: {

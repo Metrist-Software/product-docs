@@ -16,7 +16,7 @@ Description
 
 Steps
 
-: `PingCustomInstance`
+: `PingInstance`
 
 Extra Configuration
 

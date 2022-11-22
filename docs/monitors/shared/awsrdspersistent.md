@@ -132,4 +132,4 @@ Tip: Our [API](/tools/api) documentation describes how to delete/unregister the 
 
 ## Result
 
-Metrist now runs the `awsrdspersistent` monitor through your Orchestrator. Telemetry data collected is visible at [app.metrist.io](//app.metrist.io).
+Metrist now runs the `awsrdspersistent` monitor through your Orchestrator. As soon as your Orchestrator reports telemetry data to Metrist, your new monitor will be visible at [app.metrist.io](https://app.metrist.io).

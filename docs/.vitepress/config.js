@@ -2,6 +2,7 @@ import { defineConfig } from 'vitepress'
 
 export default defineConfig({
 	appearance: 'dark',
+	cleanUrls: 'without-subfolders',
 	description: 'Metrist product & developer documentation.',
 	lastUpdated: true,
 	markdown: {
@@ -14,7 +15,7 @@ export default defineConfig({
 		// 	pattern: 'https://github.com/vuejs/vitepress/edit/main/docs/:path',
     //   text: 'Edit this page on GitHub',
 		// },
-		logo: '/images/metrist-logo.svg',
+		logo: '/metrist-logo.svg',
 		footer: {
 			// message: 'Released under the MIT License.',
       copyright: 'Copyright © 2021-present Metrist Inc.',

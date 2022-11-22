@@ -7,15 +7,15 @@ hero:
   tagline: Welcome…
   actions:
     - theme: brand
-      text: Install Slack App
-      link: /guides/slack
-    - theme: alt
       text: Install Orchestrator
       link: /guides/orchestrator-installation
+    - theme: alt
+      text: Install Metrist for Slack
+      link: /guides/slack
 
 features:
   - icon: 🔭
-    title: Observe Your 3rd-Party Services
+    title: Observe Your Cloud Dependencies
     details: Select the out-of-the-box monitors you care about
     link: /guides/web-app-monitors
     linkText: Select monitors

@@ -31,7 +31,7 @@ To configure email notifications:
 
 1. Click the _Save Subscription_ button.
 
-	::: info Note
+	::: info
 	Email notifications can only be sent to the email address associated with your user account at this time.
 	:::
 

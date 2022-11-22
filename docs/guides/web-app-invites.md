@@ -26,7 +26,7 @@ Invitations do not expire, but you may choose to remove one after it is sent. Se
 
 Invitations are sent via email. Clicking the link contained in the email body will guide you through the acceptance process.
 
-::: info Note
+::: info
 Emails are sent using [Amazon Simple Email Service](https://aws.amazon.com/ses/) and are currently sent from _noreply@canarymonitor.com_.
 :::
 

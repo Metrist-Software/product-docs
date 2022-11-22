@@ -4,11 +4,19 @@ title: Index of Shared Monitors
 
 # {{ $frontmatter.title }}
 
-**Metrist**
+## Documented
+
+### AWS
+
+* [awsrdspersistent](/monitors/shared/awsrdspersistent) - AWS RDS Instance
+
+## Undocumented
+
+### Metrist
 
 * `metrist` - Metrist (yes, monitor Metrist with Metrist!)
 
-**AWS**
+### AWS
 
 * `awscloudfront` - AWS Cloudfront
 * `awscloudwatch` - AWS CloudWatch
@@ -26,7 +34,7 @@ title: Index of Shared Monitors
 * `ses` - AWS SES
 * `sqs` - AWS SQS
 
-**Azure**
+### Azure
 
 * `azureaks` - Azure AKS
 * `azuread` - Azure Active Directory
@@ -44,14 +52,14 @@ title: Index of Shared Monitors
 * `azuresql` - Azure SQL
 * `azurevm` - Azure Virtual Machines
 
-**Google Cloud Platform**
+### Google Cloud Platform
 
 * `gcpappengine` - GCP App Engine
 * `gcpcloudstorage` - GCP Cloud Storage
 * `gcpcomputeengine` - GCP Compute Engine
 * `gke` - GCP GKE
 
-**APIs**
+### APIs
 
 * `avalara` - Avalara (AvaTax)
 * `bambora` - Bambora
@@ -67,13 +75,13 @@ title: Index of Shared Monitors
 * `sendgrid` - SendGrid
 * `stripe` - Stripe
 
-**Infrastructure**
+### Infrastructure
 
 * `cloudflare` - Cloudflare
 * `heroku` - Heroku
 * `snowflake` - Snowflake
 
-**SaaS**
+### SaaS
 
 * `authzero` - Auth0
 * `circleci` - CircleCI

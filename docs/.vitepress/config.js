@@ -56,7 +56,7 @@ export default defineConfig({
 					text: 'Monitor Library',
 					collapsible: true,
 					items: [
-						{ text: 'Shared', link: '/monitors/shared'},
+						{ text: 'Shared', link: '/monitors/shared/'},
 						// { text: 'Build Your Own', link: '/monitors/shared'},
 					]
 				}

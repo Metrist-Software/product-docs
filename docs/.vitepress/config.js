@@ -5,6 +5,11 @@ export default defineConfig({
 	base: '/product-docs/',
 	description: 'Metrist product & developer documentation.',
 	lastUpdated: true,
+	markdown: {
+		config: (md) => {
+			md.use(require('markdown-it-deflist'))
+		}
+	},
 	themeConfig: {
 		// editLink: {
 		// 	pattern: 'https://github.com/vuejs/vitepress/edit/main/docs/:path',

@@ -1,7 +1,8 @@
 {
 	"devDependencies": {
-		"vitepress": "^1.0.0-alpha.29",
-		"vue": "^3.2.45"
+		"markdown-it-deflist": "2.1.0",
+		"vitepress": "1.0.0-alpha.29",
+		"vue": "3.2.45"
 	},
 	"name": "product-docs",
 	"scripts": {

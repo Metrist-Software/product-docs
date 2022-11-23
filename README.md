@@ -1,7 +1,10 @@
-# docs.metrist.io with VitePress
+# [docs.metrist.io](https://docs.metrist.io/) with VitePress
 
 ---
 
+Online at [https://docs.metrist.io](https://docs.metrist.io/)
+
+---
 
 ## VitePress Docs
 

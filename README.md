@@ -19,7 +19,7 @@ If you have those things, skip to [next section](#rundevelop)
 
 ---
 
-For guided setup:
+If you don’t have those things, here’s a guided setup:
 
 1. Confirm you have `git`:
 
@@ -105,6 +105,8 @@ yarn install
 
 # or just `yarn` (it does the same thing)
 ```
+
+> Note: If your system complains `yarn: command not found`, remember to enable corepack: `corepack enable`. If you find yourself typing “sudo apt-get ins…” STOP. Just enable corepack — nodejs will then take care of yarn for you.
 
 Then launch the vitepress site in develop mode (with hot-reloading, etc.):
 

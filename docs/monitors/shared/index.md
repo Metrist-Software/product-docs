@@ -10,7 +10,11 @@ title: Index of Shared Monitors
 
 * [awsrdspersistent](/monitors/shared/awsrdspersistent) - AWS RDS Instance
 
-## Undocumented
+### SaaS
+
+* [asana](/monitors/shared/asana) - Asana
+
+## Undocumented <Badge type="info" text="Contact us" />
 
 ### Metrist
 
@@ -83,6 +87,7 @@ title: Index of Shared Monitors
 
 ### SaaS
 
+* `asana` - Asana
 * `authzero` - Auth0
 * `circleci` - CircleCI
 * `datadog` - Datadog

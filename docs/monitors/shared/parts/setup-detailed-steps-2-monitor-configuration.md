@@ -1,0 +1,1 @@
+With a Metrist account and Orchestrator installed, you are ready to configure Orchestrator for use with your new monitor.

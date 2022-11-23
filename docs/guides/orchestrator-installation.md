@@ -142,7 +142,7 @@ sudo systemctl start metrist-orchestrator
 
 A quick `journalctl --unit metrist-orchestrator` should show a running program.
 
-## Installation From Source
+## Installation From Source <Badge type="warning" text="experimental" />
 
 Installation from source is simplest using [asdf-vm](https://asdf-vm.com/). Just fetch the source code from Git, install dependencies using `asdf`, and build:
 

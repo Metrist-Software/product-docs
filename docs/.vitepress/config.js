@@ -23,7 +23,7 @@ export default defineConfig({
 			{ text: 'Guides', link: '/guides/' },
 			{ text: 'Monitor Library', link: '/monitors/' },
 			{ text: 'API & Tools', link: '/tools/' },
-			// { text: 'Starters', link: '/' },
+			{ text: 'Help ❔', link: 'mailto:support@metrist.io' }
 		],
 		sidebar: {
 			'/guides/': [
@@ -44,7 +44,8 @@ export default defineConfig({
 					text: 'Orchestrator',
 					collapsible: true,
 					items: [
-						{ text: 'Orchestrator Installation', link: '/guides/orchestrator-installation'},
+						{ text: 'Guided Installation', link: '/guides/orchestrator-installation'},
+						{ text: 'Other Installation Options', link: '/guides/orchestrator-installation-alternatives'},
 					]
 				},
 				{

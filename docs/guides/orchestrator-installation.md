@@ -4,17 +4,39 @@ title: Install Metrist Orchestrator
 
 # {{ $frontmatter.title }}
 
-To install Orchestrator the easy way, simply run
+1. To install Orchestrator the easy way, run this command and follow the prompts. You will, for example, need your API token which you can get from [app.metrist.io/profile](https://app.metrist.io/profile).
 
-```sh
-curl https://dist.metrist.io/install.sh >/tmp/install.sh; bash /tmp/install.sh
-```
+	```sh
+	curl https://dist.metrist.io/install.sh >/tmp/install.sh; bash /tmp/install.sh
+	```
 
-and follow the prompts. If you are running on a platform that the script support, you will end up with a running copy of Orchestrator.
+	If you are running on a platform that the script supports, you will have a running copy of Orchestrator.
 
+	::: tip
+
+	`journalctl --unit metrist-orchestrator` should show a running process.
+
+	`sudo systemctl stop metrist-orchestrator` will stop the process.
+
+	`sudo systemctl start metrist-orchestrator` will start the process.
+	:::
+
+1. Also, if logged in at [app.metrist.io](https://app.metrist.io/), you can:
+
+	- Add the Metrist monitor to your dashboard (click “+ Add/Remove dependencies”),
+	- then navigate to the Metrist monitor > Realtime Data > “My Agent Data”.
+
+	Your Orchestrator is reporting telemetry data to a region called `fake-dev-instance` (this is configurable, see below).
+
+	![Metrist monitor telemetry example](/images/fake-dev-instance-monitor-running.png)
+
+::: info
 We do not support every combination of operating system and (in Linux’ case) distribution. If the script detects that your system is not supported for guided installation, it will refer you back here. Please see the rest of the document for more installation options. These options are also a good starting point for unattended installations.
+:::
 
+::: info
 The shell command above will fail in a VM running in WSL (Windows Subsystem for Linux). We recommend Windows users skip to the section below about [Docker installation](#docker-installation).
+:::
 
 ## Verification of Binaries
 

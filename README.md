@@ -110,7 +110,7 @@ Open that url and modify/edit the site, confirm the  site’s contents are updat
 
 #### Tips
 
-1. Sometimes (such as when vitepress tries to hot-reload your code with broken or partial syntax) the running process may stop. I expect vitepress will eventually solve this, but in the meantime, start dev mode again: `yarn dev`.
+1. Sometimes (such as when vitepress tries to hot-reload your code with broken or partial syntax) the running process may stop. Vitepress will eventually solve this, but in the meantime, start dev mode again: `yarn dev`.
 
 1. It is useful to check that the site builds (successfully) before commiting changes:
 

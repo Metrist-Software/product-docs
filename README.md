@@ -13,78 +13,86 @@ VitePress is [VuePress](https://vuepress.vuejs.org)' spiritual successor, built 
 
 ### Pre-requisites
 
-Confirm you have `git`:
+Confirm you have `git` and `nodejs v16.10 or higher` and enable corepack: `corepack enable`.
 
-```sh
-git --version
+If you have those things, skip to [next section](#rundevelop)
 
-# should output something like `git version 2.34.1`
-```
+---
 
-Once you have `git`, clone the repository into a folder in your preferred location:
+For guided setup:
 
-```sh
-git clone https://github.com/Metrist-Software/product-docs.git
-```
+1. Confirm you have `git`:
 
-Then cd into that new folder:
+	```sh
+	git --version
 
-```sh
-cd product-docs
-```
+	# should output something like `git version 2.34.1`
+	```
 
-Check if you have `node` (version 16 or higher; the GitHub actions suggest v18):
+1. Get the code. Clone the repository into a folder in your preferred location:
 
-```sh
-node --version
+	```sh
+	git clone https://github.com/Metrist-Software/product-docs.git
+	```
 
-# should output something like `node version v18.12.0`
-```
+1. Move into the root of the project. cd into that new folder:
 
-If you don't have nodejs available in the system, install it in your preferred way. Go to [nodejs.org](https://nodejs.org/en/download/), nvm, or use `asdf-vm` as follows:
+	```sh
+	cd product-docs
+	```
 
-Check if you have `asdf`:
+1. Check if you have `node` (version 16 or higher; the GitHub actions suggest v18):
 
-```sh
-asdf --version
+	```sh
+	node --version
 
-# should output something like v0.10.2-etc
-```
+	# should output something like `node version v18.12.0`
+	```
 
-Add the nodejs plugin for asdf:
+	If you don't have nodejs available in the system, install it in your preferred way. Go to [nodejs.org](https://nodejs.org/en/download/), nvm, or use `asdf-vm` as follows:
 
-```sh
-asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
-```
+	Check if you have `asdf`:
 
-Then (remember, we're in the project’s root folder),install a nodejs version of your choice (recommended v18 or higher, and a minimum of v16.10):
+	```sh
+	asdf --version
 
-```sh
-asdf install nodejs latest
-```
+	# should output something like v0.10.2-etc
+	```
 
-Or add to your `.tool-versions` file:
+	Add the nodejs plugin for asdf:
 
-```sh
-# add to .tool-versions
-nodejs 18.12.0
-```
+	```sh
+	asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
+	```
 
-And run `asdf install`.
+	Then (remember, we're in the project’s root folder),install a nodejs version of your choice (recommended v18 or higher, and a minimum of v16.10):
 
-Confirm nodejs is available:
+	```sh
+	asdf install nodejs latest
+	```
 
-```sh
-node --version
+	Or add to your `.tool-versions` file:
 
-# should output something like `node version v18.12.0`
-```
+	```sh
+	# add to .tool-versions
+	nodejs 18.12.0
+	```
 
-And enable corepack: it is bundled in nodejs (since v16.10) but is opt-in. It simplifies the installion of yarn.
+	And run `asdf install`.
 
-```sh
-corepack enable
-```
+	Confirm nodejs is available:
+
+	```sh
+	node --version
+
+	# should output something like `node version v18.12.0`
+	```
+
+1. And enable corepack: it is bundled in nodejs (since v16.10) but is opt-in. It simplifies the installion of yarn.
+
+	```sh
+	corepack enable
+	```
 
 ### Run/Develop
 

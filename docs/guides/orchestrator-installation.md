@@ -4,7 +4,9 @@ title: Install Metrist Orchestrator
 
 # {{ $frontmatter.title }}
 
-1. To install Orchestrator the easy way, run this command and follow the prompts. You will, for example, need your API token which you can get from [app.metrist.io/profile](https://app.metrist.io/profile).
+## Guided Installation
+
+1. To start a guided installation of Orchestrator, run this command and follow the prompts. You will, for example, need your API token which you can get from [app.metrist.io/profile](https://app.metrist.io/profile).
 
 	```sh
 	curl https://dist.metrist.io/install.sh >/tmp/install.sh; bash /tmp/install.sh
@@ -23,30 +25,24 @@ title: Install Metrist Orchestrator
 
 1. Also, if logged in at [app.metrist.io](https://app.metrist.io/), you can:
 
-	- Add the Metrist monitor to your dashboard (click “+ Add/Remove dependencies”),
-	- then navigate to the Metrist monitor > Realtime Data > “My Agent Data”.
+	- Add the Metrist monitor to your dashboard (click _+ Add/Remove dependencies_),
+	- select the Metrist monitor for display on your dashboard,
+	- _Save Changes_,
+	- then navigate to the _Metrist_ monitor > _Realtime Data_ > _My Agent Data_.
 
-	Your Orchestrator is reporting telemetry data to a region called `fake-dev-instance` (this is configurable, see below).
+	You should see your Orchestrator reporting telemetry data to a region called `fake-dev-instance` (this is configurable, see below).
 
 	![Metrist monitor telemetry example](/images/fake-dev-instance-monitor-running.png)
 
 ::: info
-We do not support every combination of operating system and (in Linux’ case) distribution. If the script detects that your system is not supported for guided installation, it will refer you back here. Please see the rest of the document for more installation options. These options are also a good starting point for unattended installations.
-:::
+We do not support every combination/distribution of operating system. If the script detects that your system is not supported for guided installation, it will refer you back here.
 
-::: info
-The shell command above will fail in a VM running in WSL (Windows Subsystem for Linux). We recommend Windows users skip to the section below about [Docker installation](#docker-installation).
+Please see [other installation options](/guides/orchestrator-installation-alternatives). These options are a good starting point for unattended installations, docker environments, etc.
 :::
 
 ## Verification of Binaries
 
-All binaries are signed by a key that is listed in our [public keyring](https://github.com/Metrist-Software/orchestrator/blob/dist/trustedkeys.gpg?raw=true). This means that you can fetch our keyring:
-
-```sh
-wget -O /tmp/metrist.gpg https://github.com/Metrist-Software/orchestrator/blob/dist/trustedkeys.gpg?raw=true
-```
-
-and use the verification commands listed with the download commands in the rest of this document.
+<!--@include: /parts/verification-of-binaries.md-->
 
 ## API Token
 

@@ -3,7 +3,7 @@
 ---
 
 
-## Vitepress Docs
+## VitePress Docs
 
 Visit [vitepress.vuejs.org](https://vitepress.vuejs.org).
 

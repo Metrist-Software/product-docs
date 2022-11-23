@@ -169,6 +169,6 @@ If you do not or can not use asdf-vm, please check the [.tool-versions](https://
 	This will create an executable `_build/prod/rel/bakeware/orchestrator` that you can then directly run.
 
 	```sh
-	_build/prod/rel/bakeware/orchestrator run
+	_build/prod/rel/bakeware/orchestrator start
 	```
 

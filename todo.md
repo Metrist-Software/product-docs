@@ -9,19 +9,22 @@
 ~~1. fix logo for bright theme~~
 ~~1. Implement custom footer~~
 ~~1. Implement 'last updated'~~
+~~1. Implement 'Edit link'~~
 
 # Present
 
 <!-- check time of updated -->
+1. Check who can commit to 'main'
 1. email from canarymonitor.com? (http://localhost:5173/guides/web-app-invites.html)
-1. Implement 'Edit link'
 1. https://docsearch.algolia.com/ (and get Metrist’s logo on their home page)
 
 # Future
 
+1. add "how to know orchestrator is working" content
 1. Implement 'team page': https://vitepress.vuejs.org/guide/theme-team-page
 1. Enhance default theme: https://vitepress.vuejs.org/guide/theme-introduction
 1. Implement frontmatter: categories?
 1. Improve this readme, drive people to the docs - remove docs from inside that repo ("but it'll be easier to maintain if it's IN the repo..." there's no evidence of that claim): https://github.com/Metrist-Software/orchestrator
 1. Take full advantage of this: https://vitepress.vuejs.org/guide/markdown
 1. Never say "just simply do ____"
+1. Ryan: "We should also consider abstracting the "register your monitor" step such that we can link it from every monitor page we write. This will also be made much easier once we write the CLI."

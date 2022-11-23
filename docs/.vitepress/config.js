@@ -10,10 +10,10 @@ export default defineConfig({
 		}
 	},
 	themeConfig: {
-		// editLink: {
-		// 	pattern: 'https://github.com/vuejs/vitepress/edit/main/docs/:path',
-    //   text: 'Edit this page on GitHub',
-		// },
+		editLink: {
+			pattern: 'https://github.com/Metrist-Software/product-docs/edit/main/docs/:path',
+      text: 'Edit this page on GitHub',
+		},
 		logo: '/metrist-logo.svg',
 		footer: {
 			// message: 'Released under the MIT License.',

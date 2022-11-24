@@ -8,6 +8,7 @@ title: Index of Shared Monitors
 
 ### AWS
 
+* [awscloudfront](/monitors/shared/awscloudfront) - AWS Cloudfront
 * [awsrdspersistent](/monitors/shared/awsrdspersistent) - AWS RDS Instance
 
 ### SaaS
@@ -22,7 +23,6 @@ title: Index of Shared Monitors
 
 ### AWS
 
-* `awscloudfront` - AWS Cloudfront
 * `awscloudwatch` - AWS CloudWatch
 * `cognito` - AWS Cognito
 * `ec2` - AWS EC2

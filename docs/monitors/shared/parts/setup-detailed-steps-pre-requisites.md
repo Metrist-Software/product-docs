@@ -5,7 +5,7 @@ A Metrist account.
 - Or [create a new account](https://app.metrist.io/login/signup).
 
 Metrist Orchestrator.
-- Follow these [installation instructions](/guides/orchestrator-installation) to get Orchestator running on your own device.
+- Follow these [installation instructions](/guides/orchestrator-installation) to get Orchestrator running on your own device.
 
 At this point, you have running instance of Orchestrator and will have set up at least these environment variables:
 

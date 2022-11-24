@@ -20,17 +20,17 @@ Steps
 
 Extra Configuration
 
-: `address` - host name/address of the instance
+: `address` — host name/address of the instance
 
-: `dbname` - name of database to ping
+: `dbname` — name of database to ping
 
-: `engine` - "postgres" | any other value will default to "mysql" [(Contact us to support other engines.)](https://etrist.io/contact/)
+: `engine` — "postgres" | any other value will default to "mysql" [(Contact us to support other engines.)](https://etrist.io/contact/)
 
-: `password` - a password
+: `password` — a password
 
-: `port` - a number
+: `port` — a number
 
-: `user` - a username
+: `user` — a username
 
 ## Description
 

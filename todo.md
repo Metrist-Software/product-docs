@@ -21,6 +21,7 @@
 
 # Future
 
+1. How to 'uninstall' Orchestrator (after the guided installation)
 1. Implement 'team page': https://vitepress.vuejs.org/guide/theme-team-page
 1. Enhance default theme: https://vitepress.vuejs.org/guide/theme-introduction
 1. Implement frontmatter: categories?

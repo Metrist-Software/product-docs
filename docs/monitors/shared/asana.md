@@ -12,7 +12,7 @@ Name (`monitor_logical_name`)
 
 Description
 
-: Monitors the observability of [Asana’s API](https://developers.asana.com/docs)
+: Monitor the observability of [Asana’s API](https://developers.asana.com/docs).
 
 Steps
 

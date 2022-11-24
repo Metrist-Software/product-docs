@@ -8,7 +8,7 @@ Online at [https://docs.metrist.io](https://docs.metrist.io/)
 
 ## VitePress Docs
 
-Visit [vitepress.vuejs.org](https://vitepress.vuejs.org).
+Visit [VitePress.vuejs.org](https://VitePress.vuejs.org).
 
 VitePress is [VuePress](https://vuepress.vuejs.org)' spiritual successor, built on top of [vite](https://github.com/vitejs/vite).
 
@@ -111,7 +111,7 @@ yarn install
 
 > Note: If your system complains `yarn: command not found`, remember to enable corepack: `corepack enable`. If you find yourself typing “sudo apt-get ins…” STOP. Just enable corepack — nodejs will then take care of yarn for you.
 
-Then launch the vitepress site in develop mode (with hot-reloading, etc.):
+Then launch the VitePress site in develop mode (with hot-reloading, etc.):
 
 ```sh
 yarn dev
@@ -123,7 +123,19 @@ Open that url and modify/edit the site, confirm the  site’s contents are updat
 
 #### Tips
 
-1. Sometimes (such as when vitepress tries to hot-reload your code with broken or partial syntax) the running process may stop. Vitepress will eventually solve this, but in the meantime, start dev mode again: `yarn dev`.
+1. VitePress supports the notion of _file @includes_. These snippets are stored in a folder called `parts` under each main folder tree:
+
+		├── docs
+		│   ├── guides
+		│   │   ├── parts
+		│   ├── monitors
+		│   │   ├── parts
+		│   ├── tools
+		└── └── └── parts
+
+	When editing the included files (the “parts”), they appear to not hot-reload in `dev` mode. You may need to restart VitePress: `yarn dev`.
+
+1. Sometimes (such as when VitePress tries to hot-reload your code with broken or partial syntax) the running process may stop. VitePress will eventually solve this, but in the meantime, start dev mode again: `yarn dev`.
 
 1. It is useful to check that the site builds (successfully) before commiting changes:
 
@@ -141,12 +153,12 @@ Open that url and modify/edit the site, confirm the  site’s contents are updat
 	# a url will be provided such as http://localhost:8080/
 	```
 
-	The `serve` mode is mostly consistent with the `dev` mode but is served directly from the `dist` folder and therefore is useful to catch rare problems with links to static assets (such as any static files served from the `public` folder, a feature of vitepress).
+	The `serve` mode is mostly consistent with the `dev` mode but is served directly from the `dist` folder and therefore is useful to catch rare problems with links to static assets (such as any static files served from the `public` folder, a feature of VitePress).
 
 ## Deployment
 
-`yarn dev` and/or `yarn build` do a reasonable job confirming things work as expected. vitepress even checks and will complain on broken links. If `yarn dev` and `yarn build` succeed, there’s a good chance your safe to publish your work.
+`yarn dev` and/or `yarn build` do a reasonable job confirming things work as expected. VitePress even checks and will complain on broken links. If `yarn dev` and `yarn build` succeed, there’s a good chance your safe to publish your work.
 
-(If this ever changes, such as we introduce custom code overriding vitepress out-of-the-box, we’ll implement `yarn test` scripts accordingly.)
+(If this ever changes, such as we introduce custom code overriding VitePress out-of-the-box, we’ll implement `yarn test` scripts accordingly.)
 
 To publish changes, `git push` to `main` branch. GitHub actions (see `.github/workflows/deploy.yml`) will publish your changes to GitHub pages (and we should never have to touch `gh-pages` branch).

@@ -19,6 +19,7 @@ export const sidebar = {
 			items: [
 				{ text: 'Guided Installation', link: '/guides/orchestrator-installation'},
 				{ text: 'Other Installation Options', link: '/guides/orchestrator-installation-alternatives'},
+				{ text: 'Environment Variables', link: '/guides/orchestrator-environment-variables'},
 			]
 		},
 		{

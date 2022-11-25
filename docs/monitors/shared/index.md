@@ -12,6 +12,7 @@ title: Index of Shared Monitors
 * [awscloudwatch](/monitors/shared/awscloudwatch) — AWS CloudWatch
 * [awsrdspersistent](/monitors/shared/awsrdspersistent) — AWS RDS Instance
 * [cognito](/monitors/shared/cognito) — AWS Cognito
+* [ec2](/monitors/shared/ec2) — AWS EC2
 
 ### SaaS
 
@@ -25,7 +26,6 @@ title: Index of Shared Monitors
 
 ### AWS
 
-* `ec2` — AWS EC2
 * `awsecs` — AWS ECS (Fargate)
 * `awseks` — AWS EKS
 * `awselb` — AWS ELB

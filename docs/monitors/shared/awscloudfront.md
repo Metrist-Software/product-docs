@@ -78,7 +78,7 @@ DISTRIBUTION_ID=your_distribution_id
 
 <!--@include: /parts/setup-detailed-steps-3-monitor-registration.md-->
 
-```json{3-4,12}
+```json{3-4}
 {
 	"monitor_logical_name": "awscloudfront",
 	"interval_secs": 120,

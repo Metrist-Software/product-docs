@@ -55,7 +55,7 @@ AWS_SECRET_ACCESS_KEY=your_key
 
 <!--@include: /parts/setup-detailed-steps-3-monitor-registration.md-->
 
-```json{3-4,12}
+```json{3-4}
 {
 	"monitor_logical_name": "awscloudwatch",
 	"interval_secs": 120,

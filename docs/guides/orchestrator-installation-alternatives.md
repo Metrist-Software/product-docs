@@ -63,15 +63,20 @@ If you are on a supported system for Debian package installation, you can:
 1. Download the package:
 
 	```sh
+	# ensure you have these dependencies first
+
 	sudo apt install -y wget gpg curl
-	orch_latest=$(curl https://dist.metrist.io/orchestrator/ubuntu/20.04.x86_64.latest.txt)
+	```
+
+	```sh
+	orch_latest=$(curl https://dist.metrist.io/orchestrator/ubuntu/22.04.x86_64.latest.txt)
 	wget https://dist.metrist.io/orchestrator/ubuntu/$orch_latest
 	wget https://dist.metrist.io/orchestrator/ubuntu/$orch_latest.asc
 	gpg --verify --keyring=/tmp/metrist.gpg $orch_latest.asc
 	```
 
 	::: info
-	(Where "20.04" is replaced by the distribution you are using.)
+	(Where "22.04" is replaced by the distribution you are using.)
 	:::
 
 1. Then install the package:
@@ -159,7 +164,9 @@ If you do not or can not use asdf-vm, please check the [.tool-versions](https://
 1. Fetch the source code from Git, install dependencies (using `asdf` as below), and build:
 
 	```sh
-	git clone git@github.com:Metrist-Software/orchestrator.git
+	git clone https://github.com/Metrist-Software/orchestrator.git
+	```
+	```sh
 	cd orchestrator
 	asdf install
 	export MIX_ENV=prod
@@ -171,4 +178,3 @@ If you do not or can not use asdf-vm, please check the [.tool-versions](https://
 	```sh
 	_build/prod/rel/bakeware/orchestrator start
 	```
-

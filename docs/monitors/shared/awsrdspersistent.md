@@ -67,7 +67,7 @@ METRIST_AWSRDSPERSISTENT_USER=your_username
 
 <!--@include: /parts/setup-detailed-steps-3-monitor-registration.md-->
 
-```json{3-4,12}
+```json{3-4}
 {
 	"monitor_logical_name": "awsrdspersistent",
 	"interval_secs": 120,

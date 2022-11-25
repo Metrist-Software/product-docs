@@ -16,7 +16,18 @@ VitePress is [VuePress](https://vuepress.vuejs.org)' spiritual successor, built 
 
 ### Pre-requisites
 
-Confirm you have `git` and `nodejs v16.10 or higher` and enable corepack: `corepack enable`.
+Confirm you have `git`, `npm`, and `nodejs v16.10 or higher`.
+
+```sh
+git --version
+node --version
+npm --version #npm is bundled with node, you should NOT have to install it separately
+
+# you should see something like:
+#   git version 2.34.1
+#   8.19.2
+#   v18.12.0
+```
 
 If you have those things, skip to [next section](#rundevelop)
 
@@ -26,7 +37,7 @@ If you don’t have those things, here’s a guided setup:
 
 1. Confirm you have `git`:
 
-	```sh
+	```shhttps://github.com/Metrist-Software/product-docs/actions/runs/3550536889/jobs/5964011237
 	git --version
 
 	# should output something like `git version 2.34.1`
@@ -99,22 +110,16 @@ If you don’t have those things, here’s a guided setup:
 
 ### Run/Develop
 
-The GitHub actions script that we borrowed, used `yarn` instead of `npm`. For npm users, yarn offers familiar features.
-
-Your first routine after cloning the repository or pulling new changes, is to run `yarn install`:
+Your first routine after cloning the repository or pulling new changes, is to run `npm install`:
 
 ```sh
-yarn install
-
-# or just `yarn` (it does the same thing)
+npm install
 ```
-
-> Note: If your system complains `yarn: command not found`, remember to enable corepack: `corepack enable`. If you find yourself typing “sudo apt-get ins…” STOP. Just enable corepack — nodejs will then take care of yarn for you.
 
 Then launch the VitePress site in develop mode (with hot-reloading, etc.):
 
 ```sh
-yarn dev
+npm run dev
 
 # this routine will print a url to the terminal, probably http://localhost:5173
 ```
@@ -133,14 +138,14 @@ Open that url and modify/edit the site, confirm the  site’s contents are updat
 		│   ├── tools
 		└── └── └── parts
 
-	When editing the included files (the “parts”), they appear to not hot-reload in `dev` mode. You may need to restart VitePress: `yarn dev`.
+	When editing the included files (the “parts”), they appear to not hot-reload in `dev` mode. You may need to restart VitePress: `npm run dev`.
 
-1. Sometimes (such as when VitePress tries to hot-reload your code with broken or partial syntax) the running process may stop. VitePress will eventually solve this, but in the meantime, start dev mode again: `yarn dev`.
+1. Sometimes (such as when VitePress tries to hot-reload your code with broken or partial syntax) the running process may stop. VitePress will eventually solve this, but in the meantime, start dev mode again: `npm run dev`.
 
 1. It is useful to check that the site builds (successfully) before commiting changes:
 
 	```sh
-	yarn build
+	npm run build
 	```
 
 	You'll notice a new `dist` folder in your directory. (That folder is ignored by `.gitignore` and should not be committed.)
@@ -148,7 +153,7 @@ Open that url and modify/edit the site, confirm the  site’s contents are updat
 1. It is useful to test the site “in production mode” as follows:
 
 	```sh
-	yarn serve
+	npm run serve
 
 	# a url will be provided such as http://localhost:8080/
 	```
@@ -157,8 +162,8 @@ Open that url and modify/edit the site, confirm the  site’s contents are updat
 
 ## Deployment
 
-`yarn dev` and/or `yarn build` do a reasonable job confirming things work as expected. VitePress even checks and will complain on broken links. If `yarn dev` and `yarn build` succeed, there’s a good chance your safe to publish your work.
+`npm run dev` and/or `npm run build` do a reasonable job confirming things work as expected. VitePress even checks and will complain on broken links. If `npm run dev` and `npm run build` succeed, there’s a good chance your safe to publish your work.
 
-(If this ever changes, such as we introduce custom code overriding VitePress out-of-the-box, we’ll implement `yarn test` scripts accordingly.)
+(If this ever changes, such as we introduce custom code overriding VitePress out-of-the-box, we’ll implement `npm run test` scripts accordingly.)
 
 To publish changes, `git push` to `main` branch. GitHub actions (see `.github/workflows/deploy.yml`) will publish your changes to GitHub pages (and we should never have to touch `gh-pages` branch).

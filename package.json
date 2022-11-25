@@ -1,15 +1,14 @@
 {
-	"devDependencies": {
-		"markdown-it-deflist": "2.1.0",
-		"vitepress": "1.0.0-alpha.29",
-		"vue": "3.2.45"
-	},
 	"name": "product-docs",
 	"scripts": {
-		"build": "vitepress build docs",
-		"dev": "vitepress dev docs",
-		"serve": "vitepress serve docs --port 8080",
+		"build": "npm run build --workspace=vitepress",
+		"dev": "npm run dev --workspace=vitepress",
+		"serve": "npm run serve --workspace=vitepress",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
-	"version": "1.0.0"
+	"version": "1.0.0",
+	"workspaces": [
+		"vitepress",
+		"manifests-to-markdown"
+	]
 }

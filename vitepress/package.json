@@ -1,0 +1,16 @@
+{
+	"devDependencies": {
+		"markdown-it-deflist": "2.1.0",
+		"vitepress": "1.0.0-alpha.29",
+		"vue": "3.2.45"
+	},
+	"name": "docs.metrist.io",
+	"homepage": "https://docs.metrist.io/",
+	"scripts": {
+		"build": "vitepress build docs",
+		"dev": "vitepress dev docs",
+		"serve": "vitepress serve docs --port 8080",
+		"hello": "echo world"
+	},
+	"version": "1.0.0"
+}

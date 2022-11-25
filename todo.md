@@ -14,6 +14,13 @@
 
 # Present
 
+// "devDependencies": {
+// 	"markdown-it-deflist": "2.1.0",
+// 	"vitepress": "1.0.0-alpha.29",
+// 	"vue": "3.2.45"
+// },
+
+
 <!-- check time of updated -->
 1. Change who can submit PRs to our docs
 1. email from canarymonitor.com? (http://localhost:5173/guides/web-app-invites.html)

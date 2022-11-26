@@ -6,7 +6,7 @@
 	"scripts": {
 		"coverage": "vitest run --coverage",
     "start": "node src/index.mjs",
-		"test": "vitest"
+		"test": "vitest --config ./vitest.config.ts"
 	},
 	"version": "1.0.0"
 }

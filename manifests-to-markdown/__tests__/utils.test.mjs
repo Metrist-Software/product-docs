@@ -9,7 +9,9 @@ import { config } from '../config.mjs'
 import {
   getAllMarkdownDocs,
   getSubDirectories,
+  markdownFileName,
   maybeMakeTmpDirectory,
+  readFileToString,
   writeMarkdownDoc
 } from '../src/utils.mjs'
 import { extname } from 'node:path'
@@ -35,27 +37,15 @@ describe(`config`, () => {
 
 })
 
-describe(`maybeMakeTmpDirectory`, () => {
+describe(`readFileToString`, () => {
 
-  afterEach(() => {
-    vi.resetAllMocks()
-    vi.restoreAllMocks()
+  it.concurrent(`reads a file`, async () => {
+    const result = await readFileToString(`${mocksPath}/a directory/a md file.md`)
+    expect(result).toContain(`# some content`)
   })
 
-  it(`doesn't remake existing directory and returns its path`, async () => {
-    mkdtemp.mockResolvedValue(`mock path`)
-    const aNewPath = `${monitorsPath}/new`
-    const result = await maybeMakeTmpDirectory(aNewPath)
-    expect(mkdtemp).toHaveBeenCalledTimes(1)
-    expect(result).toBe(`mock path`)
-  })
-
-  it(`make new directory and returns its path`, async () => {
-    mkdtemp.mockRejectedValue()
-    const aNewPath = `${monitorsPath}/new`
-    const result = await maybeMakeTmpDirectory(aNewPath)
-    expect(mkdtemp).toHaveBeenCalledTimes(1)
-    expect(result).toBe(aNewPath)
+  it.concurrent(`throws error if file doesn't exist`, async () => {
+    await expect(readFileToString(`${mocksPath}/nonexistent path/new.md`)).rejects.toThrowError(`File cannot be found: ${mocksPath}/nonexistent path/new.md`)
   })
 
 })
@@ -100,6 +90,39 @@ describe(`getAllMarkdownDocs`, () => {
     result.forEach((file) => {
       expect(extname(file.name)).toBe(`.md`)
     })
+  })
+
+})
+
+describe(`markdownFileName`, () => {
+
+  it.concurrent(`returns a better filename format, kebab-case: <producer-name>.<monitor-logical-name>.md`, () => {
+    expect(markdownFileName(`Many Paths/But at least ONE/Then a file.MD`)).toBe(`but-at-least-one.then-a-file.md`)
+  })
+
+})
+
+describe(`maybeMakeTmpDirectory`, () => {
+
+  afterEach(() => {
+    vi.resetAllMocks()
+    vi.restoreAllMocks()
+  })
+
+  it(`doesn't remake existing directory and returns its path`, async () => {
+    mkdtemp.mockResolvedValue(`mock path`)
+    const aNewPath = `${monitorsPath}/new`
+    const result = await maybeMakeTmpDirectory(aNewPath)
+    expect(mkdtemp).toHaveBeenCalledTimes(1)
+    expect(result).toBe(`mock path`)
+  })
+
+  it(`make new directory and returns its path`, async () => {
+    mkdtemp.mockRejectedValue()
+    const aNewPath = `${monitorsPath}/new`
+    const result = await maybeMakeTmpDirectory(aNewPath)
+    expect(mkdtemp).toHaveBeenCalledTimes(1)
+    expect(result).toBe(aNewPath)
   })
 
 })

@@ -1,7 +1,9 @@
 import { extname } from 'node:path'
+import { kebabCase } from '@lukaspolak/kebab-case'
 import {
   mkdtemp,
   readdir,
+  readFile,
   writeFile
 } from 'node:fs/promises'
 
@@ -27,11 +29,28 @@ export const getSubDirectories = async (path) => {
   }
 }
 
+export const markdownFileName = (path) => {
+  const pathParts = path.split(`/`)
+  const kebabCaseFileNameParts = kebabCase(pathParts.pop()).split(`-`)
+  const fileExtension = kebabCaseFileNameParts.pop()
+  const monitorLogicalName = kebabCaseFileNameParts.join(`-`)
+  const producerName = kebabCase(pathParts.pop())
+  return `${producerName}.${monitorLogicalName}.${fileExtension}`
+}
+
 export const maybeMakeTmpDirectory = async (tmpPath) => {
   try {
     return await mkdtemp(tmpPath)
   } catch (_err) {
     return tmpPath
+  }
+}
+
+export const readFileToString = async (path) => {
+  try {
+    return await readFile(path, { encoding: 'utf8' })
+  } catch (err) {
+    throw new Error(`File cannot be found: ${path}`)
   }
 }
 
@@ -44,8 +63,8 @@ export const writeMarkdownDoc = async (path, data) => {
 }
 
 /*
-get folders in manifests folder
-|> for each
+getAllDirectories(manifests folder)
+|> for each 'producer-name' folder
     -> look for <monitor-logical-name>.md and emit as is to <foldername: author>-<monitor-logical-name>.md
     -> look for <monitor-logicalname>.json and produce .md from template then emit...
 

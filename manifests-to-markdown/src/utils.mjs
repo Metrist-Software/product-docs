@@ -35,7 +35,7 @@ export const markdownFileName = (path) => {
   const fileExtension = kebabCaseFileNameParts.pop()
   const monitorLogicalName = kebabCaseFileNameParts.join(`-`)
   const producerName = kebabCase(pathParts.pop())
-  return `${producerName}.${monitorLogicalName}.${fileExtension}`
+  return `${producerName}_${monitorLogicalName}.${fileExtension}`
 }
 
 export const maybeMakeTmpDirectory = async (tmpPath) => {
@@ -61,14 +61,3 @@ export const writeMarkdownDoc = async (path, data) => {
     throw new Error(`Could not write file. Directory does not exist: ${path}`)
   }
 }
-
-/*
-getAllDirectories(manifests folder)
-|> for each 'producer-name' folder
-    -> look for <monitor-logical-name>.md and emit as is to <foldername: author>-<monitor-logical-name>.md
-    -> look for <monitor-logicalname>.json and produce .md from template then emit...
-
-make smarter
-// check the timestamp of manifest
-// adjust index.md also
-**/

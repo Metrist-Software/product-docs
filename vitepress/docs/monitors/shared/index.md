@@ -8,16 +8,16 @@ title: Index of Shared Monitors
 
 ### AWS
 
-* [awscloudfront](/monitors/shared/awscloudfront) — AWS Cloudfront
-* [awscloudwatch](/monitors/shared/awscloudwatch) — AWS CloudWatch
-* [awsecs](/monitors/shared/awsecs) — AWS ECS (Fargate)
-* [awsrdspersistent](/monitors/shared/awsrdspersistent) — AWS RDS Instance
-* [cognito](/monitors/shared/cognito) — AWS Cognito
-* [ec2](/monitors/shared/ec2) — AWS EC2
+* [awscloudfront](/monitors/shared/metrist_awscloudfront) — AWS Cloudfront
+* [awscloudwatch](/monitors/shared/metrist_awscloudwatch) — AWS CloudWatch
+* [awsecs](/monitors/shared/metrist_awsecs) — AWS ECS (Fargate)
+* [awsrdspersistent](/monitors/shared/metrist_awsrdspersistent) — AWS RDS Instance
+* [cognito](/monitors/shared/metrist_cognito) — AWS Cognito
+* [ec2](/monitors/shared/metrist_ec2) — AWS EC2
 
 ### SaaS
 
-* [asana](/monitors/shared/asana) — Asana
+* [asana](/monitors/shared/metrist_asana) — Asana
 
 ## Undocumented <Badge type="warning" text="Contact us" />
 

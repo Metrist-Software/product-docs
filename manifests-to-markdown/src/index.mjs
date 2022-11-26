@@ -3,6 +3,7 @@ import {
   getAllMarkdownDocs,
   getSubDirectories,
   markdownFileName,
+  readFileToString,
   writeMarkdownDoc
 } from './utils.mjs'
 import { join as joinPath } from 'node:path'
@@ -19,11 +20,10 @@ monitorDocsDirectories.forEach(async (directory) => {
   const allMarkdownDocs = await getAllMarkdownDocs(joinPath(config.__manifestsDirectory, directory.name))
   if (Array.isArray(allMarkdownDocs) === true) console.log(`Found md files. Will emit to VitePress…`)
   allMarkdownDocs.forEach(async (doc) => {
+    const docContent = await readFileToString(joinPath(config.__manifestsDirectory, directory.name, doc.name))
     const newPath = joinPath(config.__vitepressMonitorsDirectory, markdownFileName(joinPath(config.__vitepressMonitorsDirectory,directory.name,doc.name)))
     console.log(`Writing to ${newPath}`)
-    await writeMarkdownDoc(newPath, 'hello')
+    const writeResult = await writeMarkdownDoc(newPath, docContent)
+    console.log(writeResult)
   })
 })
-
-
-

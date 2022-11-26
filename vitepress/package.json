@@ -9,8 +9,7 @@
 	"scripts": {
 		"build": "vitepress build docs",
 		"dev": "vitepress dev docs",
-		"serve": "vitepress serve docs --port 8080",
-		"hello": "echo world"
+		"serve": "vitepress serve docs --port 8080"
 	},
 	"version": "1.0.0"
 }

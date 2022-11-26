@@ -5,6 +5,7 @@
 	"name": "manifests-to-markdown",
 	"scripts": {
 		"coverage": "vitest run --coverage",
+    "start": "node src/index.mjs",
 		"test": "vitest"
 	},
 	"version": "1.0.0"

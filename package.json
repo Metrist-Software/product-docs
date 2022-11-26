@@ -4,6 +4,7 @@
 		"build": "npm run build --workspace=vitepress",
 		"dev": "npm run dev --workspace=vitepress",
 		"serve": "npm run serve --workspace=vitepress",
+    "start": "npm run start --workspace=manifests-to-markdown",
 		"test": "npm run test --workspace=manifests-to-markdown"
 	},
 	"version": "1.0.0",

@@ -4,7 +4,7 @@
 		"build": "npm run build --workspace=vitepress",
 		"dev": "npm run dev --workspace=vitepress",
 		"serve": "npm run serve --workspace=vitepress",
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"test": "npm run test --workspace=manifests-to-markdown"
 	},
 	"version": "1.0.0",
 	"workspaces": [

@@ -1,5 +1,11 @@
 {
-	"devDependencies": {},
+	"devDependencies": {
+		"vitest": "0.25.3"
+	},
 	"name": "manifests-to-markdown",
+	"scripts": {
+		"coverage": "vitest run --coverage",
+		"test": "vitest"
+	},
 	"version": "1.0.0"
 }

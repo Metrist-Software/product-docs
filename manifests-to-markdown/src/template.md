@@ -28,9 +28,7 @@ Description
 
 <!--@include: /parts/setup-detailed-steps-2-monitor-configuration.md-->
 
-```sh
 [|'environment-variables|]
-```
 
 ### 3. Monitor Config Registration
 
@@ -43,7 +41,7 @@ Description
 Convert it to a JSON string, get your Metrist API token, and use the curl request below to register your monitor:
 
 ```sh
-json= the json above converted to json string
+json= the json above converted to string
 
 echo $json
 

@@ -165,9 +165,9 @@ describe(`line transformations`, () => {
       expect(transformLine(`This [|'matches, so |]was be replaced.`, { 'matches, so ': `` })).toBe(`This was be replaced.`)
     })
 
-    it(`does not replace handlebar expressions that have no matching key in the manifest`, () => {
-      const originalLine = `This [|'expression matches the regex, but the json doesn't have data for this|] so will output as is.`
-      expect(transformLine(originalLine, { but: 'no matching key' })).toBe(originalLine)
+    it(`removes a handlebar expressions that has no matching key in the manifest`, () => {
+      const originalLine = `This [|'expression matches the regex, but the json doesn't have data, so this |]will be removed from output.`
+      expect(transformLine(originalLine, { but: 'no matching key' })).toBe(`This will be removed from output.`)
     })
 
   })

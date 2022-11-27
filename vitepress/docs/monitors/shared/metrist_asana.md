@@ -6,7 +6,7 @@ title: Asana
 
 ## Monitor Specs
 
-Name (`monitor_logical_name`)
+Name
 
 : `asana`
 
@@ -14,17 +14,7 @@ Description
 
 : Monitor the observability of [Asana’s API](https://developers.asana.com/docs).
 
-Steps
-
-: `Ping`
-
-Extra Configuration
-
-: None
-
-## Description
-
-Our customers often use our `asana` monitor to observe the health of Asana’s API.
+: &nbsp;
 
 ## Setup (In a Nutshell)
 
@@ -34,40 +24,41 @@ Our customers often use our `asana` monitor to observe the health of Asana’s A
 
 <!--@include: /parts/setup-detailed-steps-pre-requisites.md-->
 
-### 2. Monitor Configuration
+### 2. Monitor Environment
 
 <!--@include: /parts/setup-detailed-steps-2-monitor-configuration.md-->
 
-### 3. Monitor Registration
+
+
+### 3. Monitor Config Registration
 
 <!--@include: /parts/setup-detailed-steps-3-monitor-registration.md-->
 
-```json{3-4}
+```json
 {
-	"monitor_logical_name": "asana",
-	"interval_secs": 120,
-	"run_groups": ["match-one", "or-more", "run-groups"],
-	"run_spec": {
-		"name": "asana",
-		"run_type": "dll"
-	},
-	"steps": [
-		{
-			"check_logical_name": "Ping",
-			"timeout_secs": 900
-		}
-	]
+  "monitor_logical_name": "asana",
+  "interval_secs": 120,
+  "run_groups": ["match-one", "or-more", "run-groups"],
+  "run_spec": {
+    "name": "asana",
+    "run_type": "dll"
+  },
+  "steps": [{
+    "check_logical_name": "Ping",
+    "timeout_secs": 900
+  }]
 }
 ```
 
-Convert it to a JSON string (like below), get your Metrist API token, and use the curl request below to register your monitor:
+Convert it to a JSON string, get your Metrist API token, and use the curl request below to register your monitor:
 
 ```sh
-json="{\"monitor_logical_name\":\"asana\",\"interval_secs\":120,\"run_groups\":[\"match-one\",\"or-more\",\"run-groups\"],\"run_spec\":{\"name\":\"asana\",\"run_type\":\"dll\"},\"steps\":[{\"check_logical_name\":\"Ping\",\"timeout_secs\":900}]}"
+json= the json above converted to string
+
+echo $json
 
 api_token=YOUR_TOKEN
 
-echo $json
 echo $api_token
 
 curl -d $json -H "Content-Type: application/json" -H "Authorization: Bearer $api_token" 'https://app.metrist.io/api/v0/monitor-config'
@@ -81,4 +72,3 @@ curl -d $json -H "Content-Type: application/json" -H "Authorization: Bearer $api
 ## 4. Result
 
 <!--@include: /parts/setup-detailed-steps-4-result.md-->
-

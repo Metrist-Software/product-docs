@@ -65,7 +65,7 @@ METRIST_NEW_RELIC_NERDGRAPH_USER_KEY=""
 Convert it to a JSON string, get your Metrist API token, and use the curl request below to register your monitor:
 
 ```sh
-json= the json above converted to json string
+json= the json above converted to string
 
 echo $json
 

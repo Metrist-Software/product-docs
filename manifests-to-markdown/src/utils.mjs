@@ -57,12 +57,13 @@ export const maybeMultiLineTransform = (manifest, keyname) => {
       case 'object':
       switch (keyname) {
         case 'environment-variables': {
-          const newLines = []
+          const newLines = [`\`\`\`\sh`]
           Object.keys(thisContent).forEach((item) => {
-            newLines.push(`# ${thisContent[item].required && '(Required)' } ${thisContent[item].description}\n${item}=""`)
+            newLines.push(`\n# ${thisContent[item].required && '(Required)' } ${thisContent[item].description}\n${item}=""\n`)
           })
+          newLines.push(`\`\`\``)
           js_beautify(JSON.stringify(thisContent), beautifulOptions)
-          return newLines.join(`\n\n`)
+          return newLines.join(``)
         }
         default: return js_beautify(JSON.stringify(thisContent), beautifulOptions)
       }
@@ -94,7 +95,7 @@ export const transformLine = (line, manifest) => {
       return part
     } else {
       const withThisKeyName = part.substring(3, part.length - 2)
-      return Object.hasOwn(manifest, withThisKeyName) ? maybeMultiLineTransform(manifest, withThisKeyName) : part
+      return Object.hasOwn(manifest, withThisKeyName) ? maybeMultiLineTransform(manifest, withThisKeyName) : null
     }
   })
   return arrayMaybeTransformed.join(``)

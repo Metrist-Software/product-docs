@@ -7,13 +7,13 @@ import {
 } from 'vitest'
 import { config } from '../config.mjs'
 import {
-  getAllMarkdownDocs,
+  getAllDocsOfType,
   getSubDirectories,
   markdownFileName,
   maybeMakeTmpDirectory,
   readFileToArray,
   readFileToString,
-  streamLinesToFile,
+  transformLine,
   writeMarkdownDoc
 } from '../src/utils.mjs'
 import { extname } from 'node:path'
@@ -44,6 +44,13 @@ describe(`readFileToString`, () => {
   it.concurrent(`reads a file`, async () => {
     const result = await readFileToString(`${mocksPath}/a directory/a md file.md`)
     expect(result).toContain(`# some content`)
+  })
+
+  it.concurrent(`this can be used to retrieve a json object`, async () => {
+    const result = await readFileToString(`${mocksPath}/a directory/a json file.json`)
+    const anObjectFromJsonData = JSON.parse(result)
+    expect(anObjectFromJsonData).toBeTypeOf('object')
+    expect(anObjectFromJsonData.Hi).toBe(`I'm Json.`)
   })
 
   it.concurrent(`throws error if file doesn't exist`, async () => {
@@ -86,16 +93,16 @@ describe(`getAllDirectories`, () => {
 
 })
 
-describe(`getAllMarkdownDocs`, () => {
+describe(`getAllDocsOfType(type, path)`, () => {
 
-  it.concurrent(`returns empty array if directory has no *.md files`, async () => {
-    const result = await getAllMarkdownDocs(mocksPath)
+  it.concurrent(`returns empty array if directory has no files of given type`, async () => {
+    const result = await getAllDocsOfType(`md`, mocksPath)
     expect(Array.isArray(result)).toBe(true)
     expect(result.length).toBe(0)
   })
 
-  it(`returns an array of .md files`, async () => {
-    const result = await getAllMarkdownDocs(`${mocksPath}/a directory`)
+  it(`returns an array of files of given type`, async () => {
+    const result = await getAllDocsOfType(`md`, `${mocksPath}/a directory`)
     expect(Array.isArray(result)).toBe(true)
     expect(result.length).toBeGreaterThan(0)
     expect(result[0].isFile()).toBe(true)
@@ -135,6 +142,24 @@ describe(`maybeMakeTmpDirectory`, () => {
     const result = await maybeMakeTmpDirectory(aNewPath)
     expect(mkdtemp).toHaveBeenCalledTimes(1)
     expect(result).toBe(aNewPath)
+  })
+
+})
+
+describe(`transformLine`, () => {
+
+  it(`returns a line, as is, if no handlebar expression`, () => {
+    const originalLine = `This should be returned as is.`
+    expect(transformLine(originalLine)).toBe(originalLine)
+  })
+
+  it(`transforms a match`, () => {
+    expect(transformLine(`This [|'matches, so |]was be replaced.`, { 'matches, so ': `` })).toBe(`This was be replaced.`)
+  })
+
+  it(`does not replace handlebar expressions that have no matching key in the manifest`, () => {
+    const originalLine = `This [|'expression matches the regex, but the json doesn't have data for this|] so will output as is.`
+    expect(transformLine(originalLine, { but: 'no matching key' })).toBe(originalLine)
   })
 
 })

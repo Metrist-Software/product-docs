@@ -1,28 +1,62 @@
 import { config } from '../config.mjs'
 import {
-  getAllMarkdownDocs,
+  getAllDocsOfType,
   getSubDirectories,
   markdownFileName,
+  readFileToArray,
   readFileToString,
   writeMarkdownDoc
 } from './utils.mjs'
 import { join as joinPath } from 'node:path'
 
 console.log(`Starting…`)
-console.log(`Getting content from ${config.__manifestsDirectory}`)
+console.log(`Getting manifest documents from ${config.__manifestsDirectory}`)
 
-const monitorDocsDirectories = await getSubDirectories(config.__manifestsDirectory)
+const manifestDirectories = await getSubDirectories(config.__manifestsDirectory)
 
-if (Array.isArray(monitorDocsDirectories) === true) console.log(`Found directories. Start processing…`)
+if (Array.isArray(manifestDirectories)) console.log(`Found directories. Start processing…`)
 
-monitorDocsDirectories.forEach(async (directory) => {
-  console.log(`In ${directory.name}:`)
-  const allMarkdownDocs = await getAllMarkdownDocs(joinPath(config.__manifestsDirectory, directory.name))
-  if (Array.isArray(allMarkdownDocs) === true) console.log(`Found md files. Will emit to VitePress…`)
-  allMarkdownDocs.forEach(async (doc) => {
-    const docContent = await readFileToString(joinPath(config.__manifestsDirectory, directory.name, doc.name))
-    const newPath = joinPath(config.__vitepressMonitorsDirectory, markdownFileName(joinPath(config.__vitepressMonitorsDirectory,directory.name,doc.name)))
-    console.log(`Writing to ${newPath}`)
-    await writeMarkdownDoc(newPath, docContent)
-  })
+manifestDirectories.forEach(async (directory) => {
+
+  console.log(`In directory: ${directory.name}`)
+
+  const allMarkdownDocs = await getAllDocsOfType(`md`, joinPath(config.__manifestsDirectory, directory.name))
+
+  if (Array.isArray(allMarkdownDocs)) {
+
+    console.log(`Found md files. Will emit, as is, to VitePress`)
+
+    allMarkdownDocs.forEach(async (mdDoc) => {
+      const docContent = await readFileToString(joinPath(config.__manifestsDirectory, directory.name, mdDoc.name))
+      const newPath = joinPath(config.__vitepressMonitorsDirectory, markdownFileName(joinPath(config.__vitepressMonitorsDirectory,directory.name,mdDoc.name)))
+      console.log(`Writing to ${newPath}`)
+      await writeMarkdownDoc(newPath, docContent)
+    })
+
+  }
+
+  const allJsonDocs = await getAllDocsOfType(`json`, joinPath(config.__manifestsDirectory, directory.name))
+
+  if (Array.isArray(allJsonDocs)) {
+
+    const templatePath = joinPath(config.__manifestsDirectory,`../src/template.md`)
+
+    console.log(`Found json files. Will emit, with template, to VitePress`)
+    console.log(`Getting template: ${templatePath}`)
+
+    const templateAsArray = await readFileToArray(templatePath)
+
+    allJsonDocs.forEach(async (jsonDoc) => {
+      const docContent = await readFileToString(joinPath(config.__manifestsDirectory, directory.name, jsonDoc.name))
+      console.log(`Parsing JSON…`)
+      const manifestData = JSON.parse(docContent)
+      const newDocContent = transformWithTemplate(templateAsArray, manifestData)
+      const newPath = joinPath(config.__vitepressMonitorsDirectory, markdownFileName(joinPath(config.__vitepressMonitorsDirectory,directory.name,jsonDoc.name)))
+      console.log(`Writing to ${newPath}`)
+      await writeMarkdownDoc(newPath, newDocContent)
+    })
+
+  }
+
 })
+

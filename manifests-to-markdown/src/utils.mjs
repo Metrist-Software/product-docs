@@ -8,14 +8,14 @@ import {
   writeFile
 } from 'node:fs/promises'
 
-export const getAllMarkdownDocs = async (path) => {
+export const getAllDocsOfType = async (extension, path) => {
   try {
     const contents = await readdir(path, { withFileTypes: true })
     return contents.filter((item) => {
-      return item.isFile() && extname(item.name) === `.md`
+      return item.isFile() && extname(item.name) === `.${extension}`
     })
   } catch (_err) {
-    throw new Error(`Could not retrieve .md files: ${path}`)
+    throw new Error(`Could not retrieve .${extension} files from ${path}`)
   }
 }
 
@@ -62,6 +62,19 @@ export const readFileToArray = async (path) => {
     arrayOfLines.push(line)
   }
   return arrayOfLines
+}
+
+export const transformLine = (line, manifest) => {
+  const regex = RegExp(/(\[\|\'[\s]*.*?[\s]*\|\])/g)
+  const arrayMaybeTransformed = line.split(regex).map((part) => {
+    if (!regex.test(part)) {
+      return part
+    } else {
+      const withThisKeyName = part.substring(3, part.length - 2)
+      return Object.hasOwn(manifest, withThisKeyName) ? manifest[withThisKeyName] : part
+    }
+  })
+  return arrayMaybeTransformed.join(``)
 }
 
 export const writeMarkdownDoc = async (path, data) => {

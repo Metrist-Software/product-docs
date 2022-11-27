@@ -23,7 +23,6 @@ monitorDocsDirectories.forEach(async (directory) => {
     const docContent = await readFileToString(joinPath(config.__manifestsDirectory, directory.name, doc.name))
     const newPath = joinPath(config.__vitepressMonitorsDirectory, markdownFileName(joinPath(config.__vitepressMonitorsDirectory,directory.name,doc.name)))
     console.log(`Writing to ${newPath}`)
-    const writeResult = await writeMarkdownDoc(newPath, docContent)
-    console.log(writeResult)
+    await writeMarkdownDoc(newPath, docContent)
   })
 })

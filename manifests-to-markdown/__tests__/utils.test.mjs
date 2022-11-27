@@ -11,7 +11,9 @@ import {
   getSubDirectories,
   markdownFileName,
   maybeMakeTmpDirectory,
+  readFileToArray,
   readFileToString,
+  streamLinesToFile,
   writeMarkdownDoc
 } from '../src/utils.mjs'
 import { extname } from 'node:path'
@@ -46,6 +48,16 @@ describe(`readFileToString`, () => {
 
   it.concurrent(`throws error if file doesn't exist`, async () => {
     await expect(readFileToString(`${mocksPath}/nonexistent path/new.md`)).rejects.toThrowError(`File cannot be found: ${mocksPath}/nonexistent path/new.md`)
+  })
+
+})
+
+describe(`readFileToArray`, () => {
+
+  it(`returns an array of lines`, async () => {
+    const fileToRead = `${manifestsPath.substring(0, manifestsPath.lastIndexOf(`/manifests`))}/__tests__/__mocks__/a directory/a md file.md`
+    const linesArray = await readFileToArray(fileToRead)
+    expect(Array.isArray(linesArray)).toBe(true)
   })
 
 })
@@ -97,7 +109,7 @@ describe(`getAllMarkdownDocs`, () => {
 describe(`markdownFileName`, () => {
 
   it.concurrent(`returns a better filename format, kebab-case: <producer-name>.<monitor-logical-name>.md`, () => {
-    expect(markdownFileName(`Many Paths/But at least ONE/Then a file.MD`)).toBe(`but-at-least-one.then-a-file.md`)
+    expect(markdownFileName(`Many Paths/But at least ONE/Then a file.MD`)).toBe(`but-at-least-one_then-a-file.md`)
   })
 
 })
@@ -129,10 +141,22 @@ describe(`maybeMakeTmpDirectory`, () => {
 
 describe(`writeMarkdownDoc`, () => {
 
-  it.concurrent(`writes a file`, async () => {
+  it.concurrent(`writes a file from text`, async () => {
     const result = await writeMarkdownDoc(
-      `${mocksPath}/tmp_directory/new.md`,
+      `${mocksPath}/tmp_directory/new-from-text.md`,
       `mock data`
+    )
+    expect(result).toBe(undefined)
+  })
+
+  it.concurrent(`writes a file from array`, async () => {
+    const result = await writeMarkdownDoc(
+      `${mocksPath}/tmp_directory/new-from-array.md`,
+      [
+        `mock data line 1`,
+        `\n`,
+        `mock data line 2`
+      ]
     )
     expect(result).toBe(undefined)
   })

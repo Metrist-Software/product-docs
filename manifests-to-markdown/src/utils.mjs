@@ -2,6 +2,7 @@ import { extname } from 'node:path'
 import { kebabCase } from '@lukaspolak/kebab-case'
 import {
   mkdtemp,
+  open,
   readdir,
   readFile,
   writeFile
@@ -52,6 +53,15 @@ export const readFileToString = async (path) => {
   } catch (err) {
     throw new Error(`File cannot be found: ${path}`)
   }
+}
+
+export const readFileToArray = async (path) => {
+  const file = await open(path)
+  const arrayOfLines = []
+  for await (const line of file.readLines()){
+    arrayOfLines.push(line)
+  }
+  return arrayOfLines
 }
 
 export const writeMarkdownDoc = async (path, data) => {

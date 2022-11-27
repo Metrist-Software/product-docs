@@ -8,11 +8,11 @@
   "scripts": {
     "coverage": "vitest run --coverage",
     "watch": "npm-watch",
-    "start": "node src/index.mjs",
+    "emit:all": "node src/index.mjs",
     "test": "vitest"
   },
   "version": "1.0.0",
   "watch": {
-    "start": "src/index.mjs"
+    "emit:all": "src/index.mjs"
   }
 }

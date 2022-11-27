@@ -2,6 +2,8 @@
 title: New Relic
 ---
 
+New Relic
+
 # {{ $frontmatter.title }}
 
 ## Monitor Specs

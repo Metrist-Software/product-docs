@@ -2,6 +2,8 @@
 title: \[|'name|]
 ---
 
+[|'name|]
+
 # {{ $frontmatter.title }}
 
 ## Monitor Specs

@@ -3,3 +3,4 @@ vitepress/docs/.vitepress/dist
 .yarn/*
 tmp_directory
 script.md
+coverage

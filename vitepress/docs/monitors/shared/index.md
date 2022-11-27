@@ -18,6 +18,7 @@ title: Index of Shared Monitors
 ### SaaS
 
 * [asana](/monitors/shared/metrist_asana) — Asana
+* [newrelic](/monitors/shared/metrist_newrelic) — New Relic
 
 ## Undocumented <Badge type="warning" text="Contact us" />
 

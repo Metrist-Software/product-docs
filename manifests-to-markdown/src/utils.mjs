@@ -1,3 +1,4 @@
+import js_beautify from 'js-beautify'
 import { extname } from 'node:path'
 import { kebabCase } from '@lukaspolak/kebab-case'
 import {
@@ -47,6 +48,28 @@ export const maybeMakeTmpDirectory = async (tmpPath) => {
   }
 }
 
+export const maybeMultiLineTransform = (manifest, keyname) => {
+  const beautifulOptions = {
+    indent_size: 2
+  }
+  const thisContent = manifest[keyname]
+  switch (typeof(thisContent)) {
+      case 'object':
+      switch (keyname) {
+        case 'environment-variables': {
+          const newLines = []
+          Object.keys(thisContent).forEach((item) => {
+            newLines.push(`# ${thisContent[item].required && '(Required)' } ${thisContent[item].description}\n${item}=""`)
+          })
+          js_beautify(JSON.stringify(thisContent), beautifulOptions)
+          return newLines.join(`\n\n`)
+        }
+        default: return js_beautify(JSON.stringify(thisContent), beautifulOptions)
+      }
+    default: return thisContent
+  }
+}
+
 export const readFileToString = async (path) => {
   try {
     return await readFile(path, { encoding: 'utf8' })
@@ -65,13 +88,13 @@ export const readFileToArray = async (path) => {
 }
 
 export const transformLine = (line, manifest) => {
-  const regex = RegExp(/(\[\|\'[\s]*.*?[\s]*\|\])/g)
+  const regex = RegExp(/\\?(\[\|\'[\s]*.*?[\s]*\|\])/g)
   const arrayMaybeTransformed = line.split(regex).map((part) => {
     if (!regex.test(part)) {
       return part
     } else {
       const withThisKeyName = part.substring(3, part.length - 2)
-      return Object.hasOwn(manifest, withThisKeyName) ? manifest[withThisKeyName] : part
+      return Object.hasOwn(manifest, withThisKeyName) ? maybeMultiLineTransform(manifest, withThisKeyName) : part
     }
   })
   return arrayMaybeTransformed.join(``)

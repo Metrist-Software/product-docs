@@ -1,3 +1,39 @@
 {
-  "manifest-version": "1"
+  "manifest-version": "1.0.0-alpha",
+  "logical-name": "newrelic",
+  "name": "New Relic",
+  "description": "Monitor the observability of [New Relic’s Event API](https://docs.newrelic.com/docs/data-apis/ingest-apis/event-api/introduction-event-api/).",
+  "environment-variables": {
+    "METRIST_NEW_RELIC_ACCOUNT_NUMBER": {
+      "description": "A New Relic account number.",
+      "required": true
+    },
+    "METRIST_NEW_RELIC_INSIGHT_API_KEY": {
+      "description": "For submitting event to New Relic’s Insight API.",
+      "required": true
+    },
+    "METRIST_NEW_RELIC_NERDGRAPH_USER_KEY": {
+      "description": "Nerdgraph is New Relic’s recommended API for querying events.",
+      "required": true
+    }
+  },
+  "monitor-config": {
+    "monitor_logical_name": "newrelic",
+    "interval_secs": 120,
+    "run_groups": ["match-one", "or-more", "run-groups"],
+    "run_spec": {
+      "name": "newrelic",
+      "run_type": "exe"
+    },
+    "steps": [
+      {
+        "check_logical_name": "SubmitEvent",
+        "timeout_secs": 900
+      },
+      {
+        "check_logical_name": "CheckEvent",
+        "timeout_secs": 900
+      }
+    ]
+  }
 }

@@ -11,6 +11,7 @@ import {
   getSubDirectories,
   markdownFileName,
   maybeMakeTmpDirectory,
+  maybeMultiLineTransform,
   readFileToArray,
   readFileToString,
   transformLine,
@@ -146,20 +147,55 @@ describe(`maybeMakeTmpDirectory`, () => {
 
 })
 
-describe(`transformLine`, () => {
+describe(`line transformations`, () => {
 
-  it(`returns a line, as is, if no handlebar expression`, () => {
-    const originalLine = `This should be returned as is.`
-    expect(transformLine(originalLine)).toBe(originalLine)
+  describe(`transformLine`, () => {
+
+    it(`returns a line, as is, if no handlebar expression`, () => {
+      const originalLine = `This should be returned as is.`
+      expect(transformLine(originalLine)).toBe(originalLine)
+    })
+
+    it(`regexp expression matches with '\' escape character`, () => {
+      const originalLine = `Sometimes need to escape, as in frontmatter: \[|'escaped|]`
+      expect(transformLine(originalLine, { escaped: 'for the win!' })).toBe(`Sometimes need to escape, as in frontmatter: for the win!`)
+    })
+
+    it(`transforms a match with 1-line replacement`, () => {
+      expect(transformLine(`This [|'matches, so |]was be replaced.`, { 'matches, so ': `` })).toBe(`This was be replaced.`)
+    })
+
+    it(`does not replace handlebar expressions that have no matching key in the manifest`, () => {
+      const originalLine = `This [|'expression matches the regex, but the json doesn't have data for this|] so will output as is.`
+      expect(transformLine(originalLine, { but: 'no matching key' })).toBe(originalLine)
+    })
+
   })
 
-  it(`transforms a match`, () => {
-    expect(transformLine(`This [|'matches, so |]was be replaced.`, { 'matches, so ': `` })).toBe(`This was be replaced.`)
-  })
+  describe(`maybeMultiLineTransform`, () => {
 
-  it(`does not replace handlebar expressions that have no matching key in the manifest`, () => {
-    const originalLine = `This [|'expression matches the regex, but the json doesn't have data for this|] so will output as is.`
-    expect(transformLine(originalLine, { but: 'no matching key' })).toBe(originalLine)
+    it(`transforms a match with multi-line replacement`, () => {
+      const result = maybeMultiLineTransform({ aMultiLineThing: { key1: `value 1`, key2: `value 2` } }, `aMultiLineThing`)
+      expect(result).toContain(`\n`)
+    })
+
+    it(`handle 'environment-variables' item with special treatment`, () => {
+      const partialManifest = {
+        'environment-variables': {
+          'METRIST_ENV_VAR1': {
+            'description': `A description of this var.`,
+            'required': true
+          },
+          'METRIST_ENV_VAR2': {
+            'description': `A description of this var.`,
+            'required': true
+          }
+        }
+      }
+      const result = maybeMultiLineTransform(partialManifest, `environment-variables`)
+      expect(result).toContain(`# (Required)`)
+    })
+
   })
 
 })

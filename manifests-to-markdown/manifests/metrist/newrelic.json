@@ -1,6 +1,7 @@
 {
   "manifest-version": "1.0.0-alpha",
   "logical-name": "newrelic",
+  "version": "1.0.0",
   "name": "New Relic",
   "description": "Monitor the observability of [New Relic’s Event API](https://docs.newrelic.com/docs/data-apis/ingest-apis/event-api/introduction-event-api/).",
   "environment-variables": {

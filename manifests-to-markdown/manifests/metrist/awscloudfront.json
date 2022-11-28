@@ -1,6 +1,7 @@
 {
   "manifest-version": "1.0.0-alpha",
   "logical-name": "awscloudfront",
+  "version": "1.0.0",
   "name": "AWS CloudFront",
   "description": "Monitor the observability of a specific [AWS CloudFront Distribution](https://aws.amazon.com/cloudfront/).",
   "environment-variables": {

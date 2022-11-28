@@ -1,6 +1,7 @@
 {
   "manifest-version": "1.0.0-alpha",
   "logical-name": "awscloudwatch",
+  "version": "1.0.0",
   "name": "AWS CloudWatch",
   "description": "Monitor the observability of a [AWS CloudWatch services](https://aws.amazon.com/cloudwatch/).",
   "environment-variables": {

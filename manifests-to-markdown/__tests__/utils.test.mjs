@@ -102,7 +102,7 @@ describe(`getAllDocsOfType(type, path)`, () => {
     expect(result.length).toBe(0)
   })
 
-  it(`returns an array of files of given type`, async () => {
+  it.concurrent(`returns an array of files of given type`, async () => {
     const result = await getAllDocsOfType(`md`, `${mocksPath}/a directory`)
     expect(Array.isArray(result)).toBe(true)
     expect(result.length).toBeGreaterThan(0)
@@ -110,6 +110,10 @@ describe(`getAllDocsOfType(type, path)`, () => {
     result.forEach((file) => {
       expect(extname(file.name)).toBe(`.md`)
     })
+  })
+
+  it.concurrent(`throws a relevant error`, async () => {
+    await expect(getAllDocsOfType(`md`, `${mocksPath}/nonexistent path/`)).rejects.toThrowError(`Could not retrieve .md files from ${mocksPath}/nonexistent path/`)
   })
 
 })

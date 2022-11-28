@@ -1,6 +1,7 @@
 {
   "manifest-version": "1.0.0-alpha",
   "logical-name": "asana",
+  "version": "1.0.0",
   "name": "Asana",
   "description": "Monitor the observability of [Asana’s API](https://developers.asana.com/docs).",
   "monitor-config": {

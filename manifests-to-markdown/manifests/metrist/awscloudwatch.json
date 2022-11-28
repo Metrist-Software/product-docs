@@ -1,0 +1,39 @@
+{
+  "manifest-version": "1.0.0-alpha",
+  "logical-name": "awscloudwatch",
+  "name": "AWS CloudWatch",
+  "description": "Monitor the observability of a [AWS CloudWatch services](https://aws.amazon.com/cloudwatch/).",
+  "environment-variables": {
+    "METRIST_AWS_ACCESS_KEY_ID": {
+      "description": "Your AWS Access Key Id.",
+      "required": true
+    },
+    "METRIST_AWS_SECRET_ACCESS_KEY": {
+      "description": "Your AWS Secret Access Key.",
+      "required": true
+    }
+  },
+  "monitor-config": {
+    "monitor_logical_name": "awscloudwatch",
+    "interval_secs": 120,
+    "run_groups": ["match-one", "or-more", "run-groups"],
+    "run_spec": {
+      "name": "awscloudwatch",
+      "run_type": "exe"
+    },
+    "steps": [
+      {
+        "check_logical_name": "SubmitEvent",
+        "description": "This step attemps to submit an event to the logs.",
+        "required": true,
+        "timeout_secs": 900
+      },
+      {
+        "check_logical_name": "GetEvent",
+        "description": "This step attemps to retrieve an event from the logs (not the event submitted in the previous step).",
+        "required": true,
+        "timeout_secs": 900
+      }
+    ]
+  }
+}

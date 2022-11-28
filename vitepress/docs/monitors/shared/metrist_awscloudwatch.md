@@ -2,33 +2,21 @@
 title: AWS CloudWatch
 ---
 
+AWS CloudWatch
+
 # {{ $frontmatter.title }}
 
 ## Monitor Specs
 
-Name (`monitor_logical_name`)
+Name
 
 : `awscloudwatch`
 
 Description
 
-: AWS CloudWatch
+: Monitor the observability of a [AWS CloudWatch services](https://aws.amazon.com/cloudwatch/).
 
-Steps
-
-: `SubmitEvent` — Submit a metric to Cloudwatch using the PutMetricData API call.
-
-: `GetEvent` — List metrics matching our test metric we submitted using the ListMetricsCommand API call.
-
-Extra Configuration
-
-: `AWSAccessKeyID` — String.
-
-: `AWSSecretAccessKey` — String or SecureString.
-
-## Description
-
-Use this monitor to observe AWS CloudWatch.
+: &nbsp;
 
 ## Setup (In a Nutshell)
 
@@ -38,53 +26,54 @@ Use this monitor to observe AWS CloudWatch.
 
 <!--@include: /parts/setup-detailed-steps-pre-requisites.md-->
 
-### 2. Monitor Configuration
+### 2. Monitor Environment
 
 <!--@include: /parts/setup-detailed-steps-2-monitor-configuration.md-->
 
-In the environment where your Orchestrator is installed, add the following environment variables.
+```sh
+# (Required) Your AWS Access Key Id.
+METRIST_AWS_ACCESS_KEY_ID=""
 
+# (Required) Your AWS Secret Access Key.
+METRIST_AWS_SECRET_ACCESS_KEY=""
 ```
-AWS_ACCESS_KEY_ID=your_id
-AWS_SECRET_ACCESS_KEY=your_key
-```
 
-<!--@include: /parts/setup-detailed-steps-2-monitor-configuration-env-vars.md-->
-
-### 3. Monitor Registration
+### 3. Monitor Config Registration
 
 <!--@include: /parts/setup-detailed-steps-3-monitor-registration.md-->
 
-```json{3-4}
+```json
 {
-	"monitor_logical_name": "awscloudwatch",
-	"interval_secs": 120,
-	"run_groups": ["match-one", "or-more", "run-groups"],
-	"run_spec": {
-		"name": "awscloudwatch",
-		"run_type": "exe"
-	},
-	"steps": [
-		{
-			"check_logical_name": "SubmitEvent",
-			"timeout_secs": 900
-		},
-		{
-			"check_logical_name": "GetEvent",
-			"timeout_secs": 900
-		}
-	]
+  "monitor_logical_name": "awscloudwatch",
+  "interval_secs": 120,
+  "run_groups": ["match-one", "or-more", "run-groups"],
+  "run_spec": {
+    "name": "awscloudwatch",
+    "run_type": "exe"
+  },
+  "steps": [{
+    "check_logical_name": "SubmitEvent",
+    "description": "This step attemps to submit an event to the logs.",
+    "required": true,
+    "timeout_secs": 900
+  }, {
+    "check_logical_name": "GetEvent",
+    "description": "This step attemps to retrieve an event from the logs (not the event submitted in the previous step).",
+    "required": true,
+    "timeout_secs": 900
+  }]
 }
 ```
 
-Convert it to a JSON string (like below), get your Metrist API token, and use the curl request below to register your monitor:
+Convert it to a JSON string, get your Metrist API token, and use the curl request below to register your monitor:
 
 ```sh
-json="{\"monitor_logical_name\":\"awscloudwatch\",\"interval_secs\":120,\"run_groups\":[\"match-one\",\"or-more\",\"run-groups\"],\"run_spec\":{\"name\":\"awscloudwatch\",\"run_type\":\"exe\"},\"steps\":[{\"check_logical_name\":\"SubmitEvent\",\"timeout_secs\":900},{\"check_logical_name\":\"GetEvent\",\"timeout_secs\":900}]}"
+json= the json above converted to string
+
+echo $json
 
 api_token=YOUR_TOKEN
 
-echo $json
 echo $api_token
 
 curl -d $json -H "Content-Type: application/json" -H "Authorization: Bearer $api_token" 'https://app.metrist.io/api/v0/monitor-config'

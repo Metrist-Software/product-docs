@@ -56,9 +56,13 @@ METRIST_NEW_RELIC_NERDGRAPH_USER_KEY=""
   },
   "steps": [{
     "check_logical_name": "SubmitEvent",
+    "description": "This step attemps to submit an event through the Event API.",
+    "required": true,
     "timeout_secs": 900
   }, {
     "check_logical_name": "CheckEvent",
+    "description": "This step, if configured, attemps to use the NerdGraph Graphql API to retrieve the event submitted in the previous step.",
+    "required": false,
     "timeout_secs": 900
   }]
 }

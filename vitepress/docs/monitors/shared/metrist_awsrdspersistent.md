@@ -36,13 +36,11 @@ Extra Configuration
 
 Our customers often use our `awsrds` monitor to observe the health of AWS RDS services but use this `awsrdspersistent` monitor to observe the health of a specific, running instance of an AWS RDS database.
 
-## Setup (In a Nutshell)
 
 To monitor the health of your own instance of an AWS RDS database:
 
 <!--@include: /parts/setup-in-a-nutshell.md-->
 
-## Setup (Detailed Steps)
 
 <!--@include: /parts/setup-detailed-steps-pre-requisites.md-->
 

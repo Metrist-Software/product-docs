@@ -32,11 +32,9 @@ Extra Configuration
 
 Use this monitor to observe AWS Cognito Identity Provider.
 
-## Setup (In a Nutshell)
 
 <!--@include: /parts/setup-in-a-nutshell.md-->
 
-## Setup (Detailed Steps)
 
 <!--@include: /parts/setup-detailed-steps-pre-requisites.md-->
 

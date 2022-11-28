@@ -1,12 +1,15 @@
 {
+  "devDependencies": {
+    "concurrently": "7.6.0"
+  },
 	"name": "product-docs",
 	"scripts": {
 		"build": "npm run build --workspace=vitepress",
-		"dev": "npm run dev --workspace=vitepress",
-    "emit:all": "npm run emit:all --workspace=manifests-to-markdown",
+		"dev": "concurrently \"npm run dev --workspace=vitepress\" \"npm run watch\"",
+		"emit:all": "npm run emit:all --workspace=manifests-to-markdown",
 		"serve": "npm run serve --workspace=vitepress",
 		"test": "npm run test --workspace=manifests-to-markdown",
-    "watch": "npm run watch --workspace=manifests-to-markdown"
+		"watch": "npm run watch --workspace=manifests-to-markdown"
 	},
 	"version": "1.0.0",
 	"workspaces": [

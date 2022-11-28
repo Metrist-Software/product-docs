@@ -12,6 +12,8 @@ Visit [VitePress.vuejs.org](https://VitePress.vuejs.org).
 
 VitePress is [VuePress](https://vuepress.vuejs.org)' spiritual successor, built on top of [vite](https://github.com/vitejs/vite).
 
+Helpful [VitePress guide for Markdown](https://vitepress.vuejs.org/guide/markdown).
+
 ## Running/developing on localhost
 
 ### Pre-requisites
@@ -31,13 +33,13 @@ npm --version #npm is bundled with node, you should NOT have to install it separ
 
 If you have those things, skip to [next section](#rundevelop)
 
----
+### Guided Setup of Pre-requisites
 
 If you don’t have those things, here’s a guided setup:
 
 1. Confirm you have `git`:
 
-	```shhttps://github.com/Metrist-Software/product-docs/actions/runs/3550536889/jobs/5964011237
+	```sh
 	git --version
 
 	# should output something like `git version 2.34.1`
@@ -102,12 +104,6 @@ If you don’t have those things, here’s a guided setup:
 	# should output something like `node version v18.12.0`
 	```
 
-1. And enable corepack: it is bundled in nodejs (since v16.10) but is opt-in. It simplifies the installion of yarn.
-
-	```sh
-	corepack enable
-	```
-
 ### Run/Develop
 
 Your first routine after cloning the repository or pulling new changes, is to run `npm install`:
@@ -124,7 +120,36 @@ npm run dev
 # this routine will print a url to the terminal, probably http://localhost:5173
 ```
 
-Open that url and modify/edit the site, confirm the  site’s contents are updated in real-time.
+Open that url and modify/edit the site, confirm the site’s contents are updated in real-time.
+
+#### Important to Know
+
+::: info
+Adjacent to the VitePress workspace in this repo is a purpose-built templater of `metrist.manifest.json` documents. VitePress and this utility, called `manifests-to-markdown`, are both started with the `npm run dev` command — therefore, this utility run silently while VitePress is in dev mode.
+:::
+
+##### Why is this important?
+
+1. All files called `metrist_*.md` in the `shared` folder are produced by the `manifests-to-markdown` utility.
+
+		vitepress
+		└── docs
+		    └── monitors
+		        └── shared
+
+::: info
+One might ask, why not .gitignore this folder and populate it during build or as a pre-commit hook?
+
+Answer: The "last modified" timestamps of the files are currently published in the VitePress pages. Committing them to the repo maintains the integrity of the timestamp.
+:::
+
+
+1. It is not productive to edit those files (they’ll be overridden). Instead, edit/add manifest files directly. While in `npm run dev` mode, edits to the manifest.json files will hot reload in VitePress.
+
+		manifests-to-markdown
+		└── manifests
+		    └── <producer name>
+		        └── metrist.<monitor-logical-name>.json
 
 #### Tips
 
@@ -138,7 +163,7 @@ Open that url and modify/edit the site, confirm the  site’s contents are updat
 		│   ├── tools
 		└── └── └── parts
 
-	When editing the included files (the “parts”), they appear to not hot-reload in `dev` mode. You may need to restart VitePress: `npm run dev`.
+	When editing the included files (the “parts”), they appear to not hot-reload in `dev` mode. You may need to restart VitePress: `npm run dev`. (This is likely to be fixed by VitePress.)
 
 1. Sometimes (such as when VitePress tries to hot-reload your code with broken or partial syntax) the running process may stop. VitePress will eventually solve this, but in the meantime, start dev mode again: `npm run dev`.
 

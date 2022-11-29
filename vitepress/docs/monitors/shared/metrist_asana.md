@@ -2,8 +2,6 @@
 title: Asana
 ---
 
-Asana
-
 # {{ $frontmatter.title }}
 
 ## Monitor Specs
@@ -11,6 +9,10 @@ Asana
 Name
 
 : `asana`
+
+Version
+
+: 1.0.0
 
 Description
 

@@ -15,12 +15,12 @@
 
 # Present
 
-<!-- check time of updated -->
-1. Change who can submit PRs to our docs
-1. https://docsearch.algolia.com/ (and get Metrist’s logo on their home page)
+1. Make 'environment-variables' token smarter. (handle the includes content in template)
 
 # Future
 
+1. Change who can submit PRs to our docs
+1. https://docsearch.algolia.com/ (and get Metrist’s logo on their home page)
 1. How to 'uninstall' Orchestrator (after the guided installation)
 1. Implement 'team page': https://vitepress.vuejs.org/guide/theme-team-page
 1. Enhance default theme: https://vitepress.vuejs.org/guide/theme-introduction

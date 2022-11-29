@@ -2,8 +2,6 @@
 title: AWS CloudFront
 ---
 
-AWS CloudFront
-
 # {{ $frontmatter.title }}
 
 ## Monitor Specs
@@ -11,6 +9,10 @@ AWS CloudFront
 Name
 
 : `awscloudfront`
+
+Version
+
+: 1.0.0
 
 Description
 

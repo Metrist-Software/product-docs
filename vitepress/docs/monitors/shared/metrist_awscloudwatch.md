@@ -2,8 +2,6 @@
 title: AWS CloudWatch
 ---
 
-AWS CloudWatch
-
 # {{ $frontmatter.title }}
 
 ## Monitor Specs
@@ -11,6 +9,10 @@ AWS CloudWatch
 Name
 
 : `awscloudwatch`
+
+Version
+
+: 0.1.0-beta
 
 Description
 

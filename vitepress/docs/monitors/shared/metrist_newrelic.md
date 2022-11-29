@@ -2,8 +2,6 @@
 title: New Relic
 ---
 
-New Relic
-
 # {{ $frontmatter.title }}
 
 ## Monitor Specs
@@ -11,6 +9,10 @@ New Relic
 Name
 
 : `newrelic`
+
+Version
+
+: 1.0.0
 
 Description
 

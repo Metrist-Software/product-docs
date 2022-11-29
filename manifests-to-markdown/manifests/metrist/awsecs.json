@@ -1,0 +1,74 @@
+{
+  "manifest-version": "1.0.0-alpha",
+  "logical-name": "awsecs",
+  "version": "0.1.0-beta",
+  "name": "AWS Elastic Container Service: Fargate",
+  "description": "Monitor the observability of [AWS Elastic Container Service](https://aws.amazon.com/ecs/).",
+  "environment-variables": {
+    "AWS_ACCESS_KEY_ID": {
+      "description": "Your AWS Access Key Id.",
+      "required": true
+    },
+    "AWS_SECRET_ACCESS_KEY": {
+      "description": "Your AWS Secret Access Key.",
+      "required": true
+    },
+    "METRIST_AWS_LB_DNS_NAME": {
+      "description": "A load balancer DNS name to ping.",
+      "required": "Ues, if PingService step is configured."
+    },
+    "METRIST_AWS_LB_TARGET_GROUP_ARN": {
+      "description": "The load balancer target group ARN to access from the load balancer.",
+      "required": true
+    },
+    "METRIST_AWS_TASK_DEFINITION_ARN": {
+      "description": "Full ARN of the task definition to run in your service.",
+      "required": true
+    },
+    "METRIST_CLUSTER_ID": {
+      "description": "ID of the cluster hosted by Amazon ECS.",
+      "required": true
+    },
+    "METRIST_REGION": {
+      "description": "Any of the [supported regions](https://docs.aws.amazon.com/AmazonECS/latest/userguide/AWS_Fargate-Regions.html).",
+      "required": true
+    },
+    "METRIST_SECURITY_GROUP_ID": {
+      "description": "A security group ID relevant to this cluster.",
+      "required": true
+    },
+    "METRIST_VPC_PUBLIC_SUBNETS": {
+      "description": "Comma-separated list of IDs of the subnets associated with the service.",
+      "required": true
+    }
+  },
+  "monitor-config": {
+    "monitor_logical_name": "awsecs",
+    "interval_secs": 120,
+    "run_groups": ["match-one", "or-more", "run-groups"],
+    "run_spec": {
+      "name": "awsecs",
+      "run_type": "exe"
+    },
+    "steps": [
+      {
+        "check_logical_name": "CreateService",
+        "description": "This step attempts to create an ECS service.",
+        "required": true,
+        "timeout_secs": 900
+      },
+      {
+        "check_logical_name": "PingService",
+        "description": "This step attemps to ping a load balancer by domain name.",
+        "required": true,
+        "timeout_secs": 900
+      },
+      {
+        "check_logical_name": "DestroyService",
+        "description": "This step attemps to destroy the service created in an earlier step.",
+        "required": false,
+        "timeout_secs": 900
+      }
+    ]
+  }
+}

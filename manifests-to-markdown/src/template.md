@@ -2,8 +2,6 @@
 title: \[|'name|]
 ---
 
-[|'name|]
-
 # {{ $frontmatter.title }}
 
 ## Monitor Specs
@@ -11,6 +9,10 @@ title: \[|'name|]
 Name
 
 : `[|'logical-name|]`
+
+Version
+
+: [|'version|]
 
 Description
 
@@ -59,4 +61,3 @@ curl -d $json -H "Content-Type: application/json" -H "Authorization: Bearer $api
 ## 4. Result
 
 <!--@include: /parts/setup-detailed-steps-4-result.md-->
-

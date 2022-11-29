@@ -1,114 +1,104 @@
 ---
-title: AWS ECS (Fargate)
+title: AWS Elastic Container Service: Fargate
 ---
 
 # {{ $frontmatter.title }}
 
 ## Monitor Specs
 
-Name (`monitor_logical_name`)
+Name
 
 : `awsecs`
 
+Version
+
+: 0.1.0-beta
+
 Description
 
-: AWS ECS Container Service Monitor
+: Monitor the observability of [AWS Elastic Container Service](https://aws.amazon.com/ecs/).
 
-Steps
-
-: `CreateService` — Create AWS ECS using the Create ECS API call.
-
-: `PingService` — Ping AWS ECS using the Ping ECS API call.
-
-: `DestroyService` — Destroy AWS ECS using the Destroy ECS API call.
-
-Extra Configuration
-
-: `AwsAccessKeyId` — String.
-
-: `AwsLbDnsName` — String.
-
-: `AwsLbTargetGroupArn` — String.
-
-: `AwsSecretAccessKey` — String.
-
-: `AwsTaskDefinitionArn` — String.
-
-: `ClusterId` — String.
-
-: `Region` — String.
-
-: `SecurityGroupId` — String.
-
-: `VpcPublicSubnets` — Comma-separated list of strings.
-
-## Description
-
-Use this monitor to observe the AWS Elastic Container Service.
-
+: &nbsp;
 
 <!--@include: /parts/setup-in-a-nutshell.md-->
 
 
 <!--@include: /parts/setup-detailed-steps-pre-requisites.md-->
 
-### 2. Monitor Configuration
+### 2. Monitor Environment
 
 <!--@include: /parts/setup-detailed-steps-2-monitor-configuration.md-->
 
-In the environment where your Orchestrator is installed, add the following environment variables.
+```sh
+# (Required) Your AWS Access Key Id.
+AWS_ACCESS_KEY_ID=""
 
+# (Required) Your AWS Secret Access Key.
+AWS_SECRET_ACCESS_KEY=""
+
+# (Required) A load balancer DNS name to ping.
+METRIST_AWS_LB_DNS_NAME=""
+
+# (Required) The load balancer target group ARN to access from the load balancer.
+METRIST_AWS_LB_TARGET_GROUP_ARN=""
+
+# (Required) Full ARN of the task definition to run in your service.
+METRIST_AWS_TASK_DEFINITION_ARN=""
+
+# (Required) ID of the cluster hosted by Amazon ECS.
+METRIST_CLUSTER_ID=""
+
+# (Required) Any of the [supported regions](https://docs.aws.amazon.com/AmazonECS/latest/userguide/AWS_Fargate-Regions.html).
+METRIST_REGION=""
+
+# (Required) A security group ID relevant to this cluster.
+METRIST_SECURITY_GROUP_ID=""
+
+# (Required) Comma-separated list of IDs of the subnets associated with the service.
+METRIST_VPC_PUBLIC_SUBNETS=""
 ```
-METRIST_AWSECS_AWS_ACCESS_KEY_ID=abc_123
-METRIST_AWSECS_AWS_SECRET_ACCESS_KEY=abc_123
-METRIST_AWSECS_VPC_SECURITY_GROUP_ID=abc_123
-METRIST_AWSECS_AWS_ECS_CLUSTER_ID=abc_123
-METRIST_AWSECS_AWS_ECS_VPC_PUBLIC_SUBNETS=abc_123,abc_123
-METRIST_AWSECS_AWS_ECS_LB_TARGET_GROUP_ARN=abc_123
-METRIST_AWSECS_AWS_ECS_TASK_DEFINITION_ARN=abc_123
-METRIST_AWSECS_AWS_ECS_LB_DNS_NAME=abc_123
-```
 
-<!--@include: /parts/setup-detailed-steps-2-monitor-configuration-env-vars.md-->
-
-### 3. Monitor Registration
+### 3. Monitor Config Registration
 
 <!--@include: /parts/setup-detailed-steps-3-monitor-registration.md-->
 
-```json{3-4}
+```json
 {
-	"monitor_logical_name": "awsecs",
-	"interval_secs": 120,
-	"run_groups": ["match-one", "or-more", "run-groups"],
-	"run_spec": {
-		"name": "awsecs",
-		"run_type": "exe"
-	},
-	"steps": [
-		{
-			"check_logical_name": "CreateService",
-			"timeout_secs": 900
-		},
-		{
-			"check_logical_name": "PingService",
-			"timeout_secs": 900
-		},
-		{
-			"check_logical_name": "DestroyService",
-			"timeout_secs": 900
-		}
-	]
+  "monitor_logical_name": "awsecs",
+  "interval_secs": 120,
+  "run_groups": ["match-one", "or-more", "run-groups"],
+  "run_spec": {
+    "name": "awsecs",
+    "run_type": "exe"
+  },
+  "steps": [{
+    "check_logical_name": "CreateService",
+    "description": "This step attempts to create an ECS service.",
+    "required": true,
+    "timeout_secs": 900
+  }, {
+    "check_logical_name": "PingService",
+    "description": "This step attemps to ping a load balancer by domain name.",
+    "required": true,
+    "timeout_secs": 900
+  }, {
+    "check_logical_name": "DestroyService",
+    "description": "This step attemps to destroy the service created in an earlier step.",
+    "required": false,
+    "timeout_secs": 900
+  }]
 }
 ```
 
-Convert it to a JSON string (like below), get your Metrist API token, and use the curl request below to register your monitor:
+Convert it to a JSON string, get your Metrist API token, and use the curl request below to register your monitor:
 
 ```sh
-json="{\"monitor_logical_name\":\"awsecs\",\"interval_secs\":120,\"run_groups\":[\"match-one\",\"or-more\",\"run-groups\"],\"run_spec\":{\"name\":\"awsecs\",\"run_type\":\"exe\"},\"steps\":[{\"check_logical_name\":\"CreateService\",\"timeout_secs\":900},{\"check_logical_name\":\"PingService\",\"timeout_secs\":900},{\"check_logical_name\":\"DestroyService\",\"timeout_secs\":900}]}"
+json= the json above converted to string
+
+echo $json
 
 api_token=YOUR_TOKEN
 
-echo $json
 echo $api_token
 
 curl -d $json -H "Content-Type: application/json" -H "Authorization: Bearer $api_token" 'https://app.metrist.io/api/v0/monitor-config'

@@ -20,7 +20,7 @@ We publish the following library of monitors that we use ourselves and make avai
 * [awsrdspersistent](/monitors/metrist_awsrdspersistent) — AWS RDS Instance
 * [cognito](/monitors/metrist_cognito) — AWS Cognito
 * [ec2](/monitors/metrist_ec2) — AWS EC2
-* `awseks` — AWS EKS
+* [awseks](/monitors/metrist_awseks) — AWS EKS
 * `awselb` — AWS ELB
 * `awsiam` — AWS IAM
 * `kinesis` — AWS Kinesis

@@ -3,7 +3,7 @@
   "logical-name": "awscloudfront",
   "version": "1.0.0",
   "name": "AWS CloudFront",
-  "description": "Monitor the observability of a specific [AWS CloudFront Distribution](https://aws.amazon.com/cloudfront/).",
+  "description": "Monitor the observability of [AWS EKS](https://aws.amazon.com/eks/).",
   "environment-variables": {
     "METRIST_AWS_REGION": {
       "description": "Any valid AWS Region name.",

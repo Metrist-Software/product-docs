@@ -16,7 +16,7 @@ Version
 
 Description
 
-: Monitor the observability of a specific [AWS CloudFront Distribution](https://aws.amazon.com/cloudfront/).
+: Monitor the observability of [AWS EKS](https://aws.amazon.com/eks/).
 
 : &nbsp;
 
@@ -114,7 +114,7 @@ api_token=YOUR_TOKEN
 
 echo $api_token
 
-curl -d $json -H "Content-Type: application/json" -H "Authorization: Bearer $api_token" 'https://app.metrist.io/api/v0/monitor-onfig'
+curl -d $json -H "Content-Type: application/json" -H "Authorization: Bearer $api_token" 'https://app.metrist.io/api/v0/monitor-config'
 
 ```
 

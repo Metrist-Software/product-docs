@@ -22,7 +22,7 @@ We publish the following library of monitors that we use ourselves and make avai
 * [ec2](/monitors/metrist_ec2) — AWS EC2
 * [awseks](/monitors/metrist_awseks) — AWS EKS
 * [awselb](/monitors/metrist_awselb) — AWS ELB
-* `awsiam` — AWS IAM
+* [awsiam](/monitors/metrist_awsiam) — AWS IAM
 * `kinesis` — AWS Kinesis
 * `awslambda` — AWS Lambda
 * `awsrds` — AWS RDS

@@ -5,12 +5,12 @@
   "name": "AWS Elastic Kubernetes Service",
   "description": "Monitor the observability of a specific [AWS CloudFront Distribution](https://aws.amazon.com/cloudfront/).",
   "environment-variables": {
-    "METRIST_AWS_REGION": {
-      "description": "Any valid AWS Region name.",
-      "required": true
-    },
     "METRIST_AWS_ACCESS_KEY_ID": {
       "description": "Your AWS Access Key Id.",
+      "required": true
+    },
+    "METRIST_AWS_REGION": {
+      "description": "Any valid AWS Region name.",
       "required": true
     },
     "METRIST_AWS_SECRET_ACCESS_KEY": {

@@ -31,11 +31,11 @@ Description
 
 
 ```sh
-# (Required) Any valid AWS Region name.
-METRIST_AWS_REGION=""
-
 # (Required) Your AWS Access Key Id.
 METRIST_AWS_ACCESS_KEY_ID=""
+
+# (Required) Any valid AWS Region name.
+METRIST_AWS_REGION=""
 
 # (Required) Your AWS Secret Access Key.
 METRIST_AWS_SECRET_ACCESS_KEY=""

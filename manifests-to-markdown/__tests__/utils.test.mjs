@@ -10,6 +10,7 @@ import {
   getAllDocsOfType,
   getSubDirectories,
   markdownFileName,
+  maybeDeleteFile,
   maybeMakeTmpDirectory,
   maybeMultiLineTransform,
   readFileToArray,
@@ -18,7 +19,7 @@ import {
   writeMarkdownDoc
 } from '../src/utils.mjs'
 import { extname } from 'node:path'
-import { mkdtemp } from 'node:fs/promises'
+import { mkdtemp, unlink } from 'node:fs/promises'
 
 const monitorsPath = config.__vitepressMonitorsDirectory
 const manifestsPath = config.__manifestsDirectory
@@ -27,7 +28,8 @@ const mocksPath = `${manifestsPath.substring(0, manifestsPath.lastIndexOf(`/mani
 vi.mock('node:fs/promises', async () => {
   return {
     ...(await vi.importActual('node:fs/promises')),
-    mkdtemp: vi.fn().mockImplementation(async () => null)
+    mkdtemp: vi.fn().mockImplementation(async () => null),
+    unlink: vi.fn().mockImplementation(async () => null)
   }
 })
 
@@ -37,6 +39,22 @@ describe(`config`, () => {
     expect(monitorsPath).toContain(`vitepress/docs/monitors/shared`)
     expect(manifestsPath).toContain(`manifests-to-markdown/manifests`)
     expect(config.__templatePath).toContain(`manifests-to-markdown/src`)
+  })
+
+})
+
+describe(`deleteMarkdownFile`, () => {
+
+  it.concurrent(`is quiet on failure. file probably doesn't exist, no need to delete anything`, async () => {
+    unlink.mockRejectedValue()
+    console.dir(unlink)
+    await expect(await maybeDeleteFile(`non-existent path`)).toBeUndefined()
+  })
+
+  it.concurrent(`reports success`, async () => {
+    unlink.mockResolvedValue(true)
+    const path = `${mocksPath}/a fake/file that will seem to be.deleted`
+    expect(await maybeDeleteFile(path)).toBe(true)
   })
 
 })

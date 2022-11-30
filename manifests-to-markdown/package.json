@@ -9,6 +9,7 @@
   "name": "manifests-to-markdown",
   "scripts": {
     "coverage": "vitest run --coverage",
+    "dev": "node src/watcher.mjs",
     "watch:dev": "npm-watch",
     "watch:vitepress-dev": "node src/watcher.mjs",
     "emit:all": "node src/emit-all.mjs",
@@ -16,8 +17,6 @@
   },
   "version": "1.0.0",
   "watch": {
-    "emit:all": [
-      "src/*.*"
-    ]
+    "dev": "./src/*.*"
   }
 }

@@ -6,6 +6,7 @@ import {
   open,
   readdir,
   readFile,
+  unlink,
   writeFile
 } from 'node:fs/promises'
 
@@ -39,6 +40,15 @@ export const markdownFileName = (path) => {
   const producerName = kebabCase(kebabCaseFileNameParts.shift())
   const monitorLogicalName = kebabCaseFileNameParts.join(`-`)
   return `${producerName}_${monitorLogicalName}.${fileExtension}`
+}
+
+export const maybeDeleteFile = async (path) => {
+  try {
+    const result = await unlink(path)
+    return result
+  } catch (_err) {
+    return
+  }
 }
 
 export const maybeMakeTmpDirectory = async (tmpPath) => {

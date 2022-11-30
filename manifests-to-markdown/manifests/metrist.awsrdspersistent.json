@@ -1,0 +1,50 @@
+{
+  "manifest-version": "1.0.0-alpha",
+  "logical-name": "awsrdspersistent",
+  "version": "0.1.0-beta",
+  "name": "AWS RDS Instance",
+  "description": "Monitor the observability of specific [AWS RDS Instance](https://aws.amazon.com/rds/).",
+  "environment-variables": {
+    "METRIST_AWSRDSPERSISTENT_ADDRESS": {
+      "description": "IP address or domain name of your RDS instance.",
+      "required": true
+    },
+    "METRIST_AWSRDSPERSISTENT_DBNAME": {
+      "description": "Name of your database.",
+      "required": true
+    },
+    "METRIST_AWSRDSPERSISTENT_ENGINE": {
+      "description": "Use postgres or mysql. If undefined, the monitor will default to mysql. [Contact us to support other engines.](https://metrist.io/contact/)",
+      "required": false
+    },
+    "METRIST_AWSRDSPERSISTENT_PASSWORD": {
+      "description": "Password to access your database.",
+      "required": true
+    },
+    "METRIST_AWSRDSPERSISTENT_PORT": {
+      "description": "Port number to access your database.",
+      "required": true
+    },
+    "METRIST_AWSRDSPERSISTENT_USER": {
+      "description": "Username to access your database.",
+      "required": true
+    }
+  },
+  "monitor-config": {
+    "monitor_logical_name": "awsrdspersistent",
+    "interval_secs": 120,
+    "run_groups": ["match-one", "or-more", "run-groups"],
+    "run_spec": {
+      "name": "awsrdspersistent",
+      "run_type": "exe"
+    },
+    "steps": [
+      {
+        "check_logical_name": "PingInstance",
+        "description": "This step attemps to ping your postgres or mysql RDS instance.",
+        "required": true,
+        "timeout_secs": 900
+      }
+    ]
+  }
+}

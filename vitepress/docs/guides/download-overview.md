@@ -22,7 +22,7 @@ This document explains how the various parts of Metrist’s offering fit togethe
 
 * _Production monitor_ is a monitor that uses real production traffic to assess the availability and performance of an API. A production monitor typically observes production software to gather API performance data, currently typically done by in-process monitoring.
 
-* _Shared monitors_ are synthetic monitors that Metrist continuously runs on its own infrastructure, generating data that can be used by all customers.
+* _Monitors_ (in our [Monitor Library](../monitors/)) are synthetic monitors that Metrist continuously runs on its own infrastructure, generating data that can be used by all customers.
 
 * _Private monitors_ are monitors that are operated, using Metrist-supplied software, by customers on their own infrastructure. Typically, private monitors use service-specific credentials for the APIs monitored that are managed by the customer.
 
@@ -43,9 +43,9 @@ Using an API key, Metrist Orchestrator fetches customer-specific scheduling conf
 
 The goals of private synthetic monitoring are three-fold:
 
-1. To provide insights how vendor APIs work from the customer’s premises. The shared monitors run from a number of geographically distributed locations but these locations will not necessarily match where customer interactions with the vendor happens, and network issues often result in highly local outages.
+1. To provide insights how vendor APIs work from the customer’s premises. Metrist’s monitors run from a number of geographically distributed locations but these locations will not necessarily match where customer interactions with the vendor happens, and network issues often result in highly local outages.
 
-1. To provide insights how vendor APIs react on the customer’s exact data. Shared monitors run with “dummy” data, often on vendor accounts dedicated to monitoring. It is likely that data sizes influence how a vendor API behaves, and as such using a production API key for monitoring may reveal different behaviour. By employing private monitoring, control of production API keys and production data can stay where it should be: on-premises.
+1. To provide insights how vendor APIs react on the customer’s exact data. Monitors run with “dummy” data, often on vendor accounts dedicated to monitoring. It is likely that data sizes influence how a vendor API behaves, and as such using a production API key for monitoring may reveal different behaviour. By employing private monitoring, control of production API keys and production data can stay where it should be: on-premises.
 
 	Note that the monitor is still synthetic — it runs “fake” transactions — but it operates on “real” data, which can have a large performance impact.
 
@@ -55,7 +55,7 @@ Metrist Orchestrator comes bundled with all monitors that Metrist supports for p
 
 - aggregated,
 - compared with public measurements,
-- and trigger notifications in the same way notifications for shared monitors are triggered.
+- and trigger notifications in the same way notifications for monitors are triggered.
 
 <!-- TODO: links to installation, configuration, monitoring DSL -->
 

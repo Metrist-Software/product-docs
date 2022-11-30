@@ -42,7 +42,7 @@ Parameters:
 
 * `m[]`
 
-	One or more monitors to get the status for. These should be the logical names for the monitors. These names may be monitors you have created or any of the [monitors in Metrist’s library]().
+	One or more monitors to get the status for. These should be the logical names for the monitors. These names may be monitors you have created or any of the [monitors in Metrist’s library](/monitors/).
 
 	Returns an array of JSON objects containing logical name, display name and status for each monitor that could be found (invalid logical names simply will not return a corresponding object).
 
@@ -66,7 +66,7 @@ Parameters:
 
 #### Values for Monitor Parameter
 
-The following values are available for the `m[]` parameter(s): see [Shared monitors](/monitors/shared/).
+The following values are available for the `m[]` parameter(s): see [Monitor Library](/monitors/).
 
 ### Add Monitor Configuration
 

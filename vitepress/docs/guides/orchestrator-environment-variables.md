@@ -118,4 +118,4 @@ While these environment variables are optional, they can help control the behavi
 
 Monitors may each require their own, unique environment variables.
 
-Refer to our [Monitors Library](/monitors/shared/) for examples.
+Refer to our [Monitors Library](/monitors/) for examples.

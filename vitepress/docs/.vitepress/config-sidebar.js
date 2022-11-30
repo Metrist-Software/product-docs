@@ -31,16 +31,13 @@ export const sidebar = {
 			]
 		},
 	],
-	'/monitors/': [
-		{
-			text: 'Monitor Library',
-			collapsible: true,
-			items: [
-				{ text: 'Shared', link: '/monitors/shared/'},
-				// { text: 'Build Your Own', link: '/monitors/shared'},
-			]
-		}
-	],
+	// '/monitors/': [
+	// 	{
+	// 		text: 'Monitor Library',
+	// 		collapsible: false,
+	// 		items: []
+	// 	}
+	// ],
 	'/tools/': [
 		{
 			text: 'API',

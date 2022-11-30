@@ -36,7 +36,7 @@ vi.mock('node:fs/promises', async () => {
 describe(`config`, () => {
 
   it.concurrent(`indicates the home directory of vitepress`, () => {
-    expect(monitorsPath).toContain(`vitepress/docs/monitors/shared`)
+    expect(monitorsPath).toContain(`vitepress/docs/monitors`)
     expect(manifestsPath).toContain(`manifests-to-markdown/manifests`)
     expect(config.__templatePath).toContain(`manifests-to-markdown/src`)
   })

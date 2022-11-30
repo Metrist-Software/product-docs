@@ -130,12 +130,11 @@ Adjacent to the VitePress workspace in this repo is a purpose-built templater of
 
 ##### Why is this important?
 
-1. All files called `metrist_*.md` in the `shared` folder are produced by the `manifests-to-markdown` utility.
+1. All files called `metrist_*.md` in the `monitors` folder are produced by the `manifests-to-markdown` utility.
 
 		vitepress
 		└── docs
 		    └── monitors
-		        └── shared
 
 ::: info
 One might ask, why not .gitignore this folder and populate it during build or as a pre-commit hook?

@@ -1,5 +1,5 @@
 ---
-title: AWS CloudWatch
+title: AWS Elastic Load Balancing
 ---
 
 # {{ $frontmatter.title }}
@@ -8,7 +8,7 @@ title: AWS CloudWatch
 
 Name
 
-: `awscloudwatch`
+: `awselb`
 
 Version
 
@@ -16,7 +16,7 @@ Version
 
 Description
 
-: Monitor the observability of a [AWS CloudWatch services](https://aws.amazon.com/cloudwatch/).
+: Monitor the observability of [AWS ELB service](https://aws.amazon.com/elasticloadbalancing/).
 
 : &nbsp;
 
@@ -34,6 +34,18 @@ Description
 # (Required) Your AWS Access Key Id.
 METRIST_AWS_ACCESS_KEY_ID=""
 
+# (Required) The id assigned to your ECS cluster.
+METRIST_AWS_ECS_CLUSTER_ID=""
+
+# (Required) The service name of your container service.
+METRIST_AWS_ECS_SERVICE_ID=""
+
+# (Required) The DNS name of your ELB endpoint — the address to which HTTP requests can be made.
+METRIST_AWS_ELB_DNS_NAME=""
+
+# (Required) The target group ARN of your ELB service.
+METRIST_AWS_ELB_TARGET_GROUP_ARN=""
+
 # (Required) Any valid AWS Region name.
 METRIST_AWS_REGION=""
 
@@ -49,21 +61,16 @@ METRIST_AWS_SECRET_ACCESS_KEY=""
 
 ```json
 {
-  "monitor_logical_name": "awscloudwatch",
+  "monitor_logical_name": "awselb",
   "interval_secs": 120,
   "run_groups": ["match-one", "or-more", "run-groups"],
   "run_spec": {
-    "name": "awscloudwatch",
+    "name": "awselb",
     "run_type": "exe"
   },
   "steps": [{
-    "check_logical_name": "SubmitEvent",
-    "description": "This step attemps to submit a metric using PutMetricData API call.",
-    "required": true,
-    "timeout_secs": 900
-  }, {
-    "check_logical_name": "GetEvent",
-    "description": "Using ListMetricsCommand API call, this step attemps to retrieve a list of metrics matching the event submitted in a previous step.",
+    "check_logical_name": "ChangeTargetGroup",
+    "description": "This step attempts to change an ELB target group and measure how long it takes for the change to become effective.",
     "required": true,
     "timeout_secs": 900
   }]

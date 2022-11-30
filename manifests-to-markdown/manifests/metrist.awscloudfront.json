@@ -5,12 +5,12 @@
   "name": "AWS CloudFront",
   "description": "Monitor the observability of [AWS EKS](https://aws.amazon.com/eks/).",
   "environment-variables": {
-    "METRIST_AWS_REGION": {
-      "description": "Any valid AWS Region name.",
-      "required": true
-    },
     "METRIST_AWS_ACCESS_KEY_ID": {
       "description": "Your AWS Access Key Id.",
+      "required": true
+    },
+    "METRIST_AWS_REGION": {
+      "description": "Any valid AWS Region name.",
       "required": true
     },
     "METRIST_AWS_SECRET_ACCESS_KEY": {
@@ -26,7 +26,7 @@
       "required": true
     },
     "METRIST_DISTRIBUTION_ID": {
-      "description": "The id assign to the distribution.",
+      "description": "The id assigned to the distribution.",
       "required": true
     }
   },

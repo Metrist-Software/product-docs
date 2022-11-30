@@ -1,12 +1,16 @@
 {
   "manifest-version": "1.0.0-alpha",
   "logical-name": "awscloudwatch",
-  "version": "0.1.0-beta",
+  "version": "1.0.0",
   "name": "AWS CloudWatch",
   "description": "Monitor the observability of a [AWS CloudWatch services](https://aws.amazon.com/cloudwatch/).",
   "environment-variables": {
     "METRIST_AWS_ACCESS_KEY_ID": {
       "description": "Your AWS Access Key Id.",
+      "required": true
+    },
+    "METRIST_AWS_REGION": {
+      "description": "Any valid AWS Region name.",
       "required": true
     },
     "METRIST_AWS_SECRET_ACCESS_KEY": {
@@ -17,7 +21,7 @@
   "monitor-config": {
     "monitor_logical_name": "awscloudwatch",
     "interval_secs": 120,
-    "run_groups": ["match-one", "or-more", "run-groups"],
+    "run_groups": ["match-one", "or-more","run-groups"],
     "run_spec": {
       "name": "awscloudwatch",
       "run_type": "exe"
@@ -25,13 +29,13 @@
     "steps": [
       {
         "check_logical_name": "SubmitEvent",
-        "description": "This step attemps to submit an event to the logs.",
+        "description": "This step attemps to submit a metric using PutMetricData API call.",
         "required": true,
         "timeout_secs": 900
       },
       {
         "check_logical_name": "GetEvent",
-        "description": "This step attemps to retrieve an event from the logs (not the event submitted in the previous step).",
+        "description": "Using ListMetricsCommand API call, this step attemps to retrieve a list of metrics matching the event submitted in a previous step.",
         "required": true,
         "timeout_secs": 900
       }

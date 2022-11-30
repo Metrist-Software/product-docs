@@ -23,10 +23,10 @@ We publish the following library of monitors that we use ourselves and make avai
 * [awseks](/monitors/metrist_awseks) — AWS EKS
 * [awselb](/monitors/metrist_awselb) — AWS ELB
 * [awsiam](/monitors/metrist_awsiam) — AWS IAM
-* `kinesis` — AWS Kinesis
-* `awslambda` — AWS Lambda
+* [awslambda](/monitors/metrist_awslambda) — AWS Lambda
 * `awsrds` — AWS RDS
 * `awsroute53` — AWS Route53
+* [kinesis](/monitors/metrist_kinesis) — AWS Kinesis
 * `s3` — AWS S3
 * `ses` — AWS SES
 * `sqs` — AWS SQS

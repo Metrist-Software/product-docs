@@ -5,7 +5,7 @@ import {
   it,
   vi
 } from 'vitest'
-import { config } from '../config.mjs'
+import { config } from '../src/config.mjs'
 import {
   getAllDocsOfType,
   getSubDirectories,

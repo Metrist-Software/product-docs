@@ -1,7 +1,7 @@
 {
   "manifest-version": "1.0.0-alpha",
   "logical-name": "awscloudfront",
-  "version": "1.0.0",
+  "version": "0.1.0-beta",
   "name": "AWS CloudFront",
   "description": "Monitor the observability of [AWS EKS](https://aws.amazon.com/eks/).",
   "environment-variables": {

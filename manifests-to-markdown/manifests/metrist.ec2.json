@@ -1,7 +1,7 @@
 {
   "manifest-version": "1.0.0-alpha",
   "logical-name": "ec2",
-  "version": "1.0.0",
+  "version": "0.1.0-beta",
   "name": "AWS EC2",
   "description": "Monitor the observability of the [AWS EC2 service](https://aws.amazon.com/ec2/).",
   "environment-variables": {

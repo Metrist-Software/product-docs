@@ -1,7 +1,7 @@
 {
   "manifest-version": "1.0.0-alpha",
   "logical-name": "awselb",
-  "version": "1.0.0",
+  "version": "0.1.0-beta",
   "name": "AWS Elastic Load Balancing",
   "description": "Monitor the observability of [AWS ELB service](https://aws.amazon.com/elasticloadbalancing/).",
   "environment-variables": {

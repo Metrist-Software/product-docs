@@ -1,5 +1,5 @@
 ---
-title: New Relic
+title: AWS Lambda
 ---
 
 # {{ $frontmatter.title }}
@@ -8,15 +8,15 @@ title: New Relic
 
 Name
 
-: `newrelic`
+: `awslambda`
 
 Version
 
-: 0.1.0-beta
+: 0.0.1-alpha
 
 Description
 
-: Monitor the observability of [New Relic’s Event API](https://docs.newrelic.com/docs/data-apis/ingest-apis/event-api/introduction-event-api/).
+: Monitor the observability of [AWS Lambda](https://aws.amazon.com/lambda/).
 
 : &nbsp;
 
@@ -31,14 +31,20 @@ Description
 
 
 ```sh
-# (Required) A New Relic account number.
-METRIST_NEW_RELIC_ACCOUNT_NUMBER=""
+# (Required) Your AWS Access Key Id.
+METRIST_AWS_ACCESS_KEY_ID=""
 
-# (Required) For submitting event to New Relic’s Insight API.
-METRIST_NEW_RELIC_INSIGHT_API_KEY=""
+# (Required) Any valid AWS Region name.
+METRIST_AWS_REGION=""
 
-# (Required) Nerdgraph is New Relic’s recommended API for querying events.
-METRIST_NEW_RELIC_NERDGRAPH_USER_KEY=""
+# (Required) Your AWS Secret Access Key.
+METRIST_AWS_SECRET_ACCESS_KEY=""
+
+# (Required) The ARN identifying the location of an existing Lambda function.
+METRIST_TEST_FUNCTION_ARN=""
+
+# (Required) The SQS Queue url to which the Lambda function sends a message.
+METRIST_QUEUE_URL=""
 ```
 
 <!--@include: /parts/tips_env-vars.md -->
@@ -49,22 +55,17 @@ METRIST_NEW_RELIC_NERDGRAPH_USER_KEY=""
 
 ```json
 {
-  "monitor_logical_name": "newrelic",
+  "monitor_logical_name": "awslambda",
   "interval_secs": 120,
   "run_groups": ["match-one", "or-more", "run-groups"],
   "run_spec": {
-    "name": "newrelic",
-    "run_type": "exe"
+    "name": "awslambda",
+    "run_type": "dll"
   },
   "steps": [{
-    "check_logical_name": "SubmitEvent",
-    "description": "This step attemps to submit an event through the Event API.",
+    "check_logical_name": "TriggerLambdaAndWaitForResponse",
+    "description": "This step attemps to invoke a request and send a payload from a Lambda function to a SQS Queue.",
     "required": true,
-    "timeout_secs": 900
-  }, {
-    "check_logical_name": "CheckEvent",
-    "description": "This step, if configured, attemps to use the NerdGraph Graphql API to retrieve the event submitted in the previous step.",
-    "required": false,
     "timeout_secs": 900
   }]
 }

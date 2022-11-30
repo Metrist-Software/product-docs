@@ -12,7 +12,7 @@ Name
 
 Version
 
-: 0.1.0-alpha
+: 0.0.1-alpha
 
 Description
 

@@ -1,7 +1,7 @@
 {
   "manifest-version": "1.0.0-alpha",
   "logical-name": "awsiam",
-  "version": "1.0.0",
+  "version": "0.1.0-beta",
   "name": "AWS Elastic Kubernetes Service",
   "description": "Monitor the observability of [AWS Identity and Access Management service](https://aws.amazon.com/iam/).",
   "environment-variables": {

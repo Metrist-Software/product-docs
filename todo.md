@@ -19,6 +19,8 @@
 
 # Future
 
+1. adjust emit-all.mjs for new filenaming of manifests
+1. include the monitor-config spec on API page:https://github.com/Metrist-Software/backend/blob/main/lib/mix/tasks/metrist/install_monitor.ex#L107
 1. Change who can submit PRs to our docs
 1. https://docsearch.algolia.com/ (and get Metrist’s logo on their home page)
 1. How to 'uninstall' Orchestrator (after the guided installation)

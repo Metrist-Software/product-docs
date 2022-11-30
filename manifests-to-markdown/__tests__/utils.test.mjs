@@ -36,6 +36,7 @@ describe(`config`, () => {
   it.concurrent(`indicates the home directory of vitepress`, () => {
     expect(monitorsPath).toContain(`vitepress/docs/monitors/shared`)
     expect(manifestsPath).toContain(`manifests-to-markdown/manifests`)
+    expect(config.__templatePath).toContain(`manifests-to-markdown/src`)
   })
 
 })
@@ -120,8 +121,8 @@ describe(`getAllDocsOfType(type, path)`, () => {
 
 describe(`markdownFileName`, () => {
 
-  it.concurrent(`returns a better filename format, kebab-case: <producer-name>.<monitor-logical-name>.md`, () => {
-    expect(markdownFileName(`Many Paths/But at least ONE/Then a file.MD`)).toBe(`but-at-least-one_then-a-file.md`)
+  it.concurrent(`returns a better filename format, kebab-case: <producer-name>_<monitor-logical-name>.md`, () => {
+    expect(markdownFileName(`Many Paths/then.a file.MD`)).toBe(`then_a-file.md`)
   })
 
 })

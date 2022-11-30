@@ -9,15 +9,15 @@
   "name": "manifests-to-markdown",
   "scripts": {
     "coverage": "vitest run --coverage",
-    "watch": "npm-watch",
-    "emit:all": "node src/index.mjs",
+    "watch:dev": "npm-watch",
+    "watch:vitepress-dev": "node src/watcher.mjs",
+    "emit:all": "node src/emit-all.mjs",
     "test": "vitest"
   },
   "version": "1.0.0",
   "watch": {
     "emit:all": [
-      "src/*.*",
-      "manifests/metrist/*.*"
+      "src/*.*"
     ]
   }
 }

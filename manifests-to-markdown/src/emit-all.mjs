@@ -41,4 +41,3 @@ manifestDirectories.forEach(async (directory) => {
   }
 
 })
-

@@ -47,7 +47,6 @@ describe(`deleteMarkdownFile`, () => {
 
   it.concurrent(`is quiet on failure. file probably doesn't exist, no need to delete anything`, async () => {
     unlink.mockRejectedValue()
-    console.dir(unlink)
     await expect(await maybeDeleteFile(`non-existent path`)).toBeUndefined()
   })
 

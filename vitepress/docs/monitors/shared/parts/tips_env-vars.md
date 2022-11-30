@@ -1,4 +1,4 @@
-::: tip INFO
+::: info INFO
 These values are never transmitted to Metrist — they are never exposed outside your environment.
 :::
 

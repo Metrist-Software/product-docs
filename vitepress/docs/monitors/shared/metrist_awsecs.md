@@ -1,5 +1,5 @@
 ---
-title: AWS Elastic Container Service: Fargate
+title: AWS Elastic Container Service — Fargate
 ---
 
 # {{ $frontmatter.title }}
@@ -20,14 +20,15 @@ Description
 
 : &nbsp;
 
-<!--@include: /parts/setup-in-a-nutshell.md-->
+
+<!--@include: /parts/_1.md-->
 
 
-<!--@include: /parts/setup-detailed-steps-pre-requisites.md-->
+<!--@include: /parts/_2.md-->
 
-### 2. Monitor Environment
 
-<!--@include: /parts/setup-detailed-steps-2-monitor-configuration.md-->
+<!--@include: /parts/_3.md-->
+
 
 ```sh
 # (Required) Your AWS Access Key Id.
@@ -58,9 +59,11 @@ METRIST_SECURITY_GROUP_ID=""
 METRIST_VPC_PUBLIC_SUBNETS=""
 ```
 
-### 3. Monitor Config Registration
+<!--@include: /parts/tips_env-vars.md -->
 
-<!--@include: /parts/setup-detailed-steps-3-monitor-registration.md-->
+
+<!--@include: /parts/_4.md-->
+
 
 ```json
 {
@@ -90,7 +93,7 @@ METRIST_VPC_PUBLIC_SUBNETS=""
 }
 ```
 
-Convert it to a JSON string, get your Metrist API token, and use the curl request below to register your monitor:
+Convert your monitor config to a JSON string, get your Metrist API token, and use the curl request below to register your monitor:
 
 ```sh
 json= the json above converted to string
@@ -105,10 +108,10 @@ curl -d $json -H "Content-Type: application/json" -H "Authorization: Bearer $api
 
 ```
 
-<!--@include: /parts/setup-detailed-steps-3-monitor-registration-api-tip.md-->
+<!--@include: /parts/tips_api.md-->
 
-<!--@include: /parts/setup-detailed-steps-3-monitor-registration-stdout.md-->
 
-## 4. Result
+<!--@include: /parts/_5.md-->
 
-<!--@include: /parts/setup-detailed-steps-4-result.md-->
+
+<!--@include: /parts/result.md-->

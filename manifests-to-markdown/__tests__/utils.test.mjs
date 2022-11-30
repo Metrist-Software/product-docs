@@ -165,7 +165,7 @@ describe(`line transformations`, () => {
       expect(transformLine(originalLine, { escaped: 'for the win!' })).toBe(`Sometimes need to escape, as in frontmatter: for the win!`)
     })
 
-    it(`transforms a match with 1-line replacement`, () => {
+    it(`transforms a direct match with 1-line replacement`, () => {
       expect(transformLine(`This [|'matches, so |]was be replaced.`, { 'matches, so ': `` })).toBe(`This was be replaced.`)
     })
 
@@ -174,6 +174,20 @@ describe(`line transformations`, () => {
       expect(transformLine(originalLine, { but: 'no matching key' })).toBe(`This will be removed from output.`)
     })
 
+    describe(`operators: &&`, () => {
+      // TODO: consider adjusting the regex to match multi-line content within the token, and then respect whitespace accordingly
+
+      it(`if matching key exists, then also output everything following &&`, () => {
+        const originalLine = `This [|'sentence && is|] complete.`
+        expect(transformLine(originalLine, { sentence: 'sentence ' })).toBe(`This sentence is complete.`)
+      })
+
+      it(`if matching key does not exist, then do not output any following &&`, () => {
+        const originalLine = `This sentence is also complete[|'but && ignore this|].`
+        expect(transformLine(originalLine, { and: 'blah' })).toBe(`This sentence is also complete.`)
+      })
+
+    })
   })
 
   describe(`maybeMultiLineTransform`, () => {

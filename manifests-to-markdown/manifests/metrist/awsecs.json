@@ -2,7 +2,7 @@
   "manifest-version": "1.0.0-alpha",
   "logical-name": "awsecs",
   "version": "0.1.0-beta",
-  "name": "AWS Elastic Container Service: Fargate",
+  "name": "AWS Elastic Container Service — Fargate",
   "description": "Monitor the observability of [AWS Elastic Container Service](https://aws.amazon.com/ecs/).",
   "environment-variables": {
     "AWS_ACCESS_KEY_ID": {

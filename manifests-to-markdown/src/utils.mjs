@@ -61,7 +61,7 @@ export const maybeMultiLineTransform = (manifest, keyname) => {
           Object.keys(thisContent).forEach((item) => {
             newLines.push(`\n# ${thisContent[item].required && '(Required)' } ${thisContent[item].description}\n${item}=""\n`)
           })
-          newLines.push(`\`\`\``)
+          newLines.push(`\`\`\`\n\n`)
           js_beautify(JSON.stringify(thisContent), beautifulOptions)
           return newLines.join(``)
         }
@@ -89,16 +89,37 @@ export const readFileToArray = async (path) => {
 }
 
 export const transformLine = (line, manifest) => {
-  const regex = RegExp(/\\?(\[\|\'[\s]*.*?[\s]*\|\])/g)
-  const arrayMaybeTransformed = line.split(regex).map((part) => {
-    if (!regex.test(part)) {
-      return part
+  const tokenRegex = RegExp(/\\?(\[\|\'[\s]*.*?[\s]*\|\])/g)
+  const arrayLineMaybeTransformed = line.split(tokenRegex).map((partOfLine) => {
+    if (!tokenRegex.test(partOfLine)) {
+      return partOfLine
     } else {
-      const withThisKeyName = part.substring(3, part.length - 2)
-      return Object.hasOwn(manifest, withThisKeyName) ? maybeMultiLineTransform(manifest, withThisKeyName) : null
+      const tokenContent = ((completeToken) => {
+        const token_withoutHead = completeToken.substring(3)
+        const token_withoutHeadOrTail = token_withoutHead.substring(0, token_withoutHead.length - 2)
+        return token_withoutHeadOrTail
+      })(partOfLine)
+
+      const operatorRegex = RegExp(/(\s+&&\s+)/gm)
+
+      if (!operatorRegex.test(tokenContent)) {
+        const ifTokenInManifest = !Object.hasOwn(manifest, tokenContent) ? null : maybeMultiLineTransform(manifest, tokenContent)
+        return ifTokenInManifest
+
+      } else {
+
+        const arrayTokenParts = tokenContent.split(operatorRegex).filter((el) => {
+          return !operatorRegex.test(el)
+        })
+
+        const tokenKey = arrayTokenParts.shift()
+        const tokenAppendedContent = arrayTokenParts.join(``)
+        const ifTokenKeyInManifest = !Object.hasOwn(manifest, tokenKey) ? null : `${maybeMultiLineTransform(manifest, tokenKey)}${tokenAppendedContent}`
+        return ifTokenKeyInManifest
+      }
     }
   })
-  return arrayMaybeTransformed.join(``)
+  return arrayLineMaybeTransformed.join(``)
 }
 
 export const writeMarkdownDoc = async (path, data) => {

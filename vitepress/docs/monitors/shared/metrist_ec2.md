@@ -39,14 +39,14 @@ Extra Configuration
 Use this monitor to observe the AWS EC2 service.
 
 
-<!--@include: /parts/setup-in-a-nutshell.md-->
+<!--@include: /parts/_1.md-->
 
 
-<!--@include: /parts/setup-detailed-steps-pre-requisites.md-->
+<!--@include: /parts/_2.md-->
 
 ### 2. Monitor Configuration
 
-<!--@include: /parts/setup-detailed-steps-2-monitor-configuration.md-->
+<!--@include: /parts/_3.md-->
 
 In the environment where your Orchestrator is installed, add the following environment variables.
 
@@ -62,7 +62,7 @@ METRIST_EC2_REGION=your_region_name
 
 ### 3. Monitor Registration
 
-<!--@include: /parts/setup-detailed-steps-3-monitor-registration.md-->
+<!--@include: /parts/_4.md-->
 
 ```json{3-4}
 {
@@ -104,10 +104,10 @@ curl -d $json -H "Content-Type: application/json" -H "Authorization: Bearer $api
 
 ```
 
-<!--@include: /parts/setup-detailed-steps-3-monitor-registration-api-tip.md-->
+<!--@include: /parts/api_tip.md-->
 
-<!--@include: /parts/setup-detailed-steps-3-monitor-registration-stdout.md-->
+<!--@include: /parts/_5.md-->
 
 ## 4. Result
 
-<!--@include: /parts/setup-detailed-steps-4-result.md-->
+<!--@include: /parts/result.md-->

@@ -28,3 +28,17 @@
 1. Never say "just simply do ____"
 1. Ryan: "We should also consider abstracting the "register your monitor" step such that we can link it from every monitor page we write. This will also be made much easier once we write the CLI."
 1. Never say "this _will_ " use present tense throughout docs.
+
+# TODO Adjustments in aws-serverless
+
+1. as in awsecs (maybe others), these env vars should be updated to be prepended with "METRIST_" and populated by extra-config rather than process.env:
+
+AWS_ACCESS_KEY_ID
+AWS_SECRET_ACCESS_KEY
+
+1. as in awsecs (maybe others), these env vars are misleading. Are they 'metrist' vars or awsecs vars?
+
+METRIST_CLUSTER_ID (is this a metrist cluster? no, it's an AWSECS cluster but the name confuses)
+METRIST_REGION (should be METRIST_AWS_REGION; or better yet METRIST_AWS_ECS_REGION)
+METRIST_SECURITY_GROUP_ID
+METRIST_VPC_PUBLIC_SUBNETS

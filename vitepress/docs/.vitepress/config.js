@@ -12,7 +12,7 @@ export default defineConfig({
 	},
 	themeConfig: {
 		editLink: {
-			pattern: 'https://github.com/Metrist-Software/product-docs/edit/main/docs/:path',
+      pattern: 'https://github.com/Metrist-Software/product-docs/tree/main/vitepress/docs/:path',
       text: 'Edit this page on GitHub',
 		},
 		logo: '/metrist-logo.svg',

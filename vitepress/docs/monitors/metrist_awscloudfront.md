@@ -16,7 +16,7 @@ Version
 
 Description
 
-: Monitor the observability of [AWS EKS](https://aws.amazon.com/eks/).
+: Monitor the observability of a specific [AWS Cloudfront distribution](https://aws.amazon.com/cloudfront/).
 
 : &nbsp;
 
@@ -87,7 +87,8 @@ METRIST_DISTRIBUTION_ID=""
     "timeout_secs": 900
   }, {
     "check_logical_name": "GetUpdatedFile",
-    "description": false,
+    "description": "This step attemps to retrieve a file updated in a previous step.",
+    "required": false,
     "timeout_secs": 900
   }, {
     "check_logical_name": "DeleteFile",

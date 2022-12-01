@@ -3,7 +3,7 @@
   "logical-name": "awscloudfront",
   "version": "0.1.0-beta",
   "name": "AWS CloudFront",
-  "description": "Monitor the observability of [AWS EKS](https://aws.amazon.com/eks/).",
+  "description": "Monitor the observability of a specific [AWS Cloudfront distribution](https://aws.amazon.com/cloudfront/).",
   "environment-variables": {
     "METRIST_AWS_ACCESS_KEY_ID": {
       "description": "Your AWS Access Key Id.",
@@ -65,7 +65,8 @@
       },
       {
         "check_logical_name": "GetUpdatedFile",
-        "description": false,
+        "description": "This step attemps to retrieve a file updated in a previous step.",
+        "required": false,
         "timeout_secs": 900
       },
       {

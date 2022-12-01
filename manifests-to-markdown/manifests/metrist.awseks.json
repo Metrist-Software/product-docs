@@ -2,8 +2,8 @@
   "manifest-version": "1.0.0-alpha",
   "logical-name": "awseks",
   "version": "0.0.1-alpha",
-  "name": "AWS Elastic Kubernetes Service",
-  "description": "Monitor the observability of a specific [AWS CloudFront Distribution](https://aws.amazon.com/cloudfront/).",
+  "name": "AWS EKS",
+  "description": "Monitor the observability of [AWS Elastic Kubernetes Service](https://aws.amazon.com/eks/).",
   "environment-variables": {
     "METRIST_AWS_ACCESS_KEY_ID": {
       "description": "Your AWS Access Key Id.",

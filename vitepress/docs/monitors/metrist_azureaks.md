@@ -1,5 +1,5 @@
 ---
-title: AWS EKS
+title: Azure Kubernetes Service
 ---
 
 # {{ $frontmatter.title }}
@@ -8,7 +8,7 @@ title: AWS EKS
 
 Name
 
-: `awseks`
+: `azureaks`
 
 Version
 
@@ -16,7 +16,7 @@ Version
 
 Description
 
-: Monitor the observability of [AWS Elastic Kubernetes Service](https://aws.amazon.com/eks/).
+: Monitor the observability of [Azure Kubernetes Service](https://learn.microsoft.com/azure/aks/).
 
 : &nbsp;
 
@@ -31,23 +31,17 @@ Description
 
 
 ```sh
-# (Required) Your AWS Access Key Id.
-METRIST_AWS_ACCESS_KEY_ID=""
+# (Required) A Service Principal Client Id.
+METRIST_CLIENT_ID=""
 
-# (Required) Any valid AWS Region name.
-METRIST_AWS_REGION=""
+# (Required) A Service Principal Secret.
+METRIST_CLIENT_SECRET=""
 
-# (Required) Your AWS Secret Access Key.
-METRIST_AWS_SECRET_ACCESS_KEY=""
+# (Required) A subscription ID.
+METRIST_SUBSCRIPTION_ID=""
 
-# (Required) The name of an existing cluster in which to attemp deployment.
-METRIST_AWS_EKS_CLUSTER_NAME=""
-
-# (Required) The name of an endpoint for the newly deployed cluster/server.
-METRIST_AWS_EKS_CLUSTER_SERVER_ADDRESS=""
-
-# (Required) The Certificate Authority Data related to the cluster server address/endpoint.
-METRIST_AWS_EKS_CLUSTER_CERTIFICATE_AUTHORITY_DATA=""
+# (Required) A tenant ID for which the Service Principal has authorization.
+METRIST_TENANT_ID=""
 ```
 
 <!--@include: /parts/tips_env-vars.md -->
@@ -58,22 +52,27 @@ METRIST_AWS_EKS_CLUSTER_CERTIFICATE_AUTHORITY_DATA=""
 
 ```json
 {
-  "monitor_logical_name": "awseks",
+  "monitor_logical_name": "azureaks",
   "interval_secs": 120,
   "run_groups": ["match-one", "or-more", "run-groups"],
   "run_spec": {
-    "name": "awseks",
+    "name": "azureaks",
     "run_type": "dll"
   },
   "steps": [{
-    "check_logical_name": "CreateDeployment",
-    "description": "This step attemps to deploy a container into a cluster.",
+    "check_logical_name": "CreateCluster",
+    "description": "This step attemps to create a Kubernetes Cluster in a given Azure Region. Note: this monitor has cleanup routines that run when other steps are complete. If you run this monitor through several Orchestrators, you may choose which Orchestrator(s) shall perform the cleanup.",
     "required": true,
+    "timeout_secs": 900
+  }, {
+    "check_logical_name": "CreateDeployment",
+    "description": "This step attemps to deploy a container in a cluster created in a previous step.",
+    "required": false,
     "timeout_secs": 900
   }, {
     "check_logical_name": "RemoveDeployment",
     "description": "This step attemps to remove the container deployed in a previous step.",
-    "required": true,
+    "required": false,
     "timeout_secs": 900
   }]
 }

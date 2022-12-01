@@ -1,0 +1,1 @@
+import{_ as s,c as o,o as n,e as a}from"./app.7f1ff25d.js";const C=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"monitors/parts/_5.md","lastUpdated":1669812755000}'),l={name:"monitors/parts/_5.md"},t=a("",2),p=[t];function e(c,r,D,y,i,F){return n(),o("div",null,p)}const A=s(l,[["render",e]]);export{C as __pageData,A as default};

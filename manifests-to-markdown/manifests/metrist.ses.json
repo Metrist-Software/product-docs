@@ -1,7 +1,7 @@
 {
   "manifest-version": "1.0.0-alpha",
   "logical-name": "ses",
-  "version": "0.1.0-alpha",
+  "version": "0.0.1-alpha",
   "name": "AWS SES",
   "description": "Monitor the observability of [AWS Simple Email Service](https://aws.amazon.com/ses/).",
   "environment-variables": {

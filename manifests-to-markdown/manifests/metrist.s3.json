@@ -1,7 +1,7 @@
 {
   "manifest-version": "1.0.0-alpha",
   "logical-name": "s3",
-  "version": "0.1.0-alpha",
+  "version": "0.0.1-alpha",
   "name": "AWS S3",
   "description": "Monitor the observability of [AWS Simple Storage Service (S3)](https://aws.amazon.com/s3/).",
   "environment-variables": {

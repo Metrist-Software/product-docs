@@ -1,5 +1,5 @@
 ---
-title: AWS SES
+title: AWS SQS
 ---
 
 # {{ $frontmatter.title }}
@@ -8,7 +8,7 @@ title: AWS SES
 
 Name
 
-: `ses`
+: `sqs`
 
 Version
 
@@ -16,7 +16,7 @@ Version
 
 Description
 
-: Monitor the observability of [AWS Simple Email Service](https://aws.amazon.com/ses/).
+: Monitor the observability of [AWS Simple Queue Service](https://aws.amazon.com/sqs/).
 
 : &nbsp;
 
@@ -37,11 +37,8 @@ METRIST_AWS_ACCESS_KEY_ID=""
 # (Required) Your AWS Secret Access Key.
 METRIST_AWS_SECRET_ACCESS_KEY=""
 
-# (Required) An email address.
-METRIST_FROM_EMAIL=""
-
-# (Required) An email address.
-METRIST_TO_EMAIL=""
+# (Required) The SQS Queue url to which messages will be written or read.
+METRIST_QUEUE_URL=""
 ```
 
 <!--@include: /parts/tips_env-vars.md -->
@@ -52,17 +49,22 @@ METRIST_TO_EMAIL=""
 
 ```json
 {
-  "monitor_logical_name": "ses",
+  "monitor_logical_name": "sqs",
   "interval_secs": 120,
   "run_groups": ["match-one", "or-more", "run-groups"],
   "run_spec": {
-    "name": "ses",
+    "name": "sqs",
     "run_type": "dll"
   },
   "steps": [{
-    "check_logical_name": "SendEmail",
-    "description": "This step attemps to send a message via SES.",
+    "check_logical_name": "WriteMessage",
+    "description": "This step attemps to write a message to a queue.",
     "required": true,
+    "timeout_secs": 900
+  }, {
+    "check_logical_name": "ReadMessage",
+    "description": "This step attemps to retrieve a message created in a previous step.",
+    "required": false,
     "timeout_secs": 900
   }]
 }

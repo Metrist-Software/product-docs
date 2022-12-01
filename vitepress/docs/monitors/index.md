@@ -29,7 +29,7 @@ We publish the following library of monitors that we use ourselves and make avai
 * [kinesis](/monitors/metrist_kinesis) — AWS Kinesis
 * [s3](/monitors/metrist_s3) — AWS S3
 * [ses](/monitors/metrist_ses) — AWS SES
-* `sqs` — AWS SQS
+* [sqs](/monitors/metrist_sqs) — AWS SQS
 
 #### Azure
 

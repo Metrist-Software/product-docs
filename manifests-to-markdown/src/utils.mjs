@@ -70,7 +70,7 @@ export const maybeMultiLineTransform = (manifest, keyname) => {
         case 'environment-variables': {
           const newLines = [`\`\`\`\sh`]
           Object.keys(thisContent).forEach((item) => {
-            newLines.push(`\n# ${thisContent[item].required && '(Required)' } ${thisContent[item].description}\n${item}=""\n`)
+            newLines.push(`\n# ${thisContent[item].required ? `(Required)` : `(Not required)`} ${thisContent[item].description}\n${item}=""\n`)
           })
           newLines.push(`\`\`\`\n\n`)
           js_beautify(JSON.stringify(thisContent), beautifulOptions)

@@ -37,7 +37,7 @@ METRIST_AWSRDSPERSISTENT_ADDRESS=""
 # (Required) Name of your database.
 METRIST_AWSRDSPERSISTENT_DBNAME=""
 
-# false Use postgres or mysql. If undefined, the monitor will default to mysql. [Contact us to support other engines.](https://metrist.io/contact/)
+# (Not required) Use 'postgres' or 'mysql'. If undefined, the monitor will default to mysql. [Contact us to support other engines.](https://metrist.io/contact/)
 METRIST_AWSRDSPERSISTENT_ENGINE=""
 
 # (Required) Password to access your database.

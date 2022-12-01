@@ -14,7 +14,7 @@
       "required": true
     },
     "METRIST_AWSRDSPERSISTENT_ENGINE": {
-      "description": "Use postgres or mysql. If undefined, the monitor will default to mysql. [Contact us to support other engines.](https://metrist.io/contact/)",
+      "description": "Use 'postgres' or 'mysql'. If undefined, the monitor will default to mysql. [Contact us to support other engines.](https://metrist.io/contact/)",
       "required": false
     },
     "METRIST_AWSRDSPERSISTENT_PASSWORD": {

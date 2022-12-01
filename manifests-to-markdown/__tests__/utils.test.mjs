@@ -220,7 +220,7 @@ describe(`line transformations`, () => {
         'environment-variables': {
           'METRIST_ENV_VAR1': {
             'description': `A description of this var.`,
-            'required': true
+            'required': false
           },
           'METRIST_ENV_VAR2': {
             'description': `A description of this var.`,
@@ -230,6 +230,7 @@ describe(`line transformations`, () => {
       }
       const result = maybeMultiLineTransform(partialManifest, `environment-variables`)
       expect(result).toContain(`# (Required)`)
+      expect(result).toContain(`# (Not required)`)
     })
 
   })

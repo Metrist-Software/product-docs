@@ -1,0 +1,68 @@
+{
+  "manifest-version": "1.0.0-alpha",
+  "logical-name": "awsroute53",
+  "version": "0.1.0-beta",
+  "name": "AWS Route53",
+  "description": "Monitor the observability of [AWS Route53 service](https://aws.amazon.com/route53/).",
+  "environment-variables": {
+    "METRIST_AWS_ACCESS_KEY_ID": {
+      "description": "Your AWS Access Key Id.",
+      "required": true
+    },
+    "METRIST_AWS_SECRET_ACCESS_KEY": {
+      "description": "Your AWS Secret Access Key.",
+      "required": true
+    },
+    "METRIST_HOSTED_ZONE_ID": {
+      "description": "The ID of one of your hosted zones.",
+      "required": true
+    },
+    "METRIST_HOSTED_ZONE_NAME": {
+      "description": "The hosted zone name associated with the given zone ID.",
+      "required": true
+    },
+    "METRIST_HOSTED_ZONE_NS": {
+      "description": "One or more (as a comma-separated list) name servers associated with the given zone ID.",
+      "required": true
+    },
+    "METRIST_PERSISTENT_RECORD_NAME": {
+      "description": "The name of an existing DNS record to query.",
+      "required": true
+    }
+  },
+  "monitor-config": {
+    "monitor_logical_name": "awsroute53",
+    "interval_secs": 120,
+    "run_groups": ["match-one", "or-more", "run-groups"],
+    "run_spec": {
+      "name": "awsroute53",
+      "run_type": "exe"
+    },
+    "steps": [
+      {
+        "check_logical_name": "QueryExistingDNSRecord",
+        "description": "This step attemps to query an existing record on Route53 via DNS Lookup.",
+        "required": true,
+        "timeout_secs": 900
+      },
+      {
+        "check_logical_name": "QueryExistingDNSRecordAPI",
+        "description": "This step attemps to query an existing DNS record on Route53 via the AWS SDK for JavaScript v3.",
+        "required": true,
+        "timeout_secs": 900
+      },
+      {
+        "check_logical_name": "CreateDNSRecord",
+        "description": "This step attemps to create a DNS A record on Route53 via the AWS SDK for JavaScript v3.",
+        "required": false,
+        "timeout_secs": 900
+      },
+      {
+        "check_logical_name": "RemoveDNSRecord",
+        "description": "This step attemps to remove a DNS A Record on Route53 via the AWS SDK for JavaScript v3.",
+        "required": true,
+        "timeout_secs": 900
+      }
+    ]
+  }
+}

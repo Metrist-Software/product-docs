@@ -15,7 +15,10 @@ export default defineConfig({
       pattern: 'https://github.com/Metrist-Software/product-docs/tree/main/vitepress/docs/:path',
       text: 'Edit this page on GitHub',
 		},
-		logo: '/metrist-logo.svg',
+		logo: {
+      light: '/metrist-logo-light.svg',
+      dark: '/metrist-logo-dark.svg'
+    },
 		footer: {
 			// message: 'Released under the MIT License.',
       copyright: 'Copyright © 2021-present Metrist Inc.',

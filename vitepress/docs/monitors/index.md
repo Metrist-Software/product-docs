@@ -27,7 +27,7 @@ We publish the following library of monitors that we use ourselves and make avai
 * [awsrds](/monitors/metrist_awsrds) — AWS RDS
 * [awsroute53](/monitors/metrist_awsroute53) — AWS Route53
 * [kinesis](/monitors/metrist_kinesis) — AWS Kinesis
-* `s3` — AWS S3
+* [s3](/monitors/metrist_s3) — AWS S3
 * `ses` — AWS SES
 * `sqs` — AWS SQS
 

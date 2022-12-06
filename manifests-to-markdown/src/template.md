@@ -30,7 +30,7 @@ Description
 <!--@include: /parts/_3.md-->
 
 
-[|'environment-variables && <!--@include: /parts/tips_env-vars.md -->|]
+[|'environment_variables && <!--@include: /parts/tips_env-vars.md -->|]
 
 
 <!--@include: /parts/_4.md-->

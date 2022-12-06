@@ -187,9 +187,18 @@ describe(`line transformations`, () => {
       expect(transformLine(`This [|'matches, so |]was be replaced.`, { 'matches, so ': `` })).toBe(`This was be replaced.`)
     })
 
-    it(`removes a handlebar expressions that has no matching key in the manifest`, () => {
-      const originalLine = `This [|'expression matches the regex, but the json doesn't have data, so this |]will be removed from output.`
-      expect(transformLine(originalLine, { but: 'no matching key' })).toBe(`This will be removed from output.`)
+    describe(`removes a handlebar expression`, () => {
+
+      it(`that has no matching key in the manifest`, () => {
+        const originalLine = `This [|'expression matches the regex, but the json doesn't have data, so this |]will be removed from output.`
+        expect(transformLine(originalLine, { but: 'no matching key' })).toBe(`This will be removed from output.`)
+      })
+
+      it(`unless it's 'monitor_config' (this hacky exception should be temporary)`, () => {
+        const originalLine = `[|'monitor_config|]`
+        expect(transformLine(originalLine, { logical_name: 'a name', runtime_type: `a type`, steps: [] })).toContain(`"monitor_logical_name"`)
+      })
+
     })
 
     describe(`operators: &&`, () => {
@@ -233,6 +242,26 @@ describe(`line transformations`, () => {
       const result = maybeMultiLineTransform(partialManifest, `environment_variables`)
       expect(result).toContain(`# (Required)`)
       expect(result).toContain(`# (Not required)`)
+    })
+
+    it(`handle 'monitor_config' item with special treatment`, () => {
+      const partialManifest = {
+        logical_name: `myawsomemonitor`,
+        runtime_type: `dll`,
+        steps: [
+          {
+            description: `Help text to describe this step.`,
+            logical_name: `PingSomething`,
+            recommended_timeout_seconds: 900
+          },
+          {
+            logical_name: `CreateSomethingLikeADatabase`,
+            recommended_timeout_seconds: 900
+          }
+        ]
+      }
+      const result = maybeMultiLineTransform(partialManifest, `monitor_config`)
+      expect(result).toContain(`"monitor_logical_name": "myawsomemonitor"`)
     })
 
   })

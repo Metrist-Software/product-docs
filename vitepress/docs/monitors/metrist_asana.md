@@ -6,17 +6,21 @@ title: Asana
 
 ## Monitor Specs
 
+Description
+
+: Monitor the observability of [Asana’s API](https://developers.asana.com/docs).
+
 Name
 
 : `asana`
 
+Publisher
+
+: Metrist
+
 Version
 
 : 0.1.0-beta
-
-Description
-
-: Monitor the observability of [Asana’s API](https://developers.asana.com/docs).
 
 : &nbsp;
 
@@ -43,16 +47,19 @@ Description
   "run_groups": ["match-one", "or-more", "run-groups"],
   "run_spec": {
     "name": "asana",
-    "run_type": "dll"
-  },
-  "steps": [{
-    "check_logical_name": "Ping",
-    "description": "This step attempts to ping Asana’s public API.",
-    "required": true,
-    "timeout_secs": 900
-  }]
+    "run_type": "dll",
+  }
+  "steps": [
+    {
+      "check_logical_name": "Ping",
+      "description": "This step attempts to ping Asana’s public API.",
+    },
+  ]
 }
 ```
+
+
+
 
 Convert your monitor config to a JSON string, get your Metrist API token, and use the curl request below to register your monitor:
 

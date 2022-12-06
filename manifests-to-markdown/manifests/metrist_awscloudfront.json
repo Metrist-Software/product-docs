@@ -1,0 +1,79 @@
+{
+  "description": "Monitor the observability of a specific [AWS Cloudfront distribution](https://aws.amazon.com/cloudfront/).",
+  "environment_variables": [
+    {
+      "description": "Your AWS Access Key Id.",
+      "name": "METRIST_AWS_ACCESS_KEY_ID",
+      "required": true
+    },
+    {
+      "description": "Any valid AWS Region name.",
+      "name": "METRIST_AWS_REGION",
+      "required": true
+    },
+    {
+      "description": "Your AWS Secret Access Key.",
+      "name": "METRIST_AWS_SECRET_ACCESS_KEY",
+      "required": true
+    },
+    {
+      "description": "The name of your S3 bucket.",
+      "name": "METRIST_BUCKET",
+      "required": true
+    },
+    {
+      "description": "The CloudFront domain name needed when linking to your objects.",
+      "name": "METRIST_DISTRIBUTION_DOMAIN_NAME",
+      "required": true
+    },
+    {
+      "description": "The id assigned to the distribution.",
+      "name": "METRIST_DISTRIBUTION_ID",
+      "required": true
+    }
+  ],
+  "has_cleanup_tasks": false,
+  "logical_name": "awscloudfront",
+  "name": "AWS CloudFront",
+  "publisher": "Metrist",
+  "repository": "https://docs.metrist.io/monitors/",
+  "runtime_type": "dll",
+  "steps": [
+    {
+      "logical_name": "PublishFile",
+      "description": "This step attemps to asynchronously put a file in an S3 bucket.",
+      "recommended_timeout_seconds": 900
+    },
+    {
+      "logical_name": "GetNewFile",
+      "description": "This step attemps to retrieve the file created in the previous step.",
+      "recommended_timeout_seconds": 900
+    },
+    {
+      "logical_name": "UpdateFile",
+      "description": "This step attemps to update the file created in the previous step.",
+      "recommended_timeout_seconds": 900
+    },
+    {
+      "logical_name": "PurgeFile",
+      "description": "This step attemps to purge items from the distribution.",
+      "recommended_timeout_seconds": 900
+    },
+    {
+      "logical_name": "GetUpdatedFile",
+      "description": "This step attemps to retrieve a file updated in a previous step.",
+      "recommended_timeout_seconds": 900
+    },
+    {
+      "logical_name": "DeleteFile",
+      "description": "This step attemps to delete the file created in a previous step.",
+      "recommended_timeout_seconds": 900
+    },
+    {
+      "logical_name": "WaitForDeletionPropagation",
+      "description": "This step attemps to confirm the DeleteFile step was successful.",
+      "recommended_timeout_seconds": 900
+    }
+  ],
+  "version": "0.1.0-beta"
+}

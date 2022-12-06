@@ -1,0 +1,17 @@
+{
+  "description": "Monitor the observability of [Asana’s API](https://developers.asana.com/docs).",
+  "has_cleanup_tasks": false,
+  "logical_name": "asana",
+  "name": "Asana",
+  "publisher": "Metrist",
+  "repository": "https://docs.metrist.io/monitors/",
+  "runtime_type": "dll",
+  "steps": [
+    {
+      "logical_name": "Ping",
+      "description": "This step attempts to ping Asana’s public API.",
+      "recommended_timeout_seconds": 900
+    }
+  ],
+  "version": "0.1.0-beta"
+}

@@ -6,17 +6,21 @@ title: \[|'name|]
 
 ## Monitor Specs
 
+Description
+
+: [|'description|]
+
 Name
 
-: `[|'logical-name|]`
+: `[|'logical_name|]`
+
+Publisher
+
+: [|'publisher|]
 
 Version
 
 : [|'version|]
-
-Description
-
-: [|'description|]
 
 : &nbsp;
 
@@ -36,9 +40,8 @@ Description
 <!--@include: /parts/_4.md-->
 
 
-```json
-[|'monitor-config|]
-```
+[|'monitor_config|]
+
 
 Convert your monitor config to a JSON string, get your Metrist API token, and use the curl request below to register your monitor:
 

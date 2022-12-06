@@ -60,18 +60,42 @@ export const maybeMakeTmpDirectory = async (tmpPath) => {
 }
 
 export const maybeMultiLineTransform = (manifest, keyname) => {
+  manifest = { ...manifest, monitor_config: {}}
   const beautifulOptions = {
     indent_size: 2
   }
   const thisContent = manifest[keyname]
   switch (typeof(thisContent)) {
-      case 'object':
-      switch (keyname) {
+    case 'object':
+        switch (keyname) {
         case 'environment_variables': {
           const newLines = [`\`\`\`\sh`]
           thisContent.forEach((item) => {
             newLines.push(`\n# ${item.required ? `(Required)` : `(Not required)`} ${item.description}\n${item.name}=""\n`)
           })
+          newLines.push(`\`\`\`\n\n`)
+          js_beautify(JSON.stringify(thisContent), beautifulOptions)
+          return newLines.join(``)
+        }
+        case 'monitor_config': {
+          const newLines = [`\`\`\`\json\n`]
+          newLines.push(`{\n`)
+          newLines.push(`  "monitor_logical_name": "${manifest.logical_name}",\n`)
+          newLines.push(`  "interval_secs": 120,\n`)
+          newLines.push(`  "run_groups": ["match-one", "or-more", "run-groups"],\n`)
+          newLines.push(`  "run_spec": {\n`)
+          newLines.push(`    "name": "${manifest.logical_name}",\n`)
+          newLines.push(`    "run_type": "${manifest.runtime_type}",\n`)
+          newLines.push(`  }\n`)
+          newLines.push(`  "steps": [\n`)
+          manifest.steps.forEach((step) => {
+            newLines.push(`    {\n`)
+            newLines.push(`      "check_logical_name": "${step[`logical_name`]}",\n`)
+            Object.hasOwn(step, `description`) ? newLines.push(`      "description": "${step[`description`]}",\n`) : undefined
+            newLines.push(`    },\n`)
+          })
+          newLines.push(`  ]\n`)
+          newLines.push(`}\n`)
           newLines.push(`\`\`\`\n\n`)
           js_beautify(JSON.stringify(thisContent), beautifulOptions)
           return newLines.join(``)
@@ -114,7 +138,7 @@ export const transformLine = (line, manifest) => {
       const operatorRegex = RegExp(/(\s+&&\s+)/gm)
 
       if (!operatorRegex.test(tokenContent)) {
-        const ifTokenInManifest = !Object.hasOwn(manifest, tokenContent) ? null : maybeMultiLineTransform(manifest, tokenContent)
+        const ifTokenInManifest = (tokenContent !== `monitor_config` && !Object.hasOwn(manifest, tokenContent)) ? null : maybeMultiLineTransform(manifest, tokenContent)
         return ifTokenInManifest
 
       } else {

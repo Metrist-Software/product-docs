@@ -6,17 +6,21 @@ title: AWS CloudFront
 
 ## Monitor Specs
 
+Description
+
+: Monitor the observability of a specific [AWS Cloudfront distribution](https://aws.amazon.com/cloudfront/).
+
 Name
 
 : `awscloudfront`
 
+Publisher
+
+: Metrist
+
 Version
 
 : 0.1.0-beta
-
-Description
-
-: Monitor the observability of a specific [AWS Cloudfront distribution](https://aws.amazon.com/cloudfront/).
 
 : &nbsp;
 
@@ -63,46 +67,43 @@ METRIST_DISTRIBUTION_ID=""
   "run_groups": ["match-one", "or-more", "run-groups"],
   "run_spec": {
     "name": "awscloudfront",
-    "run_type": "dll"
-  },
-  "steps": [{
-    "check_logical_name": "PublishFile",
-    "description": "This step attemps to asynchronously put a file in an S3 bucket.",
-    "required": true,
-    "timeout_secs": 900
-  }, {
-    "check_logical_name": "GetNewFile",
-    "description": "This step attemps to retrieve the file created in the previous step.",
-    "required": true,
-    "timeout_secs": 900
-  }, {
-    "check_logical_name": "UpdateFile",
-    "description": "This step attemps to update the file created in the previous step.",
-    "required": false,
-    "timeout_secs": 900
-  }, {
-    "check_logical_name": "PurgeFile",
-    "description": "This step attemps to purge items from the distribution.",
-    "required": true,
-    "timeout_secs": 900
-  }, {
-    "check_logical_name": "GetUpdatedFile",
-    "description": "This step attemps to retrieve a file updated in a previous step.",
-    "required": false,
-    "timeout_secs": 900
-  }, {
-    "check_logical_name": "DeleteFile",
-    "description": "This step attemps to delete the file created in a previous step.",
-    "required": true,
-    "timeout_secs": 900
-  }, {
-    "check_logical_name": "WaitForDeletionPropagation",
-    "description": "This step attemps to confirm the DeleteFile step was successful.",
-    "required": false,
-    "timeout_secs": 900
-  }]
+    "run_type": "dll",
+  }
+  "steps": [
+    {
+      "check_logical_name": "PublishFile",
+      "description": "This step attemps to asynchronously put a file in an S3 bucket.",
+    },
+    {
+      "check_logical_name": "GetNewFile",
+      "description": "This step attemps to retrieve the file created in the previous step.",
+    },
+    {
+      "check_logical_name": "UpdateFile",
+      "description": "This step attemps to update the file created in the previous step.",
+    },
+    {
+      "check_logical_name": "PurgeFile",
+      "description": "This step attemps to purge items from the distribution.",
+    },
+    {
+      "check_logical_name": "GetUpdatedFile",
+      "description": "This step attemps to retrieve a file updated in a previous step.",
+    },
+    {
+      "check_logical_name": "DeleteFile",
+      "description": "This step attemps to delete the file created in a previous step.",
+    },
+    {
+      "check_logical_name": "WaitForDeletionPropagation",
+      "description": "This step attemps to confirm the DeleteFile step was successful.",
+    },
+  ]
 }
 ```
+
+
+
 
 Convert your monitor config to a JSON string, get your Metrist API token, and use the curl request below to register your monitor:
 

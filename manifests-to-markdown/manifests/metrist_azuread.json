@@ -1,0 +1,54 @@
+{
+  "description": "Monitor the observability of [Azure Active Directory](https://azure.microsoft.com/products/active-directory).",
+  "environment_variables": [
+    {
+      "description": "The domain name associated with users in your Active Directory. Example: metrist.io.",
+      "name": "METRIST_DOMAIN",
+      "required": true
+    },
+    {
+      "description": "The client ID is the unique Application (client) ID assigned to your app by Azure AD when the app was registered. You can find the Application (Client) ID in your Azure subscription by Azure AD => Enterprise applications => Application ID.",
+      "name": "METRIST_CLIENT_ID",
+      "required": true
+    },
+    {
+      "description": "Secret string previously shared with AAD at application registration to prove the identity of the application (the client) requesting the tokens.",
+      "name": "METRIST_CLIENT_SECRET",
+      "required": true
+    },
+    {
+      "description": "Tenant ID of the Azure AD tenant or a domain associated with this Azure AD tenant, in order to sign-in a user of a specific organization only.",
+      "name": "METRIST_TENANT_ID",
+      "required": true
+    }
+  ],
+  "has_cleanup_tasks": true,
+  "logical_name": "azuread",
+  "name": "Azure Active Directory",
+  "publisher": "Metrist",
+  "repository": "https://docs.metrist.io/monitors/",
+  "runtime_type": "dll",
+  "steps": [
+    {
+      "logical_name": "Authenticate",
+      "description": "This step attemps to retrieve an authentication token for a Client/Application.",
+      "recommended_timeout_seconds": 900
+    },
+    {
+      "logical_name": "WriteUser",
+      "description": "This step attemps to add a new user, randomly named, to the given domain.",
+      "recommended_timeout_seconds": 900
+    },
+    {
+      "logical_name": "ReadUser",
+      "description": "This step attemps to retrieve the user account created in a previous step.",
+      "recommended_timeout_seconds": 900
+    },
+    {
+      "logical_name": "DeleteUser",
+      "description": "This step attemps to delete the user account created in a previous step.",
+      "recommended_timeout_seconds": 900
+    }
+  ],
+  "version": "0.1.0-beta"
+}

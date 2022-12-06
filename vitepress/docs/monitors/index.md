@@ -34,7 +34,7 @@ We publish the following library of monitors that we use ourselves and make avai
 #### Azure
 
 * [azureaks](/monitors/metrist_azureaks) — Azure AKS
-* `azuread` — Azure Active Directory
+* [azuread](/monitors/metrist_azuread) — Azure Active Directory
 * `azureappservice` — Azure App Service
 * `azureblob` — Azure Blob Storage
 * `azurecdn` — Azure CDN

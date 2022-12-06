@@ -139,7 +139,7 @@ describe(`getAllDocsOfType(type, path)`, () => {
 describe(`markdownFileName`, () => {
 
   it.concurrent(`returns a better filename format, kebab-case: <producer-name>_<monitor-logical-name>.md`, () => {
-    expect(markdownFileName(`Many Paths/then.a file.MD`)).toBe(`then_a-file.md`)
+    expect(markdownFileName(`Many Paths/then.a fileName.MD`, `Producer Name`)).toBe(`producer-name_then-a-file-name.md`)
   })
 
 })
@@ -215,20 +215,22 @@ describe(`line transformations`, () => {
       expect(result).toContain(`\n`)
     })
 
-    it(`handle 'environment-variables' item with special treatment`, () => {
+    it(`handle 'environment_variables' item with special treatment`, () => {
       const partialManifest = {
-        'environment-variables': {
-          'METRIST_ENV_VAR1': {
+        'environment_variables': [
+          {
             'description': `A description of this var.`,
+            'name': 'METRIST_ENV_VAR1',
             'required': false
           },
-          'METRIST_ENV_VAR2': {
+          {
             'description': `A description of this var.`,
+            'name': 'METRIST_ENV_VAR2',
             'required': true
           }
-        }
+        ]
       }
-      const result = maybeMultiLineTransform(partialManifest, `environment-variables`)
+      const result = maybeMultiLineTransform(partialManifest, `environment_variables`)
       expect(result).toContain(`# (Required)`)
       expect(result).toContain(`# (Not required)`)
     })
@@ -243,24 +245,24 @@ describe(`writeMarkdownDoc`, () => {
     const result = await writeMarkdownDoc(
       `${mocksPath}/tmp_directory/new-from-text.md`,
       `mock data`
-    )
-    expect(result).toBe(undefined)
-  })
+      )
+      expect(result).toBe(undefined)
+    })
 
-  it.concurrent(`writes a file from array`, async () => {
-    const result = await writeMarkdownDoc(
-      `${mocksPath}/tmp_directory/new-from-array.md`,
-      [
-        `mock data line 1`,
-        `\n`,
-        `mock data line 2`
-      ]
-    )
-    expect(result).toBe(undefined)
-  })
+    it.concurrent(`writes a file from array`, async () => {
+      const result = await writeMarkdownDoc(
+        `${mocksPath}/tmp_directory/new-from-array.md`,
+        [
+          `mock data line 1`,
+          `\n`,
+          `mock data line 2`
+        ]
+        )
+        expect(result).toBe(undefined)
+      })
 
-  it.concurrent(`throws error if directory doesn't exist`, async () => {
-    await expect(writeMarkdownDoc(`${mocksPath}/nonexistent path/new.md`, `mock data`)).rejects.toThrowError(`Could not write file. Directory does not exist: ${mocksPath}/nonexistent path/new.md`)
-  })
+      it.concurrent(`throws error if directory doesn't exist`, async () => {
+        await expect(writeMarkdownDoc(`${mocksPath}/nonexistent path/new.md`, `mock data`)).rejects.toThrowError(`Could not write file. Directory does not exist: ${mocksPath}/nonexistent path/new.md`)
+      })
 
-})
+    })

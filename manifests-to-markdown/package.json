@@ -13,7 +13,7 @@
     "watch:dev": "npm-watch",
     "watch:vitepress-dev": "node src/watcher.mjs",
     "emit:all": "node src/emit-all.mjs",
-    "test": "vitest --reporter verbose"
+    "test": "vitest --reporter dot"
   },
   "version": "1.0.0",
   "watch": {

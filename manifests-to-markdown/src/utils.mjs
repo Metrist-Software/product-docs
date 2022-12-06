@@ -32,14 +32,14 @@ export const getSubDirectories = async (path) => {
   }
 }
 
-export const markdownFileName = (path) => {
+export const markdownFileName = (path, producername) => {
   const pathParts = path.split(`/`)
   const fileName = pathParts.pop()
   const kebabCaseFileNameParts = kebabCase(fileName).split(`-`)
   const fileExtension = kebabCaseFileNameParts.pop()
-  const producerName = kebabCase(kebabCaseFileNameParts.shift())
-  const monitorLogicalName = kebabCaseFileNameParts.join(`-`)
-  return `${producerName}_${monitorLogicalName}.${fileExtension}`
+  const kebabCaseProducerName = kebabCase(producername)
+  const newFileName = `${kebabCaseProducerName}_${kebabCaseFileNameParts.join(`-`)}.${fileExtension}`
+  return newFileName
 }
 
 export const maybeDeleteFile = async (path) => {
@@ -67,10 +67,10 @@ export const maybeMultiLineTransform = (manifest, keyname) => {
   switch (typeof(thisContent)) {
       case 'object':
       switch (keyname) {
-        case 'environment-variables': {
+        case 'environment_variables': {
           const newLines = [`\`\`\`\sh`]
-          Object.keys(thisContent).forEach((item) => {
-            newLines.push(`\n# ${thisContent[item].required ? `(Required)` : `(Not required)`} ${thisContent[item].description}\n${item}=""\n`)
+          thisContent.forEach((item) => {
+            newLines.push(`\n# ${item.required ? `(Required)` : `(Not required)`} ${item.description}\n${item.name}=""\n`)
           })
           newLines.push(`\`\`\`\n\n`)
           js_beautify(JSON.stringify(thisContent), beautifulOptions)

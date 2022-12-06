@@ -138,8 +138,8 @@ describe(`getAllDocsOfType(type, path)`, () => {
 
 describe(`markdownFileName`, () => {
 
-  it.concurrent(`returns a better filename format, kebab-case: <producer-name>_<monitor-logical-name>.md`, () => {
-    expect(markdownFileName(`Many Paths/then.a fileName.MD`, `Producer Name`)).toBe(`producer-name_then-a-file-name.md`)
+  it.concurrent(`expects a format: (kebab-case) <producer-name>_<monitor-logical-name>.json, return .md`, () => {
+    expect(markdownFileName(`Many Paths/then_a-filename.MD`)).toBe(`then_a-filename.md`)
   })
 
 })
@@ -247,22 +247,22 @@ describe(`writeMarkdownDoc`, () => {
       `mock data`
       )
       expect(result).toBe(undefined)
-    })
+  })
 
-    it.concurrent(`writes a file from array`, async () => {
-      const result = await writeMarkdownDoc(
-        `${mocksPath}/tmp_directory/new-from-array.md`,
-        [
-          `mock data line 1`,
-          `\n`,
-          `mock data line 2`
-        ]
-        )
-        expect(result).toBe(undefined)
-      })
+  it.concurrent(`writes a file from array`, async () => {
+    const result = await writeMarkdownDoc(
+      `${mocksPath}/tmp_directory/new-from-array.md`,
+      [
+        `mock data line 1`,
+        `\n`,
+        `mock data line 2`
+      ]
+      )
+      expect(result).toBe(undefined)
+  })
 
-      it.concurrent(`throws error if directory doesn't exist`, async () => {
-        await expect(writeMarkdownDoc(`${mocksPath}/nonexistent path/new.md`, `mock data`)).rejects.toThrowError(`Could not write file. Directory does not exist: ${mocksPath}/nonexistent path/new.md`)
-      })
+  it.concurrent(`throws error if directory doesn't exist`, async () => {
+    await expect(writeMarkdownDoc(`${mocksPath}/nonexistent path/new.md`, `mock data`)).rejects.toThrowError(`Could not write file. Directory does not exist: ${mocksPath}/nonexistent path/new.md`)
+  })
 
-    })
+})

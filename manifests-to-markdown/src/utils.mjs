@@ -32,12 +32,12 @@ export const getSubDirectories = async (path) => {
   }
 }
 
-export const markdownFileName = (path, producername) => {
+export const markdownFileName = (path) => {
   const pathParts = path.split(`/`)
   const fileName = pathParts.pop()
-  const kebabCaseFileNameParts = kebabCase(fileName).split(`-`)
+  const kebabCaseProducerName = kebabCase(fileName.split(`_`).shift())
+  const kebabCaseFileNameParts = kebabCase(fileName.split(`_`).pop()).split(`-`)
   const fileExtension = kebabCaseFileNameParts.pop()
-  const kebabCaseProducerName = kebabCase(producername)
   const newFileName = `${kebabCaseProducerName}_${kebabCaseFileNameParts.join(`-`)}.${fileExtension}`
   return newFileName
 }

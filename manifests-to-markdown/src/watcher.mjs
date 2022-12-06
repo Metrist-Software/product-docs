@@ -38,20 +38,20 @@ const startWatcher = async (callback) => {
 
 const eventsListener = async (event) => {
   console.log(`Handle ${event.eventType} event on ${event.filename}`)
-  const markdownFilePath = joinPath(config.__vitepressMonitorsDirectory, markdownFileName(joinPath(config.__vitepressMonitorsDirectory,event.filename.replace(/json/gi, 'md'))))
+  // const markdownFilePath = joinPath(config.__vitepressMonitorsDirectory, markdownFileName(joinPath(config.__vitepressMonitorsDirectory,event.filename.replace(/json/gi, 'md'))))
   if(
     event.eventType === `rename` ||
     event.eventType === `change`
   ) {
     try {
-      const jsonContent = await readFileToString(joinPath(config.__manifestsDirectory, event.filename))
-      console.log(`Parsing JSON for ${event.filename}`)
-      const manifestData = JSON.parse(jsonContent)
-      const newDocContent = templateAsArray.map((line) => {
-        return transformLine(line, manifestData)
-      })
-      console.log(`Writing to ${markdownFilePath}`)
-      await writeMarkdownDoc(markdownFilePath, newDocContent.join(`\n`))
+//       const jsonContent = await readFileToString(joinPath(config.__manifestsDirectory, event.filename))
+//       console.log(`Parsing JSON for ${event.filename}`)
+//       const manifestData = JSON.parse(jsonContent)
+//       const newDocContent = templateAsArray.map((line) => {
+//         return transformLine(line, manifestData)
+//       })
+//       console.log(`Writing to ${markdownFilePath}`)
+//       await writeMarkdownDoc(markdownFilePath, newDocContent.join(`\n`))
     } catch (err) {
       console.log(`Rename event on ${event.filename} looks like a delete`)
       maybeDeleteFile(markdownFilePath)

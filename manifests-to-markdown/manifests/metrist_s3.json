@@ -1,0 +1,49 @@
+{
+  "description": "Monitor the observability of [AWS Simple Storage Service (S3)](https://aws.amazon.com/s3/).",
+  "environment_variables": [
+    {
+      "description": "Your AWS Access Key Id.",
+      "name": "METRIST_AWS_ACCESS_KEY_ID",
+      "required": true
+    },
+    {
+      "description": "Your AWS Secret Access Key.",
+      "name": "METRIST_AWS_SECRET_ACCESS_KEY",
+      "required": true
+    }
+  ],
+  "has_cleanup_tasks": true,
+  "logical_name": "s3",
+  "name": "AWS S3",
+  "publisher": "Metrist",
+  "repository": "https://docs.metrist.io/monitors/",
+  "runtime_type": "dll",
+  "steps": [
+    {
+      "description": "This step attemps to put a bucket, randomly named.",
+      "logical_name": "PutBucket",
+      "recommended_timeout_seconds": 900
+    },
+    {
+      "description": "This step attemps to put an object in a bucket created in a previous step.",
+      "logical_name": "PutObject",
+      "recommended_timeout_seconds": 900
+    },
+    {
+      "description": "This step attemps to get an object placed in a previous step.",
+      "logical_name": "GetObject",
+      "recommended_timeout_seconds": 900
+    },
+    {
+      "description": "This step attemps to delete an object placed in a previous step.",
+      "logical_name": "DeleteObject",
+      "recommended_timeout_seconds": 900
+    },
+    {
+      "description": "This step attemps to delete a bucket put in a previous step.",
+      "logical_name": "DeleteBucket",
+      "recommended_timeout_seconds": 900
+    }
+  ],
+  "version": "0.1.0-beta"
+}

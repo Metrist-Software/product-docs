@@ -6,17 +6,21 @@ title: AWS RDS (MySQL)
 
 ## Monitor Specs
 
+Description
+
+: Monitor the observability of [AWS RDS service](https://aws.amazon.com/rds/).
+
 Name
 
 : `awsrds`
 
+Publisher
+
+: Metrist
+
 Version
 
 : 0.1.0-beta
-
-Description
-
-: Monitor the observability of [AWS RDS service](https://aws.amazon.com/rds/).
 
 : &nbsp;
 
@@ -57,26 +61,27 @@ METRIST_DB_SUBNET_GROUP_NAME=""
   "run_groups": ["match-one", "or-more", "run-groups"],
   "run_spec": {
     "name": "awsrds",
-    "run_type": "exe"
-  },
-  "steps": [{
-    "check_logical_name": "CreateInstance",
-    "description": "This step attemps to create a MySQL RDS instance.",
-    "required": true,
-    "timeout_secs": 900
-  }, {
-    "check_logical_name": "PingInstance",
-    "description": "This step attemps to ping the RDS instance created in a previous step.",
-    "required": true,
-    "timeout_secs": 900
-  }, {
-    "check_logical_name": "DestroyInstance",
-    "description": "This step attemps to destory the RDS instance created in a previous step.",
-    "required": false,
-    "timeout_secs": 900
-  }]
+    "run_type": "exe",
+  }
+  "steps": [
+    {
+      "check_logical_name": "CreateInstance",
+      "description": "This step attemps to create a MySQL RDS instance.",
+    },
+    {
+      "check_logical_name": "PingInstance",
+      "description": "This step attemps to ping the RDS instance created in a previous step.",
+    },
+    {
+      "check_logical_name": "DestroyInstance",
+      "description": "This step attemps to destory the RDS instance created in a previous step.",
+    },
+  ]
 }
 ```
+
+
+
 
 Convert your monitor config to a JSON string, get your Metrist API token, and use the curl request below to register your monitor:
 

@@ -6,17 +6,21 @@ title: AWS EKS
 
 ## Monitor Specs
 
+Description
+
+: Monitor the observability of [AWS Elastic Kubernetes Service](https://aws.amazon.com/eks/).
+
 Name
 
 : `awseks`
 
+Publisher
+
+: Metrist
+
 Version
 
-: 0.0.1-alpha
-
-Description
-
-: Monitor the observability of [AWS Elastic Kubernetes Service](https://aws.amazon.com/eks/).
+: 0.1.0-beta
 
 : &nbsp;
 
@@ -63,21 +67,23 @@ METRIST_AWS_EKS_CLUSTER_CERTIFICATE_AUTHORITY_DATA=""
   "run_groups": ["match-one", "or-more", "run-groups"],
   "run_spec": {
     "name": "awseks",
-    "run_type": "dll"
-  },
-  "steps": [{
-    "check_logical_name": "CreateDeployment",
-    "description": "This step attemps to deploy a container into a cluster.",
-    "required": true,
-    "timeout_secs": 900
-  }, {
-    "check_logical_name": "RemoveDeployment",
-    "description": "This step attemps to remove the container deployed in a previous step.",
-    "required": true,
-    "timeout_secs": 900
-  }]
+    "run_type": "dll",
+  }
+  "steps": [
+    {
+      "check_logical_name": "CreateDeployment",
+      "description": "This step attemps to deploy a container into a cluster.",
+    },
+    {
+      "check_logical_name": "RemoveDeployment",
+      "description": "This step attemps to remove the container deployed in a previous step.",
+    },
+  ]
 }
 ```
+
+
+
 
 Convert your monitor config to a JSON string, get your Metrist API token, and use the curl request below to register your monitor:
 

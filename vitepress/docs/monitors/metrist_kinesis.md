@@ -6,17 +6,21 @@ title: AWS Kinesis
 
 ## Monitor Specs
 
+Description
+
+: Monitor the observability of [Amazon Kinesis](https://aws.amazon.com/kinesis/).
+
 Name
 
 : `kinesis`
 
+Publisher
+
+: Metrist
+
 Version
 
 : 0.1.0-beta
-
-Description
-
-: Monitor the observability of [Amazon Kinesis](https://aws.amazon.com/kinesis/).
 
 : &nbsp;
 
@@ -57,21 +61,23 @@ METRIST_STREAM_NAME=""
   "run_groups": ["match-one", "or-more", "run-groups"],
   "run_spec": {
     "name": "kinesis",
-    "run_type": "dll"
-  },
-  "steps": [{
-    "check_logical_name": "WriteToStream",
-    "description": "This step attempts to write streaming data using the PutRecordRequest class.",
-    "required": true,
-    "timeout_secs": 900
-  }, {
-    "check_logical_name": "ReadFromStream",
-    "description": "This step attempts to read data from the stream created in a previous step.",
-    "required": true,
-    "timeout_secs": 900
-  }]
+    "run_type": "dll",
+  }
+  "steps": [
+    {
+      "check_logical_name": "WriteToStream",
+      "description": "This step attempts to write streaming data using the PutRecordRequest class.",
+    },
+    {
+      "check_logical_name": "ReadFromStream",
+      "description": "This step attempts to read data from the stream created in a previous step.",
+    },
+  ]
 }
 ```
+
+
+
 
 Convert your monitor config to a JSON string, get your Metrist API token, and use the curl request below to register your monitor:
 

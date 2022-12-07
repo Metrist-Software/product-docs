@@ -6,17 +6,21 @@ title: AWS EC2
 
 ## Monitor Specs
 
+Description
+
+: Monitor the observability of the [AWS EC2 service](https://aws.amazon.com/ec2/).
+
 Name
 
 : `ec2`
 
+Publisher
+
+: Metrist
+
 Version
 
 : 0.1.0-beta
-
-Description
-
-: Monitor the observability of the [AWS EC2 service](https://aws.amazon.com/ec2/).
 
 : &nbsp;
 
@@ -60,26 +64,27 @@ METRIST_PERSISTENT_INSTANCE_ID=""
   "run_groups": ["match-one", "or-more", "run-groups"],
   "run_spec": {
     "name": "ec2",
-    "run_type": "dll"
-  },
-  "steps": [{
-    "check_logical_name": "RunInstance",
-    "description": "This step attemps to launch an EC2 instance using the AMI for which you have permissions.",
-    "required": true,
-    "timeout_secs": 900
-  }, {
-    "check_logical_name": "TerminateInstance",
-    "description": "This step attemps to terminate the instance created in a previous step.",
-    "required": true,
-    "timeout_secs": 900
-  }, {
-    "check_logical_name": "DescribePersistentInstance",
-    "description": "This step attemps to retrieve description(s) of running instances.",
-    "required": false,
-    "timeout_secs": 900
-  }]
+    "run_type": "dll",
+  }
+  "steps": [
+    {
+      "check_logical_name": "RunInstance",
+      "description": "This step attemps to launch an EC2 instance using the AMI for which you have permissions.",
+    },
+    {
+      "check_logical_name": "TerminateInstance",
+      "description": "This step attemps to terminate the instance created in a previous step.",
+    },
+    {
+      "check_logical_name": "DescribePersistentInstance",
+      "description": "This step attemps to retrieve description(s) of running instances.",
+    },
+  ]
 }
 ```
+
+
+
 
 Convert your monitor config to a JSON string, get your Metrist API token, and use the curl request below to register your monitor:
 

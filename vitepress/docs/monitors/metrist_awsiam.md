@@ -1,22 +1,26 @@
 ---
-title: AWS Elastic Kubernetes Service
+title: AWS Identity and Access Management
 ---
 
 # {{ $frontmatter.title }}
 
 ## Monitor Specs
 
+Description
+
+: Monitor the observability of [AWS Identity and Access Management service](https://aws.amazon.com/iam/).
+
 Name
 
 : `awsiam`
 
+Publisher
+
+: Metrist
+
 Version
 
 : 0.1.0-beta
-
-Description
-
-: Monitor the observability of [AWS Identity and Access Management service](https://aws.amazon.com/iam/).
 
 : &nbsp;
 
@@ -57,51 +61,47 @@ METRIST_NAMESPACE=""
   "run_groups": ["match-one", "or-more", "run-groups"],
   "run_spec": {
     "name": "awsiam",
-    "run_type": "exe"
-  },
-  "steps": [{
-    "check_logical_name": "CreateUser",
-    "description": "This step attemps to create a user, randomly named.",
-    "required": true,
-    "timeout_secs": 900
-  }, {
-    "check_logical_name": "CreateGroup",
-    "description": "This step attemps to create a group, randomly named.",
-    "required": true,
-    "timeout_secs": 900
-  }, {
-    "check_logical_name": "AddUserToGroup",
-    "description": "This step attemps to add the newly created user to the newly created group.",
-    "required": true,
-    "timeout_secs": 900
-  }, {
-    "check_logical_name": "RemoveUserFromGroup",
-    "description": "This step attemps to remove the user from the group.",
-    "required": true,
-    "timeout_secs": 900
-  }, {
-    "check_logical_name": "DeleteGroup",
-    "description": "This step attemps to delete the group.",
-    "required": true,
-    "timeout_secs": 900
-  }, {
-    "check_logical_name": "AttachPolicy",
-    "description": "This step attemps to attach the user to the given policy arn.",
-    "required": true,
-    "timeout_secs": 900
-  }, {
-    "check_logical_name": "DetachPolicy",
-    "description": "This step attemps to detach the user from the given policy arn.",
-    "required": true,
-    "timeout_secs": 900
-  }, {
-    "check_logical_name": "DeleteUser",
-    "description": "This step attemps to delete the user created in an earlier step.",
-    "required": true,
-    "timeout_secs": 900
-  }]
+    "run_type": "exe",
+  }
+  "steps": [
+    {
+      "check_logical_name": "CreateUser",
+      "description": "This step attemps to create a user, randomly named.",
+    },
+    {
+      "check_logical_name": "CreateGroup",
+      "description": "This step attemps to create a group, randomly named.",
+    },
+    {
+      "check_logical_name": "AddUserToGroup",
+      "description": "This step attemps to add the newly created user to the newly created group.",
+    },
+    {
+      "check_logical_name": "RemoveUserFromGroup",
+      "description": "This step attemps to remove the user from the group.",
+    },
+    {
+      "check_logical_name": "DeleteGroup",
+      "description": "This step attemps to delete the group.",
+    },
+    {
+      "check_logical_name": "AttachPolicy",
+      "description": "This step attemps to attach the user to the given policy arn.",
+    },
+    {
+      "check_logical_name": "DetachPolicy",
+      "description": "This step attemps to detach the user from the given policy arn.",
+    },
+    {
+      "check_logical_name": "DeleteUser",
+      "description": "This step attemps to delete the user created in an earlier step.",
+    },
+  ]
 }
 ```
+
+
+
 
 Convert your monitor config to a JSON string, get your Metrist API token, and use the curl request below to register your monitor:
 

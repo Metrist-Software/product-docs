@@ -1,0 +1,54 @@
+{
+  "description": "Monitor the observability of [AWS ELB service](https://aws.amazon.com/elasticloadbalancing/).",
+  "environment_variables": [
+    {
+      "description": "Your AWS Access Key Id.",
+      "name": "METRIST_AWS_ACCESS_KEY_ID",
+      "required": true
+    },
+    {
+      "description": "The id assigned to your ECS cluster.",
+      "name": "METRIST_AWS_ECS_CLUSTER_ID",
+      "required": true
+    },
+    {
+      "description": "The service name of your container service.",
+      "name": "METRIST_AWS_ECS_SERVICE_ID",
+      "required": true
+    },
+    {
+      "description": "The DNS name of your ELB endpoint — the address to which HTTP requests can be made.",
+      "name": "METRIST_AWS_ELB_DNS_NAME",
+      "required": true
+    },
+    {
+      "description": "The target group ARN of your ELB service.",
+      "name": "METRIST_AWS_ELB_TARGET_GROUP_ARN",
+      "required": true
+    },
+    {
+      "description": "Any valid AWS Region name.",
+      "name": "METRIST_AWS_REGION",
+      "required": true
+    },
+    {
+      "description": "Your AWS Secret Access Key.",
+      "name": "METRIST_AWS_SECRET_ACCESS_KEY",
+      "required": true
+    }
+  ],
+  "has_cleanup_tasks": false,
+  "logical_name": "awselb",
+  "name": "AWS Elastic Load Balancing",
+  "publisher": "Metrist",
+  "repository": "https://docs.metrist.io/monitors/",
+  "runtime_type": "exe",
+  "steps": [
+    {
+      "description": "This step attempts to change an ELB target group and measure how long it takes for the change to become effective.",
+      "logical_name": "ChangeTargetGroup",
+      "recommended_timeout_seconds": 900
+    }
+  ],
+  "version": "0.1.0-beta"
+}

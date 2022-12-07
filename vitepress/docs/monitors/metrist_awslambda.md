@@ -6,17 +6,21 @@ title: AWS Lambda
 
 ## Monitor Specs
 
+Description
+
+: Monitor the observability of [AWS Lambda](https://aws.amazon.com/lambda/).
+
 Name
 
 : `awslambda`
 
+Publisher
+
+: Metrist
+
 Version
 
-: 0.0.1-alpha
-
-Description
-
-: Monitor the observability of [AWS Lambda](https://aws.amazon.com/lambda/).
+: 0.1.0-beta
 
 : &nbsp;
 
@@ -60,16 +64,19 @@ METRIST_QUEUE_URL=""
   "run_groups": ["match-one", "or-more", "run-groups"],
   "run_spec": {
     "name": "awslambda",
-    "run_type": "dll"
-  },
-  "steps": [{
-    "check_logical_name": "TriggerLambdaAndWaitForResponse",
-    "description": "This step attemps to invoke a request and send a payload from a Lambda function to a SQS Queue.",
-    "required": true,
-    "timeout_secs": 900
-  }]
+    "run_type": "dll",
+  }
+  "steps": [
+    {
+      "check_logical_name": "TriggerLambdaAndWaitForResponse",
+      "description": "This step attemps to invoke a request and send a payload from a Lambda function to a SQS Queue.",
+    },
+  ]
 }
 ```
+
+
+
 
 Convert your monitor config to a JSON string, get your Metrist API token, and use the curl request below to register your monitor:
 

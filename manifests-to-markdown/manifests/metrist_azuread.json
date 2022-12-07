@@ -30,23 +30,23 @@
   "runtime_type": "dll",
   "steps": [
     {
-      "logical_name": "Authenticate",
       "description": "This step attemps to retrieve an authentication token for a Client/Application.",
+      "logical_name": "Authenticate",
       "recommended_timeout_seconds": 900
     },
     {
-      "logical_name": "WriteUser",
       "description": "This step attemps to add a new user, randomly named, to the given domain.",
+      "logical_name": "WriteUser",
       "recommended_timeout_seconds": 900
     },
     {
-      "logical_name": "ReadUser",
       "description": "This step attemps to retrieve the user account created in a previous step.",
+      "logical_name": "ReadUser",
       "recommended_timeout_seconds": 900
     },
     {
-      "logical_name": "DeleteUser",
       "description": "This step attemps to delete the user account created in a previous step.",
+      "logical_name": "DeleteUser",
       "recommended_timeout_seconds": 900
     }
   ],

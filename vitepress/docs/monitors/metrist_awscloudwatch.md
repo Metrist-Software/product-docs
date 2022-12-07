@@ -6,17 +6,21 @@ title: AWS CloudWatch
 
 ## Monitor Specs
 
+Description
+
+: Monitor the observability of a [AWS CloudWatch services](https://aws.amazon.com/cloudwatch/).
+
 Name
 
 : `awscloudwatch`
 
+Publisher
+
+: Metrist
+
 Version
 
 : 0.1.0-beta
-
-Description
-
-: Monitor the observability of a [AWS CloudWatch services](https://aws.amazon.com/cloudwatch/).
 
 : &nbsp;
 
@@ -54,21 +58,23 @@ METRIST_AWS_SECRET_ACCESS_KEY=""
   "run_groups": ["match-one", "or-more", "run-groups"],
   "run_spec": {
     "name": "awscloudwatch",
-    "run_type": "exe"
-  },
-  "steps": [{
-    "check_logical_name": "SubmitEvent",
-    "description": "This step attemps to submit a metric using PutMetricData API call.",
-    "required": true,
-    "timeout_secs": 900
-  }, {
-    "check_logical_name": "GetEvent",
-    "description": "Using ListMetricsCommand API call, this step attemps to retrieve a list of metrics matching the event submitted in a previous step.",
-    "required": true,
-    "timeout_secs": 900
-  }]
+    "run_type": "exe",
+  }
+  "steps": [
+    {
+      "check_logical_name": "SubmitEvent",
+      "description": "This step attemps to submit a metric using PutMetricData API call.",
+    },
+    {
+      "check_logical_name": "GetEvent",
+      "description": "Using ListMetricsCommand API call, this step attemps to retrieve a list of metrics matching the event submitted in a previous step.",
+    },
+  ]
 }
 ```
+
+
+
 
 Convert your monitor config to a JSON string, get your Metrist API token, and use the curl request below to register your monitor:
 

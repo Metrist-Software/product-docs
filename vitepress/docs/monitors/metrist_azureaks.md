@@ -6,17 +6,21 @@ title: Azure Kubernetes Service
 
 ## Monitor Specs
 
+Description
+
+: Monitor the observability of [Azure Kubernetes Service](https://learn.microsoft.com/azure/aks/).
+
 Name
 
 : `azureaks`
 
+Publisher
+
+: Metrist
+
 Version
 
-: 0.0.1-alpha
-
-Description
-
-: Monitor the observability of [Azure Kubernetes Service](https://learn.microsoft.com/azure/aks/).
+: 0.1.0-beta
 
 : &nbsp;
 
@@ -57,26 +61,31 @@ METRIST_TENANT_ID=""
   "run_groups": ["match-one", "or-more", "run-groups"],
   "run_spec": {
     "name": "azureaks",
-    "run_type": "dll"
-  },
-  "steps": [{
-    "check_logical_name": "CreateCluster",
-    "description": "This step attemps to create a Kubernetes Cluster in a given Azure Region. Note: this monitor has cleanup routines that run when other steps are complete. If you run this monitor through several Orchestrators, you may choose which Orchestrator(s) shall perform the cleanup.",
-    "required": true,
-    "timeout_secs": 900
-  }, {
-    "check_logical_name": "CreateDeployment",
-    "description": "This step attemps to deploy a container in a cluster created in a previous step.",
-    "required": false,
-    "timeout_secs": 900
-  }, {
-    "check_logical_name": "RemoveDeployment",
-    "description": "This step attemps to remove the container deployed in a previous step.",
-    "required": false,
-    "timeout_secs": 900
-  }]
+    "run_type": "dll",
+  }
+  "steps": [
+    {
+      "check_logical_name": "QueryExistingDNSRecord",
+      "description": "This step attemps to query an existing record on Route53 via DNS Lookup.",
+    },
+    {
+      "check_logical_name": "CreateCluster",
+      "description": "This step attemps to create a Kubernetes Cluster in a given Azure Region. Note: this monitor has cleanup routines that run when other steps are complete. If you run this monitor through several Orchestrators, you may choose which Orchestrator(s) shall perform the cleanup.",
+    },
+    {
+      "check_logical_name": "CreateDeployment",
+      "description": "This step attemps to deploy a container in a cluster created in a previous step.",
+    },
+    {
+      "check_logical_name": "RemoveDeployment",
+      "description": "This step attemps to remove the container deployed in a previous step.",
+    },
+  ]
 }
 ```
+
+
+
 
 Convert your monitor config to a JSON string, get your Metrist API token, and use the curl request below to register your monitor:
 

@@ -6,17 +6,21 @@ title: AWS SQS
 
 ## Monitor Specs
 
+Description
+
+: Monitor the observability of [AWS Simple Queue Service](https://aws.amazon.com/sqs/).
+
 Name
 
 : `sqs`
 
+Publisher
+
+: Metrist
+
 Version
 
-: 0.0.1-alpha
-
-Description
-
-: Monitor the observability of [AWS Simple Queue Service](https://aws.amazon.com/sqs/).
+: 0.1.0-beta
 
 : &nbsp;
 
@@ -54,21 +58,23 @@ METRIST_QUEUE_URL=""
   "run_groups": ["match-one", "or-more", "run-groups"],
   "run_spec": {
     "name": "sqs",
-    "run_type": "dll"
-  },
-  "steps": [{
-    "check_logical_name": "WriteMessage",
-    "description": "This step attemps to write a message to a queue.",
-    "required": true,
-    "timeout_secs": 900
-  }, {
-    "check_logical_name": "ReadMessage",
-    "description": "This step attemps to retrieve a message created in a previous step.",
-    "required": false,
-    "timeout_secs": 900
-  }]
+    "run_type": "dll",
+  }
+  "steps": [
+    {
+      "check_logical_name": "WriteMessage",
+      "description": "This step attemps to write a message to a queue.",
+    },
+    {
+      "check_logical_name": "ReadMessage",
+      "description": "This step attemps to retrieve a message created in a previous step.",
+    },
+  ]
 }
 ```
+
+
+
 
 Convert your monitor config to a JSON string, get your Metrist API token, and use the curl request below to register your monitor:
 

@@ -6,17 +6,21 @@ title: AWS SES
 
 ## Monitor Specs
 
+Description
+
+: Monitor the observability of [AWS Simple Email Service](https://aws.amazon.com/ses/).
+
 Name
 
 : `ses`
 
+Publisher
+
+: Metrist
+
 Version
 
-: 0.0.1-alpha
-
-Description
-
-: Monitor the observability of [AWS Simple Email Service](https://aws.amazon.com/ses/).
+: 0.1.0-beta
 
 : &nbsp;
 
@@ -57,16 +61,19 @@ METRIST_TO_EMAIL=""
   "run_groups": ["match-one", "or-more", "run-groups"],
   "run_spec": {
     "name": "ses",
-    "run_type": "dll"
-  },
-  "steps": [{
-    "check_logical_name": "SendEmail",
-    "description": "This step attemps to send a message via SES.",
-    "required": true,
-    "timeout_secs": 900
-  }]
+    "run_type": "dll",
+  }
+  "steps": [
+    {
+      "check_logical_name": "SendEmail",
+      "description": "This step attemps to send a message via SES.",
+    },
+  ]
 }
 ```
+
+
+
 
 Convert your monitor config to a JSON string, get your Metrist API token, and use the curl request below to register your monitor:
 

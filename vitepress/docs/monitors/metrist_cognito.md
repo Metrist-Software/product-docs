@@ -6,17 +6,21 @@ title: AWS Cognito
 
 ## Monitor Specs
 
+Description
+
+: Monitor the observability of the [AWS Cognito Identity Provider](https://aws.amazon.com/cognito/).
+
 Name
 
 : `cognito`
 
+Publisher
+
+: Metrist
+
 Version
 
 : 0.1.0-beta
-
-Description
-
-: Monitor the observability of the [AWS Cognito Identity Provider](https://aws.amazon.com/cognito/).
 
 : &nbsp;
 
@@ -54,21 +58,23 @@ METRIST_USER_POOL=""
   "run_groups": ["match-one", "or-more", "run-groups"],
   "run_spec": {
     "name": "cognito",
-    "run_type": "dll"
-  },
-  "steps": [{
-    "check_logical_name": "CreateUser",
-    "description": "This step attemps to create a user account (randomly named) using Cognito Identity Provider Client.",
-    "required": true,
-    "timeout_secs": 900
-  }, {
-    "check_logical_name": "DeleteUser",
-    "description": "This step attemps to delete the user account created in a previous step.",
-    "required": true,
-    "timeout_secs": 900
-  }]
+    "run_type": "dll",
+  }
+  "steps": [
+    {
+      "check_logical_name": "CreateUser",
+      "description": "This step attemps to create a user account (randomly named) using Cognito Identity Provider Client.",
+    },
+    {
+      "check_logical_name": "DeleteUser",
+      "description": "This step attemps to delete the user account created in a previous step.",
+    },
+  ]
 }
 ```
+
+
+
 
 Convert your monitor config to a JSON string, get your Metrist API token, and use the curl request below to register your monitor:
 

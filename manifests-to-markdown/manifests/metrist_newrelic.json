@@ -1,0 +1,39 @@
+{
+  "description": "Monitor the observability of [New Relic’s Event API](https://docs.newrelic.com/docs/data-apis/ingest-apis/event-api/introduction-event-api/).",
+  "environment_variables": [
+    {
+      "description": "A New Relic account number.",
+      "name": "METRIST_NEW_RELIC_ACCOUNT_NUMBER",
+      "required": true
+    },
+    {
+      "description": "For submitting event to New Relic’s Insight API.",
+      "name": "METRIST_NEW_RELIC_INSIGHT_API_KEY",
+      "required": true
+    },
+    {
+      "description": "Nerdgraph is New Relic’s recommended API for querying events.",
+      "name": "METRIST_NEW_RELIC_NERDGRAPH_USER_KEY",
+      "required": true
+    }
+  ],
+  "has_cleanup_tasks": false,
+  "logical_name": "newrelic",
+  "name": "New Relic",
+  "publisher": "Metrist",
+  "repository": "https://docs.metrist.io/monitors/",
+  "runtime_type": "exe",
+  "steps": [
+    {
+      "description": "This step attemps to submit an event through the Event API.",
+      "logical_name": "SubmitEvent",
+      "recommended_timeout_seconds": 900
+    },
+    {
+      "description": "This step, if configured, attemps to use the NerdGraph Graphql API to retrieve the event submitted in the previous step.",
+      "logical_name": "CheckEvent",
+      "recommended_timeout_seconds": 900
+    }
+  ],
+  "version": "0.1.0-beta"
+}

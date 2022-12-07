@@ -6,17 +6,21 @@ title: AWS S3
 
 ## Monitor Specs
 
+Description
+
+: Monitor the observability of [AWS Simple Storage Service (S3)](https://aws.amazon.com/s3/).
+
 Name
 
 : `s3`
 
+Publisher
+
+: Metrist
+
 Version
 
-: 0.0.1-alpha
-
-Description
-
-: Monitor the observability of [AWS Simple Storage Service (S3)](https://aws.amazon.com/s3/).
+: 0.1.0-beta
 
 : &nbsp;
 
@@ -51,36 +55,35 @@ METRIST_AWS_SECRET_ACCESS_KEY=""
   "run_groups": ["match-one", "or-more", "run-groups"],
   "run_spec": {
     "name": "s3",
-    "run_type": "dll"
-  },
-  "steps": [{
-    "check_logical_name": "PutBucket",
-    "description": "This step attemps to put a bucket, randomly named.",
-    "required": true,
-    "timeout_secs": 900
-  }, {
-    "check_logical_name": "PutObject",
-    "description": "This step attemps to put an object in a bucket created in a previous step.",
-    "required": false,
-    "timeout_secs": 900
-  }, {
-    "check_logical_name": "GetObject",
-    "description": "This step attemps to get an object placed in a previous step.",
-    "required": false,
-    "timeout_secs": 900
-  }, {
-    "check_logical_name": "DeleteObject",
-    "description": "This step attemps to delete an object placed in a previous step.",
-    "required": false,
-    "timeout_secs": 900
-  }, {
-    "check_logical_name": "DeleteBucket",
-    "description": "This step attemps to delete a bucket put in a previous step.",
-    "required": true,
-    "timeout_secs": 900
-  }]
+    "run_type": "dll",
+  }
+  "steps": [
+    {
+      "check_logical_name": "PutBucket",
+      "description": "This step attemps to put a bucket, randomly named.",
+    },
+    {
+      "check_logical_name": "PutObject",
+      "description": "This step attemps to put an object in a bucket created in a previous step.",
+    },
+    {
+      "check_logical_name": "GetObject",
+      "description": "This step attemps to get an object placed in a previous step.",
+    },
+    {
+      "check_logical_name": "DeleteObject",
+      "description": "This step attemps to delete an object placed in a previous step.",
+    },
+    {
+      "check_logical_name": "DeleteBucket",
+      "description": "This step attemps to delete a bucket put in a previous step.",
+    },
+  ]
 }
 ```
+
+
+
 
 Convert your monitor config to a JSON string, get your Metrist API token, and use the curl request below to register your monitor:
 

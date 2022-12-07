@@ -8,8 +8,8 @@
   "runtime_type": "dll",
   "steps": [
     {
-      "logical_name": "Ping",
       "description": "This step attempts to ping Asana’s public API.",
+      "logical_name": "Ping",
       "recommended_timeout_seconds": 900
     }
   ],

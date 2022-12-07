@@ -6,17 +6,21 @@ title: AWS RDS Instance
 
 ## Monitor Specs
 
+Description
+
+: Monitor the observability of specific [AWS RDS Instance](https://aws.amazon.com/rds/).
+
 Name
 
 : `awsrdspersistent`
 
+Publisher
+
+: Metrist
+
 Version
 
 : 0.1.0-beta
-
-Description
-
-: Monitor the observability of specific [AWS RDS Instance](https://aws.amazon.com/rds/).
 
 : &nbsp;
 
@@ -63,16 +67,19 @@ METRIST_AWSRDSPERSISTENT_USER=""
   "run_groups": ["match-one", "or-more", "run-groups"],
   "run_spec": {
     "name": "awsrdspersistent",
-    "run_type": "exe"
-  },
-  "steps": [{
-    "check_logical_name": "PingInstance",
-    "description": "This step attemps to ping your postgres or mysql RDS instance.",
-    "required": true,
-    "timeout_secs": 900
-  }]
+    "run_type": "exe",
+  }
+  "steps": [
+    {
+      "check_logical_name": "PingInstance",
+      "description": "This step attemps to ping your postgres or mysql RDS instance.",
+    },
+  ]
 }
 ```
+
+
+
 
 Convert your monitor config to a JSON string, get your Metrist API token, and use the curl request below to register your monitor:
 

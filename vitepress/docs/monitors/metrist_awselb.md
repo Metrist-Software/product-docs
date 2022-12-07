@@ -6,17 +6,21 @@ title: AWS Elastic Load Balancing
 
 ## Monitor Specs
 
+Description
+
+: Monitor the observability of [AWS ELB service](https://aws.amazon.com/elasticloadbalancing/).
+
 Name
 
 : `awselb`
 
+Publisher
+
+: Metrist
+
 Version
 
 : 0.1.0-beta
-
-Description
-
-: Monitor the observability of [AWS ELB service](https://aws.amazon.com/elasticloadbalancing/).
 
 : &nbsp;
 
@@ -66,16 +70,19 @@ METRIST_AWS_SECRET_ACCESS_KEY=""
   "run_groups": ["match-one", "or-more", "run-groups"],
   "run_spec": {
     "name": "awselb",
-    "run_type": "exe"
-  },
-  "steps": [{
-    "check_logical_name": "ChangeTargetGroup",
-    "description": "This step attempts to change an ELB target group and measure how long it takes for the change to become effective.",
-    "required": true,
-    "timeout_secs": 900
-  }]
+    "run_type": "exe",
+  }
+  "steps": [
+    {
+      "check_logical_name": "ChangeTargetGroup",
+      "description": "This step attempts to change an ELB target group and measure how long it takes for the change to become effective.",
+    },
+  ]
 }
 ```
+
+
+
 
 Convert your monitor config to a JSON string, get your Metrist API token, and use the curl request below to register your monitor:
 

@@ -1,0 +1,54 @@
+{
+  "description": "Monitor the observability of the [AWS EC2 service](https://aws.amazon.com/ec2/).",
+  "environment_variables": [
+    {
+      "description": "Your AWS Access Key Id.",
+      "name": "METRIST_AWS_ACCESS_KEY_ID",
+      "required": true
+    },
+    {
+      "description": "Your AWS Secret Access Key.",
+      "name": "METRIST_AWS_SECRET_ACCESS_KEY",
+      "required": true
+    },
+    {
+      "description": "Any valid AWS Region name.",
+      "name": "METRIST_REGION",
+      "required": true
+    },
+    {
+      "description": "The ID of an Amazon Machine Image.",
+      "name": "METRIST_AMI_ID",
+      "required": true
+    },
+    {
+      "description": "The ID of a running instance.",
+      "name": "METRIST_PERSISTENT_INSTANCE_ID",
+      "required": true
+    }
+  ],
+  "has_cleanup_tasks": true,
+  "logical_name": "ec2",
+  "name": "AWS EC2",
+  "publisher": "Metrist",
+  "repository": "https://docs.metrist.io/monitors/",
+  "runtime_type": "dll",
+  "steps": [
+    {
+      "description": "This step attemps to launch an EC2 instance using the AMI for which you have permissions.",
+      "logical_name": "RunInstance",
+      "recommended_timeout_seconds": 900
+    },
+    {
+      "description": "This step attemps to terminate the instance created in a previous step.",
+      "logical_name": "TerminateInstance",
+      "recommended_timeout_seconds": 900
+    },
+    {
+      "description": "This step attemps to retrieve description(s) of running instances.",
+      "logical_name": "DescribePersistentInstance",
+      "recommended_timeout_seconds": 900
+    }
+  ],
+  "version": "0.1.0-beta"
+}

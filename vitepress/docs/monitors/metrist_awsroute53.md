@@ -6,17 +6,21 @@ title: AWS Route53
 
 ## Monitor Specs
 
+Description
+
+: Monitor the observability of [AWS Route53 service](https://aws.amazon.com/route53/).
+
 Name
 
 : `awsroute53`
 
+Publisher
+
+: Metrist
+
 Version
 
 : 0.1.0-beta
-
-Description
-
-: Monitor the observability of [AWS Route53 service](https://aws.amazon.com/route53/).
 
 : &nbsp;
 
@@ -63,31 +67,31 @@ METRIST_PERSISTENT_RECORD_NAME=""
   "run_groups": ["match-one", "or-more", "run-groups"],
   "run_spec": {
     "name": "awsroute53",
-    "run_type": "exe"
-  },
-  "steps": [{
-    "check_logical_name": "QueryExistingDNSRecord",
-    "description": "This step attemps to query an existing record on Route53 via DNS Lookup.",
-    "required": true,
-    "timeout_secs": 900
-  }, {
-    "check_logical_name": "QueryExistingDNSRecordAPI",
-    "description": "This step attemps to query an existing DNS record on Route53 via the AWS SDK for JavaScript v3.",
-    "required": true,
-    "timeout_secs": 900
-  }, {
-    "check_logical_name": "CreateDNSRecord",
-    "description": "This step attemps to create a DNS A record on Route53 via the AWS SDK for JavaScript v3.",
-    "required": false,
-    "timeout_secs": 900
-  }, {
-    "check_logical_name": "RemoveDNSRecord",
-    "description": "This step attemps to remove a DNS A Record on Route53 via the AWS SDK for JavaScript v3.",
-    "required": true,
-    "timeout_secs": 900
-  }]
+    "run_type": "exe",
+  }
+  "steps": [
+    {
+      "check_logical_name": "QueryExistingDNSRecord",
+      "description": "This step attemps to query an existing record on Route53 via DNS Lookup.",
+    },
+    {
+      "check_logical_name": "QueryExistingDNSRecordAPI",
+      "description": "This step attemps to query an existing DNS record on Route53 via the AWS SDK for JavaScript v3.",
+    },
+    {
+      "check_logical_name": "CreateDNSRecord",
+      "description": "This step attemps to create a DNS A record on Route53 via the AWS SDK for JavaScript v3.",
+    },
+    {
+      "check_logical_name": "RemoveDNSRecord",
+      "description": "This step attemps to remove a DNS A Record on Route53 via the AWS SDK for JavaScript v3.",
+    },
+  ]
 }
 ```
+
+
+
 
 Convert your monitor config to a JSON string, get your Metrist API token, and use the curl request below to register your monitor:
 

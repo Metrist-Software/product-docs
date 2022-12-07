@@ -6,17 +6,21 @@ title: AWS Elastic Container Service — Fargate
 
 ## Monitor Specs
 
+Description
+
+: Monitor the observability of a [AWS CloudWatch services](https://aws.amazon.com/cloudwatch/).
+
 Name
 
 : `awsecs`
 
+Publisher
+
+: Metrist
+
 Version
 
 : 0.1.0-beta
-
-Description
-
-: Monitor the observability of [AWS Elastic Container Service](https://aws.amazon.com/ecs/).
 
 : &nbsp;
 
@@ -72,26 +76,27 @@ METRIST_VPC_PUBLIC_SUBNETS=""
   "run_groups": ["match-one", "or-more", "run-groups"],
   "run_spec": {
     "name": "awsecs",
-    "run_type": "exe"
-  },
-  "steps": [{
-    "check_logical_name": "CreateService",
-    "description": "This step attempts to create an ECS service.",
-    "required": true,
-    "timeout_secs": 900
-  }, {
-    "check_logical_name": "PingService",
-    "description": "This step attemps to ping a load balancer by domain name.",
-    "required": true,
-    "timeout_secs": 900
-  }, {
-    "check_logical_name": "DestroyService",
-    "description": "This step attemps to destroy the service created in an earlier step.",
-    "required": false,
-    "timeout_secs": 900
-  }]
+    "run_type": "exe",
+  }
+  "steps": [
+    {
+      "check_logical_name": "CreateService",
+      "description": "This step attempts to create an ECS service.",
+    },
+    {
+      "check_logical_name": "PingService",
+      "description": "This step attemps to ping a load balancer by domain name.",
+    },
+    {
+      "check_logical_name": "DestroyService",
+      "description": "This step attemps to destroy the service created in an earlier step.",
+    },
+  ]
 }
 ```
+
+
+
 
 Convert your monitor config to a JSON string, get your Metrist API token, and use the curl request below to register your monitor:
 

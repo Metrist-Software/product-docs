@@ -1,0 +1,64 @@
+{
+  "description": "Monitor the observability of [AWS Route53 service](https://aws.amazon.com/route53/).",
+  "environment_variables": [
+    {
+      "description": "Your AWS Access Key Id.",
+      "name": "METRIST_AWS_ACCESS_KEY_ID",
+      "required": true
+    },
+    {
+      "description": "Your AWS Secret Access Key.",
+      "name": "METRIST_AWS_SECRET_ACCESS_KEY",
+      "required": true
+    },
+    {
+      "description": "The ID of one of your hosted zones.",
+      "name": "METRIST_HOSTED_ZONE_ID",
+      "required": true
+    },
+    {
+      "description": "The hosted zone name associated with the given zone ID.",
+      "name": "METRIST_HOSTED_ZONE_NAME",
+      "required": true
+    },
+    {
+      "description": "One or more (as a comma-separated list) name servers associated with the given zone ID.",
+      "name": "METRIST_HOSTED_ZONE_NS",
+      "required": true
+    },
+    {
+      "description": "The name of an existing DNS record to query.",
+      "name": "METRIST_PERSISTENT_RECORD_NAME",
+      "required": true
+    }
+  ],
+  "has_cleanup_tasks": true,
+  "logical_name": "awsroute53",
+  "name": "AWS Route53",
+  "publisher": "Metrist",
+  "repository": "https://docs.metrist.io/monitors/",
+  "runtime_type": "exe",
+  "steps": [
+    {
+      "description": "This step attemps to query an existing record on Route53 via DNS Lookup.",
+      "logical_name": "QueryExistingDNSRecord",
+      "recommended_timeout_seconds": 900
+    },
+    {
+      "description": "This step attemps to query an existing DNS record on Route53 via the AWS SDK for JavaScript v3.",
+      "logical_name": "QueryExistingDNSRecordAPI",
+      "recommended_timeout_seconds": 900
+    },
+    {
+      "description": "This step attemps to create a DNS A record on Route53 via the AWS SDK for JavaScript v3.",
+      "logical_name": "CreateDNSRecord",
+      "recommended_timeout_seconds": 900
+    },
+    {
+      "description": "This step attemps to remove a DNS A Record on Route53 via the AWS SDK for JavaScript v3.",
+      "logical_name": "RemoveDNSRecord",
+      "recommended_timeout_seconds": 900
+    }
+  ],
+  "version": "0.1.0-beta"
+}

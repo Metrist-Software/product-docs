@@ -1,0 +1,54 @@
+{
+  "description": "Monitor the observability of [Azure Kubernetes Service](https://learn.microsoft.com/azure/aks/).",
+  "environment_variables": [
+    {
+      "description": "A Service Principal Client Id.",
+      "name": "METRIST_CLIENT_ID",
+      "required": true
+    },
+    {
+      "description": "A Service Principal Secret.",
+      "name": "METRIST_CLIENT_SECRET",
+      "required": true
+    },
+    {
+      "description": "A subscription ID.",
+      "name": "METRIST_SUBSCRIPTION_ID",
+      "required": true
+    },
+    {
+      "description": "A tenant ID for which the Service Principal has authorization.",
+      "name": "METRIST_TENANT_ID",
+      "required": true
+    }
+  ],
+  "has_cleanup_tasks": true,
+  "logical_name": "azureaks",
+  "name": "Azure Kubernetes Service",
+  "publisher": "Metrist",
+  "repository": "https://docs.metrist.io/monitors/",
+  "runtime_type": "dll",
+  "steps": [
+    {
+      "description": "This step attemps to query an existing record on Route53 via DNS Lookup.",
+      "logical_name": "QueryExistingDNSRecord",
+      "recommended_timeout_seconds": 900
+    },
+    {
+      "description": "This step attemps to create a Kubernetes Cluster in a given Azure Region. Note: this monitor has cleanup routines that run when other steps are complete. If you run this monitor through several Orchestrators, you may choose which Orchestrator(s) shall perform the cleanup.",
+      "logical_name": "CreateCluster",
+      "recommended_timeout_seconds": 900
+    },
+    {
+      "description": "This step attemps to deploy a container in a cluster created in a previous step.",
+      "logical_name": "CreateDeployment",
+      "recommended_timeout_seconds": 900
+    },
+    {
+      "description": "This step attemps to remove the container deployed in a previous step.",
+      "logical_name": "RemoveDeployment",
+      "recommended_timeout_seconds": 900
+    }
+  ],
+  "version": "0.1.0-beta"
+}

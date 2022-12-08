@@ -61,21 +61,21 @@ METRIST_DB_SUBNET_GROUP_NAME=""
   "run_groups": ["match-one", "or-more", "run-groups"],
   "run_spec": {
     "name": "awsrds",
-    "run_type": "exe",
-  }
+    "run_type": "exe"
+  },
   "steps": [
     {
       "check_logical_name": "CreateInstance",
-      "description": "This step attemps to create a MySQL RDS instance.",
+      "description": "This step attemps to create a MySQL RDS instance."
     },
     {
       "check_logical_name": "PingInstance",
-      "description": "This step attemps to ping the RDS instance created in a previous step.",
+      "description": "This step attemps to ping the RDS instance created in a previous step."
     },
     {
       "check_logical_name": "DestroyInstance",
-      "description": "This step attemps to destory the RDS instance created in a previous step.",
-    },
+      "description": "This step attemps to destory the RDS instance created in a previous step."
+    }
   ]
 }
 ```

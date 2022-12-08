@@ -76,21 +76,21 @@ METRIST_VPC_PUBLIC_SUBNETS=""
   "run_groups": ["match-one", "or-more", "run-groups"],
   "run_spec": {
     "name": "awsecs",
-    "run_type": "exe",
-  }
+    "run_type": "exe"
+  },
   "steps": [
     {
       "check_logical_name": "CreateService",
-      "description": "This step attempts to create an ECS service.",
+      "description": "This step attempts to create an ECS service."
     },
     {
       "check_logical_name": "PingService",
-      "description": "This step attemps to ping a load balancer by domain name.",
+      "description": "This step attemps to ping a load balancer by domain name."
     },
     {
       "check_logical_name": "DestroyService",
-      "description": "This step attemps to destroy the service created in an earlier step.",
-    },
+      "description": "This step attemps to destroy the service created in an earlier step."
+    }
   ]
 }
 ```

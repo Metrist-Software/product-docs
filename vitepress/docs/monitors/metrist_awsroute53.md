@@ -67,25 +67,25 @@ METRIST_PERSISTENT_RECORD_NAME=""
   "run_groups": ["match-one", "or-more", "run-groups"],
   "run_spec": {
     "name": "awsroute53",
-    "run_type": "exe",
-  }
+    "run_type": "exe"
+  },
   "steps": [
     {
       "check_logical_name": "QueryExistingDNSRecord",
-      "description": "This step attemps to query an existing record on Route53 via DNS Lookup.",
+      "description": "This step attemps to query an existing record on Route53 via DNS Lookup."
     },
     {
       "check_logical_name": "QueryExistingDNSRecordAPI",
-      "description": "This step attemps to query an existing DNS record on Route53 via the AWS SDK for JavaScript v3.",
+      "description": "This step attemps to query an existing DNS record on Route53 via the AWS SDK for JavaScript v3."
     },
     {
       "check_logical_name": "CreateDNSRecord",
-      "description": "This step attemps to create a DNS A record on Route53 via the AWS SDK for JavaScript v3.",
+      "description": "This step attemps to create a DNS A record on Route53 via the AWS SDK for JavaScript v3."
     },
     {
       "check_logical_name": "RemoveDNSRecord",
-      "description": "This step attemps to remove a DNS A Record on Route53 via the AWS SDK for JavaScript v3.",
-    },
+      "description": "This step attemps to remove a DNS A Record on Route53 via the AWS SDK for JavaScript v3."
+    }
   ]
 }
 ```

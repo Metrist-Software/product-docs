@@ -61,13 +61,13 @@ METRIST_TO_EMAIL=""
   "run_groups": ["match-one", "or-more", "run-groups"],
   "run_spec": {
     "name": "ses",
-    "run_type": "dll",
-  }
+    "run_type": "dll"
+  },
   "steps": [
     {
       "check_logical_name": "SendEmail",
-      "description": "This step attemps to send a message via SES.",
-    },
+      "description": "This step attemps to send a message via SES."
+    }
   ]
 }
 ```

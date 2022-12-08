@@ -58,17 +58,17 @@ METRIST_USER_POOL=""
   "run_groups": ["match-one", "or-more", "run-groups"],
   "run_spec": {
     "name": "cognito",
-    "run_type": "dll",
-  }
+    "run_type": "dll"
+  },
   "steps": [
     {
       "check_logical_name": "CreateUser",
-      "description": "This step attemps to create a user account (randomly named) using Cognito Identity Provider Client.",
+      "description": "This step attemps to create a user account (randomly named) using Cognito Identity Provider Client."
     },
     {
       "check_logical_name": "DeleteUser",
-      "description": "This step attemps to delete the user account created in a previous step.",
-    },
+      "description": "This step attemps to delete the user account created in a previous step."
+    }
   ]
 }
 ```

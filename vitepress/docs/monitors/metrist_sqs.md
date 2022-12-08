@@ -58,17 +58,17 @@ METRIST_QUEUE_URL=""
   "run_groups": ["match-one", "or-more", "run-groups"],
   "run_spec": {
     "name": "sqs",
-    "run_type": "dll",
-  }
+    "run_type": "dll"
+  },
   "steps": [
     {
       "check_logical_name": "WriteMessage",
-      "description": "This step attemps to write a message to a queue.",
+      "description": "This step attemps to write a message to a queue."
     },
     {
       "check_logical_name": "ReadMessage",
-      "description": "This step attemps to retrieve a message created in a previous step.",
-    },
+      "description": "This step attemps to retrieve a message created in a previous step."
+    }
   ]
 }
 ```

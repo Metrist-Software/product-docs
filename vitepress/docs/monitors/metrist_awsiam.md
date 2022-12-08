@@ -61,41 +61,41 @@ METRIST_NAMESPACE=""
   "run_groups": ["match-one", "or-more", "run-groups"],
   "run_spec": {
     "name": "awsiam",
-    "run_type": "exe",
-  }
+    "run_type": "exe"
+  },
   "steps": [
     {
       "check_logical_name": "CreateUser",
-      "description": "This step attemps to create a user, randomly named.",
+      "description": "This step attemps to create a user, randomly named."
     },
     {
       "check_logical_name": "CreateGroup",
-      "description": "This step attemps to create a group, randomly named.",
+      "description": "This step attemps to create a group, randomly named."
     },
     {
       "check_logical_name": "AddUserToGroup",
-      "description": "This step attemps to add the newly created user to the newly created group.",
+      "description": "This step attemps to add the newly created user to the newly created group."
     },
     {
       "check_logical_name": "RemoveUserFromGroup",
-      "description": "This step attemps to remove the user from the group.",
+      "description": "This step attemps to remove the user from the group."
     },
     {
       "check_logical_name": "DeleteGroup",
-      "description": "This step attemps to delete the group.",
+      "description": "This step attemps to delete the group."
     },
     {
       "check_logical_name": "AttachPolicy",
-      "description": "This step attemps to attach the user to the given policy arn.",
+      "description": "This step attemps to attach the user to the given policy arn."
     },
     {
       "check_logical_name": "DetachPolicy",
-      "description": "This step attemps to detach the user from the given policy arn.",
+      "description": "This step attemps to detach the user from the given policy arn."
     },
     {
       "check_logical_name": "DeleteUser",
-      "description": "This step attemps to delete the user created in an earlier step.",
-    },
+      "description": "This step attemps to delete the user created in an earlier step."
+    }
   ]
 }
 ```

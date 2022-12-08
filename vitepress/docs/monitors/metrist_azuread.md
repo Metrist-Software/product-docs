@@ -61,25 +61,25 @@ METRIST_TENANT_ID=""
   "run_groups": ["match-one", "or-more", "run-groups"],
   "run_spec": {
     "name": "azuread",
-    "run_type": "dll",
-  }
+    "run_type": "dll"
+  },
   "steps": [
     {
       "check_logical_name": "Authenticate",
-      "description": "This step attemps to retrieve an authentication token for a Client/Application.",
+      "description": "This step attemps to retrieve an authentication token for a Client/Application."
     },
     {
       "check_logical_name": "WriteUser",
-      "description": "This step attemps to add a new user, randomly named, to the given domain.",
+      "description": "This step attemps to add a new user, randomly named, to the given domain."
     },
     {
       "check_logical_name": "ReadUser",
-      "description": "This step attemps to retrieve the user account created in a previous step.",
+      "description": "This step attemps to retrieve the user account created in a previous step."
     },
     {
       "check_logical_name": "DeleteUser",
-      "description": "This step attemps to delete the user account created in a previous step.",
-    },
+      "description": "This step attemps to delete the user account created in a previous step."
+    }
   ]
 }
 ```

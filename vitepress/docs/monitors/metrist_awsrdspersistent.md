@@ -67,13 +67,13 @@ METRIST_AWSRDSPERSISTENT_USER=""
   "run_groups": ["match-one", "or-more", "run-groups"],
   "run_spec": {
     "name": "awsrdspersistent",
-    "run_type": "exe",
-  }
+    "run_type": "exe"
+  },
   "steps": [
     {
       "check_logical_name": "PingInstance",
-      "description": "This step attemps to ping your postgres or mysql RDS instance.",
-    },
+      "description": "This step attemps to ping your postgres or mysql RDS instance."
+    }
   ]
 }
 ```

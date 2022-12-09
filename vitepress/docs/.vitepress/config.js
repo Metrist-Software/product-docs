@@ -27,6 +27,7 @@ export default defineConfig({
 			{ text: 'Guides', link: '/guides/' },
 			{ text: 'Monitor Library', link: '/monitors/' },
 			{ text: 'API & Tools', link: '/tools/' },
+			{ text: 'Web App', link: 'https://app.metrist.io' },
 			{ text: 'Help ❔', link: 'mailto:support@metrist.io' }
 		],
 		sidebar: sidebar,

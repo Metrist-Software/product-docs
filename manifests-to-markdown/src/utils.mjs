@@ -74,31 +74,29 @@ export const maybeMultiLineTransform = (manifest, keyname) => {
             newLines.push(`\n# ${item.required ? `(Required)` : `(Not required)`} ${item.description}\n${item.name}=""\n`)
           })
           newLines.push(`\`\`\`\n\n`)
-          js_beautify(JSON.stringify(thisContent), beautifulOptions)
           return newLines.join(``)
         }
         case 'monitor_config': {
-          const newLines = [`\`\`\`\json\n`]
-          newLines.push(`{\n`)
-          newLines.push(`  "monitor_logical_name": "${manifest.logical_name}",\n`)
-          newLines.push(`  "interval_secs": 120,\n`)
-          newLines.push(`  "run_groups": ["match-one", "or-more", "run-groups"],\n`)
-          newLines.push(`  "run_spec": {\n`)
-          newLines.push(`    "name": "${manifest.logical_name}",\n`)
-          newLines.push(`    "run_type": "${manifest.runtime_type}",\n`)
-          newLines.push(`  }\n`)
-          newLines.push(`  "steps": [\n`)
-          manifest.steps.forEach((step) => {
-            newLines.push(`    {\n`)
-            newLines.push(`      "check_logical_name": "${step[`logical_name`]}",\n`)
-            Object.hasOwn(step, `description`) ? newLines.push(`      "description": "${step[`description`]}",\n`) : undefined
-            newLines.push(`    },\n`)
-          })
-          newLines.push(`  ]\n`)
-          newLines.push(`}\n`)
-          newLines.push(`\`\`\`\n\n`)
-          js_beautify(JSON.stringify(thisContent), beautifulOptions)
-          return newLines.join(``)
+          const monitor_config_syntax = {
+            monitor_logical_name: manifest.logical_name,
+            interval_secs: 120,
+            run_groups: [`match-one`, `or-more`, `run-groups`],
+            run_spec: {
+              name: manifest.logical_name,
+              run_type: manifest.runtime_type
+            },
+            steps: manifest.steps.map((step) => {
+              return {
+                check_logical_name: step?.logical_name,
+                description: step?.description
+              }
+            })
+          }
+          return [
+            `\`\`\`\json\n`,
+            js_beautify(JSON.stringify(monitor_config_syntax), beautifulOptions),
+            `\`\`\`\n\n`
+          ].join(``)
         }
         default: return js_beautify(JSON.stringify(thisContent), beautifulOptions)
       }

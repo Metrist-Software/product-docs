@@ -6,13 +6,19 @@ Online at [https://docs.metrist.io](https://docs.metrist.io/)
 
 ---
 
-## VitePress Docs
+## Metrist Docs with VitePress & Manifest JSON
 
-Visit [VitePress.vuejs.org](https://VitePress.vuejs.org).
+### VitePress
 
-VitePress is [VuePress](https://vuepress.vuejs.org)' spiritual successor, built on top of [vite](https://github.com/vitejs/vite).
+Visit [VitePress.vuejs.org](https://VitePress.vuejs.org). VitePress is [VuePress](https://vuepress.vuejs.org)' spiritual successor, built on top of [vite](https://github.com/vitejs/vite).
 
 Helpful [VitePress guide for Markdown](https://vitepress.vuejs.org/guide/markdown).
+
+### Manifest JSON
+
+[Monitor manifests](https://assets.metrist.io/dist/monitors/manifests.json) are published as a collection, and individually in the root of each monitor’s codebase.
+
+The collection of manifests is used in this repository to render all [monitor docs](https://docs.metrist.io/monitors/). See the [README](manifests-to-markdown/README.md) for more.
 
 ## Running/developing on localhost
 
@@ -31,7 +37,77 @@ npm --version #npm is bundled with node, you should NOT have to install it separ
 #   v18.12.0
 ```
 
-If you have those things, skip to [next section](#rundevelop)
+If you have those things, continue reading.
+
+If you do not have those things, see the guided setup instructions [next section](#guided-setup-of-pre-requisites)
+
+### Run/Develop
+
+Your first routine after cloning the repository or pulling new changes, is to run `npm install`:
+
+```sh
+npm install
+```
+
+Then launch the VitePress site in develop mode (with hot-reloading, etc.):
+
+```sh
+npm run dev
+
+# this routine will print a url to the terminal, probably http://localhost:5173
+```
+
+Open that url and modify/edit the site, confirm the site’s contents are updated in real-time.
+
+#### Important to Know
+
+::: info
+Adjacent to the VitePress workspace in this repo is a purpose-built templater of [monitor manifests](https://assets.metrist.io/dist/monitors/manifests.json). VitePress and this utility, called `manifests-to-markdown`, are both started with the `npm run dev` command — therefore, this utility run silently while VitePress is in dev mode.
+:::
+
+##### Why is this important?
+
+1. All files called `metrist_*.md` in the `monitors` folder are produced by the `manifests-to-markdown` utility.
+
+		vitepress
+		└── docs
+		    └── monitors
+
+1. It is not productive to edit those files. They are written each time the manifests are collected via `npm run dev`.
+
+#### Tips
+
+1. VitePress supports the notion of _file @includes_. These snippets are stored in a folder called `parts` under each main folder tree:
+
+		├── docs
+		│   ├── guides
+		│   │   ├── parts
+		│   ├── monitors
+		│   │   ├── parts
+		│   ├── tools
+		└── └── └── parts
+
+	When editing the included files (the “parts”), they appear to not hot-reload in `dev` mode. You may need to restart VitePress: `npm run dev`. (This is likely to be fixed by VitePress.)
+
+1. Sometimes (such as when VitePress tries to hot-reload your code with broken or partial syntax) the running process may stop. VitePress will eventually solve this, but in the meantime, start dev mode again: `npm run dev`.
+
+1. It is useful to check that the site builds (successfully) before commiting changes:
+
+	```sh
+	npm run build
+	```
+
+	You'll notice a new `dist` folder in your directory. (That folder is ignored by `.gitignore` and should not be committed.)
+
+1. It is useful to test the site “in production mode” as follows:
+
+	```sh
+	npm run serve
+
+	# a url will be provided such as http://localhost:8080/
+	```
+
+	The `serve` mode is mostly consistent with the `dev` mode but is served directly from the `dist` folder and therefore is useful to catch rare problems with links to static assets (such as any static files served from the `public` folder, a feature of VitePress).
 
 ### Guided Setup of Pre-requisites
 
@@ -104,89 +180,9 @@ If you don’t have those things, here’s a guided setup:
 	# should output something like `node version v18.12.0`
 	```
 
-### Run/Develop
-
-Your first routine after cloning the repository or pulling new changes, is to run `npm install`:
-
-```sh
-npm install
-```
-
-Then launch the VitePress site in develop mode (with hot-reloading, etc.):
-
-```sh
-npm run dev
-
-# this routine will print a url to the terminal, probably http://localhost:5173
-```
-
-Open that url and modify/edit the site, confirm the site’s contents are updated in real-time.
-
-#### Important to Know
-
-::: info
-Adjacent to the VitePress workspace in this repo is a purpose-built templater of `metrist.manifest.json` documents. VitePress and this utility, called `manifests-to-markdown`, are both started with the `npm run dev` command — therefore, this utility run silently while VitePress is in dev mode.
-:::
-
-##### Why is this important?
-
-1. All files called `metrist_*.md` in the `monitors` folder are produced by the `manifests-to-markdown` utility.
-
-		vitepress
-		└── docs
-		    └── monitors
-
-::: info
-One might ask, why not .gitignore this folder and populate it during build or as a pre-commit hook?
-
-Answer: The "last modified" timestamps of the files are currently published in the VitePress pages. Committing them to the repo maintains the integrity of the timestamp.
-:::
-
-
-1. It is not productive to edit those files (they’ll be overridden). Instead, edit/add manifest files directly. While in `npm run dev` mode, edits to the manifest.json files will hot reload in VitePress.
-
-		manifests-to-markdown
-		└── manifests
-		    └── <producer name>
-		        └── metrist.<monitor-logical-name>.json
-
-#### Tips
-
-1. VitePress supports the notion of _file @includes_. These snippets are stored in a folder called `parts` under each main folder tree:
-
-		├── docs
-		│   ├── guides
-		│   │   ├── parts
-		│   ├── monitors
-		│   │   ├── parts
-		│   ├── tools
-		└── └── └── parts
-
-	When editing the included files (the “parts”), they appear to not hot-reload in `dev` mode. You may need to restart VitePress: `npm run dev`. (This is likely to be fixed by VitePress.)
-
-1. Sometimes (such as when VitePress tries to hot-reload your code with broken or partial syntax) the running process may stop. VitePress will eventually solve this, but in the meantime, start dev mode again: `npm run dev`.
-
-1. It is useful to check that the site builds (successfully) before commiting changes:
-
-	```sh
-	npm run build
-	```
-
-	You'll notice a new `dist` folder in your directory. (That folder is ignored by `.gitignore` and should not be committed.)
-
-1. It is useful to test the site “in production mode” as follows:
-
-	```sh
-	npm run serve
-
-	# a url will be provided such as http://localhost:8080/
-	```
-
-	The `serve` mode is mostly consistent with the `dev` mode but is served directly from the `dist` folder and therefore is useful to catch rare problems with links to static assets (such as any static files served from the `public` folder, a feature of VitePress).
-
 ## Deployment
 
-`npm run dev` and/or `npm run build` do a reasonable job confirming things work as expected. VitePress even checks and will complain on broken links. If `npm run dev` and `npm run build` succeed, there’s a good chance your safe to publish your work.
+`npm run dev` and/or `npm run build` do a reasonable job confirming things work as expected. VitePress will even complain on broken links. If `npm run dev` and `npm run build` succeed, there’s a good chance your safe to publish your work.
 
 (If this ever changes, such as we introduce custom code overriding VitePress out-of-the-box, we’ll implement `npm run test` scripts accordingly.)
 

@@ -1,5 +1,5 @@
 import { afterAll, afterEach, beforeAll, describe, expect, it } from 'vitest'
-import { getManifestsJSON } from '../src/httprequest'
+import { getManifestsJSON } from '../src/httprequest.mjs'
 import { setupServer } from 'msw/node'
 import { http_handler } from './__mocks__/httprequest_handler'
 

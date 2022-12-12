@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { config } from './config'
+import { config } from './config.mjs'
 
 export const getManifestsJSON = async () => {
   const response = await axios({

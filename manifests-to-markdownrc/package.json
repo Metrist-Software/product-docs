@@ -10,6 +10,7 @@
   "name": "manifests-to-markdown-release-candidate",
   "scripts": {
     "coverage": "vitest run --coverage",
+    "manifests:get-from-source": "node src/get-and-render-manifests.mjs",
     "test": "vitest --reporter verbose"
   },
   "version": "1.0.0"

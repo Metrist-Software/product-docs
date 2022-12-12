@@ -1,4 +1,4 @@
-import { config } from '../../src/config'
+import { config } from '../../src/config.mjs'
 import { rest } from 'msw'
 
 const sampleManifestsJSON = {

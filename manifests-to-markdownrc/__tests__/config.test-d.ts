@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { config } from '../src/config'
+import { config } from '../src/config.mjs'
 
 describe(`Config values`, () => {
 

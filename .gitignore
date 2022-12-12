@@ -1,6 +1,5 @@
 node_modules
 vitepress/docs/.vitepress/dist
 .yarn/*
-tmp_directory
 coverage
 todo.md

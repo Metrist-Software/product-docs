@@ -1,3 +1,4 @@
+import { config } from '../../src/config'
 import { rest } from 'msw'
 
 const sampleManifestsJSON = {
@@ -72,7 +73,7 @@ const sampleManifestsJSON = {
 }
 
 export const http_handler = [
-  rest.get(`https://assets.metrist.io/dist/monitors/manifests-preview.json`, (_req, res, ctx) => {
+  rest.get(config.__manifestsUrl, (_req, res, ctx) => {
     return res(
       ctx.status(200),
       ctx.json(sampleManifestsJSON)

@@ -95,7 +95,7 @@ export const maybeMultiLineTransform = (manifest, keyname) => {
           return [
             `\`\`\`\json\n`,
             js_beautify(JSON.stringify(monitor_config_syntax), beautifulOptions),
-            `\`\`\`\n\n`
+            `\n\`\`\`\n\n`
           ].join(``)
         }
         default: return js_beautify(JSON.stringify(thisContent), beautifulOptions)

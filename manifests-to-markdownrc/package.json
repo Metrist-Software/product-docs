@@ -1,0 +1,14 @@
+{
+  "devDependencies": {
+    "@lukaspolak/kebab-case": "0.0.2",
+    "@vitest/coverage-c8": "0.25.3",
+    "js-beautify": "1.14.6",
+    "vitest": "0.25.3"
+  },
+  "name": "manifests-to-markdown-release-candidate",
+  "scripts": {
+    "coverage": "vitest run --coverage",
+    "test": "vitest --reporter dot"
+  },
+  "version": "1.0.0"
+}

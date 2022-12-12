@@ -2,13 +2,15 @@
   "devDependencies": {
     "@lukaspolak/kebab-case": "0.0.2",
     "@vitest/coverage-c8": "0.25.3",
+    "axios": "1.2.1",
     "js-beautify": "1.14.6",
+    "msw": "0.49.1",
     "vitest": "0.25.3"
   },
   "name": "manifests-to-markdown-release-candidate",
   "scripts": {
     "coverage": "vitest run --coverage",
-    "test": "vitest --reporter dot"
+    "test": "vitest --reporter verbose"
   },
   "version": "1.0.0"
 }

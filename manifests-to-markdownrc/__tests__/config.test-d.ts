@@ -3,8 +3,15 @@ import { config } from '../src/config'
 
 describe(`Config values`, () => {
 
-  it.concurrent(`provide paths to markdown template and monitors directory`, () => {
+  it.concurrent(`provide path to manifests public url`, () => {
+    expect(config.__manifestsUrl).toContain(`assets.metrist.io`)
+  })
+
+  it.concurrent(`provide path to markdown template`, () => {
     expect(config.__templatePath).toContain(`/src/template.md`)
+  })
+
+  it.concurrent(`provide path to monitors directory`, () => {
     expect(config.__vitepressMonitorDocsDirectory).toContain(`/docs/monitors`)
   })
 

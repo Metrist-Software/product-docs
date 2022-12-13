@@ -4,7 +4,7 @@ import { config } from '../src/config.mjs'
 describe(`Config values`, () => {
 
   it.concurrent(`provide path to manifests public url`, () => {
-    expect(config.__manifestsUrl).toContain(`assets.metrist.io`)
+    expect(config.__manifestsUrl).toBe(`https://monitor-distributions.metrist.io/manifests.json`)
   })
 
   it.concurrent(`provide path to markdown template`, () => {

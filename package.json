@@ -6,7 +6,7 @@
 	"scripts": {
 		"build": "npm run build --workspace=vitepress",
     "coverage": "npm run coverage --workspace=manifests-to-markdown",
-		"dev": "concurrently \"echo Fetching manifests takes ~10 seconds && npm run manifests:get-from-source --workspace=manifests-to-markdown\" \"npm run dev --workspace=vitepress\"",
+		"dev": "concurrently \"echo Fetching manifests takes ~2 seconds && npm run manifests:get-from-source --workspace=manifests-to-markdown\" \"npm run dev --workspace=vitepress\"",
 		"serve": "npm run serve --workspace=vitepress",
 		"test": "npm run test --workspace=manifests-to-markdown"
 	},

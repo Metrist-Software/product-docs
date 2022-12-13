@@ -35,66 +35,66 @@ We publish the following library of monitors that we use ourselves and make avai
 
 * [azureaks](/monitors/metrist_azureaks) — Azure AKS
 * [azuread](/monitors/metrist_azuread) — Azure Active Directory
-* `azureappservice` — Azure App Service
-* `azureblob` — Azure Blob Storage
-* `azurecdn` — Azure CDN
-* `azuredb` — Azure Cosmos DB
-* `azuredevopsartifacts` — Azure DevOps Artifacts
-* `azuredevopsboards` — Azure DevOps Boards
-* `azuredevopspipelines` — Azure DevOps Pipelines
-* `azuredevops` — Azure DevOps Repos
-* `azuredevopstestplans` — Azure DevOps Test Plans
-* `azurefncs` — Azure Functions
-* `azuremonitor` — Azure Monitor
-* `azuresql` — Azure SQL
-* `azurevm` — Azure Virtual Machines
+* [azureappservice](/monitors/metrist_azureappservice) — Azure App Service
+* [azureblob](/monitors/metrist_azureblob) — Azure Blob Storage
+* [azurecdn](/monitors/metrist_azurecdn) — Azure CDN
+* [azuredb](/monitors/metrist_azuredb) — Azure Cosmos DB
+* [azuredevopsartifacts](/monitors/metrist_azuredevopsartifacts) — Azure DevOps Artifacts
+* [azuredevopsboards](/monitors/metrist_azuredevopsboards) — Azure DevOps Boards
+* [azuredevopspipelines](/monitors/metrist_azuredevopspipelines) — Azure DevOps Pipelines
+* [azuredevops](/monitors/metrist_azuredevops) — Azure DevOps Repos
+* [azuredevopstestplans](/monitors/metrist_azuredevopstestplans) — Azure DevOps Test Plans
+* [azurefncs](/monitors/metrist_azurefncs) — Azure Functions
+* [azuremonitor](/monitors/metrist_azuremonitor) — Azure Monitor
+* [azuresql](/monitors/metrist_azuresql) — Azure SQL
+* [azurevm](/monitors/metrist_azurevm) — Azure Virtual Machines
 
 #### Google Cloud Platform
 
-* `gcpappengine` — GCP App Engine
-* `gcpcloudstorage` — GCP Cloud Storage
-* `gcpcomputeengine` — GCP Compute Engine
-* `gke` — GCP GKE
+* [gcpappengine](/monitors/metrist_gcpappengine) — GCP App Engine
+* [gcpcloudstorage](/monitors/metrist_gcpcloudstorage) — GCP Cloud Storage
+* [gcpcomputeengine](/monitors/metrist_gcpcomputeengine) — GCP Compute Engine
+* [gke](/monitors/metrist_gke) — GCP GKE
 
 ### APIs
 
-* `avalara` — Avalara (AvaTax)
-* `bambora` — Bambora
-* `braintree` — Braintree
-* `easypost` — EasyPost
-* `fastly` — Fastly
-* `github` — GitHub
-* `gcal` — Google Calendar
-* `gmaps` — Google Maps
-* `hubspot` — HubSpot
-* `moneris` — Moneris
-* `pubnub` — PubNub
-* `sendgrid` — SendGrid
-* `stripe` — Stripe
+* [avalara](/monitors/metrist_avalara) — Avalara (AvaTax)
+* [bambora](/monitors/metrist_bambora) — Bambora
+* [braintree](/monitors/metrist_braintree) — Braintree
+* [easypost](/monitors/metrist_easypost) — EasyPost
+* [fastly](/monitors/metrist_fastly) — Fastly
+* [github](/monitors/metrist_github) — GitHub
+* [gcal](/monitors/metrist_gcal) — Google Calendar
+* [gmaps](/monitors/metrist_gmaps) — Google Maps
+* [hubspot](/monitors/metrist_hubspot) — HubSpot
+* [moneris](/monitors/metrist_moneris) — Moneris
+* [pubnub](/monitors/metrist_pubnub) — PubNub
+* [sendgrid](/monitors/metrist_sendgrid) — SendGrid
+* [stripe](/monitors/metrist_stripe) — Stripe
 
 ### Infrastructure
 
-* `cloudflare` — Cloudflare
-* `heroku` — Heroku
-* `snowflake` — Snowflake
+* [cloudflare](/monitors/metrist_cloudflare) — Cloudflare
+* [heroku](/monitors/metrist_heroku) — Heroku
+* [snowflake](/monitors/metrist_snowflake) — Snowflake
 
 #### SaaS
 
 * [asana](/monitors/metrist_asana) — Asana
 * [newrelic](/monitors/metrist_newrelic) — New Relic
-* `authzero` — Auth0
-* `circleci` — CircleCI
-* `datadog` — Datadog
-* `jira` — Jira
-* `npm` — NPM
-* `nuget` — NuGet
-* `pagerduty` — PagerDuty
-* `sentry` — Sentry
-* `slack` — Slack
-* `trello` — Trello
-* `twiliovid` — Twilio Video
-* `zendesk` — Zendesk
-* `zoom` — Zoom
+* [authzero](/monitors/metrist_authzero) — Auth0
+* [circleci](/monitors/metrist_circleci) — CircleCI
+* [datadog](/monitors/metrist_datadog) — Datadog
+* [jira](/monitors/metrist_jira) — Jira
+* [npm](/monitors/metrist_npm) — NPM
+* [nuget](/monitors/metrist_nuget) — NuGet
+* [pagerduty](/monitors/metrist_pagerduty) — PagerDuty
+* [sentry](/monitors/metrist_sentry) — Sentry
+* [slack](/monitors/metrist_slack) — Slack
+* [trello](/monitors/metrist_trello) — Trello
+* [twiliovid](/monitors/metrist_twiliovid) — Twilio Video
+* [zendesk](/monitors/metrist_zendesk) — Zendesk
+* [zoom](/monitors/metrist_zoom) — Zoom
 
 #### Metrist
 

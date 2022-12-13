@@ -63,12 +63,10 @@ METRIST_TO_EMAIL=""
     "name": "ses",
     "run_type": "dll"
   },
-  "steps": [
-    {
-      "check_logical_name": "SendEmail",
-      "description": "This step attemps to send a message via SES."
-    }
-  ]
+  "steps": [{
+    "check_logical_name": "SendEmail",
+    "description": "This step attempts to send a message via SES."
+  }]
 }
 ```
 

@@ -63,24 +63,19 @@ METRIST_TENANT_ID=""
     "name": "azureaks",
     "run_type": "dll"
   },
-  "steps": [
-    {
-      "check_logical_name": "QueryExistingDNSRecord",
-      "description": "This step attemps to query an existing record on Route53 via DNS Lookup."
-    },
-    {
-      "check_logical_name": "CreateCluster",
-      "description": "This step attemps to create a Kubernetes Cluster in a given Azure Region. Note: this monitor has cleanup routines that run when other steps are complete. If you run this monitor through several Orchestrators, you may choose which Orchestrator(s) shall perform the cleanup."
-    },
-    {
-      "check_logical_name": "CreateDeployment",
-      "description": "This step attemps to deploy a container in a cluster created in a previous step."
-    },
-    {
-      "check_logical_name": "RemoveDeployment",
-      "description": "This step attemps to remove the container deployed in a previous step."
-    }
-  ]
+  "steps": [{
+    "check_logical_name": "QueryExistingDNSRecord",
+    "description": "This step attempts to query an existing record on Route53 via DNS Lookup."
+  }, {
+    "check_logical_name": "CreateCluster",
+    "description": "This step attempts to create a Kubernetes Cluster in a given Azure Region. Note: this monitor has cleanup routines that run when other steps are complete. If you run this monitor through several Orchestrators, you may choose which Orchestrator(s) shall perform the cleanup."
+  }, {
+    "check_logical_name": "CreateDeployment",
+    "description": "This step attempts to deploy a container in a cluster created in a previous step."
+  }, {
+    "check_logical_name": "RemoveDeployment",
+    "description": "This step attempts to remove the container deployed in a previous step."
+  }]
 }
 ```
 

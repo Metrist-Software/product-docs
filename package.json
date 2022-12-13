@@ -13,6 +13,7 @@
 		"serve": "npm run serve --workspace=vitepress",
 		"test": "npm run test --workspace=manifests-to-markdown",
     "rccoverage": "npm run coverage --workspace=manifests-to-markdownrc",
+    "rcdev": "concurrently \"npm run dev --workspace=vitepress\" \"npm run manifests:get-from-source --workspace=manifests-to-markdownrc\"",
 		"rctest": "npm run test --workspace=manifests-to-markdownrc"
 	},
 	"version": "1.0.0",

@@ -72,12 +72,10 @@ METRIST_AWS_SECRET_ACCESS_KEY=""
     "name": "awselb",
     "run_type": "exe"
   },
-  "steps": [
-    {
-      "check_logical_name": "ChangeTargetGroup",
-      "description": "This step attempts to change an ELB target group and measure how long it takes for the change to become effective."
-    }
-  ]
+  "steps": [{
+    "check_logical_name": "ChangeTargetGroup",
+    "description": "This step attempts to change an ELB target group and measure how long it takes for the change to become effective."
+  }]
 }
 ```
 

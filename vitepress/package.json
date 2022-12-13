@@ -8,7 +8,7 @@
 	"homepage": "https://docs.metrist.io/",
 	"scripts": {
 		"build": "vitepress build docs",
-		"dev": "vitepress dev docs && $echo `manifest watcher not running`",
+		"dev": "vitepress dev docs",
 		"serve": "vitepress serve docs --port 8080"
 	},
 	"version": "1.0.0"

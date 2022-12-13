@@ -66,20 +66,16 @@ METRIST_PERSISTENT_INSTANCE_ID=""
     "name": "ec2",
     "run_type": "dll"
   },
-  "steps": [
-    {
-      "check_logical_name": "RunInstance",
-      "description": "This step attemps to launch an EC2 instance using the AMI for which you have permissions."
-    },
-    {
-      "check_logical_name": "TerminateInstance",
-      "description": "This step attemps to terminate the instance created in a previous step."
-    },
-    {
-      "check_logical_name": "DescribePersistentInstance",
-      "description": "This step attemps to retrieve description(s) of running instances."
-    }
-  ]
+  "steps": [{
+    "check_logical_name": "RunInstance",
+    "description": "This step attempts to launch an EC2 instance using the AMI for which you have permissions."
+  }, {
+    "check_logical_name": "TerminateInstance",
+    "description": "This step attempts to terminate the instance created in a previous step."
+  }, {
+    "check_logical_name": "DescribePersistentInstance",
+    "description": "This step attempts to retrieve description(s) of running instances."
+  }]
 }
 ```
 

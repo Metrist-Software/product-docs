@@ -63,24 +63,19 @@ METRIST_TENANT_ID=""
     "name": "azuread",
     "run_type": "dll"
   },
-  "steps": [
-    {
-      "check_logical_name": "Authenticate",
-      "description": "This step attemps to retrieve an authentication token for a Client/Application."
-    },
-    {
-      "check_logical_name": "WriteUser",
-      "description": "This step attemps to add a new user, randomly named, to the given domain."
-    },
-    {
-      "check_logical_name": "ReadUser",
-      "description": "This step attemps to retrieve the user account created in a previous step."
-    },
-    {
-      "check_logical_name": "DeleteUser",
-      "description": "This step attemps to delete the user account created in a previous step."
-    }
-  ]
+  "steps": [{
+    "check_logical_name": "Authenticate",
+    "description": "This step attempts to retrieve an authentication token for a Client/Application."
+  }, {
+    "check_logical_name": "WriteUser",
+    "description": "This step attempts to add a new user, randomly named, to the given domain."
+  }, {
+    "check_logical_name": "ReadUser",
+    "description": "This step attempts to retrieve the user account created in a previous step."
+  }, {
+    "check_logical_name": "DeleteUser",
+    "description": "This step attempts to delete the user account created in a previous step."
+  }]
 }
 ```
 

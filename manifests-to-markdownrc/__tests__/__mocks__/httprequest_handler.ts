@@ -1,7 +1,7 @@
 import { config } from '../../src/config.mjs'
 import { rest } from 'msw'
 
-const sampleManifestsJSON = {
+export const sampleManifestsJSON = {
   "monitors": [
     {
       "description": "Tests Auth0 to validate that access tokens and branding can be retrieved.",

@@ -63,16 +63,13 @@ METRIST_STREAM_NAME=""
     "name": "kinesis",
     "run_type": "dll"
   },
-  "steps": [
-    {
-      "check_logical_name": "WriteToStream",
-      "description": "This step attempts to write streaming data using the PutRecordRequest class."
-    },
-    {
-      "check_logical_name": "ReadFromStream",
-      "description": "This step attempts to read data from the stream created in a previous step."
-    }
-  ]
+  "steps": [{
+    "check_logical_name": "WriteToStream",
+    "description": "This step attempts to write streaming data using the PutRecordRequest class."
+  }, {
+    "check_logical_name": "ReadFromStream",
+    "description": "This step attempts to read data from the stream created in a previous step."
+  }]
 }
 ```
 

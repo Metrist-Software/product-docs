@@ -58,7 +58,7 @@ METRIST_NAMESPACE=""
 {
   "monitor_logical_name": "awsiam",
   "interval_secs": 120,
-  "run_groups": ["match-one", "or-more", "run-groups"],
+  "run_groups": [],
   "run_spec": {
     "name": "awsiam",
     "run_type": "exe"

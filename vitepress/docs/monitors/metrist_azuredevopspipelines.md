@@ -58,7 +58,7 @@ METRIST_PROJECT=""
 {
   "monitor_logical_name": "azuredevopspipelines",
   "interval_secs": 120,
-  "run_groups": ["match-one", "or-more", "run-groups"],
+  "run_groups": [],
   "run_spec": {
     "name": "azuredevopspipelines",
     "run_type": "dll"

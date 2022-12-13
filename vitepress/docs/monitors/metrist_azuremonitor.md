@@ -49,7 +49,7 @@ METRIST_CONNECTION_STRING=""
 {
   "monitor_logical_name": "azuremonitor",
   "interval_secs": 120,
-  "run_groups": ["match-one", "or-more", "run-groups"],
+  "run_groups": [],
   "run_spec": {
     "name": "azuremonitor",
     "run_type": "dll"

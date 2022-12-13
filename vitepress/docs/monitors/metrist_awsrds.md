@@ -58,7 +58,7 @@ METRIST_DB_SUBNET_GROUP_NAME=""
 {
   "monitor_logical_name": "awsrds",
   "interval_secs": 120,
-  "run_groups": ["match-one", "or-more", "run-groups"],
+  "run_groups": [],
   "run_spec": {
     "name": "awsrds",
     "run_type": "exe"

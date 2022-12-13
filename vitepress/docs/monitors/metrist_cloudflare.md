@@ -44,7 +44,7 @@ Version
 {
   "monitor_logical_name": "cloudflare",
   "interval_secs": 120,
-  "run_groups": ["match-one", "or-more", "run-groups"],
+  "run_groups": [],
   "run_spec": {
     "name": "cloudflare",
     "run_type": "dll"

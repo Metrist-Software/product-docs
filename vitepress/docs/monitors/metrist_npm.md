@@ -44,7 +44,7 @@ Version
 {
   "monitor_logical_name": "npm",
   "interval_secs": 120,
-  "run_groups": ["match-one", "or-more", "run-groups"],
+  "run_groups": [],
   "run_spec": {
     "name": "npm",
     "run_type": "dll"

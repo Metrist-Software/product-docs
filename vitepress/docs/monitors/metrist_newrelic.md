@@ -55,7 +55,7 @@ METRIST_NEW_RELIC_NERDGRAPH_USER_KEY=""
 {
   "monitor_logical_name": "newrelic",
   "interval_secs": 120,
-  "run_groups": ["match-one", "or-more", "run-groups"],
+  "run_groups": [],
   "run_spec": {
     "name": "newrelic",
     "run_type": "exe"

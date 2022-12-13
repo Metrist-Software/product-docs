@@ -55,7 +55,7 @@ METRIST_AWS_SECRET_ACCESS_KEY=""
 {
   "monitor_logical_name": "awscloudwatch",
   "interval_secs": 120,
-  "run_groups": ["match-one", "or-more", "run-groups"],
+  "run_groups": [],
   "run_spec": {
     "name": "awscloudwatch",
     "run_type": "exe"

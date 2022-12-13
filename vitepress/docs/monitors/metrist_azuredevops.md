@@ -55,7 +55,7 @@ METRIST_REPOSITORY=""
 {
   "monitor_logical_name": "azuredevops",
   "interval_secs": 120,
-  "run_groups": ["match-one", "or-more", "run-groups"],
+  "run_groups": [],
   "run_spec": {
     "name": "azuredevops",
     "run_type": "exe"

@@ -64,7 +64,7 @@ METRIST_PERSISTENT_RECORD_NAME=""
 {
   "monitor_logical_name": "awsroute53",
   "interval_secs": 120,
-  "run_groups": ["match-one", "or-more", "run-groups"],
+  "run_groups": [],
   "run_spec": {
     "name": "awsroute53",
     "run_type": "exe"

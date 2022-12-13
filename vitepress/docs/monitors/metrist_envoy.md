@@ -49,7 +49,7 @@ METRIST_CLIENT_API_KEY=""
 {
   "monitor_logical_name": "envoy",
   "interval_secs": 120,
-  "run_groups": ["match-one", "or-more", "run-groups"],
+  "run_groups": [],
   "run_spec": {
     "name": "envoy",
     "run_type": "exe"

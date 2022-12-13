@@ -64,7 +64,7 @@ METRIST_AWS_EKS_CLUSTER_CERTIFICATE_AUTHORITY_DATA=""
 {
   "monitor_logical_name": "awseks",
   "interval_secs": 120,
-  "run_groups": ["match-one", "or-more", "run-groups"],
+  "run_groups": [],
   "run_spec": {
     "name": "awseks",
     "run_type": "dll"

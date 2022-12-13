@@ -61,7 +61,7 @@ METRIST_TENANT_ID=""
 {
   "monitor_logical_name": "azuredb",
   "interval_secs": 120,
-  "run_groups": ["match-one", "or-more", "run-groups"],
+  "run_groups": [],
   "run_spec": {
     "name": "azuredb",
     "run_type": "dll"

@@ -49,7 +49,7 @@ METRIST_HOST_NAME=""
 {
   "monitor_logical_name": "azureappservice",
   "interval_secs": 120,
-  "run_groups": ["match-one", "or-more", "run-groups"],
+  "run_groups": [],
   "run_spec": {
     "name": "azureappservice",
     "run_type": "exe"

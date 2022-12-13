@@ -55,7 +55,7 @@ METRIST_USER_POOL=""
 {
   "monitor_logical_name": "cognito",
   "interval_secs": 120,
-  "run_groups": ["match-one", "or-more", "run-groups"],
+  "run_groups": [],
   "run_spec": {
     "name": "cognito",
     "run_type": "dll"

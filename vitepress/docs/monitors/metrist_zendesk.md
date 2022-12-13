@@ -44,7 +44,7 @@ Version
 {
   "monitor_logical_name": "zendesk",
   "interval_secs": 120,
-  "run_groups": ["match-one", "or-more", "run-groups"],
+  "run_groups": [],
   "run_spec": {
     "name": "zendesk",
     "run_type": "dll"

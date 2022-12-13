@@ -73,7 +73,7 @@ METRIST_VPC_PUBLIC_SUBNETS=""
 {
   "monitor_logical_name": "awsecs",
   "interval_secs": 120,
-  "run_groups": ["match-one", "or-more", "run-groups"],
+  "run_groups": [],
   "run_spec": {
     "name": "awsecs",
     "run_type": "exe"

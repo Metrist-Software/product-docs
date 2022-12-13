@@ -58,7 +58,7 @@ METRIST_TO_EMAIL=""
 {
   "monitor_logical_name": "ses",
   "interval_secs": 120,
-  "run_groups": ["match-one", "or-more", "run-groups"],
+  "run_groups": [],
   "run_spec": {
     "name": "ses",
     "run_type": "dll"

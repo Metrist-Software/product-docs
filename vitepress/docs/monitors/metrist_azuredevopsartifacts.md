@@ -44,7 +44,7 @@ Version
 {
   "monitor_logical_name": "azuredevopsartifacts",
   "interval_secs": 120,
-  "run_groups": ["match-one", "or-more", "run-groups"],
+  "run_groups": [],
   "run_spec": {
     "name": "azuredevopsartifacts",
     "run_type": "dll"

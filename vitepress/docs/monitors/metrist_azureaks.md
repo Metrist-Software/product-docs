@@ -58,7 +58,7 @@ METRIST_TENANT_ID=""
 {
   "monitor_logical_name": "azureaks",
   "interval_secs": 120,
-  "run_groups": ["match-one", "or-more", "run-groups"],
+  "run_groups": [],
   "run_spec": {
     "name": "azureaks",
     "run_type": "dll"

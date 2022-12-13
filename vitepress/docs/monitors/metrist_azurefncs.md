@@ -52,7 +52,7 @@ METRIST_TEST_FUNCTION_URL=""
 {
   "monitor_logical_name": "azurefncs",
   "interval_secs": 120,
-  "run_groups": ["match-one", "or-more", "run-groups"],
+  "run_groups": [],
   "run_spec": {
     "name": "azurefncs",
     "run_type": "dll"

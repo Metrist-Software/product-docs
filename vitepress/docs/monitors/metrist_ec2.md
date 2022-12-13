@@ -61,7 +61,7 @@ METRIST_PERSISTENT_INSTANCE_ID=""
 {
   "monitor_logical_name": "ec2",
   "interval_secs": 120,
-  "run_groups": ["match-one", "or-more", "run-groups"],
+  "run_groups": [],
   "run_spec": {
     "name": "ec2",
     "run_type": "dll"

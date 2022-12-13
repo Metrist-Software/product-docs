@@ -58,7 +58,7 @@ METRIST_TENANT_ID=""
 {
   "monitor_logical_name": "azuread",
   "interval_secs": 120,
-  "run_groups": ["match-one", "or-more", "run-groups"],
+  "run_groups": [],
   "run_spec": {
     "name": "azuread",
     "run_type": "dll"

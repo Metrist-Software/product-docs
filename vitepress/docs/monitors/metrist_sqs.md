@@ -55,7 +55,7 @@ METRIST_QUEUE_URL=""
 {
   "monitor_logical_name": "sqs",
   "interval_secs": 120,
-  "run_groups": ["match-one", "or-more", "run-groups"],
+  "run_groups": [],
   "run_spec": {
     "name": "sqs",
     "run_type": "dll"

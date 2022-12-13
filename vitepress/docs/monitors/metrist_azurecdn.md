@@ -79,7 +79,7 @@ METRIST_TENANT_ID=""
 {
   "monitor_logical_name": "azurecdn",
   "interval_secs": 120,
-  "run_groups": ["match-one", "or-more", "run-groups"],
+  "run_groups": [],
   "run_spec": {
     "name": "azurecdn",
     "run_type": "exe"

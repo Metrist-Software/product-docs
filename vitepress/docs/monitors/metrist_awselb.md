@@ -67,7 +67,7 @@ METRIST_AWS_SECRET_ACCESS_KEY=""
 {
   "monitor_logical_name": "awselb",
   "interval_secs": 120,
-  "run_groups": ["match-one", "or-more", "run-groups"],
+  "run_groups": [],
   "run_spec": {
     "name": "awselb",
     "run_type": "exe"

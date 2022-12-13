@@ -52,7 +52,7 @@ METRIST_GOOGLE_DRIVE_ACCOUNT_EMAIL=""
 {
   "monitor_logical_name": "googledrive",
   "interval_secs": 120,
-  "run_groups": ["match-one", "or-more", "run-groups"],
+  "run_groups": [],
   "run_spec": {
     "name": "googledrive",
     "run_type": "exe"

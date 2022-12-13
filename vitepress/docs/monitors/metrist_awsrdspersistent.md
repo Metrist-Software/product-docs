@@ -64,7 +64,7 @@ METRIST_AWSRDSPERSISTENT_USER=""
 {
   "monitor_logical_name": "awsrdspersistent",
   "interval_secs": 120,
-  "run_groups": ["match-one", "or-more", "run-groups"],
+  "run_groups": [],
   "run_spec": {
     "name": "awsrdspersistent",
     "run_type": "exe"

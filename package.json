@@ -6,20 +6,13 @@
 	"scripts": {
 		"build": "npm run build --workspace=vitepress",
     "coverage": "npm run coverage --workspace=manifests-to-markdown",
-		"dev": "concurrently \"npm run dev --workspace=vitepress\" \"npm run manifests:vitepress-dev-watcher\"",
-		"manifests:dev": "npm run watch:dev --workspace=manifests-to-markdown",
-		"manifests:emit-all": "npm run emit:all --workspace=manifests-to-markdown",
-		"manifests:vitepress-dev-watcher": "npm run watch:vitepress-dev --workspace=manifests-to-markdown",
+		"dev": "concurrently \"echo Fetching manifests takes ~10 seconds && npm run manifests:get-from-source --workspace=manifests-to-markdown\" \"npm run dev --workspace=vitepress\"",
 		"serve": "npm run serve --workspace=vitepress",
-		"test": "npm run test --workspace=manifests-to-markdown",
-    "rccoverage": "npm run coverage --workspace=manifests-to-markdownrc",
-    "rcdev": "concurrently \"npm run dev --workspace=vitepress\" \"npm run manifests:get-from-source --workspace=manifests-to-markdownrc\"",
-		"rctest": "npm run test --workspace=manifests-to-markdownrc"
+		"test": "npm run test --workspace=manifests-to-markdown"
 	},
 	"version": "1.0.0",
 	"workspaces": [
 		"vitepress",
-		"manifests-to-markdown",
-		"manifests-to-markdownrc"
+		"manifests-to-markdown"
 	]
 }

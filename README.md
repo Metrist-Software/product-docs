@@ -55,6 +55,7 @@ Then launch the VitePress site in develop mode (with hot-reloading, etc.):
 npm run dev
 
 # this routine will print a url to the terminal, probably http://localhost:5173
+# this routine will also fetch all manifests and render all monitor markdown pages
 ```
 
 Open that url and modify/edit the site, confirm the site’s contents are updated in real-time.

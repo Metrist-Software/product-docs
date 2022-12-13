@@ -66,12 +66,10 @@ METRIST_QUEUE_URL=""
     "name": "awslambda",
     "run_type": "dll"
   },
-  "steps": [
-    {
-      "check_logical_name": "TriggerLambdaAndWaitForResponse",
-      "description": "This step attemps to invoke a request and send a payload from a Lambda function to a SQS Queue."
-    }
-  ]
+  "steps": [{
+    "check_logical_name": "TriggerLambdaAndWaitForResponse",
+    "description": "This step attempts to invoke a request and send a payload from a Lambda function to a SQS Queue."
+  }]
 }
 ```
 

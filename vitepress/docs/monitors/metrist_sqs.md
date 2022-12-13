@@ -60,16 +60,13 @@ METRIST_QUEUE_URL=""
     "name": "sqs",
     "run_type": "dll"
   },
-  "steps": [
-    {
-      "check_logical_name": "WriteMessage",
-      "description": "This step attemps to write a message to a queue."
-    },
-    {
-      "check_logical_name": "ReadMessage",
-      "description": "This step attemps to retrieve a message created in a previous step."
-    }
-  ]
+  "steps": [{
+    "check_logical_name": "WriteMessage",
+    "description": "This step attempts to write a message to a queue."
+  }, {
+    "check_logical_name": "ReadMessage",
+    "description": "This step attempts to retrieve a message created in a previous step."
+  }]
 }
 ```
 

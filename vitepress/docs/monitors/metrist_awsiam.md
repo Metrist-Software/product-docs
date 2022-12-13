@@ -63,40 +63,31 @@ METRIST_NAMESPACE=""
     "name": "awsiam",
     "run_type": "exe"
   },
-  "steps": [
-    {
-      "check_logical_name": "CreateUser",
-      "description": "This step attemps to create a user, randomly named."
-    },
-    {
-      "check_logical_name": "CreateGroup",
-      "description": "This step attemps to create a group, randomly named."
-    },
-    {
-      "check_logical_name": "AddUserToGroup",
-      "description": "This step attemps to add the newly created user to the newly created group."
-    },
-    {
-      "check_logical_name": "RemoveUserFromGroup",
-      "description": "This step attemps to remove the user from the group."
-    },
-    {
-      "check_logical_name": "DeleteGroup",
-      "description": "This step attemps to delete the group."
-    },
-    {
-      "check_logical_name": "AttachPolicy",
-      "description": "This step attemps to attach the user to the given policy arn."
-    },
-    {
-      "check_logical_name": "DetachPolicy",
-      "description": "This step attemps to detach the user from the given policy arn."
-    },
-    {
-      "check_logical_name": "DeleteUser",
-      "description": "This step attemps to delete the user created in an earlier step."
-    }
-  ]
+  "steps": [{
+    "check_logical_name": "CreateUser",
+    "description": "This step attempts to create a user, randomly named."
+  }, {
+    "check_logical_name": "CreateGroup",
+    "description": "This step attempts to create a group, randomly named."
+  }, {
+    "check_logical_name": "AddUserToGroup",
+    "description": "This step attempts to add the newly created user to the newly created group."
+  }, {
+    "check_logical_name": "RemoveUserFromGroup",
+    "description": "This step attempts to remove the user from the group."
+  }, {
+    "check_logical_name": "DeleteGroup",
+    "description": "This step attempts to delete the group."
+  }, {
+    "check_logical_name": "AttachPolicy",
+    "description": "This step attempts to attach the user to the given policy arn."
+  }, {
+    "check_logical_name": "DetachPolicy",
+    "description": "This step attempts to detach the user from the given policy arn."
+  }, {
+    "check_logical_name": "DeleteUser",
+    "description": "This step attempts to delete the user created in an earlier step."
+  }]
 }
 ```
 

@@ -60,16 +60,13 @@ METRIST_AWS_SECRET_ACCESS_KEY=""
     "name": "awscloudwatch",
     "run_type": "exe"
   },
-  "steps": [
-    {
-      "check_logical_name": "SubmitEvent",
-      "description": "This step attemps to submit a metric using PutMetricData API call."
-    },
-    {
-      "check_logical_name": "GetEvent",
-      "description": "Using ListMetricsCommand API call, this step attemps to retrieve a list of metrics matching the event submitted in a previous step."
-    }
-  ]
+  "steps": [{
+    "check_logical_name": "SubmitEvent",
+    "description": "This step attempts to submit a metric using PutMetricData API call."
+  }, {
+    "check_logical_name": "GetEvent",
+    "description": "Using ListMetricsCommand API call, this step attempts to retrieve a list of metrics matching the event submitted in a previous step."
+  }]
 }
 ```
 

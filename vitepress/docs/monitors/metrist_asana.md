@@ -49,12 +49,10 @@ Version
     "name": "asana",
     "run_type": "dll"
   },
-  "steps": [
-    {
-      "check_logical_name": "Ping",
-      "description": "This step attempts to ping Asana’s public API."
-    }
-  ]
+  "steps": [{
+    "check_logical_name": "Ping",
+    "description": "This step attempts to ping Asana’s public API."
+  }]
 }
 ```
 

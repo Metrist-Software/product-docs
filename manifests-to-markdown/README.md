@@ -1,46 +1,25 @@
-# Manifest file watcher for [docs.metrist.io](https://docs.metrist.io/)
+# Manifest to Markdown Rendering
 
----
+[Monitor manifests](https://assets.metrist.io/dist/monitors/manifests.json) are published as a collection, and individually in the root of each monitor’s codebase.
 
-This utility renders markdown files from monitor manifests and writes those files to the VitePress file system.
+When `npm run dev` is executed from the root of the project, that JSON file is fetched and all [monitor docs](https://docs.metrist.io/monitors/) are rendered to the following location:
 
-To contribute/develop in the VitePress site, see [docs.metrist.io README](../README.md) first.
-
-To contribute/develop to this utility, see below.
-
----
-
-## Installation and Setup
-
-None required.
-
-Basically, you should only care about this workspace to modify the watcher code or to add/edit/delete `./manifests/*.json` files.
-
-## Development
-
-### Running Tests
-
-In the root of the project, `npm run test` will start vitest in watch mode. Most tests use real production code or fakes. Where a function is capable of destructive change (such as write or delete), a vitest mock is implemented to allow non-destructive development.
-
-In the root of the project, `npm run coverage` will run vitest once with coverage reporter.
-
-### Hot-reloading watcher.mjs
-
-In the root of the project, `npm run manifests:dev` will start `watcher.mjs` and the `src/*.*` folder/files will be watched for changes, courtesy of `npm-watch`. This is helpful — though be aware that delete operations are very real in this mode.
+		vitepress
+		└── docs
+		    └── monitors
 
 
-## Features
+## Running/developing on localhost
 
-All scripts related to this workspace can be activated from the root of the project. `npm run ____` commands should rarely, if ever, run from within this folder.
+To develop in this `manifests-to-markdown` workspace, the following scripts can be run from the root of the project _OR_ within this folder:
 
-### Watcher
+```sh
+npm run test
+npm run coverage
+```
 
-`watcher.mjs` is run when you active VitePress in dev mode in the root of this project: `npm run dev`.
+## Deployment
 
-This watcher is actively listening for `rename`, `delete`, and `change` events in all `./manifests/*.json` files. Those events are then emitted to the appropriate VitePress folder.
+This workspace is never deployed.
 
-### Emit All
-
-(Undocumented. Should be removed from the project.)
-
-Before the above `watcher` was produced, a less sophisticated function ws written to list all *.json files in the `manifests` folder and emit all of them to the VitePress folders.
+Instead, the files it produces are included in the VitePress `build` script which is activated when the GitHub workflow publishes the site to `gh-pages`.

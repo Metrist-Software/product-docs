@@ -69,36 +69,28 @@ METRIST_DISTRIBUTION_ID=""
     "name": "awscloudfront",
     "run_type": "dll"
   },
-  "steps": [
-    {
-      "check_logical_name": "PublishFile",
-      "description": "This step attemps to asynchronously put a file in an S3 bucket."
-    },
-    {
-      "check_logical_name": "GetNewFile",
-      "description": "This step attemps to retrieve the file created in the previous step."
-    },
-    {
-      "check_logical_name": "UpdateFile",
-      "description": "This step attemps to update the file created in the previous step."
-    },
-    {
-      "check_logical_name": "PurgeFile",
-      "description": "This step attemps to purge items from the distribution."
-    },
-    {
-      "check_logical_name": "GetUpdatedFile",
-      "description": "This step attemps to retrieve a file updated in a previous step."
-    },
-    {
-      "check_logical_name": "DeleteFile",
-      "description": "This step attemps to delete the file created in a previous step."
-    },
-    {
-      "check_logical_name": "WaitForDeletionPropagation",
-      "description": "This step attemps to confirm the DeleteFile step was successful."
-    }
-  ]
+  "steps": [{
+    "check_logical_name": "PublishFile",
+    "description": "This step attempts to asynchronously put a file in an S3 bucket."
+  }, {
+    "check_logical_name": "GetNewFile",
+    "description": "This step attempts to retrieve the file created in the previous step."
+  }, {
+    "check_logical_name": "UpdateFile",
+    "description": "This step attempts to update the file created in the previous step."
+  }, {
+    "check_logical_name": "PurgeFile",
+    "description": "This step attempts to purge items from the distribution."
+  }, {
+    "check_logical_name": "GetUpdatedFile",
+    "description": "This step attempts to retrieve a file updated in a previous step."
+  }, {
+    "check_logical_name": "DeleteFile",
+    "description": "This step attempts to delete the file created in a previous step."
+  }, {
+    "check_logical_name": "WaitForDeletionPropagation",
+    "description": "This step attempts to confirm the DeleteFile step was successful."
+  }]
 }
 ```
 

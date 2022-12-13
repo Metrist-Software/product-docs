@@ -57,28 +57,22 @@ METRIST_AWS_SECRET_ACCESS_KEY=""
     "name": "s3",
     "run_type": "dll"
   },
-  "steps": [
-    {
-      "check_logical_name": "PutBucket",
-      "description": "This step attemps to put a bucket, randomly named."
-    },
-    {
-      "check_logical_name": "PutObject",
-      "description": "This step attemps to put an object in a bucket created in a previous step."
-    },
-    {
-      "check_logical_name": "GetObject",
-      "description": "This step attemps to get an object placed in a previous step."
-    },
-    {
-      "check_logical_name": "DeleteObject",
-      "description": "This step attemps to delete an object placed in a previous step."
-    },
-    {
-      "check_logical_name": "DeleteBucket",
-      "description": "This step attemps to delete a bucket put in a previous step."
-    }
-  ]
+  "steps": [{
+    "check_logical_name": "PutBucket",
+    "description": "This step attempts to put a bucket, randomly named."
+  }, {
+    "check_logical_name": "PutObject",
+    "description": "This step attempts to put an object in a bucket created in a previous step."
+  }, {
+    "check_logical_name": "GetObject",
+    "description": "This step attempts to get an object placed in a previous step."
+  }, {
+    "check_logical_name": "DeleteObject",
+    "description": "This step attempts to delete an object placed in a previous step."
+  }, {
+    "check_logical_name": "DeleteBucket",
+    "description": "This step attempts to delete a bucket put in a previous step."
+  }]
 }
 ```
 

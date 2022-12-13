@@ -60,16 +60,13 @@ METRIST_NEW_RELIC_NERDGRAPH_USER_KEY=""
     "name": "newrelic",
     "run_type": "exe"
   },
-  "steps": [
-    {
-      "check_logical_name": "SubmitEvent",
-      "description": "This step attemps to submit an event through the Event API."
-    },
-    {
-      "check_logical_name": "CheckEvent",
-      "description": "This step, if configured, attemps to use the NerdGraph Graphql API to retrieve the event submitted in the previous step."
-    }
-  ]
+  "steps": [{
+    "check_logical_name": "SubmitEvent",
+    "description": "This step attempts to submit an event through the Event API."
+  }, {
+    "check_logical_name": "CheckEvent",
+    "description": "This step attempts to use the NerdGraph Graphql API to retrieve the event submitted in the previous step."
+  }]
 }
 ```
 

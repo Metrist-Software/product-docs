@@ -8,7 +8,7 @@ title: AWS Elastic Container Service — Fargate
 
 Description
 
-: Monitor the observability of a [AWS CloudWatch services](https://aws.amazon.com/cloudwatch/).
+: Monitor the observability of a [AWS ECS services](https://aws.amazon.com/ecs/).
 
 Name
 
@@ -78,20 +78,16 @@ METRIST_VPC_PUBLIC_SUBNETS=""
     "name": "awsecs",
     "run_type": "exe"
   },
-  "steps": [
-    {
-      "check_logical_name": "CreateService",
-      "description": "This step attempts to create an ECS service."
-    },
-    {
-      "check_logical_name": "PingService",
-      "description": "This step attemps to ping a load balancer by domain name."
-    },
-    {
-      "check_logical_name": "DestroyService",
-      "description": "This step attemps to destroy the service created in an earlier step."
-    }
-  ]
+  "steps": [{
+    "check_logical_name": "CreateService",
+    "description": "This step attempts to create an ECS service."
+  }, {
+    "check_logical_name": "PingService",
+    "description": "This step attempts to ping a load balancer by domain name."
+  }, {
+    "check_logical_name": "DestroyService",
+    "description": "This step attempts to destroy the service created in an earlier step."
+  }]
 }
 ```
 

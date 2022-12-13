@@ -69,16 +69,13 @@ METRIST_AWS_EKS_CLUSTER_CERTIFICATE_AUTHORITY_DATA=""
     "name": "awseks",
     "run_type": "dll"
   },
-  "steps": [
-    {
-      "check_logical_name": "CreateDeployment",
-      "description": "This step attemps to deploy a container into a cluster."
-    },
-    {
-      "check_logical_name": "RemoveDeployment",
-      "description": "This step attemps to remove the container deployed in a previous step."
-    }
-  ]
+  "steps": [{
+    "check_logical_name": "CreateDeployment",
+    "description": "This step attempts to deploy a container into a cluster."
+  }, {
+    "check_logical_name": "RemoveDeployment",
+    "description": "This step attempts to remove the container deployed in a previous step."
+  }]
 }
 ```
 

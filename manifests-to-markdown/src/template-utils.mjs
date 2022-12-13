@@ -30,7 +30,7 @@ export const maybeMultiLineTransform = (manifest, keyname) => {
           const monitor_config_syntax = {
             monitor_logical_name: manifest.logical_name,
             interval_secs: 120,
-            run_groups: [`match-one`, `or-more`, `run-groups`],
+            run_groups: [],
             run_spec: {
               name: manifest.logical_name,
               run_type: manifest.runtime_type

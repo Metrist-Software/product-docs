@@ -4,10 +4,6 @@ title: Monitors
 
 # {{ $frontmatter.title }}
 
-## Produce Your Own <Badge type="warning" text="experimental" />
-
-We encourage customers to produce their own monitors. Expect more documentation in this area soon.
-
 ## Produced by Metrist
 
 We publish the following library of monitors that we use ourselves and make available to all Metrist customers. These are a good starting point after you have [installed Orchestrator](/guides/orchestrator-installation).
@@ -99,3 +95,7 @@ We publish the following library of monitors that we use ourselves and make avai
 #### Metrist
 
 * `metrist` — Metrist (yes, monitor Metrist with Metrist!)
+
+## Produce Your Own <Badge type="warning" text="experimental" />
+
+We encourage customers to produce their own monitors. Expect more documentation in this area soon.

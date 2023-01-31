@@ -34,7 +34,18 @@ Version
 <!--@include: /parts/_3.md-->
 
 
+```sh
+# (Required) The ID of the project to use.
+METRIST_ASANA_PROJECT_ID=""
 
+# (Required) The ID of the workspace to use.
+METRIST_ASANA_WORKSPACE_ID=""
+
+# (Required) The personal access token to use.
+METRIST_ASANA_PERSONAL_ACCESS_TOKEN=""
+```
+
+<!--@include: /parts/tips_env-vars.md -->
 
 
 <!--@include: /parts/_4.md-->
@@ -51,7 +62,16 @@ Version
   },
   "steps": [{
     "check_logical_name": "Ping",
-    "description": "This step attempts to ping Asana’s public API."
+    "description": "This step pings Asana’s users REST API."
+  }, {
+    "check_logical_name": "CreateTask",
+    "description": "This step creates a task using Asana's REST API."
+  }, {
+    "check_logical_name": "GetTask",
+    "description": "This step retrieves a task using Asana's REST API."
+  }, {
+    "check_logical_name": "DeleteTask",
+    "description": "This step deletes a task using Asana's REST API."
   }]
 }
 ```

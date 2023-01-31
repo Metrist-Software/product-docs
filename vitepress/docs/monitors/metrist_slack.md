@@ -34,7 +34,18 @@ Version
 <!--@include: /parts/_3.md-->
 
 
+```sh
+# (Required) The Slack channel to use.
+METRIST_SLACK_CHANNEL=""
 
+# (Required) The API token to use.
+METRIST_SLACK_API_TOKEN=""
+
+# (Required) The tag to use. The tag is visible in the automated messages.
+METRIST_SLACK_TAG=""
+```
+
+<!--@include: /parts/tips_env-vars.md -->
 
 
 <!--@include: /parts/_4.md-->

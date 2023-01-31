@@ -8,7 +8,7 @@ title: Zoom
 
 Description
 
-: Tests Zoom to validate that users can be retrieved.
+: Tests Zoom API.
 
 Name
 
@@ -52,6 +52,15 @@ Version
   "steps": [{
     "check_logical_name": "GetUsers",
     "description": "Gets users using the REST API."
+  }, {
+    "check_logical_name": "CreateMeeting",
+    "description": "Create a meeting."
+  }, {
+    "check_logical_name": "GetMeeting",
+    "description": "Gets meeting details."
+  }, {
+    "check_logical_name": "DeleteMeeting",
+    "description": "Deletes a meeting."
   }]
 }
 ```

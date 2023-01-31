@@ -34,7 +34,12 @@ Version
 <!--@include: /parts/_3.md-->
 
 
+```sh
+# (Required) The API token to use.
+METRIST_ZENDESK_API_TOKEN=""
+```
 
+<!--@include: /parts/tips_env-vars.md -->
 
 
 <!--@include: /parts/_4.md-->

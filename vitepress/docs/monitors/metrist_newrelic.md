@@ -8,7 +8,7 @@ title: New Relic
 
 Description
 
-: Monitor the observability of [New Relic’s Event API](https://docs.newrelic.com/docs/data-apis/ingest-apis/event-api/introduction-event-api/).
+: Monitor the functionality of New Relic's web UI.
 
 Name
 
@@ -35,14 +35,23 @@ Version
 
 
 ```sh
-# (Required) A New Relic account number.
-METRIST_NEW_RELIC_ACCOUNT_NUMBER=""
+# (Required) Username to log in to NewRelic's UI with.
+METRIST_NEW_RELIC_USERNAME=""
 
-# (Required) For submitting event to New Relic’s Insight API.
-METRIST_NEW_RELIC_INSIGHT_API_KEY=""
+# (Required) Password for the associated user.
+METRIST_NEW_RELIC_PASSWORD=""
 
-# (Required) Nerdgraph is New Relic’s recommended API for querying events.
-METRIST_NEW_RELIC_NERDGRAPH_USER_KEY=""
+# (Required) ID of the dashboard to load.
+METRIST_NEW_RELIC_DASHBOARD_ID=""
+
+# (Required) XPath string to use for validating dashboard page has loaded successfully.
+METRIST_NEW_RELIC_DASHBOARD_XPATH=""
+
+# (Required) ID of the synthetic monitor to load.
+METRIST_NEW_RELIC_SYNTHETIC_MONITOR_ID=""
+
+# (Required) XPath string to use for validating synthetic monitor page has loaded successfully.
+METRIST_NEW_RELIC_SYNTHETICS_XPATH=""
 ```
 
 <!--@include: /parts/tips_env-vars.md -->
@@ -61,11 +70,14 @@ METRIST_NEW_RELIC_NERDGRAPH_USER_KEY=""
     "run_type": "exe"
   },
   "steps": [{
-    "check_logical_name": "SubmitEvent",
-    "description": "This step attempts to submit an event through the Event API."
+    "check_logical_name": "OpenDashboardUI",
+    "description": "Load a dashboard in the New Relic web UI"
   }, {
-    "check_logical_name": "CheckEvent",
-    "description": "This step attempts to use the NerdGraph Graphql API to retrieve the event submitted in the previous step."
+    "check_logical_name": "OpenSyntheticsUI",
+    "description": "Load a synthetic monitor in the New Relic web UI"
+  }, {
+    "check_logical_name": "OpenAlertsUI",
+    "description": "Load the Alerting Overview page in the New Relic web UI"
   }]
 }
 ```

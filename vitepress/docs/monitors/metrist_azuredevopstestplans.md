@@ -65,34 +65,44 @@ METRIST_TEAM=""
   },
   "steps": [{
     "check_logical_name": "CreateTestCase",
-    "description": "This step attempts to create a test case in the given project."
+    "description": "This step attempts to create a test case in the given project.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "CreateTestPlan",
-    "description": "This step attempts to create a test plan in the given project."
+    "description": "This step attempts to create a test plan in the given project.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "CreateTestSuite",
-    "description": "This step attempts to create a test suite in the given project."
+    "description": "This step attempts to create a test suite in the given project.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "AddTestCasesToSuite",
-    "description": "This step attempts to add test cases to a suite created in a previous step."
+    "description": "This step attempts to add test cases to a suite created in a previous step.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "CreateTestRun",
-    "description": "This step attempts to create a test run of a suite created in a previous step."
+    "description": "This step attempts to create a test run of a suite created in a previous step.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "AddResultsToTestRun",
-    "description": "This step attempts to add test results to a test run created in a previous step."
+    "description": "This step attempts to add test results to a test run created in a previous step.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "GetResults",
-    "description": "This step attempts to retrieve the test results produced in a previous step."
+    "description": "This step attempts to retrieve the test results produced in a previous step.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "DeleteTestRun",
-    "description": "This step attempts to delete a test run created in a previous step."
+    "description": "This step attempts to delete a test run created in a previous step.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "DeleteTestPlan",
-    "description": "This step attempts to delete a test plan created in a previous step."
+    "description": "This step attempts to delete a test plan created in a previous step.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "DeleteTestCase",
-    "description": "This step attempts to delete a test case created in a previous step."
+    "description": "This step attempts to delete a test case created in a previous step.",
+    "timeout_secs": 900
   }]
 }
 ```

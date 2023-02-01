@@ -59,7 +59,8 @@ METRIST_TEST_FUNCTION_URL=""
   },
   "steps": [{
     "check_logical_name": "RunHttpTrigger",
-    "description": "This step triggers a GET request to the given url and appends `?code={the_given_value}`."
+    "description": "This step triggers a GET request to the given url and appends `?code={the_given_value}`.",
+    "timeout_secs": 900
   }]
 }
 ```

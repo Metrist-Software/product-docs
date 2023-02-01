@@ -59,13 +59,16 @@ METRIST_GOOGLE_DRIVE_ACCOUNT_EMAIL=""
   },
   "steps": [{
     "check_logical_name": "CreateDocsFile",
-    "description": "This step attempts to create a file."
+    "description": "This step attempts to create a file.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "GetDocsFile",
-    "description": "This step attempts to retrieve a file created in a previous step."
+    "description": "This step attempts to retrieve a file created in a previous step.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "DeleteDocsFile",
-    "description": "This step attempts to delete a file created in a previous step."
+    "description": "This step attempts to delete a file created in a previous step.",
+    "timeout_secs": 900
   }]
 }
 ```

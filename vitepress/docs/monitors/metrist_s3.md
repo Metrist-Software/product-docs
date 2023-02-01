@@ -59,19 +59,24 @@ METRIST_AWS_SECRET_ACCESS_KEY=""
   },
   "steps": [{
     "check_logical_name": "PutBucket",
-    "description": "This step attempts to put a bucket, randomly named."
+    "description": "This step attempts to put a bucket, randomly named.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "PutObject",
-    "description": "This step attempts to put an object in a bucket created in a previous step."
+    "description": "This step attempts to put an object in a bucket created in a previous step.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "GetObject",
-    "description": "This step attempts to get an object placed in a previous step."
+    "description": "This step attempts to get an object placed in a previous step.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "DeleteObject",
-    "description": "This step attempts to delete an object placed in a previous step."
+    "description": "This step attempts to delete an object placed in a previous step.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "DeleteBucket",
-    "description": "This step attempts to delete a bucket put in a previous step."
+    "description": "This step attempts to delete a bucket put in a previous step.",
+    "timeout_secs": 900
   }]
 }
 ```

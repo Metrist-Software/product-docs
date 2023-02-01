@@ -56,10 +56,12 @@ METRIST_CLIENT_API_KEY=""
   },
   "steps": [{
     "check_logical_name": "GetEmployees",
-    "description": "This step attempts to retrieve a list of employees."
+    "description": "This step attempts to retrieve a list of employees.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "GetReservations",
-    "description": "This step attempts to retrieve a list of reservations."
+    "description": "This step attempts to retrieve a list of reservations.",
+    "timeout_secs": 900
   }]
 }
 ```

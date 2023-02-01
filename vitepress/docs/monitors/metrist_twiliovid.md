@@ -51,13 +51,16 @@ Version
   },
   "steps": [{
     "check_logical_name": "CreateRoom",
-    "description": "Creates a room using the Twilio C# library for the REST API."
+    "description": "Creates a room using the Twilio C# library for the REST API.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "GetRoom",
-    "description": "Fetches the room using the Twilio C# library for the REST API."
+    "description": "Fetches the room using the Twilio C# library for the REST API.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "CompleteRoom",
-    "description": "Updates the room, setting its status to completed, using the Twilio C# library for the REST API."
+    "description": "Updates the room, setting its status to completed, using the Twilio C# library for the REST API.",
+    "timeout_secs": 900
   }]
 }
 ```

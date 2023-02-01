@@ -68,31 +68,40 @@ METRIST_TENANT_ID=""
   },
   "steps": [{
     "check_logical_name": "TrackEvent",
-    "description": "This step attempts to track a known type of event."
+    "description": "This step attempts to track a known type of event.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "CreateSqlServer",
-    "description": "This step attempts to create a SQL server on the given tenant."
+    "description": "This step attempts to create a SQL server on the given tenant.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "CreateDatabase",
-    "description": "This step attempts to create a database in a SQL server created in a previous step."
+    "description": "This step attempts to create a database in a SQL server created in a previous step.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "CreateTable",
-    "description": "This step attempts to create a table in a database created in a previous step."
+    "description": "This step attempts to create a table in a database created in a previous step.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "InsertItem",
-    "description": "This step attempts to insert an item in a table created in a previous step."
+    "description": "This step attempts to insert an item in a table created in a previous step.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "GetItem",
-    "description": "This step attempts to retrieve an item inserted in a previous step."
+    "description": "This step attempts to retrieve an item inserted in a previous step.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "DeleteItem",
-    "description": "This step attempts to delete an item inserted in a previous step."
+    "description": "This step attempts to delete an item inserted in a previous step.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "DeleteDatabase",
-    "description": "This step attempts to delete a database created in a previous step."
+    "description": "This step attempts to delete a database created in a previous step.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "DeleteServer",
-    "description": "This step attempts to delete a server created in a previous step."
+    "description": "This step attempts to delete a server created in a previous step.",
+    "timeout_secs": 900
   }]
 }
 ```

@@ -51,10 +51,12 @@ Version
   },
   "steps": [{
     "check_logical_name": "AppPing",
-    "description": "Pings an application."
+    "description": "Pings an application.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "ConfigUpdate",
-    "description": "Updates an application's configuration."
+    "description": "Updates an application's configuration.",
+    "timeout_secs": 900
   }]
 }
 ```

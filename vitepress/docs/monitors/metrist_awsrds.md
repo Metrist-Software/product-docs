@@ -65,13 +65,16 @@ METRIST_DB_SUBNET_GROUP_NAME=""
   },
   "steps": [{
     "check_logical_name": "CreateInstance",
-    "description": "This step attempts to create a MySQL RDS instance."
+    "description": "This step attempts to create a MySQL RDS instance.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "PingInstance",
-    "description": "This step attempts to ping the RDS instance created in a previous step."
+    "description": "This step attempts to ping the RDS instance created in a previous step.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "DestroyInstance",
-    "description": "This step attempts to destory the RDS instance created in a previous step."
+    "description": "This step attempts to destory the RDS instance created in a previous step.",
+    "timeout_secs": 900
   }]
 }
 ```

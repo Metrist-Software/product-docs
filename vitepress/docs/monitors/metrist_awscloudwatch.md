@@ -62,10 +62,12 @@ METRIST_AWS_SECRET_ACCESS_KEY=""
   },
   "steps": [{
     "check_logical_name": "SubmitEvent",
-    "description": "This step attempts to submit a metric using PutMetricData API call."
+    "description": "This step attempts to submit a metric using PutMetricData API call.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "GetEvent",
-    "description": "Using ListMetricsCommand API call, this step attempts to retrieve a list of metrics matching the event submitted in a previous step."
+    "description": "Using ListMetricsCommand API call, this step attempts to retrieve a list of metrics matching the event submitted in a previous step.",
+    "timeout_secs": 900
   }]
 }
 ```

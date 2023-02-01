@@ -51,25 +51,32 @@ Version
   },
   "steps": [{
     "check_logical_name": "CreateDatabase",
-    "description": "Creates a database."
+    "description": "Creates a database.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "CreateTable",
-    "description": "Creates a table in the database."
+    "description": "Creates a table in the database.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "PutFile",
-    "description": "Puts a file into the table."
+    "description": "Puts a file into the table.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "GetData",
-    "description": "Gets data from the table."
+    "description": "Gets data from the table.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "DeleteData",
-    "description": "Deletes data from the table."
+    "description": "Deletes data from the table.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "DropTable",
-    "description": "Drops the table."
+    "description": "Drops the table.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "DropDatabase",
-    "description": "Drops the database."
+    "description": "Drops the database.",
+    "timeout_secs": 900
   }]
 }
 ```

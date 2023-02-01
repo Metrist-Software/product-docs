@@ -51,13 +51,16 @@ Version
   },
   "steps": [{
     "check_logical_name": "GetDirections",
-    "description": "Gets directions."
+    "description": "Gets directions.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "GetStaticMapImage",
-    "description": "Gets a static image."
+    "description": "Gets a static image.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "GetGeocodingFromAddress",
-    "description": "Gets gecoding from an address."
+    "description": "Gets gecoding from an address.",
+    "timeout_secs": 900
   }]
 }
 ```

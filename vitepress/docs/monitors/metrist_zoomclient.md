@@ -51,7 +51,8 @@ Version
   },
   "steps": [{
     "check_logical_name": "JoinCall",
-    "description": "Joins a call using the Zoom client and a headless Chrome browser."
+    "description": "Joins a call using the Zoom client and a headless Chrome browser.",
+    "timeout_secs": 900
   }]
 }
 ```

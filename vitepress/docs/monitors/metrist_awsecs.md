@@ -80,13 +80,16 @@ METRIST_VPC_PUBLIC_SUBNETS=""
   },
   "steps": [{
     "check_logical_name": "CreateService",
-    "description": "This step attempts to create an ECS service."
+    "description": "This step attempts to create an ECS service.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "PingService",
-    "description": "This step attempts to ping a load balancer by domain name."
+    "description": "This step attempts to ping a load balancer by domain name.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "DestroyService",
-    "description": "This step attempts to destroy the service created in an earlier step."
+    "description": "This step attempts to destroy the service created in an earlier step.",
+    "timeout_secs": 900
   }]
 }
 ```

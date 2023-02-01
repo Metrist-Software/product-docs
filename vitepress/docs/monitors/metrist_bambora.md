@@ -51,13 +51,16 @@ Version
   },
   "steps": [{
     "check_logical_name": "TestPurchase",
-    "description": "Attempts a test purchase."
+    "description": "Attempts a test purchase.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "TestRefund",
-    "description": "Attempts a test refund."
+    "description": "Attempts a test refund.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "TestVoid",
-    "description": "Attempts a test void."
+    "description": "Attempts a test void.",
+    "timeout_secs": 900
   }]
 }
 ```

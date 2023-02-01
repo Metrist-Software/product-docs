@@ -65,16 +65,20 @@ METRIST_TEAM=""
   },
   "steps": [{
     "check_logical_name": "CreateWorkItem",
-    "description": "This step attempts to create a work item on the given board."
+    "description": "This step attempts to create a work item on the given board.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "GetWorkItem",
-    "description": "This step attempts to retrieve a work item created in a previous step."
+    "description": "This step attempts to retrieve a work item created in a previous step.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "EditWorkItem",
-    "description": "This step attempts to edit a work item created in a previous step."
+    "description": "This step attempts to edit a work item created in a previous step.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "DeleteWorkItem",
-    "description": "This step attempts to delete a work item created in a previous step."
+    "description": "This step attempts to delete a work item created in a previous step.",
+    "timeout_secs": 900
   }]
 }
 ```

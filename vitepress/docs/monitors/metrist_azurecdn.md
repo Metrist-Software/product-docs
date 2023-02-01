@@ -86,19 +86,24 @@ METRIST_TENANT_ID=""
   },
   "steps": [{
     "check_logical_name": "GetLongCachedFile",
-    "description": "This step attempts to retrieve an existing file from CDN cache."
+    "description": "This step attempts to retrieve an existing file from CDN cache.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "GetNewFile",
-    "description": "This step uploads a new file to the CDN and attempts to retrieve it from CDN cache."
+    "description": "This step uploads a new file to the CDN and attempts to retrieve it from CDN cache.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "PurgeFile",
-    "description": "This step attempts to purge a file uploaded in a previous step."
+    "description": "This step attempts to purge a file uploaded in a previous step.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "UpdateFile",
-    "description": "This step attempts to update an existing file, then retrieve the updated version from CDN cache."
+    "description": "This step attempts to update an existing file, then retrieve the updated version from CDN cache.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "DeleteFile",
-    "description": "This step attempts to delete a file, purge the file from cache, then confirm the file no longer exists."
+    "description": "This step attempts to delete a file, purge the file from cache, then confirm the file no longer exists.",
+    "timeout_secs": 900
   }]
 }
 ```

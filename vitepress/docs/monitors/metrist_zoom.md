@@ -51,16 +51,20 @@ Version
   },
   "steps": [{
     "check_logical_name": "GetUsers",
-    "description": "Gets users using the REST API."
+    "description": "Gets users using the REST API.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "CreateMeeting",
-    "description": "Create a meeting."
+    "description": "Create a meeting.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "GetMeeting",
-    "description": "Gets meeting details."
+    "description": "Gets meeting details.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "DeleteMeeting",
-    "description": "Deletes a meeting."
+    "description": "Deletes a meeting.",
+    "timeout_secs": 900
   }]
 }
 ```

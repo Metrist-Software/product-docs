@@ -68,13 +68,16 @@ METRIST_PERSISTENT_INSTANCE_ID=""
   },
   "steps": [{
     "check_logical_name": "RunInstance",
-    "description": "This step attempts to launch an EC2 instance using the AMI for which you have permissions."
+    "description": "This step attempts to launch an EC2 instance using the AMI for which you have permissions.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "TerminateInstance",
-    "description": "This step attempts to terminate the instance created in a previous step."
+    "description": "This step attempts to terminate the instance created in a previous step.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "DescribePersistentInstance",
-    "description": "This step attempts to retrieve description(s) of running instances."
+    "description": "This step attempts to retrieve description(s) of running instances.",
+    "timeout_secs": 900
   }]
 }
 ```

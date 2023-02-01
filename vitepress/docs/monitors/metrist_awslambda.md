@@ -68,7 +68,8 @@ METRIST_QUEUE_URL=""
   },
   "steps": [{
     "check_logical_name": "TriggerLambdaAndWaitForResponse",
-    "description": "This step attempts to invoke a request and send a payload from a Lambda function to a SQS Queue."
+    "description": "This step attempts to invoke a request and send a payload from a Lambda function to a SQS Queue.",
+    "timeout_secs": 900
   }]
 }
 ```

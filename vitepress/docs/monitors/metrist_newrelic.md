@@ -71,13 +71,16 @@ METRIST_NEW_RELIC_SYNTHETICS_XPATH=""
   },
   "steps": [{
     "check_logical_name": "OpenDashboardUI",
-    "description": "Load a dashboard in the New Relic web UI"
+    "description": "Load a dashboard in the New Relic web UI",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "OpenSyntheticsUI",
-    "description": "Load a synthetic monitor in the New Relic web UI"
+    "description": "Load a synthetic monitor in the New Relic web UI",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "OpenAlertsUI",
-    "description": "Load the Alerting Overview page in the New Relic web UI"
+    "description": "Load the Alerting Overview page in the New Relic web UI",
+    "timeout_secs": 900
   }]
 }
 ```

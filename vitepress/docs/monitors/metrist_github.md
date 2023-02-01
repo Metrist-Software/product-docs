@@ -51,22 +51,28 @@ Version
   },
   "steps": [{
     "check_logical_name": "PullCode",
-    "description": "Pulls code from a git repository."
+    "description": "Pulls code from a git repository.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "PushCode",
-    "description": "Pushes code to a git repository."
+    "description": "Pushes code to a git repository.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "RemoveRemoteBranch",
-    "description": "Removes a remote branch from a git repository."
+    "description": "Removes a remote branch from a git repository.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "PullRequests",
-    "description": "Loads the pull requests web UI."
+    "description": "Loads the pull requests web UI.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "Issues",
-    "description": "Loads the issues web UI."
+    "description": "Loads the issues web UI.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "Raw",
-    "description": "Loads a file from raw.githubusercontent.com."
+    "description": "Loads a file from raw.githubusercontent.com.",
+    "timeout_secs": 900
   }]
 }
 ```

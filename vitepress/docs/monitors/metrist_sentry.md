@@ -51,16 +51,20 @@ Version
   },
   "steps": [{
     "check_logical_name": "CaptureEvent",
-    "description": "Captures an event."
+    "description": "Captures an event.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "WaitForIssue",
-    "description": "Waits for an issue to be created from the event."
+    "description": "Waits for an issue to be created from the event.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "ResolveIssue",
-    "description": "Resolves the issue."
+    "description": "Resolves the issue.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "DeleteIssue",
-    "description": "Deletes the issue."
+    "description": "Deletes the issue.",
+    "timeout_secs": 900
   }]
 }
 ```

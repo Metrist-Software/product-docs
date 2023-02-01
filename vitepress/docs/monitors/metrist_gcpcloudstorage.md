@@ -51,19 +51,24 @@ Version
   },
   "steps": [{
     "check_logical_name": "CreateBucket",
-    "description": "Creating a bucket adds the bucket to your GCP account."
+    "description": "Creating a bucket adds the bucket to your GCP account.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "UploadObject",
-    "description": "Stores a new object in a bucket."
+    "description": "Stores a new object in a bucket.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "GetObject",
-    "description": "Gets the object's metadata."
+    "description": "Gets the object's metadata.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "DeleteObject",
-    "description": "Objects are the individual pieces of data. Deleting an object removes it from the bucket."
+    "description": "Objects are the individual pieces of data. Deleting an object removes it from the bucket.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "DeleteBucket",
-    "description": "Deletes the bucket and removes the associated data from the GCP account."
+    "description": "Deletes the bucket and removes the associated data from the GCP account.",
+    "timeout_secs": 900
   }]
 }
 ```

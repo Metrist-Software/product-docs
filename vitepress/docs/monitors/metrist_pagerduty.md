@@ -51,16 +51,20 @@ Version
   },
   "steps": [{
     "check_logical_name": "CreateIncident",
-    "description": "Submits a trigger event to the v2 events API."
+    "description": "Submits a trigger event to the v2 events API.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "CheckForIncident",
-    "description": "Polls for incidents using the REST API until the submitted event results in an incident."
+    "description": "Polls for incidents using the REST API until the submitted event results in an incident.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "ReceiveWebhook",
-    "description": "Waits for PagerDuty to send a webhook for the resulting incident."
+    "description": "Waits for PagerDuty to send a webhook for the resulting incident.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "ResolveIncident",
-    "description": "Submits a resolve event for the incident using the v2 events API."
+    "description": "Submits a resolve event for the incident using the v2 events API.",
+    "timeout_secs": 900
   }]
 }
 ```

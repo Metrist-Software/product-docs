@@ -51,7 +51,8 @@ Version
   },
   "steps": [{
     "check_logical_name": "Ping",
-    "description": "Calls the ping endpoint on the AvaTax v2 API."
+    "description": "Calls the ping endpoint on the AvaTax v2 API.",
+    "timeout_secs": 900
   }]
 }
 ```

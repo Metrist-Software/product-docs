@@ -51,10 +51,12 @@ Version
   },
   "steps": [{
     "check_logical_name": "Ping",
-    "description": "Retreives a package's metadata over HTTPS."
+    "description": "Retreives a package's metadata over HTTPS.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "DownloadPackage",
-    "description": "Downloads the package over HTTPS."
+    "description": "Downloads the package over HTTPS.",
+    "timeout_secs": 900
   }]
 }
 ```

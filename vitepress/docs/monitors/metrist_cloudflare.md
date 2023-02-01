@@ -51,13 +51,16 @@ Version
   },
   "steps": [{
     "check_logical_name": "Ping",
-    "description": "Pings by requesting https://1.1.1.1/favicon.ico."
+    "description": "Pings by requesting https://1.1.1.1/favicon.ico.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "DNSLookup",
-    "description": "Performs a DNS lookup."
+    "description": "Performs a DNS lookup.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "CDN",
-    "description": "Requests an asset from the CDN."
+    "description": "Requests an asset from the CDN.",
+    "timeout_secs": 900
   }]
 }
 ```

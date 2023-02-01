@@ -65,19 +65,24 @@ METRIST_TENANT_ID=""
   },
   "steps": [{
     "check_logical_name": "CreateStorageAccount",
-    "description": "Creates a storage account."
+    "description": "Creates a storage account.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "CreateContainer",
-    "description": "Creates a container."
+    "description": "Creates a container.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "CreateBlob",
-    "description": "Creates a blob in the container."
+    "description": "Creates a blob in the container.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "GetBlob",
-    "description": "Gets the blob from the container."
+    "description": "Gets the blob from the container.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "DeleteBlob",
-    "description": "Deletes the blob from the container."
+    "description": "Deletes the blob from the container.",
+    "timeout_secs": 900
   }]
 }
 ```

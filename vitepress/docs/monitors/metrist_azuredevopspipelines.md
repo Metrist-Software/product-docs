@@ -65,16 +65,20 @@ METRIST_PROJECT=""
   },
   "steps": [{
     "check_logical_name": "StartMachineWorkflow",
-    "description": "This step attempts to start a workflow on the given pipeline."
+    "description": "This step attempts to start a workflow on the given pipeline.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "WaitForMachineWorkflowRunToComplete",
-    "description": "This step attempts to read the result of a workflow started in a previous step."
+    "description": "This step attempts to read the result of a workflow started in a previous step.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "StartDockerWorkflow",
-    "description": "This step attempts to start a workflow using Docker on the given pipeline."
+    "description": "This step attempts to start a workflow using Docker on the given pipeline.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "WaitForDockerWorkflowRunToComplete",
-    "description": "This step attempts to read the result of a workflow started in a previous step."
+    "description": "This step attempts to read the result of a workflow started in a previous step.",
+    "timeout_secs": 900
   }]
 }
 ```

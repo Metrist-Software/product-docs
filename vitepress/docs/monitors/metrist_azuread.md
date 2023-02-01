@@ -65,16 +65,20 @@ METRIST_TENANT_ID=""
   },
   "steps": [{
     "check_logical_name": "Authenticate",
-    "description": "This step attempts to retrieve an authentication token for a Client/Application."
+    "description": "This step attempts to retrieve an authentication token for a Client/Application.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "WriteUser",
-    "description": "This step attempts to add a new user, randomly named, to the given domain."
+    "description": "This step attempts to add a new user, randomly named, to the given domain.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "ReadUser",
-    "description": "This step attempts to retrieve the user account created in a previous step."
+    "description": "This step attempts to retrieve the user account created in a previous step.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "DeleteUser",
-    "description": "This step attempts to delete the user account created in a previous step."
+    "description": "This step attempts to delete the user account created in a previous step.",
+    "timeout_secs": 900
   }]
 }
 ```

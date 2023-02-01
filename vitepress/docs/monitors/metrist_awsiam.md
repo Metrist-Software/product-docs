@@ -65,28 +65,36 @@ METRIST_NAMESPACE=""
   },
   "steps": [{
     "check_logical_name": "CreateUser",
-    "description": "This step attempts to create a user, randomly named."
+    "description": "This step attempts to create a user, randomly named.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "CreateGroup",
-    "description": "This step attempts to create a group, randomly named."
+    "description": "This step attempts to create a group, randomly named.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "AddUserToGroup",
-    "description": "This step attempts to add the newly created user to the newly created group."
+    "description": "This step attempts to add the newly created user to the newly created group.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "RemoveUserFromGroup",
-    "description": "This step attempts to remove the user from the group."
+    "description": "This step attempts to remove the user from the group.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "DeleteGroup",
-    "description": "This step attempts to delete the group."
+    "description": "This step attempts to delete the group.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "AttachPolicy",
-    "description": "This step attempts to attach the user to the given policy arn."
+    "description": "This step attempts to attach the user to the given policy arn.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "DetachPolicy",
-    "description": "This step attempts to detach the user from the given policy arn."
+    "description": "This step attempts to detach the user from the given policy arn.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "DeleteUser",
-    "description": "This step attempts to delete the user created in an earlier step."
+    "description": "This step attempts to delete the user created in an earlier step.",
+    "timeout_secs": 900
   }]
 }
 ```

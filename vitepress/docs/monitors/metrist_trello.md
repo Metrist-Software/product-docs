@@ -51,10 +51,12 @@ Version
   },
   "steps": [{
     "check_logical_name": "CreateCard",
-    "description": "Creates a card using the REST API."
+    "description": "Creates a card using the REST API.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "DeleteCard",
-    "description": "Deletes the card using the REST API."
+    "description": "Deletes the card using the REST API.",
+    "timeout_secs": 900
   }]
 }
 ```

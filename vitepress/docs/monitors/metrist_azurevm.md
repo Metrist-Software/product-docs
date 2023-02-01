@@ -71,16 +71,20 @@ METRIST_TENANT_ID=""
   },
   "steps": [{
     "check_logical_name": "CreateInstance",
-    "description": "This step attempts to create a virtual machine instance."
+    "description": "This step attempts to create a virtual machine instance.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "RunInstance",
-    "description": "This step attemps to run a virtual machine instance created in a previous step."
+    "description": "This step attemps to run a virtual machine instance created in a previous step.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "TerminateInstance",
-    "description": "This step attempts to terminate a virtual machine instance created in a previous step."
+    "description": "This step attempts to terminate a virtual machine instance created in a previous step.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "DescribePersistentInstance",
-    "description": "This step attemps to retrieve information about a persistent virtual machine instance."
+    "description": "This step attemps to retrieve information about a persistent virtual machine instance.",
+    "timeout_secs": 900
   }]
 }
 ```

@@ -37,6 +37,9 @@ Version
 ```sh
 # (Required) The API token to use.
 METRIST_ZENDESK_API_TOKEN=""
+
+# (Required) Subdomain to run api calls against. E.g. `metrist` for https://metrist.zendesk.com/api
+METRIST_ZENDESK_SUBDOMAIN=""
 ```
 
 <!--@include: /parts/tips_env-vars.md -->
@@ -56,16 +59,20 @@ METRIST_ZENDESK_API_TOKEN=""
   },
   "steps": [{
     "check_logical_name": "GetUsers",
-    "description": "Lists users using the REST API."
+    "description": "Lists users using the REST API.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "CreateTicket",
-    "description": "Creates a ticket using the REST API."
+    "description": "Creates a ticket using the REST API.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "SoftDeleteTicket",
-    "description": "Deletes the ticket, (soft deletion), using the REST API."
+    "description": "Deletes the ticket, (soft deletion), using the REST API.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "PermanentlyDeleteTicket",
-    "description": "Permanently deletes the ticket using the REST API."
+    "description": "Permanently deletes the ticket using the REST API.",
+    "timeout_secs": 900
   }]
 }
 ```

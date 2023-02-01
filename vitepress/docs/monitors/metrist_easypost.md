@@ -51,13 +51,16 @@ Version
   },
   "steps": [{
     "check_logical_name": "GetAddressesTest",
-    "description": "Gets addresses in the test environment."
+    "description": "Gets addresses in the test environment.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "GetAddressesProd",
-    "description": "Gets addresses in the prod environment."
+    "description": "Gets addresses in the prod environment.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "VerifyInvalidAddress",
-    "description": "Verifies addresses in the prod environment."
+    "description": "Verifies addresses in the prod environment.",
+    "timeout_secs": 900
   }]
 }
 ```

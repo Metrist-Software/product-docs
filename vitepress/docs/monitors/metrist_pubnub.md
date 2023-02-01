@@ -51,13 +51,16 @@ Version
   },
   "steps": [{
     "check_logical_name": "SubscribeToChannel",
-    "description": "Subscribes to a channel."
+    "description": "Subscribes to a channel.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "SendMessage",
-    "description": "Sends a message to the channel."
+    "description": "Sends a message to the channel.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "ReceiveMessaeg",
-    "description": "Receives a message from the channel."
+    "description": "Receives a message from the channel.",
+    "timeout_secs": 900
   }]
 }
 ```

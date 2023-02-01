@@ -71,25 +71,32 @@ METRIST_DISTRIBUTION_ID=""
   },
   "steps": [{
     "check_logical_name": "PublishFile",
-    "description": "This step attempts to asynchronously put a file in an S3 bucket."
+    "description": "This step attempts to asynchronously put a file in an S3 bucket.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "GetNewFile",
-    "description": "This step attempts to retrieve the file created in the previous step."
+    "description": "This step attempts to retrieve the file created in the previous step.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "UpdateFile",
-    "description": "This step attempts to update the file created in the previous step."
+    "description": "This step attempts to update the file created in the previous step.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "PurgeFile",
-    "description": "This step attempts to purge items from the distribution."
+    "description": "This step attempts to purge items from the distribution.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "GetUpdatedFile",
-    "description": "This step attempts to retrieve a file updated in a previous step."
+    "description": "This step attempts to retrieve a file updated in a previous step.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "DeleteFile",
-    "description": "This step attempts to delete the file created in a previous step."
+    "description": "This step attempts to delete the file created in a previous step.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "WaitForDeletionPropagation",
-    "description": "This step attempts to confirm the DeleteFile step was successful."
+    "description": "This step attempts to confirm the DeleteFile step was successful.",
+    "timeout_secs": 900
   }]
 }
 ```

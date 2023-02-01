@@ -51,7 +51,8 @@ Version
   },
   "steps": [{
     "check_logical_name": "SendEmail",
-    "description": "Sends an email using the v3 API."
+    "description": "Sends an email using the v3 API.",
+    "timeout_secs": 900
   }]
 }
 ```

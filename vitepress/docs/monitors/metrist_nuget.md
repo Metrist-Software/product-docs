@@ -51,10 +51,12 @@ Version
   },
   "steps": [{
     "check_logical_name": "ListVersions",
-    "description": "Lists versions of a package."
+    "description": "Lists versions of a package.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "Download",
-    "description": "Downloads a package."
+    "description": "Downloads a package.",
+    "timeout_secs": 900
   }]
 }
 ```

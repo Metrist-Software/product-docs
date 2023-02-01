@@ -68,28 +68,36 @@ METRIST_TENANT_ID=""
   },
   "steps": [{
     "check_logical_name": "CreateCosmosAccount",
-    "description": "This step attempts to create a cosmos account, randomly named, in the given region."
+    "description": "This step attempts to create a cosmos account, randomly named, in the given region.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "CreateDatabase",
-    "description": "This step attempts to attach a database, randonmy named, to the cosmos account created in a previous step."
+    "description": "This step attempts to attach a database, randonmy named, to the cosmos account created in a previous step.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "CreateContainer",
-    "description": "This step attempts to create a new SqlContainer in a database created in a previous step."
+    "description": "This step attempts to create a new SqlContainer in a database created in a previous step.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "InsertItem",
-    "description": "This step attempts to insert an item in a container created in a previous step."
+    "description": "This step attempts to insert an item in a container created in a previous step.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "GetItem",
-    "description": "This step attempts to retrieve an item created in a previous step."
+    "description": "This step attempts to retrieve an item created in a previous step.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "DeleteItem",
-    "description": "This step attempts to delete an item created in a previous step."
+    "description": "This step attempts to delete an item created in a previous step.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "DeleteContainer",
-    "description": "This step attempts to delete a container created in a previous step."
+    "description": "This step attempts to delete a container created in a previous step.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "DeleteDatabase",
-    "description": "This step attempts to delete a database created in a previous step."
+    "description": "This step attempts to delete a database created in a previous step.",
+    "timeout_secs": 900
   }]
 }
 ```

@@ -51,7 +51,8 @@ Version
   },
   "steps": [{
     "check_logical_name": "GetContacts",
-    "description": "Lists contacts using the v1 REST API."
+    "description": "Lists contacts using the v1 REST API.",
+    "timeout_secs": 900
   }]
 }
 ```

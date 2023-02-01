@@ -51,10 +51,12 @@ Version
   },
   "steps": [{
     "check_logical_name": "Ping",
-    "description": "This step attempts to retrieve package metadata from a known artifact."
+    "description": "This step attempts to retrieve package metadata from a known artifact.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "DownloadPackage",
-    "description": "This step attempts to download a known artifact."
+    "description": "This step attempts to download a known artifact.",
+    "timeout_secs": 900
   }]
 }
 ```

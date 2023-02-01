@@ -71,16 +71,20 @@ METRIST_PERSISTENT_RECORD_NAME=""
   },
   "steps": [{
     "check_logical_name": "QueryExistingDNSRecord",
-    "description": "This step attempts to query an existing record on Route53 via DNS Lookup."
+    "description": "This step attempts to query an existing record on Route53 via DNS Lookup.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "QueryExistingDNSRecordAPI",
-    "description": "This step attempts to query an existing DNS record on Route53 via the AWS SDK for JavaScript v3."
+    "description": "This step attempts to query an existing DNS record on Route53 via the AWS SDK for JavaScript v3.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "CreateDNSRecord",
-    "description": "This step attempts to create a DNS A record on Route53 via the AWS SDK for JavaScript v3."
+    "description": "This step attempts to create a DNS A record on Route53 via the AWS SDK for JavaScript v3.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "RemoveDNSRecord",
-    "description": "This step attempts to remove a DNS A Record on Route53 via the AWS SDK for JavaScript v3."
+    "description": "This step attempts to remove a DNS A Record on Route53 via the AWS SDK for JavaScript v3.",
+    "timeout_secs": 900
   }]
 }
 ```

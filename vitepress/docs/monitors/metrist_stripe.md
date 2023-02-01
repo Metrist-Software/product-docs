@@ -51,13 +51,16 @@ Version
   },
   "steps": [{
     "check_logical_name": "CreateMethod",
-    "description": "Creates a method on a test card."
+    "description": "Creates a method on a test card.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "CreateIntent",
-    "description": "Creates an intent a test card."
+    "description": "Creates an intent a test card.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "ConfirmIntent",
-    "description": "Confirms an intent on a test card."
+    "description": "Confirms an intent on a test card.",
+    "timeout_secs": 900
   }]
 }
 ```

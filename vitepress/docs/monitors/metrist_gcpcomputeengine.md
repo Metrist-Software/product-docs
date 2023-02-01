@@ -51,13 +51,16 @@ Version
   },
   "steps": [{
     "check_logical_name": "CreateInstance",
-    "description": "Creates an instance."
+    "description": "Creates an instance.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "GetInstanceInfo",
-    "description": "Gets information about the instance."
+    "description": "Gets information about the instance.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "DeleteInstance",
-    "description": "Deletes the instance."
+    "description": "Deletes the instance.",
+    "timeout_secs": 900
   }]
 }
 ```

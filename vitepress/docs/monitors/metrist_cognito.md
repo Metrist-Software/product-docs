@@ -62,10 +62,12 @@ METRIST_USER_POOL=""
   },
   "steps": [{
     "check_logical_name": "CreateUser",
-    "description": "This step attempts to create a user account (randomly named) using Cognito Identity Provider Client."
+    "description": "This step attempts to create a user account (randomly named) using Cognito Identity Provider Client.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "DeleteUser",
-    "description": "This step attempts to delete the user account created in a previous step."
+    "description": "This step attempts to delete the user account created in a previous step.",
+    "timeout_secs": 900
   }]
 }
 ```

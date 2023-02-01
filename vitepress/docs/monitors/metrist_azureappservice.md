@@ -56,7 +56,8 @@ METRIST_HOST_NAME=""
   },
   "steps": [{
     "check_logical_name": "PingService",
-    "description": "This step attemps to ping Azure App Service API."
+    "description": "This step attemps to ping Azure App Service API.",
+    "timeout_secs": 900
   }]
 }
 ```

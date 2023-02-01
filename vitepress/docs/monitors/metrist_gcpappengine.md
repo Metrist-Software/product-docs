@@ -51,22 +51,28 @@ Version
   },
   "steps": [{
     "check_logical_name": "AutoScaleUp",
-    "description": "Performs several rapid requests to trigger autoscaling."
+    "description": "Performs several rapid requests to trigger autoscaling.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "PingApp",
-    "description": "Pings an existing instance."
+    "description": "Pings an existing instance.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "CreateVersion",
-    "description": "Deploys a new version of the service."
+    "description": "Deploys a new version of the service.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "MigrateTraffic",
-    "description": "Migrates traffic of a service from one version to another."
+    "description": "Migrates traffic of a service from one version to another.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "AutoScaleDown",
-    "description": "Waits for instance count to return to 0. Instances are created with a 10s idle timeout."
+    "description": "Waits for instance count to return to 0. Instances are created with a 10s idle timeout.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "DestroyVersion",
-    "description": "Destroys a version of the service."
+    "description": "Destroys a version of the service.",
+    "timeout_secs": 900
   }]
 }
 ```

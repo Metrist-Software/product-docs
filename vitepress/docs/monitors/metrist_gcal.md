@@ -51,13 +51,16 @@ Version
   },
   "steps": [{
     "check_logical_name": "CreateEvent",
-    "description": "Creates an event."
+    "description": "Creates an event.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "GetEvent",
-    "description": "Gets an event."
+    "description": "Gets an event.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "DeleteEvent",
-    "description": "Deletes an event."
+    "description": "Deletes an event.",
+    "timeout_secs": 900
   }]
 }
 ```

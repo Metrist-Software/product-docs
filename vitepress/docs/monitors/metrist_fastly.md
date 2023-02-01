@@ -51,13 +51,16 @@ Version
   },
   "steps": [{
     "check_logical_name": "PurgeCache",
-    "description": "Purges a cache."
+    "description": "Purges a cache.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "GetNonCachedFile",
-    "description": "Gets a non-cached file."
+    "description": "Gets a non-cached file.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "GetCachedFile",
-    "description": "Gets a cached file."
+    "description": "Gets a cached file.",
+    "timeout_secs": 900
   }]
 }
 ```

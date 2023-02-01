@@ -38,7 +38,8 @@ export const maybeMultiLineTransform = (manifest, keyname) => {
             steps: manifest.steps.map((step) => {
               return {
                 check_logical_name: step?.logical_name,
-                description: step?.description
+                description: step?.description,
+                timeout_secs: 900.0
               }
             })
           }

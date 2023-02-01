@@ -51,7 +51,8 @@ Version
   },
   "steps": [{
     "check_logical_name": "SubmitSandboxTransaction",
-    "description": "Attempts to submit a sandbox transaction."
+    "description": "Attempts to submit a sandbox transaction.",
+    "timeout_secs": 900
   }]
 }
 ```

@@ -62,13 +62,16 @@ METRIST_REPOSITORY=""
   },
   "steps": [{
     "check_logical_name": "CloneRepo",
-    "description": "This step attempts to clone a given repository."
+    "description": "This step attempts to clone a given repository.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "PushCode",
-    "description": "This step attempts to checkout a new branch, write a file, add, commit, and push changes to a given repository."
+    "description": "This step attempts to checkout a new branch, write a file, add, commit, and push changes to a given repository.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "RemoveRemoteBranch",
-    "description": "This step attempts to remove the new branch created in a previous step."
+    "description": "This step attempts to remove the new branch created in a previous step.",
+    "timeout_secs": 900
   }]
 }
 ```

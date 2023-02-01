@@ -62,10 +62,12 @@ METRIST_SLACK_TAG=""
   },
   "steps": [{
     "check_logical_name": "PostMessage",
-    "description": "Sends a message through the API."
+    "description": "Sends a message through the API.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "ReadMessage",
-    "description": "Reads the previously sent message through the API."
+    "description": "Reads the previously sent message through the API.",
+    "timeout_secs": 900
   }]
 }
 ```

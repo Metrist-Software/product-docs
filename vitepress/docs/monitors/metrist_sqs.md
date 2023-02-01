@@ -62,10 +62,12 @@ METRIST_QUEUE_URL=""
   },
   "steps": [{
     "check_logical_name": "WriteMessage",
-    "description": "This step attempts to write a message to a queue."
+    "description": "This step attempts to write a message to a queue.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "ReadMessage",
-    "description": "This step attempts to retrieve a message created in a previous step."
+    "description": "This step attempts to retrieve a message created in a previous step.",
+    "timeout_secs": 900
   }]
 }
 ```

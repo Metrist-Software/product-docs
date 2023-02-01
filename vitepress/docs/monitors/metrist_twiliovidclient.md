@@ -51,7 +51,8 @@ Version
   },
   "steps": [{
     "check_logical_name": "JoinRoom",
-    "description": "Joins the room using a headless Chrome browser."
+    "description": "Joins the room using a headless Chrome browser.",
+    "timeout_secs": 900
   }]
 }
 ```

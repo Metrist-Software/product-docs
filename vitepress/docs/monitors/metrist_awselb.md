@@ -74,7 +74,8 @@ METRIST_AWS_SECRET_ACCESS_KEY=""
   },
   "steps": [{
     "check_logical_name": "ChangeTargetGroup",
-    "description": "This step attempts to change an ELB target group and measure how long it takes for the change to become effective."
+    "description": "This step attempts to change an ELB target group and measure how long it takes for the change to become effective.",
+    "timeout_secs": 900
   }]
 }
 ```

@@ -51,10 +51,12 @@ Version
   },
   "steps": [{
     "check_logical_name": "CreateIssue",
-    "description": "Creates an issue using the REST API."
+    "description": "Creates an issue using the REST API.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "DeleteIssue",
-    "description": "Deletes the issue using the REST API."
+    "description": "Deletes the issue using the REST API.",
+    "timeout_secs": 900
   }]
 }
 ```

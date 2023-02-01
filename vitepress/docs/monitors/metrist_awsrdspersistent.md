@@ -71,7 +71,8 @@ METRIST_AWSRDSPERSISTENT_USER=""
   },
   "steps": [{
     "check_logical_name": "PingInstance",
-    "description": "This step attempts to ping your postgres or mysql RDS instance."
+    "description": "This step attempts to ping your postgres or mysql RDS instance.",
+    "timeout_secs": 900
   }]
 }
 ```

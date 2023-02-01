@@ -51,10 +51,12 @@ Version
   },
   "steps": [{
     "check_logical_name": "GetAccessToken",
-    "description": "Gets an access token using the API."
+    "description": "Gets an access token using the API.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "GetBranding",
-    "description": "Gets branding information using the API."
+    "description": "Gets branding information using the API.",
+    "timeout_secs": 900
   }]
 }
 ```

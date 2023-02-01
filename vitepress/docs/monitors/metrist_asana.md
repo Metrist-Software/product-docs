@@ -62,16 +62,20 @@ METRIST_ASANA_PERSONAL_ACCESS_TOKEN=""
   },
   "steps": [{
     "check_logical_name": "Ping",
-    "description": "This step pings Asana’s users REST API."
+    "description": "This step pings Asana’s users REST API.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "CreateTask",
-    "description": "This step creates a task using Asana's REST API."
+    "description": "This step creates a task using Asana's REST API.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "GetTask",
-    "description": "This step retrieves a task using Asana's REST API."
+    "description": "This step retrieves a task using Asana's REST API.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "DeleteTask",
-    "description": "This step deletes a task using Asana's REST API."
+    "description": "This step deletes a task using Asana's REST API.",
+    "timeout_secs": 900
   }]
 }
 ```

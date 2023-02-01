@@ -51,10 +51,12 @@ Version
   },
   "steps": [{
     "check_logical_name": "SubmitEvent",
-    "description": "Posts an event using the v1 events API."
+    "description": "Posts an event using the v1 events API.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "GetEvent",
-    "description": "Gets the event using the v1 events API."
+    "description": "Gets the event using the v1 events API.",
+    "timeout_secs": 900
   }]
 }
 ```

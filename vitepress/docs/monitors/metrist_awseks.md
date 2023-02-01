@@ -71,10 +71,12 @@ METRIST_AWS_EKS_CLUSTER_CERTIFICATE_AUTHORITY_DATA=""
   },
   "steps": [{
     "check_logical_name": "CreateDeployment",
-    "description": "This step attempts to deploy a container into a cluster."
+    "description": "This step attempts to deploy a container into a cluster.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "RemoveDeployment",
-    "description": "This step attempts to remove the container deployed in a previous step."
+    "description": "This step attempts to remove the container deployed in a previous step.",
+    "timeout_secs": 900
   }]
 }
 ```

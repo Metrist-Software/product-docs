@@ -51,10 +51,12 @@ Version
   },
   "steps": [{
     "check_logical_name": "CreateDeployment",
-    "description": "Creates a deployment."
+    "description": "Creates a deployment.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "RemoveDeployment",
-    "description": "Removes a deployment."
+    "description": "Removes a deployment.",
+    "timeout_secs": 900
   }]
 }
 ```

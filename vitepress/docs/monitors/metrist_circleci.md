@@ -51,13 +51,16 @@ Version
   },
   "steps": [{
     "check_logical_name": "StartPipeline",
-    "description": "Starts a pipeline."
+    "description": "Starts a pipeline.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "RunMonitorDockerWorkflow",
-    "description": "Runs a Docker workflow."
+    "description": "Runs a Docker workflow.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "RunMonitorMachineWorkflow",
-    "description": "Runs a machine workflow."
+    "description": "Runs a machine workflow.",
+    "timeout_secs": 900
   }]
 }
 ```

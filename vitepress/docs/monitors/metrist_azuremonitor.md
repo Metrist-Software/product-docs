@@ -56,19 +56,24 @@ METRIST_CONNECTION_STRING=""
   },
   "steps": [{
     "check_logical_name": "TrackEvent",
-    "description": "This step attempts to track a known type of event."
+    "description": "This step attempts to track a known type of event.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "TrackMetricValue",
-    "description": "This step attempts to track a metric with a given value."
+    "description": "This step attempts to track a metric with a given value.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "TrackExc",
-    "description": "This step throws an exception and attempts to track it."
+    "description": "This step throws an exception and attempts to track it.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "TrackTrace",
-    "description": "This step attempts to track a monitor trace."
+    "description": "This step attempts to track a monitor trace.",
+    "timeout_secs": 900
   }, {
     "check_logical_name": "SendLog",
-    "description": "This step attempts to send error details to a log."
+    "description": "This step attempts to send error details to a log.",
+    "timeout_secs": 900
   }]
 }
 ```

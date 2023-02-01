@@ -65,7 +65,8 @@ METRIST_TO_EMAIL=""
   },
   "steps": [{
     "check_logical_name": "SendEmail",
-    "description": "This step attempts to send a message via SES."
+    "description": "This step attempts to send a message via SES.",
+    "timeout_secs": 900
   }]
 }
 ```

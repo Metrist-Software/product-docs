@@ -30,19 +30,22 @@ Version
 
 ```sh
 # (Required) The client ID is the unique Application (client) ID assigned to your app by Azure AD when the app was registered.
-METRIST_CLIENT_ID=""
+METRIST_AZURESQL_CLIENT_I_D=""
 
 # (Required) Secret string previously shared with AAD at application registration to prove the identity of the application (the client) requesting the tokens.
-METRIST_CLIENT_SECRET=""
+METRIST_AZURESQL_CLIENT_SECRET=""
 
 # (Required) The name of an Azure Region.
-METRIST_REGION=""
+METRIST_AZURESQL_REGION=""
 
 # (Required) A GUID that identifies a subscription and underlying services.
-METRIST_SUBSCRIPTION_ID=""
+METRIST_AZURESQL_SUBSCRIPTION_I_D=""
 
 # (Required) A unique identifier of the Active Directory instance.
-METRIST_TENANT_ID=""
+METRIST_AZURESQL_TENANT_I_D=""
+
+# (Required) A valid Azure region.
+METRIST_AZURESQL_REGION=""
 ```
 
 <!--@include: /parts/tips_env-vars.md -->

@@ -28,7 +28,13 @@ Version
 <!--@include: /parts/_3.md-->
 
 
-```sh```
+```sh
+# (Required) An API key to use to perform the test transactions.
+METRIST_BAMBORA_PAYMENTS_A_P_I_KEY=""
+
+# (Required) A merchant ID to use for the test transactions.
+METRIST_BAMBORA_MERCHANT_ID=""
+```
 
 <!--@include: /parts/tips_env-vars.md -->
 

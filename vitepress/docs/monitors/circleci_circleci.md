@@ -28,7 +28,13 @@ Version
 <!--@include: /parts/_3.md-->
 
 
-```sh```
+```sh
+# (Required) The API Token for the account that contains the pipeline & workflows to run.
+METRIST_CIRCLECI_API_TOKEN=""
+
+# (Required) The slug of the project that contains the MonitorMachine and MonitorDocker workflows.
+METRIST_CIRCLECI_PROJECT_SLUG=""
+```
 
 <!--@include: /parts/tips_env-vars.md -->
 

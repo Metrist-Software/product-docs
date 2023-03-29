@@ -30,13 +30,10 @@ Version
 
 ```sh
 # (Required) Your AWS Access Key Id.
-METRIST_AWS_ACCESS_KEY_ID=""
-
-# (Required) Any valid AWS Region name.
-METRIST_AWS_REGION=""
+METRIST_AWSCLOUDWATCH_A_W_S_ACCESS_KEY_ID=""
 
 # (Required) Your AWS Secret Access Key.
-METRIST_AWS_SECRET_ACCESS_KEY=""
+METRIST_AWSCLOUDWATCH_A_W_S_SECRET_ACCESS_KEY=""
 ```
 
 <!--@include: /parts/tips_env-vars.md -->

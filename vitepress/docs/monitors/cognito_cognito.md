@@ -30,13 +30,13 @@ Version
 
 ```sh
 # (Required) Your AWS Access Key Id.
-METRIST_AWS_ACCESS_KEY_ID=""
+METRIST_COGNITO_AWS_ACCESS_KEY_ID=""
 
 # (Required) Your AWS Secret Access Key.
-METRIST_AWS_SECRET_ACCESS_KEY=""
+METRIST_COGNITO_AWS_SECRET_ACCESS_KEY=""
 
 # (Required) Name of user pool.
-METRIST_USER_POOL=""
+METRIST_COGNITO_USER_POOL=""
 ```
 
 <!--@include: /parts/tips_env-vars.md -->

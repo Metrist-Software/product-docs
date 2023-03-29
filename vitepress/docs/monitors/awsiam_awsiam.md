@@ -30,16 +30,16 @@ Version
 
 ```sh
 # (Required) Your AWS Access Key Id.
-METRIST_AWS_ACCESS_KEY_ID=""
+METRIST_AWSIAM_A_W_S_ACCESS_KEY_ID=""
 
 # (Required) Any valid AWS Region name.
-METRIST_AWS_REGION=""
+METRIST_AWSIAM_A_W_S_REGION=""
 
 # (Required) Your AWS Secret Access Key.
-METRIST_AWS_SECRET_ACCESS_KEY=""
+METRIST_AWSIAM_A_W_S_SECRET_ACCESS_KEY=""
 
 # (Required) A name used to retrieve a policy arn, as in `arn:aws:iam::123456789000:policy/AwsIamMonitorTestPolicies/${THIS_NAME}-a_region-awsiam-testpolicy`.
-METRIST_NAMESPACE=""
+METRIST_AWSIAM_NAMESPACE=""
 ```
 
 <!--@include: /parts/tips_env-vars.md -->

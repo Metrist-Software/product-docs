@@ -30,31 +30,31 @@ Version
 
 ```sh
 # (Required) Your AWS Access Key Id.
-AWS_ACCESS_KEY_ID=""
+METRIST_AWSECS_AWS_ACCESS_KEY_ID=""
 
 # (Required) Your AWS Secret Access Key.
-AWS_SECRET_ACCESS_KEY=""
+METRIST_AWSECS_AWS_SECRET_ACCESS_KEY=""
 
 # (Required) A load balancer DNS name to ping.
-METRIST_AWS_LB_DNS_NAME=""
+METRIST_AWSECS_AWS_LB_DNS_NAME=""
 
 # (Required) The load balancer target group ARN to access from the load balancer.
-METRIST_AWS_LB_TARGET_GROUP_ARN=""
+METRIST_AWSECS_AWS_LB_TARGET_GROUP_ARN=""
 
 # (Required) Full ARN of the task definition to run in your service.
-METRIST_AWS_TASK_DEFINITION_ARN=""
+METRIST_AWSECS_AWS_TASK_DEFINITION_ARN=""
 
 # (Required) ID of the cluster hosted by Amazon ECS.
-METRIST_CLUSTER_ID=""
+METRIST_AWSECS_CLUSTER_ID=""
 
 # (Required) Any of the [supported regions](https://docs.aws.amazon.com/AmazonECS/latest/userguide/AWS_Fargate-Regions.html).
-METRIST_REGION=""
+METRIST_AWSECS_REGION=""
 
 # (Required) A security group ID relevant to this cluster.
-METRIST_SECURITY_GROUP_ID=""
+METRIST_AWSECS_SECURITY_GROUP_ID=""
 
 # (Required) Comma-separated list of IDs of the subnets associated with the service.
-METRIST_VPC_PUBLIC_SUBNETS=""
+METRIST_AWSECS_VPC_PUBLIC_SUBNETS=""
 ```
 
 <!--@include: /parts/tips_env-vars.md -->

@@ -30,19 +30,19 @@ Version
 
 ```sh
 # (Required) Your AWS Access Key Id.
-METRIST_AWS_ACCESS_KEY_ID=""
+METRIST_AWSLAMBDA_AWS_ACCESS_KEY_ID=""
 
 # (Required) Any valid AWS Region name.
-METRIST_AWS_REGION=""
+METRIST_AWSLAMBDA_REGION=""
 
 # (Required) Your AWS Secret Access Key.
-METRIST_AWS_SECRET_ACCESS_KEY=""
+METRIST_AWSLAMBDA_AWS_SECRET_ACCESS_KEY=""
 
 # (Required) The ARN identifying the location of an existing Lambda function.
-METRIST_TEST_FUNCTION_ARN=""
+METRIST_AWSLAMBDA_TEST_FUNCTION_ARN=""
 
 # (Required) The SQS Queue url to which the Lambda function sends a message.
-METRIST_QUEUE_URL=""
+METRIST_AWSLAMBDA_QUEUE_URL=""
 ```
 
 <!--@include: /parts/tips_env-vars.md -->

@@ -28,7 +28,22 @@ Version
 <!--@include: /parts/_3.md-->
 
 
-```sh```
+```sh
+# (Required) The GCP Project ID of the project to perform app engine operations on.
+METRIST_GCPAPPENGINE_PROJECT_ID=""
+
+# (Required) The URL to the zip file to use for deployments.
+METRIST_GCPAPPENGINE_APP_ZIP_URL=""
+
+# (Required) The hostname to use for the deployed app
+METRIST_GCPAPPENGINE_APP_HOSTNAME=""
+
+# (Required) The base 64 encoded credentials string to use for appengine operations.
+METRIST_GCPAPPENGINE_PRIVATE_KEY=""
+
+# (Required) An environment tag to use for deployed elements.
+METRIST_GCPAPPENGINE_ENVIRONMENT_TAG=""
+```
 
 <!--@include: /parts/tips_env-vars.md -->
 

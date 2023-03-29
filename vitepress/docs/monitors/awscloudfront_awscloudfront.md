@@ -30,22 +30,22 @@ Version
 
 ```sh
 # (Required) Your AWS Access Key Id.
-METRIST_AWS_ACCESS_KEY_ID=""
+METRIST_AWSCLOUDFRONT_A_W_S_ACCESS_KEY_ID=""
 
 # (Required) Any valid AWS Region name.
-METRIST_AWS_REGION=""
+METRIST_AWSCLOUDFRONT_A_W_S_REGION=""
 
 # (Required) Your AWS Secret Access Key.
-METRIST_AWS_SECRET_ACCESS_KEY=""
+METRIST_AWSCLOUDFRONT_A_W_S_SECRET_ACCESS_KEY=""
 
 # (Required) The name of your S3 bucket.
-METRIST_BUCKET=""
+METRIST_AWSCLOUDFRONT_BUCKET_NAME=""
 
 # (Required) The CloudFront domain name needed when linking to your objects.
-METRIST_DISTRIBUTION_DOMAIN_NAME=""
+METRIST_AWSCLOUDFRONT_DISTRIBUTION_DOMAIN_NAME=""
 
 # (Required) The id assigned to the distribution.
-METRIST_DISTRIBUTION_ID=""
+METRIST_AWSCLOUDFRONT_DISTRIBUTION_ID=""
 ```
 
 <!--@include: /parts/tips_env-vars.md -->

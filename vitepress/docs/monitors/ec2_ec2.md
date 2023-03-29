@@ -30,19 +30,19 @@ Version
 
 ```sh
 # (Required) Your AWS Access Key Id.
-METRIST_AWS_ACCESS_KEY_ID=""
+METRIST_EC2_AWS_ACCESS_KEY_ID=""
 
 # (Required) Your AWS Secret Access Key.
-METRIST_AWS_SECRET_ACCESS_KEY=""
+METRIST_EC2_AWS_SECRET_ACCESS_KEY=""
 
 # (Required) Any valid AWS Region name.
-METRIST_REGION=""
+METRIST_EC2_REGION=""
 
 # (Required) The ID of an Amazon Machine Image.
-METRIST_AMI_ID=""
+METRIST_EC2_AMI_I_D=""
 
 # (Required) The ID of a running instance.
-METRIST_PERSISTENT_INSTANCE_ID=""
+METRIST_EC2_PERSISTENT_INSTANCE_ID=""
 ```
 
 <!--@include: /parts/tips_env-vars.md -->

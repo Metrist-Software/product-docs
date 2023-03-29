@@ -30,7 +30,7 @@ Version
 
 ```sh
 # (Required) A valid app host name.
-METRIST_HOST_NAME=""
+METRIST_AZUREAPPSERVICE_HOST_NAME=""
 ```
 
 <!--@include: /parts/tips_env-vars.md -->

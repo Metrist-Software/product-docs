@@ -30,16 +30,16 @@ Version
 
 ```sh
 # (Required) The domain name associated with users in your Active Directory. Example: metrist.io.
-METRIST_DOMAIN=""
+METRIST_AZUREAD_DOMAIN=""
 
 # (Required) The client ID is the unique Application (client) ID assigned to your app by Azure AD when the app was registered. You can find the Application (Client) ID in your Azure subscription by Azure AD => Enterprise applications => Application ID.
-METRIST_CLIENT_ID=""
+METRIST_AZUREAD_CLIENT_I_D=""
 
 # (Required) Secret string previously shared with AAD at application registration to prove the identity of the application (the client) requesting the tokens.
-METRIST_CLIENT_SECRET=""
+METRIST_AZUREAD_CLIENT_SECRET=""
 
 # (Required) Tenant ID of the Azure AD tenant or a domain associated with this Azure AD tenant, in order to sign-in a user of a specific organization only.
-METRIST_TENANT_ID=""
+METRIST_AZUREAD_TENANT_I_D=""
 ```
 
 <!--@include: /parts/tips_env-vars.md -->

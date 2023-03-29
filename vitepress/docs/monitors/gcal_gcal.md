@@ -28,7 +28,13 @@ Version
 <!--@include: /parts/_3.md-->
 
 
-```sh```
+```sh
+# (Required) A calendar to operate on.
+METRIST_GCAL_CALENDAR_NAME=""
+
+# (Required) Base64 encoded user credentials that are allowed to create/retrieve/delete events on the specified calendar.
+METRIST_GCAL_CALENDAR_NAME=""
+```
 
 <!--@include: /parts/tips_env-vars.md -->
 

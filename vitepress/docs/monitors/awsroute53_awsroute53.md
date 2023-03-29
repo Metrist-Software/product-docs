@@ -30,22 +30,25 @@ Version
 
 ```sh
 # (Required) Your AWS Access Key Id.
-METRIST_AWS_ACCESS_KEY_ID=""
+METRIST_AWSROUTE53_A_W_S_ACCESS_KEY_ID=""
 
 # (Required) Your AWS Secret Access Key.
-METRIST_AWS_SECRET_ACCESS_KEY=""
+METRIST_AWSROUTE53_A_W_S_SECRET_ACCESS_KEY=""
+
+# (Required) Any valid AWS Region name.
+METRIST_AWSROUTE53_A_W_S_REGION=""
 
 # (Required) The ID of one of your hosted zones.
-METRIST_HOSTED_ZONE_ID=""
+METRIST_AWSROUTE53_HOSTED_ZONE_ID=""
 
 # (Required) The hosted zone name associated with the given zone ID.
-METRIST_HOSTED_ZONE_NAME=""
+METRIST_AWSROUTE53_HOSTED_ZONE_NAME=""
 
 # (Required) One or more (as a comma-separated list) name servers associated with the given zone ID.
-METRIST_HOSTED_ZONE_NS=""
+METRIST_AWSROUTE53_HOSTED_ZONE_NS=""
 
 # (Required) The name of an existing DNS record to query.
-METRIST_PERSISTENT_RECORD_NAME=""
+METRIST_AWSROUTE53_PERSISTENT_RECORD_NAME=""
 ```
 
 <!--@include: /parts/tips_env-vars.md -->

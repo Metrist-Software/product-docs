@@ -28,7 +28,16 @@ Version
 <!--@include: /parts/_3.md-->
 
 
-```sh```
+```sh
+# (Required) An environment tag to use when creating datadog events.
+METRIST_DATADOG_ENVIRONMENT_TAG_NAME=""
+
+# (Required) A datadog API key.
+METRIST_DATADOG_API_KEY=""
+
+# (Required) A datadog app key with permissions to create and retrieve events.
+METRIST_DATADOG_APP_KEY=""
+```
 
 <!--@include: /parts/tips_env-vars.md -->
 

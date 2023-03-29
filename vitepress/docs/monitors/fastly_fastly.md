@@ -28,7 +28,10 @@ Version
 <!--@include: /parts/_3.md-->
 
 
-```sh```
+```sh
+# (Required) A URL to the fastly file to operate on.
+METRIST_FASTLY_REQUEST_URI=""
+```
 
 <!--@include: /parts/tips_env-vars.md -->
 

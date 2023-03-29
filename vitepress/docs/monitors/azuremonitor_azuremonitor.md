@@ -30,7 +30,7 @@ Version
 
 ```sh
 # (Required) A connection string to be used by a ApplicationInsightsServiceOptions object to AddApplicationInsightsTelemetryWorkerService.
-METRIST_CONNECTION_STRING=""
+METRIST_AZUREMONITOR_CONNECTION_STRING=""
 ```
 
 <!--@include: /parts/tips_env-vars.md -->

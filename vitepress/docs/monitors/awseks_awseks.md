@@ -30,22 +30,22 @@ Version
 
 ```sh
 # (Required) Your AWS Access Key Id.
-METRIST_AWS_ACCESS_KEY_ID=""
+METRIST_AWSEKS_A_W_S_ACCESS_KEY_ID=""
 
 # (Required) Any valid AWS Region name.
-METRIST_AWS_REGION=""
+METRIST_AWSEKS_A_W_S_REGION=""
 
 # (Required) Your AWS Secret Access Key.
-METRIST_AWS_SECRET_ACCESS_KEY=""
+METRIST_AWSEKS_A_W_S_SECRET_ACCESS_KEY=""
 
 # (Required) The name of an existing cluster in which to attemp deployment.
-METRIST_AWS_EKS_CLUSTER_NAME=""
+METRIST_AWSEKS_CLUSTER_NAME=""
 
 # (Required) The name of an endpoint for the newly deployed cluster/server.
-METRIST_AWS_EKS_CLUSTER_SERVER_ADDRESS=""
+METRIST_AWSEKS_CLUSTER_SERVER_ADDRESS=""
 
 # (Required) The Certificate Authority Data related to the cluster server address/endpoint.
-METRIST_AWS_EKS_CLUSTER_CERTIFICATE_AUTHORITY_DATA=""
+METRIST_AWSEKS_CLUSTER_CERTIFICATE_AUTHORITY_DATA=""
 ```
 
 <!--@include: /parts/tips_env-vars.md -->

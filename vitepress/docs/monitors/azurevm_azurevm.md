@@ -30,22 +30,22 @@ Version
 
 ```sh
 # (Required) An Active Directory application Id.
-METRIST_CLIENT_ID=""
+METRIST_AZUREVM_CLIENT_I_D=""
 
 # (Required) A client secret associated with the application Id.
-METRIST_CLIENT_SECRET=""
+METRIST_AZUREVM_CLIENT_SECRET=""
 
 # (Required) The name of a persistent VM instance.
-METRIST_PERSISTENT_INSTANCE_NAME=""
+METRIST_AZUREVM_PERSISTENT_INSTANCE_NAME=""
 
 # (Required) The name of resource group associated with the given persistent instance.
-METRIST_PERSISTENT_INSTANCE_RESOURCE_GROUP=""
+METRIST_AZUREVM_PERSISTENT_INSTANCE_RESOURCE_GROUP=""
 
 # (Required) A GUID that identifies a subscription and underlying services.
-METRIST_SUBSCRIPTION_ID=""
+METRIST_AZUREVM_SUBSCRIPTION_I_D=""
 
 # (Required) A unique identifier of the Active Directory instance.
-METRIST_TENANT_ID=""
+METRIST_AZUREVM_TENANT_I_D=""
 ```
 
 <!--@include: /parts/tips_env-vars.md -->

@@ -28,7 +28,16 @@ Version
 <!--@include: /parts/_3.md-->
 
 
-```sh```
+```sh
+# (Required) The client ID to use.
+METRIST_AUTHZERO_CLIENT_ID=""
+
+# (Required) The Client secret to use.
+METRIST_AUTHZERO_CLIENT_SECRET=""
+
+# (Required) The auth0 domain to use for the API calls.
+METRIST_AUTHZERO_DOMAIN=""
+```
 
 <!--@include: /parts/tips_env-vars.md -->
 

@@ -28,7 +28,13 @@ Version
 <!--@include: /parts/_3.md-->
 
 
-```sh```
+```sh
+# (Required) The base 64 encoded credentials string to use for Cloud Storage operations.
+METRIST_GCPCLOUDSTORAGE_PRIVATE_KEY=""
+
+# (Required) The GCP project ID to use for Cloud Storage operations.
+METRIST_GCPCLOUDSTORAGE_ENVIRONMENT_TAG=""
+```
 
 <!--@include: /parts/tips_env-vars.md -->
 

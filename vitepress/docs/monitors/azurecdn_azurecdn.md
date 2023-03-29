@@ -30,37 +30,43 @@ Version
 
 ```sh
 # (Required) A blob connection string.
-METRIST_BLOB_STORAGE_CONNECTION_STRING=""
+METRIST_AZURECDN_BLOB_STORAGE_CONNECTION_STRING=""
 
 # (Required) A container name.
-METRIST_BLOB_STORAGE_CONTAINER_NAME=""
+METRIST_AZURECDN_BLOB_STORAGE_CONTAINER_NAME=""
 
 # (Required) A file name.
-METRIST_CACHE_FILE_NAME=""
+METRIST_AZURECDN_CACHE_FILE_NAME=""
 
 # (Required) File path.
-METRIST_CACHE_FILE_PATH=""
+METRIST_AZURECDN_CACHE_FILE_PATH=""
 
 # (Required) A CDN endpoint name.
-METRIST_CDN_ENDPOINT_NAME=""
+METRIST_AZURECDN_CDN_ENDPOINT_NAME=""
 
 # (Required) A CDN profile name.
-METRIST_CDN_PROFILE_NAME=""
+METRIST_AZURECDN_CDN_PROFILE_NAME=""
 
 # (Required) An Active Directory application Id.
-METRIST_CLIENT_ID=""
+METRIST_AZURECDN_CLIENT_I_D=""
 
 # (Required) A client secret associated with the application Id.
-METRIST_CLIENT_SECRET=""
+METRIST_AZURECDN_CLIENT_SECRET=""
 
 # (Required) A resource group name.
-METRIST_RESOURCE_GROUP_NAME=""
+METRIST_AZURECDN_RESOURCE_GROUP_NAME=""
 
 # (Required) A GUID that identifies a subscription and underlying services.
-METRIST_SUBSCRIPTION_ID=""
+METRIST_AZURECDN_SUBSCRIPTION_I_D=""
 
 # (Required) A unique identifier of the Active Directory instance.
-METRIST_TENANT_ID=""
+METRIST_AZURECDN_TENANT_I_D=""
+
+# (Required) A valid Azure region.
+METRIST_AZURECDN_REGION=""
+
+# (Required) A tag used for created resources.
+METRIST_AZURECDN_ENVIRONMENT_TAG=""
 ```
 
 <!--@include: /parts/tips_env-vars.md -->

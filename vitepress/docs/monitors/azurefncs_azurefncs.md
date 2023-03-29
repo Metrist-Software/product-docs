@@ -30,10 +30,10 @@ Version
 
 ```sh
 # (Required) A code (any value) to which your function will respond.
-METRIST_TEST_FUNCTION_CODE=""
+METRIST_AZUREFNCS_TEST_FUNCTION_CODE=""
 
 # (Required) The url of an existing Azure Function endpoint. The function must be written to expect, and respond to, the given code.
-METRIST_TEST_FUNCTION_URL=""
+METRIST_AZUREFNCS_TEST_FUNCTION_URL=""
 ```
 
 <!--@include: /parts/tips_env-vars.md -->

@@ -30,16 +30,22 @@ Version
 
 ```sh
 # (Required) Your AWS Access Key Id.
-METRIST_AWS_ACCESS_KEY_ID=""
+METRIST_AWSRDS_AWS_ACCESS_KEY_ID=""
 
 # (Required) Your AWS Secret Access Key.
-METRIST_AWS_SECRET_ACCESS_KEY=""
+METRIST_AWSRDS_SECRET_ACCESS_KEY=""
 
 # (Required) A security group ID relevant to your RDS.
-METRIST_VPC_SECURITY_GROUP_ID=""
+METRIST_AWSRDS_VPC_SECURITY_GROUP_ID=""
 
 # (Required) ID of the subnets associated with the service
-METRIST_DB_SUBNET_GROUP_NAME=""
+METRIST_AWSRDS_DB_SUBNET_GROUP_NAME=""
+
+# (Required) Any valid AWS Region name.
+METRIST_AWSRDS_REGION=""
+
+# (Required) A name used as part of the created RDS instance Id.
+METRIST_AWSRDS_ENVIRONMENT_TAG=""
 ```
 
 <!--@include: /parts/tips_env-vars.md -->

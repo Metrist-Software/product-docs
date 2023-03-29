@@ -30,7 +30,7 @@ Version
 
 ```sh
 # (Required) An Envoy client API key.
-METRIST_CLIENT_API_KEY=""
+METRIST_ENVOY_CLIENT_A_P_I_KEY=""
 ```
 
 <!--@include: /parts/tips_env-vars.md -->

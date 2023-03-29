@@ -28,7 +28,19 @@ Version
 <!--@include: /parts/_3.md-->
 
 
-```sh```
+```sh
+# (Required) The merchant Id to use for the sandbox transaction.
+METRIST_BRAINTREE_MERCHANT_ID=""
+
+# (Required) The public key to use for the sandbox transaction.
+METRIST_BRAINTREE_PUBLIC_KEY=""
+
+# (Required) The private key to use for the sandbox transaction.
+METRIST_BRAINTREE_PRIVATE_KEY=""
+
+# (Required) The customer Id to use for the sandbox transaction.
+METRIST_BRAINTREE_CUSTOMER_ID=""
+```
 
 <!--@include: /parts/tips_env-vars.md -->
 

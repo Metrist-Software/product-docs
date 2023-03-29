@@ -30,16 +30,16 @@ Version
 
 ```sh
 # (Required) Your Organization name as it appears in `https://dev.azure.com/{Organization}/`.
-METRIST_ORGANIZATION=""
+METRIST_AZUREDEVOPSTESTPLANS_ORGANIZATION=""
 
 # (Required) A personal access token associated with your team's project board.
-METRIST_PERSONAL_ACCESS_TOKEN=""
+METRIST_AZUREDEVOPSTESTPLANS_PERSONAL_ACCESS_TOKEN=""
 
 # (Required) Your Project key as it appears in `https://dev.azure.com/org/{Project}/`.
-METRIST_PROJECT=""
+METRIST_AZUREDEVOPSTESTPLANS_PROJECT=""
 
 # (Required) Your Team name as it appears in `https://dev.azure.com/org/project/{Team}/_apis/wit/wiql`.
-METRIST_TEAM=""
+METRIST_AZUREDEVOPSTESTPLANS_TEAM=""
 ```
 
 <!--@include: /parts/tips_env-vars.md -->

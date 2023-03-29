@@ -30,16 +30,19 @@ Version
 
 ```sh
 # (Required) A Service Principal Client Id.
-METRIST_CLIENT_ID=""
+METRIST_AZUREAKS_CLIENT_I_D=""
 
 # (Required) A Service Principal Secret.
-METRIST_CLIENT_SECRET=""
+METRIST_AZUREAKS_CLIENT_SECRET=""
 
 # (Required) A subscription ID.
-METRIST_SUBSCRIPTION_ID=""
+METRIST_AZUREAKS_SUBSCRIPTION_I_D=""
 
 # (Required) A tenant ID for which the Service Principal has authorization.
-METRIST_TENANT_ID=""
+METRIST_AZUREAKS_TENANT_I_D=""
+
+# (Required) A valid Azure region.
+METRIST_AZUREAKS_REGION=""
 ```
 
 <!--@include: /parts/tips_env-vars.md -->

@@ -28,7 +28,13 @@ Version
 <!--@include: /parts/_3.md-->
 
 
-```sh```
+```sh
+# (Required) A test environment API key with access to GetAddresses.
+METRIST_EASYPOST_TEST_A_P_I_Key=""
+
+# (Required) A test environment API key with access to GetAddresses and Validate addresses.
+METRIST_EASYPOST_PROD_A_P_I_Key=""
+```
 
 <!--@include: /parts/tips_env-vars.md -->
 

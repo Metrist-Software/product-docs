@@ -30,16 +30,16 @@ Version
 
 ```sh
 # (Required) Your Organization name as it appears in `https://dev.azure.com/{Organization}/`.
-METRIST_ORGANIZATION=""
+METRIST_AZUREDEVOPSPIPELINES_ORGANIZATION=""
 
 # (Required) A personal access token associated with your team's project board.
-METRIST_PERSONAL_ACCESS_TOKEN=""
+METRIST_AZUREDEVOPSPIPELINES_PERSONAL_ACCESS_TOKEN=""
 
 # (Required) Your Project key as it appears in `https://dev.azure.com/org/project/_apis/pipelines/{pipelineId}`.
-METRIST_PIPELINE_ID=""
+METRIST_AZUREDEVOPSPIPELINES_PIPELINE_ID=""
 
 # (Required) Your Project key as it appears in `https://dev.azure.com/org/{Project}/`.
-METRIST_PROJECT=""
+METRIST_AZUREDEVOPSPIPELINES_PROJECT=""
 ```
 
 <!--@include: /parts/tips_env-vars.md -->

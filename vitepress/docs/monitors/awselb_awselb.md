@@ -30,25 +30,25 @@ Version
 
 ```sh
 # (Required) Your AWS Access Key Id.
-METRIST_AWS_ACCESS_KEY_ID=""
-
-# (Required) The id assigned to your ECS cluster.
-METRIST_AWS_ECS_CLUSTER_ID=""
-
-# (Required) The service name of your container service.
-METRIST_AWS_ECS_SERVICE_ID=""
-
-# (Required) The DNS name of your ELB endpoint — the address to which HTTP requests can be made.
-METRIST_AWS_ELB_DNS_NAME=""
-
-# (Required) The target group ARN of your ELB service.
-METRIST_AWS_ELB_TARGET_GROUP_ARN=""
-
-# (Required) Any valid AWS Region name.
-METRIST_AWS_REGION=""
+METRIST_AWSELB_A_W_S_ACCESS_KEY_ID=""
 
 # (Required) Your AWS Secret Access Key.
-METRIST_AWS_SECRET_ACCESS_KEY=""
+METRIST_AWSELB_A_W_S_SECRET_ACCESS_KEY=""
+
+# (Required) The id assigned to your ECS cluster.
+METRIST_AWSELB_CLUSTER_ID=""
+
+# (Required) The service name of your container service.
+METRIST_AWSELB_SERVICE_ID=""
+
+# (Required) The DNS name of your ELB endpoint — the address to which HTTP requests can be made.
+METRIST_AWSELB_DNS_NAME=""
+
+# (Required) The target group ARN of your ELB service.
+METRIST_AWSELB_TARGET_GROUP_ARN=""
+
+# (Required) Any valid AWS Region name.
+METRIST_AWSELB_A_W_S_REGION=""
 ```
 
 <!--@include: /parts/tips_env-vars.md -->

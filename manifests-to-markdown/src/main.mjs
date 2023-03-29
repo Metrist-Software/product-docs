@@ -2,7 +2,8 @@ import { config } from '../src/config.mjs'
 import { getManifestsJSON } from './httprequest.mjs'
 import { join as joinPath } from 'node:path'
 import {
-  markdownFileName,
+  monitorMarkdownFileName,
+  packageMarkdownFileName,
   readFileToArray,
   transformLine,
   writeMarkdownDoc
@@ -12,18 +13,18 @@ export const renderMonitorDocs = async ({monitors}) => {
 
   let counter = 0
 
-  console.log(`Using template: ${config.__templatePath}`)
+  console.log(`Using template: ${config.__monitorTemplatePath}`)
   console.log(`Will render to ${config.__vitepressMonitorDocsDirectory}`)
 
-  const templateAsArray = await readFileToArray(config.__templatePath)
+  const monitorTemplateAsArray = await readFileToArray(config.__monitorTemplatePath)
 
   monitors.forEach(async (manifest) => {
 
-    console.log(`Rendering ${++counter}`)
+    console.log(`Rendering ${manifest.logical_name}`)
 
-    const fileName = markdownFileName(manifest)
+    const fileName = monitorMarkdownFileName(manifest)
 
-    const newDocContent = templateAsArray.map((line) => {
+    const newDocContent = monitorTemplateAsArray.map((line) => {
       return transformLine(line, manifest)
     })
 
@@ -34,10 +35,34 @@ export const renderMonitorDocs = async ({monitors}) => {
       newDocContent.join(`\n`)
     )
 
+    if ('packages' in manifest) {
+      await renderPackageDocs(manifest.packages)
+    }
   })
 
   return `Monitors rendered: ${counter}`
 
+}
+
+export const renderPackageDocs = async (packages) => {
+  const packageTemplateAsArray = await readFileToArray(config.__packageTemplatePath)
+
+  packages.forEach((async pkg => {
+    console.log(`Rendering package doc ${pkg.package_name}`)
+
+    const fileName = packageMarkdownFileName(pkg)
+
+    const newDocContent = packageTemplateAsArray.map((line) => {
+      return transformLine(line, pkg)
+    })
+
+    console.log(`${fileName}: writing`)
+
+    await writeMarkdownDoc(
+      joinPath(config.__vitepressMonitorDocsDirectory, fileName),
+      newDocContent.join(`\n`)
+    )
+  }))
 }
 
 

@@ -7,8 +7,12 @@ describe(`Config values`, () => {
     expect(config.__manifestsUrl).toBe(`https://monitor-distributions.metrist.io/manifests.json`)
   })
 
-  it.concurrent(`provide path to markdown template`, () => {
-    expect(config.__templatePath).toContain(`/src/template.md`)
+  it.concurrent(`provide path to markdown monitor template`, () => {
+    expect(config.__monitorTemplatePath).toContain(`/src/monitor_template.md`)
+  })
+
+  it.concurrent(`provide path to markdown package template`, () => {
+    expect(config.__packageTemplatePath).toContain(`/src/package_template.md`)
   })
 
   it.concurrent(`provide path to monitors directory`, () => {

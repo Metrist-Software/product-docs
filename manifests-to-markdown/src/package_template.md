@@ -1,10 +1,6 @@
----
-title: \[|'name|]
----
+[Back to monitor]([|'logical_name|].md)
 
-# {{ $frontmatter.title }}
-
-## Monitor Specs
+# Package Specs
 
 Description
 
@@ -13,6 +9,10 @@ Description
 Name
 
 : `[|'logical_name|]`
+
+Package Name
+
+: `[|'package_name|]`
 
 Publisher
 
@@ -25,16 +25,10 @@ Version
 : &nbsp;
 
 
-<!--@include: /parts/_1.md-->
-
-
-<!--@include: /parts/_2.md-->
-
-
 <!--@include: /parts/_3.md-->
 
 
-[|'environment_variables && <!--@include: /parts/tips_env-vars.md -->|]
+[|'config_values && <!--@include: /parts/tips_env-vars.md -->|]
 
 
 <!--@include: /parts/_4.md-->

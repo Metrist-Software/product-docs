@@ -55,6 +55,7 @@ We publish the following library of monitors that we use ourselves and make avai
 ### APIs
 
 * [avalara](/monitors/avalara) — Avalara (AvaTax)
+* [authorizenet](/monitors/authorizenet) — Authorize.net
 * [bambora](/monitors/bambora) — Bambora
 * [braintree](/monitors/braintree) — Braintree
 * [easypost](/monitors/easypost) — EasyPost
@@ -77,16 +78,36 @@ We publish the following library of monitors that we use ourselves and make avai
 #### SaaS
 
 * [asana](/monitors/asana) — Asana
-* [newrelic](/monitors/newrelic) — New Relic
+* [atlassianbitbucket](/monitors/atlassianbitbucket) — Atlassian Bitbucket
 * [authzero](/monitors/authzero) — Auth0
 * [circleci](/monitors/circleci) — CircleCI
 * [datadog](/monitors/datadog) — Datadog
+* [discord](/monitors/discord) — Discord
+* [eclipsefoundationservices](/monitors/eclipsefoundationservices) — Eclipse Foundation Services
+* [envoy](/monitors/envoy) — Envoy
+* [freshbooks](/monitors/freshbooks) — Freshbooks
+* [gitpod](/monitors/gitpod) — Gitpod
+* [hotjar](/monitors/hotjar) — Hotjar
 * [jira](/monitors/jira) — Jira
+* [launchpad](/monitors/launchpad) — LaunchPad
+* [lightspeed](/monitors/lightspeed) — Lightspeed
+* [lightstep](/monitors/lightstep) — Lightstep
+* [linode](/monitors/linode) — Linode
+* [logrocket](/monitors/logrocket) — LogRocket
+* [jira](/monitors/jira) — Jira
+* [mavencentral](/monitors/mavencentral) — Maven Central
+* [netlify](/monitors/netlify) — Netlify
+* [newrelic](/monitors/newrelic) — New Relic
+* [nobl9](/monitors/nobl9) — Nobl9
 * [npm](/monitors/npm) — NPM
 * [nuget](/monitors/nuget) — NuGet
+* [opsgenie](/monitors/opsgenie) — Opsgenie
 * [pagerduty](/monitors/pagerduty) — PagerDuty
+* [rubygemsorg](/monitors/rubygemsorg) — Ruby Gems
 * [sentry](/monitors/sentry) — Sentry
 * [slack](/monitors/slack) — Slack
+* [strava](/monitors/strava) — Strava
+* [taxjar](/monitors/taxjar) — TaxJar
 * [trello](/monitors/trello) — Trello
 * [twiliovid](/monitors/twiliovid) — Twilio Video
 * [zendesk](/monitors/zendesk) — Zendesk

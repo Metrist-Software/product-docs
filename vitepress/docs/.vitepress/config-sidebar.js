@@ -28,6 +28,7 @@ export const sidebar = {
 			items: [
 				{ text: 'Terminology', link: '/guides/download-overview'},
 				{ text: 'How We Sign Code', link: '/guides/how-we-sign-code'},
+        { text: 'Data Encryption', link: '/guides/encryption' }
 			]
 		},
 	],

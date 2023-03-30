@@ -94,7 +94,11 @@ export const transformLine = (line, manifest) => {
       const operatorRegex = RegExp(/(\s+&&\s+)/gm)
 
       if (!operatorRegex.test(tokenContent)) {
-        const ifTokenInManifest = (tokenContent !== `monitor_config` && tokenContent !== `package_links` && !Object.hasOwn(manifest, tokenContent)) ? null : maybeMultiLineTransform(manifest, tokenContent)
+        const ifTokenInManifest = (
+          tokenContent !== `monitor_config`
+          && tokenContent !== `package_links`
+          && !Object.hasOwn(manifest, tokenContent)) ? null : maybeMultiLineTransform(manifest, tokenContent)
+
         return ifTokenInManifest
 
       } else {

@@ -10,50 +10,21 @@ import {
 } from './template-utils.mjs'
 
 export const renderMonitorDocs = async ({monitors}) => {
-
-  let counter = 0
-
-  console.log(`Using template: ${config.__monitorTemplatePath}`)
+  console.log(`Using monitor template: ${config.__monitorTemplatePath}`)
+  console.log(`Using package template: ${config.__packageTemplatePath}`)
   console.log(`Will render to ${config.__vitepressMonitorDocsDirectory}`)
 
-  const monitorTemplateAsArray = await readFileToArray(config.__monitorTemplatePath)
-
-  monitors.forEach(async (manifest) => {
-
-    console.log(`Rendering ${manifest.logical_name}`)
-
-    const fileName = monitorMarkdownFileName(manifest)
-
-    const newDocContent = monitorTemplateAsArray.map((line) => {
-      return transformLine(line, manifest)
-    })
-
-    console.log(`${fileName}: writing`)
-
-    await writeMarkdownDoc(
-      joinPath(config.__vitepressMonitorDocsDirectory, fileName),
-      newDocContent.join(`\n`)
-    )
-
-    if ('packages' in manifest) {
-      await renderPackageDocs(manifest.packages)
-    }
-  })
-
-  return `Monitors rendered: ${counter}`
-
+  renderDocs(monitors, config.__monitorTemplatePath, monitorMarkdownFileName)
 }
 
-export const renderPackageDocs = async (packages) => {
-  const packageTemplateAsArray = await readFileToArray(config.__packageTemplatePath)
+export const renderDocs = async (manifests, templatePath, nameGenerator) => {
+  const templateAsArray = await readFileToArray(templatePath)
 
-  packages.forEach((async pkg => {
-    console.log(`Rendering package doc ${pkg.package_name}`)
+  manifests.forEach((async man => {
+    const fileName = nameGenerator(man)
 
-    const fileName = packageMarkdownFileName(pkg)
-
-    const newDocContent = packageTemplateAsArray.map((line) => {
-      return transformLine(line, pkg)
+    const newDocContent = templateAsArray.map((line) => {
+      return transformLine(line, man)
     })
 
     console.log(`${fileName}: writing`)
@@ -62,6 +33,10 @@ export const renderPackageDocs = async (packages) => {
       joinPath(config.__vitepressMonitorDocsDirectory, fileName),
       newDocContent.join(`\n`)
     )
+
+    if ('packages' in man) {
+      await renderDocs(man.packages, config.__packageTemplatePath, packageMarkdownFileName)
+    }
   }))
 }
 

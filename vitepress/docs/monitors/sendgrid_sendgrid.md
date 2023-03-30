@@ -28,7 +28,16 @@ Version
 <!--@include: /parts/_3.md-->
 
 
-```sh```
+```sh
+# (Required) The API key to use.
+METRIST_SENDGRID_API_KEY=""
+
+# (Required) The from email address to use.
+METRIST_SENDGRID_FROM_EMAIL=""
+
+# (Required) The to email address to use.
+METRIST_SENDGRID_TO_EMAIL=""
+```
 
 <!--@include: /parts/tips_env-vars.md -->
 

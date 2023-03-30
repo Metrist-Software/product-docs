@@ -28,7 +28,19 @@ Version
 <!--@include: /parts/_3.md-->
 
 
-```sh```
+```sh
+# (Required) The base 64 encoded credentials string to use for Cloud Storage operations.
+METRIST_GCPCOMPUTEENGINE_PRIVATE_KEY=""
+
+# (Required) The GCP project ID to use for GCP compute engine operations.
+METRIST_GCPCOMPUTEENGINE_PROJECT_ID=""
+
+# (Required) An environment tag to use for deployed elements.
+METRIST_GCPAPPENGINE_ENVIRONMENT_TAG=""
+
+# (Required) Any valid GCP region.
+METRIST_GCPAPPENGINE_REGION=""
+```
 
 <!--@include: /parts/tips_env-vars.md -->
 

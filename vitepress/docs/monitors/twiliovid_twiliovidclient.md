@@ -28,7 +28,19 @@ Version
 <!--@include: /parts/_3.md-->
 
 
-```sh```
+```sh
+# (Required) The account SID to use.
+METRIST_TWILIOVID_ACCOUNT_SID=""
+
+# (Required) The auth token to use.
+METRIST_TWILIOVID_AUTH_TOKEN=""
+
+# (Required) The API key to use.
+METRIST_TWILIOVID_API_KEY=""
+
+# (Required) The API secret to use.
+METRIST_TWILIOVID_API_SECRET=""
+```
 
 <!--@include: /parts/tips_env-vars.md -->
 

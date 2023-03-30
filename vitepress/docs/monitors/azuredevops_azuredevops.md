@@ -30,13 +30,13 @@ Version
 
 ```sh
 # (Required) The organization name, as in https://dev.azure.com/${this organization}/
-METRIST_AZUREDEVOPS_ORGANIZATION=""
+METRIST_AZUREDEVOPSORGANIZATION=""
 
 # (Required) A personal access token, as in https://${this personalaccesstoken}@dev.azure.com/
-METRIST_AZUREDEVOPS_PERSONAL_ACCESS_TOKEN=""
+METRIST_AZUREDEVOPSPERSONAL_ACCESS_TOKEN=""
 
 # (Required) A repository logical name, as in https://token@dev.azure.com/org/${this.repository}
-METRIST_AZUREDEVOPS_REPOSITORY=""
+METRIST_AZUREDEVOPSREPOSITORY=""
 ```
 
 <!--@include: /parts/tips_env-vars.md -->

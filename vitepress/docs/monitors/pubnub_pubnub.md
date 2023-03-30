@@ -28,7 +28,16 @@ Version
 <!--@include: /parts/_3.md-->
 
 
-```sh```
+```sh
+# (Required) The UUID to use.
+METRIST_PUBNUB_UUID=""
+
+# (Required) The subscribe key to use.
+METRIST_PUBNUB_SUBSCRIBE_KEY=""
+
+# (Required) The publish key to use.
+METRIST_PUBNUB_PUBLISH_KEY=""
+```
 
 <!--@include: /parts/tips_env-vars.md -->
 

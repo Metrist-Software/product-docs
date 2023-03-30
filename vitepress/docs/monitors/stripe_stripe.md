@@ -28,7 +28,10 @@ Version
 <!--@include: /parts/_3.md-->
 
 
-```sh```
+```sh
+# (Required) The API key to use.
+METRIST_STRIPE_API_KEY=""
+```
 
 <!--@include: /parts/tips_env-vars.md -->
 

@@ -28,7 +28,13 @@ Version
 <!--@include: /parts/_3.md-->
 
 
-```sh```
+```sh
+# (Required) The store ID of the store to use.
+METRIST_MONERIS_STORE_ID=""
+
+# (Required) The API token to use.
+METRIST_MONERIS_API_TOKEN=""
+```
 
 <!--@include: /parts/tips_env-vars.md -->
 

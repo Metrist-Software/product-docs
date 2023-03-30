@@ -30,22 +30,22 @@ Version
 
 ```sh
 # (Required) Username to log in to NewRelic's UI with.
-METRIST_NEW_RELIC_USERNAME=""
+METRIST_NEWRELIC_NEW_RELIC_USERNAME=""
 
 # (Required) Password for the associated user.
-METRIST_NEW_RELIC_PASSWORD=""
+METRIST_NEWRELIC_NEW_RELIC_PASSWORD=""
 
 # (Required) ID of the dashboard to load.
-METRIST_NEW_RELIC_DASHBOARD_ID=""
+METRIST_NEWRELIC_NEW_RELIC_DASHBOARD_ID=""
 
 # (Required) XPath string to use for validating dashboard page has loaded successfully.
-METRIST_NEW_RELIC_DASHBOARD_XPATH=""
+METRIST_NEWRELIC_NEW_RELIC_DASHBOARD_XPATH=""
 
 # (Required) ID of the synthetic monitor to load.
-METRIST_NEW_RELIC_SYNTHETIC_MONITOR_ID=""
+METRIST_NEWRELIC_NEW_RELIC_SYNTHETIC_MONITOR_ID=""
 
 # (Required) XPath string to use for validating synthetic monitor page has loaded successfully.
-METRIST_NEW_RELIC_SYNTHETICS_XPATH=""
+METRIST_NEWRELIC_NEW_RELIC_SYNTHETICS_XPATH=""
 ```
 
 <!--@include: /parts/tips_env-vars.md -->

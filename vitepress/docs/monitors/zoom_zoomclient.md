@@ -28,7 +28,19 @@ Version
 <!--@include: /parts/_3.md-->
 
 
-```sh```
+```sh
+# (Required) The SDK key to use.
+METRIST_ZOOM_SDK_KEY=""
+
+# (Required) The SDK secret to use.
+METRIST_ZOOM_SDK_SECRET=""
+
+# (Required) The meeting number to use.
+METRIST_ZOOM_MEETING_NUMBER=""
+
+# (Required) The meeting password to use.
+METRIST_ZOOM_MEETING_PASSWORD=""
+```
 
 <!--@include: /parts/tips_env-vars.md -->
 

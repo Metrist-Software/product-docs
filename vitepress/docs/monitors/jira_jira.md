@@ -28,7 +28,16 @@ Version
 <!--@include: /parts/_3.md-->
 
 
-```sh```
+```sh
+# (Required) The API token to use.
+METRIST_JIRA_API_TOKEN=""
+
+# (Required) The API token to use.
+METRIST_JIRA_URL=""
+
+# (Required) The project key to use.
+METRIST_JIRA_PROJECT_KEY=""
+```
 
 <!--@include: /parts/tips_env-vars.md -->
 

@@ -30,10 +30,10 @@ Version
 
 ```sh
 # (Required) A Google Drive account private key.
-METRIST_GOOGLE_DRIVE_ACCOUNT_PRIVATE_KEY=""
+METRIST_GOOGLEDRIVE_GOOGLE_DRIVE_ACCOUNT_PRIVATE_KEY=""
 
 # (Required) A Google Drive account email address.
-METRIST_GOOGLE_DRIVE_ACCOUNT_EMAIL=""
+METRIST_GOOGLEDRIVE_GOOGLE_DRIVE_ACCOUNT_EMAIL=""
 ```
 
 <!--@include: /parts/tips_env-vars.md -->

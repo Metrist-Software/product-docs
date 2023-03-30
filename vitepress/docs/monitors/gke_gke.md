@@ -28,7 +28,16 @@ Version
 <!--@include: /parts/_3.md-->
 
 
-```sh```
+```sh
+# (Required) Base64 encoded credentials for GKE operations.
+METRIST_GKE_BASE64_KEYFILE=""
+
+# (Required) Address of Kubernetes cluster.
+METRIST_GKE_CLUSTER_SERVER=""
+
+# (Required) PEM-encoded certificate authority certificates.
+METRIST_GKE_CLUSTER_CERT_AUTH_DATA=""
+```
 
 <!--@include: /parts/tips_env-vars.md -->
 

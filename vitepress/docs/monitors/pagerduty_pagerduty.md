@@ -28,7 +28,16 @@ Version
 <!--@include: /parts/_3.md-->
 
 
-```sh```
+```sh
+# (Required) The routing key to use.
+METRIST_PAGERDUTY_ROUTING_KEY=""
+
+# (Required) The API token to use.
+METRIST_PAGERDUTY_API_TOKEN=""
+
+# (Required) The service ID of the service to use.
+METRIST_PAGERDUTY_SERVICE_ID=""
+```
 
 <!--@include: /parts/tips_env-vars.md -->
 

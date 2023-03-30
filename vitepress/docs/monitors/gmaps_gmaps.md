@@ -28,7 +28,10 @@ Version
 <!--@include: /parts/_3.md-->
 
 
-```sh```
+```sh
+# (Required) Google maps API key with access to Directions, Static Map Images, and Geocoding.
+METRIST_GMAPS_API_KEY=""
+```
 
 <!--@include: /parts/tips_env-vars.md -->
 

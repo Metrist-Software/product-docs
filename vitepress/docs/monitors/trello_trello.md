@@ -28,7 +28,16 @@ Version
 <!--@include: /parts/_3.md-->
 
 
-```sh```
+```sh
+# (Required) The app key to use.
+METRIST_TRELLO_APP_KEY=""
+
+# (Required) The user token to use.
+METRIST_TRELLO_USER_TOKEN=""
+
+# (Required) The list ID to use.
+METRIST_TRELLO_LIST_ID=""
+```
 
 <!--@include: /parts/tips_env-vars.md -->
 

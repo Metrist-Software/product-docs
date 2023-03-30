@@ -28,7 +28,16 @@ Version
 <!--@include: /parts/_3.md-->
 
 
-```sh```
+```sh
+# (Required) Github username to use for Github operations.
+METRIST_GITHUB_USERNAME=""
+
+# (Required) Github repository name to use for Github operations.
+METRIST_GITHUB_REPOSITORY=""
+
+# (Required) Github API token with access to Issues, Pull, and Push.
+METRIST_GITHUB_API_TOKEN=""
+```
 
 <!--@include: /parts/tips_env-vars.md -->
 

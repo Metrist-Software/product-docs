@@ -28,7 +28,16 @@ Version
 <!--@include: /parts/_3.md-->
 
 
-```sh```
+```sh
+# (Required) The API key to use.
+METRIST_ZOOM_API_KEY=""
+
+# (Required) The API secret to use.
+METRIST_ZOOM_API_SECRET=""
+
+# (Required) The user ID of the user for the meeting. Required if CreateMeeting is enabled.
+METRIST_ZOOM_MEETING_USER_ID=""
+```
 
 <!--@include: /parts/tips_env-vars.md -->
 

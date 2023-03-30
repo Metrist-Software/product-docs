@@ -33,7 +33,10 @@ Version
 METRIST_GCPCLOUDSTORAGE_PRIVATE_KEY=""
 
 # (Required) The GCP project ID to use for Cloud Storage operations.
-METRIST_GCPCLOUDSTORAGE_ENVIRONMENT_TAG=""
+METRIST_GCPCLOUDSTORAGE_PROJECT_ID=""
+
+# (Required) Any valid GCP region.
+METRIST_GCPAPPENGINE_REGION=""
 ```
 
 <!--@include: /parts/tips_env-vars.md -->

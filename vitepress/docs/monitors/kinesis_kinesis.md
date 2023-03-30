@@ -29,17 +29,17 @@ Version
 
 
 ```sh
-# (Required) Your AWS Access Key Id.
-METRIST_AWS_ACCESS_KEY_ID=""
+# (Required) Your AWS access key ID
+METRIST_KINESIS_AWS_ACCESS_KEY_ID=""
 
-# (Required) Any valid AWS Region name.
-METRIST_AWS_REGION=""
+# (Required) The AWS region to use
+METRIST_KINESIS_REGION=""
 
-# (Required) Your AWS Secret Access Key.
-METRIST_AWS_SECRET_ACCESS_KEY=""
+# (Required) Your AWS secret access key
+METRIST_KINESIS_AWS_SECRET_ACCESS_KEY=""
 
-# (Required) A name to apply to a Kinesis stream.
-METRIST_STREAM_NAME=""
+# (Required) A name to apply to a Kinesis stream
+METRIST_KINESIS_STREAM_NAME=""
 ```
 
 <!--@include: /parts/tips_env-vars.md -->

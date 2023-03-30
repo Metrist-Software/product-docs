@@ -28,7 +28,13 @@ Version
 <!--@include: /parts/_3.md-->
 
 
-```sh```
+```sh
+# (Required) An API key with access to update the configuration of the app described in AppName.
+METRIST_HEROKU_API_KEY=""
+
+# (Required) The name of an existing App on Heroku.
+METRIST_HEROKU_APP_NAME=""
+```
 
 <!--@include: /parts/tips_env-vars.md -->
 

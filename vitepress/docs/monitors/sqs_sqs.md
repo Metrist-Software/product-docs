@@ -29,14 +29,17 @@ Version
 
 
 ```sh
-# (Required) Your AWS Access Key Id.
-METRIST_AWS_ACCESS_KEY_ID=""
+# (Required) Your AWS Access Key ID.
+METRIST_SQS_AWS_ACCESS_KEY_ID=""
 
-# (Required) Your AWS Secret Access Key.
-METRIST_AWS_SECRET_ACCESS_KEY=""
+# (Required) Your AWS secret access key.
+METRIST_SQS_AWS_SECRET_ACCESS_KEY=""
 
-# (Required) The SQS Queue url to which messages will be written or read.
-METRIST_QUEUE_URL=""
+# (Required) The SQS Queue URL to or from which messages will be written or read.
+METRIST_SQS_QUEUE_URL=""
+
+# (Required) The region to use.
+METRIST_SQS_REGION=""
 ```
 
 <!--@include: /parts/tips_env-vars.md -->

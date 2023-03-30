@@ -28,7 +28,22 @@ Version
 <!--@include: /parts/_3.md-->
 
 
-```sh```
+```sh
+# (Required) The API token to use.
+METRIST_SENTRY_API_TOKEN=""
+
+# (Required) The ingest URL to use.
+METRIST_SENTRY_INGEST_URL=""
+
+# (Required) The organization slug of the organization to use.
+METRIST_SENTRY_ORGANIZATION_SLUG=""
+
+# (Required) The project slug of the project to use.
+METRIST_SENTRY_PROJECT_SLUG=""
+
+# (Required) The region to use.
+METRIST_SENTRY_REGION=""
+```
 
 <!--@include: /parts/tips_env-vars.md -->
 

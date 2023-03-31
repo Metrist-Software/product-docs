@@ -2,29 +2,29 @@ import { config } from '../src/config.mjs'
 import { getManifestsJSON } from './httprequest.mjs'
 import { join as joinPath } from 'node:path'
 import {
-  markdownFileName,
+  monitorMarkdownFileName,
+  packageMarkdownFileName,
   readFileToArray,
   transformLine,
   writeMarkdownDoc
 } from './template-utils.mjs'
 
 export const renderMonitorDocs = async ({monitors}) => {
-
-  let counter = 0
-
-  console.log(`Using template: ${config.__templatePath}`)
+  console.log(`Using monitor template: ${config.__monitorTemplatePath}`)
+  console.log(`Using package template: ${config.__packageTemplatePath}`)
   console.log(`Will render to ${config.__vitepressMonitorDocsDirectory}`)
 
-  const templateAsArray = await readFileToArray(config.__templatePath)
+  renderDocs(monitors, config.__monitorTemplatePath, monitorMarkdownFileName)
+}
 
-  monitors.forEach(async (manifest) => {
+export const renderDocs = async (manifests, templatePath, nameGenerator) => {
+  const templateAsArray = await readFileToArray(templatePath)
 
-    console.log(`Rendering ${++counter}`)
-
-    const fileName = markdownFileName(manifest)
+  manifests.forEach((async man => {
+    const fileName = nameGenerator(man)
 
     const newDocContent = templateAsArray.map((line) => {
-      return transformLine(line, manifest)
+      return transformLine(line, man)
     })
 
     console.log(`${fileName}: writing`)
@@ -34,10 +34,10 @@ export const renderMonitorDocs = async ({monitors}) => {
       newDocContent.join(`\n`)
     )
 
-  })
-
-  return `Monitors rendered: ${counter}`
-
+    if ('packages' in man) {
+      await renderDocs(man.packages, config.__packageTemplatePath, packageMarkdownFileName)
+    }
+  }))
 }
 
 

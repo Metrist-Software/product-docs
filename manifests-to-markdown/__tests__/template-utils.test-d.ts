@@ -2,7 +2,7 @@ import { config } from '../src/config.mjs'
 import { describe, expect, it } from 'vitest'
 import { join as joinPath } from 'node:path'
 import {
-  markdownFileName,
+  monitorMarkdownFileName,
   maybeMultiLineTransform,
   readFileToArray,
   transformLine,
@@ -12,21 +12,21 @@ import {
 describe(`readFileToArray`, () => {
 
   it(`returns an array of lines`, async () => {
-    const fileToRead = config.__templatePath
+    const fileToRead = config.__monitorTemplatePath
     const linesArray = await readFileToArray(fileToRead)
     expect(Array.isArray(linesArray)).toBe(true)
   })
 
 })
 
-describe(`markdownFileName`, () => {
+describe(`monitorMarkdownFileName`, () => {
 
-  it.concurrent(`returns a filename of format (kebab-case) <publisher-name>_<monitor-logical-name>.md`, () => {
+  it.concurrent(`returns a filename of format (kebab-case) <monitor-logical-name>.md`, () => {
     const manifestData = {
       logical_name: `monitorLogicalName`,
       publisher: `publisherName`
     }
-    expect(markdownFileName(manifestData)).toBe(`publisher-name_monitor-logical-name.md`)
+    expect(monitorMarkdownFileName(manifestData)).toBe(`monitor-logical-name.md`)
   })
 
 })
@@ -86,22 +86,24 @@ describe(`line transformations`, () => {
       expect(result).toContain(`\n`)
     })
 
-    it(`handle 'environment_variables' item with special treatment`, () => {
+    it(`handle 'config_values' item with special treatment`, () => {
       const partialManifest = {
-        'environment_variables': [
+        'config_values': [
           {
             'description': `A description of this var.`,
-            'name': 'METRIST_ENV_VAR1',
+            'name': 'testname1',
+            'environment_variable_name': 'METRIST_ENV_VAR1',
             'required': false
           },
           {
             'description': `A description of this var.`,
-            'name': 'METRIST_ENV_VAR2',
+            'name': 'testname2',
+            'environment_variable_name': 'METRIST_ENV_VAR1',
             'required': true
           }
         ]
       }
-      const result = maybeMultiLineTransform(partialManifest, `environment_variables`)
+      const result = maybeMultiLineTransform(partialManifest, `config_values`)
       expect(result).toContain(`# (Required)`)
       expect(result).toContain(`# (Not required)`)
     })
@@ -132,7 +134,7 @@ describe(`line transformations`, () => {
 
 describe(`writeMarkdownDoc`, () => {
 
-  const mocksPath = joinPath(config.__templatePath, `../../__tests__/__mocks__`)
+  const mocksPath = joinPath(config.__monitorTemplatePath, `../../__tests__/__mocks__`)
 
   it.concurrent(`writes a file from array`, async () => {
     const result = await writeMarkdownDoc(

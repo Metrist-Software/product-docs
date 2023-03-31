@@ -5,12 +5,16 @@ import {
   writeFile
 } from 'node:fs/promises'
 
-export const markdownFileName = (manifestData) => {
-  return `${kebabCase(manifestData.publisher)}_${kebabCase(manifestData.logical_name)}.md`
+export const monitorMarkdownFileName = (manifestData) => {
+  return `${kebabCase(manifestData.logical_name)}.md`
+}
+
+export const packageMarkdownFileName = (pkg) => {
+  return `${kebabCase(pkg.logical_name)}_${kebabCase(pkg.package_name)}.md`
 }
 
 export const maybeMultiLineTransform = (manifest, keyname) => {
-  manifest = { ...manifest, monitor_config: {}}
+  manifest = { ...manifest, monitor_config: {}, package_links: {}}
   const beautifulOptions = {
     indent_size: 2
   }
@@ -18,13 +22,24 @@ export const maybeMultiLineTransform = (manifest, keyname) => {
   switch (typeof(thisContent)) {
     case 'object':
         switch (keyname) {
-        case 'environment_variables': {
+        case 'config_values': {
           const newLines = [`\`\`\`\sh`]
           thisContent.forEach((item) => {
-            newLines.push(`\n# ${item.required ? `(Required)` : `(Not required)`} ${item.description}\n${item.name}=""\n`)
+            newLines.push(`\n# ${item.required ? `(Required)` : `(Not required)`} ${item.description}\n${item.environment_variable_name}=""\n`)
           })
           newLines.push(`\`\`\`\n\n`)
           return newLines.join(``)
+        }
+        case 'package_links': {
+          if ('packages' in manifest && manifest.packages.length > 0) {
+            const newLines = []
+            manifest.packages.forEach((pkg) => {
+              newLines.push(`: [${pkg.package_name}](${packageMarkdownFileName(pkg)})`)
+            })
+            return newLines.join(`\n`)
+          } else {
+            return ": There are no installable packages for this monitor"
+          }
         }
         case 'monitor_config': {
           const monitor_config_syntax = {
@@ -32,7 +47,7 @@ export const maybeMultiLineTransform = (manifest, keyname) => {
             interval_secs: 120,
             run_groups: [],
             run_spec: {
-              name: manifest.logical_name,
+              name: manifest.package_name,
               run_type: manifest.runtime_type
             },
             steps: manifest.steps.map((step) => {
@@ -79,7 +94,11 @@ export const transformLine = (line, manifest) => {
       const operatorRegex = RegExp(/(\s+&&\s+)/gm)
 
       if (!operatorRegex.test(tokenContent)) {
-        const ifTokenInManifest = (tokenContent !== `monitor_config` && !Object.hasOwn(manifest, tokenContent)) ? null : maybeMultiLineTransform(manifest, tokenContent)
+        const ifTokenInManifest = (
+          tokenContent !== `monitor_config`
+          && tokenContent !== `package_links`
+          && !Object.hasOwn(manifest, tokenContent)) ? null : maybeMultiLineTransform(manifest, tokenContent)
+
         return ifTokenInManifest
 
       } else {

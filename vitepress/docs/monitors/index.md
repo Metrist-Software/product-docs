@@ -10,87 +10,108 @@ We publish the following library of monitors that we use ourselves and make avai
 
 #### AWS
 
-* [awscloudfront](/monitors/metrist_awscloudfront) — AWS Cloudfront
-* [awscloudwatch](/monitors/metrist_awscloudwatch) — AWS CloudWatch
-* [awsecs](/monitors/metrist_awsecs) — AWS ECS (Fargate)
-* [awsrdspersistent](/monitors/metrist_awsrdspersistent) — AWS RDS Instance
-* [cognito](/monitors/metrist_cognito) — AWS Cognito
-* [ec2](/monitors/metrist_ec2) — AWS EC2
-* [awseks](/monitors/metrist_awseks) — AWS EKS
-* [awselb](/monitors/metrist_awselb) — AWS ELB
-* [awsiam](/monitors/metrist_awsiam) — AWS IAM
-* [awslambda](/monitors/metrist_awslambda) — AWS Lambda
-* [awsrds](/monitors/metrist_awsrds) — AWS RDS
-* [awsroute53](/monitors/metrist_awsroute53) — AWS Route53
-* [kinesis](/monitors/metrist_kinesis) — AWS Kinesis
-* [s3](/monitors/metrist_s3) — AWS S3
-* [ses](/monitors/metrist_ses) — AWS SES
-* [sqs](/monitors/metrist_sqs) — AWS SQS
+* [awscloudfront](/monitors/awscloudfront) — AWS Cloudfront
+* [awscloudwatch](/monitors/awscloudwatch) — AWS CloudWatch
+* [awsecs](/monitors/awsecs) — AWS ECS (Fargate)
+* [awsrdspersistent](/monitors/awsrdspersistent) — AWS RDS Instance
+* [cognito](/monitors/cognito) — AWS Cognito
+* [ec2](/monitors/ec2) — AWS EC2
+* [awseks](/monitors/awseks) — AWS EKS
+* [awselb](/monitors/awselb) — AWS ELB
+* [awsiam](/monitors/awsiam) — AWS IAM
+* [awslambda](/monitors/awslambda) — AWS Lambda
+* [awsrds](/monitors/awsrds) — AWS RDS
+* [awsroute53](/monitors/awsroute53) — AWS Route53
+* [kinesis](/monitors/kinesis) — AWS Kinesis
+* [s3](/monitors/s3) — AWS S3
+* [ses](/monitors/ses) — AWS SES
+* [sqs](/monitors/sqs) — AWS SQS
 
 #### Azure
 
-* [azureaks](/monitors/metrist_azureaks) — Azure AKS
-* [azuread](/monitors/metrist_azuread) — Azure Active Directory
-* [azureappservice](/monitors/metrist_azureappservice) — Azure App Service
-* [azureblob](/monitors/metrist_azureblob) — Azure Blob Storage
-* [azurecdn](/monitors/metrist_azurecdn) — Azure CDN
-* [azuredb](/monitors/metrist_azuredb) — Azure Cosmos DB
-* [azuredevopsartifacts](/monitors/metrist_azuredevopsartifacts) — Azure DevOps Artifacts
-* [azuredevopsboards](/monitors/metrist_azuredevopsboards) — Azure DevOps Boards
-* [azuredevopspipelines](/monitors/metrist_azuredevopspipelines) — Azure DevOps Pipelines
-* [azuredevops](/monitors/metrist_azuredevops) — Azure DevOps Repos
-* [azuredevopstestplans](/monitors/metrist_azuredevopstestplans) — Azure DevOps Test Plans
-* [azurefncs](/monitors/metrist_azurefncs) — Azure Functions
-* [azuremonitor](/monitors/metrist_azuremonitor) — Azure Monitor
-* [azuresql](/monitors/metrist_azuresql) — Azure SQL
-* [azurevm](/monitors/metrist_azurevm) — Azure Virtual Machines
+* [azureaks](/monitors/azureaks) — Azure AKS
+* [azuread](/monitors/azuread) — Azure Active Directory
+* [azureappservice](/monitors/azureappservice) — Azure App Service
+* [azureblob](/monitors/azureblob) — Azure Blob Storage
+* [azurecdn](/monitors/azurecdn) — Azure CDN
+* [azuredb](/monitors/azuredb) — Azure Cosmos DB
+* [azuredevopsartifacts](/monitors/azuredevopsartifacts) — Azure DevOps Artifacts
+* [azuredevopsboards](/monitors/azuredevopsboards) — Azure DevOps Boards
+* [azuredevopspipelines](/monitors/azuredevopspipelines) — Azure DevOps Pipelines
+* [azuredevops](/monitors/azuredevops) — Azure DevOps Repos
+* [azuredevopstestplans](/monitors/azuredevopstestplans) — Azure DevOps Test Plans
+* [azurefncs](/monitors/azurefncs) — Azure Functions
+* [azuremonitor](/monitors/azuremonitor) — Azure Monitor
+* [azuresql](/monitors/azuresql) — Azure SQL
+* [azurevm](/monitors/azurevm) — Azure Virtual Machines
 
 #### Google Cloud Platform
 
-* [gcpappengine](/monitors/metrist_gcpappengine) — GCP App Engine
-* [gcpcloudstorage](/monitors/metrist_gcpcloudstorage) — GCP Cloud Storage
-* [gcpcomputeengine](/monitors/metrist_gcpcomputeengine) — GCP Compute Engine
-* [gke](/monitors/metrist_gke) — GCP GKE
+* [gcpappengine](/monitors/gcpappengine) — GCP App Engine
+* [gcpcloudstorage](/monitors/gcpcloudstorage) — GCP Cloud Storage
+* [gcpcomputeengine](/monitors/gcpcomputeengine) — GCP Compute Engine
+* [gke](/monitors/gke) — GCP GKE
 
 ### APIs
 
-* [avalara](/monitors/metrist_avalara) — Avalara (AvaTax)
-* [bambora](/monitors/metrist_bambora) — Bambora
-* [braintree](/monitors/metrist_braintree) — Braintree
-* [easypost](/monitors/metrist_easypost) — EasyPost
-* [fastly](/monitors/metrist_fastly) — Fastly
-* [github](/monitors/metrist_github) — GitHub
-* [gcal](/monitors/metrist_gcal) — Google Calendar
-* [gmaps](/monitors/metrist_gmaps) — Google Maps
-* [hubspot](/monitors/metrist_hubspot) — HubSpot
-* [moneris](/monitors/metrist_moneris) — Moneris
-* [pubnub](/monitors/metrist_pubnub) — PubNub
-* [sendgrid](/monitors/metrist_sendgrid) — SendGrid
-* [stripe](/monitors/metrist_stripe) — Stripe
+* [avalara](/monitors/avalara) — Avalara (AvaTax)
+* [authorizenet](/monitors/authorizenet) — Authorize.net
+* [bambora](/monitors/bambora) — Bambora
+* [braintree](/monitors/braintree) — Braintree
+* [easypost](/monitors/easypost) — EasyPost
+* [fastly](/monitors/fastly) — Fastly
+* [github](/monitors/github) — GitHub
+* [gcal](/monitors/gcal) — Google Calendar
+* [gmaps](/monitors/gmaps) — Google Maps
+* [hubspot](/monitors/hubspot) — HubSpot
+* [moneris](/monitors/moneris) — Moneris
+* [pubnub](/monitors/pubnub) — PubNub
+* [sendgrid](/monitors/sendgrid) — SendGrid
+* [stripe](/monitors/stripe) — Stripe
 
 ### Infrastructure
 
-* [cloudflare](/monitors/metrist_cloudflare) — Cloudflare
-* [heroku](/monitors/metrist_heroku) — Heroku
-* [snowflake](/monitors/metrist_snowflake) — Snowflake
+* [cloudflare](/monitors/cloudflare) — Cloudflare
+* [heroku](/monitors/heroku) — Heroku
+* [snowflake](/monitors/snowflake) — Snowflake
 
 #### SaaS
 
-* [asana](/monitors/metrist_asana) — Asana
-* [newrelic](/monitors/metrist_newrelic) — New Relic
-* [authzero](/monitors/metrist_authzero) — Auth0
-* [circleci](/monitors/metrist_circleci) — CircleCI
-* [datadog](/monitors/metrist_datadog) — Datadog
-* [jira](/monitors/metrist_jira) — Jira
-* [npm](/monitors/metrist_npm) — NPM
-* [nuget](/monitors/metrist_nuget) — NuGet
-* [pagerduty](/monitors/metrist_pagerduty) — PagerDuty
-* [sentry](/monitors/metrist_sentry) — Sentry
-* [slack](/monitors/metrist_slack) — Slack
-* [trello](/monitors/metrist_trello) — Trello
-* [twiliovid](/monitors/metrist_twiliovid) — Twilio Video
-* [zendesk](/monitors/metrist_zendesk) — Zendesk
-* [zoom](/monitors/metrist_zoom) — Zoom
+* [asana](/monitors/asana) — Asana
+* [atlassianbitbucket](/monitors/atlassianbitbucket) — Atlassian Bitbucket
+* [authzero](/monitors/authzero) — Auth0
+* [circleci](/monitors/circleci) — CircleCI
+* [datadog](/monitors/datadog) — Datadog
+* [discord](/monitors/discord) — Discord
+* [eclipsefoundationservices](/monitors/eclipsefoundationservices) — Eclipse Foundation Services
+* [envoy](/monitors/envoy) — Envoy
+* [freshbooks](/monitors/freshbooks) — Freshbooks
+* [gitpod](/monitors/gitpod) — Gitpod
+* [hotjar](/monitors/hotjar) — Hotjar
+* [jira](/monitors/jira) — Jira
+* [launchpad](/monitors/launchpad) — LaunchPad
+* [lightspeed](/monitors/lightspeed) — Lightspeed
+* [lightstep](/monitors/lightstep) — Lightstep
+* [linode](/monitors/linode) — Linode
+* [logrocket](/monitors/logrocket) — LogRocket
+* [jira](/monitors/jira) — Jira
+* [mavencentral](/monitors/mavencentral) — Maven Central
+* [netlify](/monitors/netlify) — Netlify
+* [newrelic](/monitors/newrelic) — New Relic
+* [nobl9](/monitors/nobl9) — Nobl9
+* [npm](/monitors/npm) — NPM
+* [nuget](/monitors/nuget) — NuGet
+* [opsgenie](/monitors/opsgenie) — Opsgenie
+* [pagerduty](/monitors/pagerduty) — PagerDuty
+* [rubygemsorg](/monitors/rubygemsorg) — Ruby Gems
+* [sentry](/monitors/sentry) — Sentry
+* [slack](/monitors/slack) — Slack
+* [strava](/monitors/strava) — Strava
+* [taxjar](/monitors/taxjar) — TaxJar
+* [trello](/monitors/trello) — Trello
+* [twiliovid](/monitors/twiliovid) — Twilio Video
+* [zendesk](/monitors/zendesk) — Zendesk
+* [zoom](/monitors/zoom) — Zoom
 
 #### Metrist
 

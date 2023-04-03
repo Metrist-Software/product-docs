@@ -4,7 +4,7 @@
 
 Description
 
-: Monitor the functionality of New Relic's web UI.
+: Monitor the observability of [New Relic's Event API](https://docs.newrelic.com/docs/data-apis/ingest-apis/event-api/introduction-event-api/).
 
 Name
 
@@ -29,23 +29,14 @@ Version
 
 
 ```sh
-# (Required) Username to log in to NewRelic's UI with.
-METRIST_NEWRELIC_NEW_RELIC_USERNAME=""
+# (Required) A New Relic account number.
+METRIST_NEWRELIC_NEW_RELIC_ACCOUNT_NUMBER=""
 
-# (Required) Password for the associated user.
-METRIST_NEWRELIC_NEW_RELIC_PASSWORD=""
+# (Required) For submitting event to New Relic's Insight API.
+METRIST_NEWRELIC_NEW_RELIC_INSIGHT_API_KEY=""
 
-# (Required) ID of the dashboard to load.
-METRIST_NEWRELIC_NEW_RELIC_DASHBOARD_ID=""
-
-# (Required) XPath string to use for validating dashboard page has loaded successfully.
-METRIST_NEWRELIC_NEW_RELIC_DASHBOARD_XPATH=""
-
-# (Required) ID of the synthetic monitor to load.
-METRIST_NEWRELIC_NEW_RELIC_SYNTHETIC_MONITOR_ID=""
-
-# (Required) XPath string to use for validating synthetic monitor page has loaded successfully.
-METRIST_NEWRELIC_NEW_RELIC_SYNTHETICS_XPATH=""
+# (Required) Nerdgraph is New Relic's recommended API for querying events.
+METRIST_NEWRELIC_NEW_RELIC_NERDGRAPH_USER_KEY=""
 ```
 
 <!--@include: /parts/tips_env-vars.md -->
@@ -64,16 +55,12 @@ METRIST_NEWRELIC_NEW_RELIC_SYNTHETICS_XPATH=""
     "run_type": "exe"
   },
   "steps": [{
-    "check_logical_name": "OpenDashboardUI",
-    "description": "Load a dashboard in the New Relic web UI",
+    "check_logical_name": "SubmitEvent",
+    "description": "This step attempts to submit an event through the Event API.",
     "timeout_secs": 900
   }, {
-    "check_logical_name": "OpenSyntheticsUI",
-    "description": "Load a synthetic monitor in the New Relic web UI",
-    "timeout_secs": 900
-  }, {
-    "check_logical_name": "OpenAlertsUI",
-    "description": "Load the Alerting Overview page in the New Relic web UI",
+    "check_logical_name": "CheckEvent",
+    "description": "This step attempts to use the NerdGraph Graphql API to retrieve the event submitted in the previous step.",
     "timeout_secs": 900
   }]
 }

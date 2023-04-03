@@ -116,6 +116,7 @@ We publish the following library of monitors that we use ourselves and make avai
 #### Metrist
 
 * `metrist` — Metrist (yes, monitor Metrist with Metrist!)
+* [testsignal](/monitors/testsignal) — Debugging and test monitor without any third-party API calls
 
 ## Produce Your Own <Badge type="warning" text="experimental" />
 

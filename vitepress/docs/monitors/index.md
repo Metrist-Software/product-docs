@@ -22,6 +22,7 @@ We publish the following library of monitors that we use ourselves and make avai
 * [awslambda](/monitors/awslambda) — AWS Lambda
 * [awsrds](/monitors/awsrds) — AWS RDS
 * [awsroute53](/monitors/awsroute53) — AWS Route53
+* [awssecretsmanager](/monitors/awssecretsmanager) — AWS Secrets Manager
 * [kinesis](/monitors/kinesis) — AWS Kinesis
 * [s3](/monitors/s3) — AWS S3
 * [ses](/monitors/ses) — AWS SES

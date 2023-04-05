@@ -7,6 +7,8 @@ export const sidebar = {
 				{ text: 'Chat Apps', link: '/guides/chat-apps'},
 				{ text: 'Slack Setup', link: '/guides/slack'},
 				{ text: 'Web App', link: '/guides/web-app'},
+        // Enable once the Datadog app is available
+        //{ text: 'Datadog App', link: '/guides/datadog-app'},
 				{ text: 'Invite Your Team', link: '/guides/web-app-invites'},
 				{ text: 'Add Service Monitors', link: '/guides/web-app-monitors'},
 				{ text: 'Configure Notifications', link: '/guides/web-app-notifications'},

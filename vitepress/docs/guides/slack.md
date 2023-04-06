@@ -7,7 +7,7 @@ title: Slack App Setup
 ## Installation
 
 ::: info
-Some Slack workspaces require an adminstrator to install third-party Slack applications. If your workspace is configured this way, your administrator will need to follow the steps below.
+Some Slack workspaces require an administrator to install third-party Slack applications. If your workspace is configured this way, your administrator will need to follow the steps below.
 :::
 
 1. Click on the _Profile_ menu item.

@@ -37,6 +37,9 @@ METRIST_GKE_CLUSTER_SERVER=""
 
 # (Required) PEM-encoded certificate authority certificates.
 METRIST_GKE_CLUSTER_CERT_AUTH_DATA=""
+
+# (Not required) Namespace in which to create deployments. Uses 'default' if not supplied.
+METRIST_GKE_NAMESPACE=""
 ```
 
 <!--@include: /parts/tips_env-vars.md -->

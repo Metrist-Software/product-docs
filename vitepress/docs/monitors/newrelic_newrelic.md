@@ -4,7 +4,7 @@
 
 Description
 
-: Monitor the functionality of [New Relic's Event API](https://docs.newrelic.com/docs/data-apis/ingest-apis/event-api/introduction-event-api/).
+: Monitor the observability of [New Relic's Event API](https://docs.newrelic.com/docs/data-apis/ingest-apis/event-api/introduction-event-api/).
 
 Name
 

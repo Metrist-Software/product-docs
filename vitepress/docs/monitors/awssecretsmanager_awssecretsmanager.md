@@ -4,7 +4,7 @@
 
 Description
 
-: Monitor the availability of [AWS Secrets Manager](https://aws.amazon.com/secretsmanager/).
+: Monitor the observability of [AWS Secrets Manager](https://aws.amazon.com/secretsmanager/).
 
 Name
 

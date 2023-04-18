@@ -17,7 +17,6 @@ Name
 Packages
 
 : [newrelic](newrelic_newrelic.md)
-: [newrelicclient](newrelic_newrelicclient.md)
 
 
 <!--@include: /parts/_1.md-->

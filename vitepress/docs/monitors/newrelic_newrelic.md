@@ -4,7 +4,7 @@
 
 Description
 
-: Monitor the functionality of [New Relic's Event API](https://docs.newrelic.com/docs/data-apis/ingest-apis/event-api/introduction-event-api/).
+: Monitor the observability of [New Relic's Event API](https://docs.newrelic.com/docs/data-apis/ingest-apis/event-api/introduction-event-api/).
 
 Name
 
@@ -61,6 +61,18 @@ METRIST_NEWRELIC_NEW_RELIC_NERDGRAPH_USER_KEY=""
   }, {
     "check_logical_name": "CheckEvent",
     "description": "This step attempts to use the NerdGraph Graphql API to retrieve the event submitted in the previous step.",
+    "timeout_secs": 900
+  }, {
+    "check_logical_name": "CreateSyntheticMonitor",
+    "description": "Creates a synthetic monitor that pings https://newrelic.com",
+    "timeout_secs": 900
+  }, {
+    "check_logical_name": "WaitForSyntheticMonitorResponse",
+    "description": "Waits for the result of the created synthetic monitor to be available.",
+    "timeout_secs": 900
+  }, {
+    "check_logical_name": "DeleteSyntheticMonitor",
+    "description": "Deletes the previously created synthetic monitor.",
     "timeout_secs": 900
   }]
 }

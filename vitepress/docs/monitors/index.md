@@ -102,6 +102,7 @@ We publish the following library of monitors that we use ourselves and make avai
 * [nobl9](/monitors/nobl9) — Nobl9
 * [npm](/monitors/npm) — NPM
 * [nuget](/monitors/nuget) — NuGet
+* [okta](/monitors/okta) - Okta
 * [opsgenie](/monitors/opsgenie) — Opsgenie
 * [pagerduty](/monitors/pagerduty) — PagerDuty
 * [rubygemsorg](/monitors/rubygemsorg) — Ruby Gems

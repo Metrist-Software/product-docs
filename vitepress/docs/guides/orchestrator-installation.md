@@ -4,6 +4,16 @@ title: Install Metrist Orchestrator
 
 # {{ $frontmatter.title }}
 
+## Introduction
+
+In order to get started with Metrist, you need to download the software onto your Linux-based environment. This allows you to monitor your individual experience with a cloud product. After creating a Metrist account, the process for you monitoring your cloud dependencies is as follows:
+
+1. [Download & install Metrist](/guides/orchestrator-installation.html#guided-installation)
+2. [Configure service monitors](/monitors/)
+3. [Configure alerting](/guides/web-app-notifications.html)
+
+Please [contact us](mailto:support@metrist.io) with any questions or [schedule an onboarding call](https://calendly.com/jmartenspdx/metrist-consultation) to get started.
+
 ## Guided Installation
 
 1. To start a guided installation of Orchestrator, run this command and follow the prompts. You will, for example, need your API token which you can get from [app.metrist.io/profile](https://app.metrist.io/profile).

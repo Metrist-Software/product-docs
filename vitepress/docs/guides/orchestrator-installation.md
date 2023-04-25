@@ -6,7 +6,7 @@ title: Install Metrist Orchestrator
 
 ## Introduction
 
-In order to get started with Metrist, you need to download the software onto your Linux-based environment. This allows you to monitor your individual experience with a cloud product. After creating a Metrist account, the process for you monitoring your cloud dependencies is as follows:
+In order to get started with Metrist, you need to download the software into a compute environment you own. This allows you to monitor your individual experience with a cloud product. After creating a Metrist account, the process for you monitoring your cloud dependencies is as follows:
 
 1. [Download & install Metrist](/guides/orchestrator-installation.html#guided-installation)
 2. [Configure service monitors](/monitors/)

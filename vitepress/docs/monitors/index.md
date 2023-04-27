@@ -74,6 +74,7 @@ We publish the following library of monitors that we use ourselves and make avai
 
 * [cloudflare](/monitors/cloudflare) — Cloudflare
 * [heroku](/monitors/heroku) — Heroku
+* [neon](/monitors/neon) — Neon
 * [snowflake](/monitors/snowflake) — Snowflake
 
 #### SaaS

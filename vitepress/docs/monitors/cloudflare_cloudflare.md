@@ -28,7 +28,10 @@ Version
 <!--@include: /parts/_3.md-->
 
 
-```sh```
+```sh
+# (Not required) The URL to use for the CDN check (defaults to https://www.cloudflare.com if not specified).
+METRIST_CLOUDFLARE_CDN_CHECK_URL=""
+```
 
 <!--@include: /parts/tips_env-vars.md -->
 

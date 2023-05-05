@@ -38,7 +38,7 @@ METRIST_GITHUB_REPOSITORY=""
 # (Required) Github API token with access to Issues, Pull, and Push.
 METRIST_GITHUB_API_TOKEN=""
 
-# (Not required) If running against an organization repository, supply the organization name.
+# (Not required) If running against an organization repository, supply the organization slug (ex. metrist).
 METRIST_GITHUB_ORGANIZATION=""
 ```
 

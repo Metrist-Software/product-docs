@@ -37,6 +37,9 @@ METRIST_GITHUB_REPOSITORY=""
 
 # (Required) Github API token with access to Issues, Pull, and Push.
 METRIST_GITHUB_API_TOKEN=""
+
+# (Not required) If running against an organization repository, supply the organization name.
+METRIST_GITHUB_ORGANIZATION=""
 ```
 
 <!--@include: /parts/tips_env-vars.md -->
